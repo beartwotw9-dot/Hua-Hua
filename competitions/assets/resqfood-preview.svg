@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0C2118"/>
+      <stop offset="100%" stop-color="#184530"/>
+    </linearGradient>
+    <linearGradient id="card1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1C3E28"/>
+      <stop offset="100%" stop-color="#142E1E"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4A9060"/>
+      <stop offset="100%" stop-color="#62A870"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bg)"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="100" x2="600" y2="100" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="200" x2="600" y2="200" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="300" x2="600" y2="300" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="200" y1="0" x2="200" y2="400" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="400" y1="0" x2="400" y2="400" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- App label -->
+  <rect x="24" y="22" width="120" height="22" rx="11" fill="rgba(74,144,96,0.25)"/>
+  <text x="84" y="37" font-size="11" font-family="system-ui,sans-serif" fill="#68B87A" text-anchor="middle" font-weight="500">永續創新 · 2026</text>
+
+  <!-- App title -->
+  <text x="24" y="76" font-size="30" font-family="system-ui,sans-serif" fill="white" font-weight="700">ResQfood</text>
+  <text x="24" y="98" font-size="13" font-family="system-ui,sans-serif" fill="#68B87A">拯救食物 — AI 剩食即時媒合平台</text>
+
+  <!-- ── Phone 1: 探索地圖 ── -->
+  <rect x="24" y="120" width="160" height="258" rx="20" fill="url(#card1)" stroke="#2A5E3C" stroke-width="1.5"/>
+  <!-- Status bar -->
+  <text x="40" y="140" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.5)">9:41</text>
+  <rect x="138" y="132" width="30" height="8" rx="3" fill="rgba(255,255,255,0.15)"/>
+  <!-- Nav title -->
+  <text x="104" y="162" font-size="11" font-family="system-ui,sans-serif" fill="white" text-anchor="middle" font-weight="600">探索地圖</text>
+  <line x1="24" y1="170" x2="184" y2="170" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <!-- Map area -->
+  <rect x="32" y="178" width="144" height="118" rx="8" fill="#0E2A1C"/>
+  <!-- Map dots and lines -->
+  <circle cx="70" cy="218" r="5" fill="#4A9060" opacity="0.9"/>
+  <circle cx="110" cy="203" r="5" fill="#4A9060" opacity="0.9"/>
+  <circle cx="148" cy="228" r="5" fill="#62A870" opacity="0.9"/>
+  <circle cx="90" cy="248" r="5" fill="#4A9060" opacity="0.9"/>
+  <circle cx="140" cy="260" r="5" fill="#3A7050" opacity="0.8"/>
+  <line x1="70" y1="218" x2="110" y2="203" stroke="#3A6040" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="110" y1="203" x2="148" y2="228" stroke="#3A6040" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="148" y1="228" x2="140" y2="260" stroke="#3A6040" stroke-width="1" stroke-dasharray="3,2"/>
+  <!-- Map label -->
+  <rect x="78" y="240" width="44" height="16" rx="4" fill="#4A9060"/>
+  <text x="100" y="251" font-size="8" font-family="system-ui,sans-serif" fill="white" text-anchor="middle">附近 12 家</text>
+  <!-- List chips -->
+  <rect x="32" y="306" width="66" height="20" rx="10" fill="#1C3E28"/>
+  <text x="65" y="319" font-size="9" font-family="system-ui,sans-serif" fill="#68B87A" text-anchor="middle">🗺 地圖</text>
+  <rect x="106" y="306" width="66" height="20" rx="10" fill="rgba(255,255,255,0.07)"/>
+  <text x="139" y="319" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.5)" text-anchor="middle">≡ 列表</text>
+  <!-- Bottom tab bar -->
+  <rect x="32" y="336" width="144" height="32" rx="8" fill="rgba(255,255,255,0.05)"/>
+  <text x="65" y="356" font-size="9" font-family="system-ui,sans-serif" fill="#4A9060" text-anchor="middle">探索</text>
+  <text x="104" y="356" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.4)" text-anchor="middle">訂單</text>
+  <text x="143" y="356" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.4)" text-anchor="middle">我的</text>
+
+  <!-- ── Phone 2: 商品詳情 ── -->
+  <rect x="218" y="120" width="160" height="258" rx="20" fill="url(#card1)" stroke="#2A5E3C" stroke-width="1.5"/>
+  <text x="252" y="140" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.5)">9:41</text>
+  <rect x="330" y="132" width="30" height="8" rx="3" fill="rgba(255,255,255,0.15)"/>
+  <text x="298" y="162" font-size="11" font-family="system-ui,sans-serif" fill="white" text-anchor="middle" font-weight="600">商品詳情</text>
+  <line x1="218" y1="170" x2="378" y2="170" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <!-- Food image area -->
+  <rect x="226" y="178" width="144" height="70" rx="8" fill="#0E2A1C"/>
+  <text x="298" y="220" font-size="28" font-family="system-ui,sans-serif" text-anchor="middle">🥡</text>
+  <!-- Product info -->
+  <text x="226" y="268" font-size="11" font-family="system-ui,sans-serif" fill="white" font-weight="600">鄰家便當</text>
+  <rect x="330" y="256" width="36" height="16" rx="8" fill="rgba(74,144,96,0.3)"/>
+  <text x="348" y="267" font-size="8" font-family="system-ui,sans-serif" fill="#68B87A" text-anchor="middle">70折</text>
+  <text x="226" y="284" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.5)">取貨時限：今日 18:30 前</text>
+  <text x="226" y="298" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.5)">剩餘數量：3 份</text>
+  <!-- Divider -->
+  <line x1="226" y1="308" x2="370" y2="308" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="226" y="322" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.4)">減碳說明：節省 1.2kg CO₂</text>
+  <!-- CTA -->
+  <rect x="226" y="334" width="144" height="30" rx="10" fill="#4A9060"/>
+  <text x="298" y="353" font-size="11" font-family="system-ui,sans-serif" fill="white" text-anchor="middle" font-weight="600">立即預約 · NT$85</text>
+
+  <!-- ── Phone 3: 個人惜食 ── -->
+  <rect x="412" y="120" width="160" height="258" rx="20" fill="url(#card1)" stroke="#2A5E3C" stroke-width="1.5"/>
+  <text x="428" y="140" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.5)">9:41</text>
+  <rect x="514" y="132" width="30" height="8" rx="3" fill="rgba(255,255,255,0.15)"/>
+  <text x="492" y="162" font-size="11" font-family="system-ui,sans-serif" fill="white" text-anchor="middle" font-weight="600">個人惜食</text>
+  <line x1="412" y1="170" x2="572" y2="170" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <!-- Stats row -->
+  <rect x="420" y="180" width="66" height="56" rx="10" fill="#0E2A1C"/>
+  <text x="453" y="205" font-size="20" font-family="system-ui,sans-serif" fill="white" text-anchor="middle" font-weight="700">23</text>
+  <text x="453" y="222" font-size="8" font-family="system-ui,sans-serif" fill="#68B87A" text-anchor="middle">次惜食</text>
+  <rect x="496" y="180" width="66" height="56" rx="10" fill="#0E2A1C"/>
+  <text x="529" y="205" font-size="20" font-family="system-ui,sans-serif" fill="white" text-anchor="middle" font-weight="700">4.8</text>
+  <text x="529" y="222" font-size="8" font-family="system-ui,sans-serif" fill="#68B87A" text-anchor="middle">kg CO₂↓</text>
+  <!-- Progress -->
+  <text x="420" y="254" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.5)">本月目標進度</text>
+  <rect x="420" y="260" width="144" height="8" rx="4" fill="#0E2A1C"/>
+  <rect x="420" y="260" width="93" height="8" rx="4" fill="url(#bar)"/>
+  <text x="564" y="269" font-size="8" font-family="system-ui,sans-serif" fill="#68B87A" text-anchor="end">65%</text>
+  <!-- Recent list -->
+  <text x="420" y="288" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.5)">最近惜食紀錄</text>
+  <rect x="420" y="294" width="144" height="26" rx="6" fill="#0E2A1C"/>
+  <text x="430" y="311" font-size="8.5" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.7)">🥡 鄰家便當 · 今天</text>
+  <text x="552" y="311" font-size="8" font-family="system-ui,sans-serif" fill="#68B87A" text-anchor="end">-1.2kg</text>
+  <rect x="420" y="326" width="144" height="26" rx="6" fill="#0E2A1C"/>
+  <text x="430" y="343" font-size="8.5" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.7)">🥗 蔬食廚坊 · 昨天</text>
+  <text x="552" y="343" font-size="8" font-family="system-ui,sans-serif" fill="#68B87A" text-anchor="end">-0.8kg</text>
+  <!-- Bottom bar -->
+  <rect x="420" y="358" width="144" height="10" rx="5" fill="rgba(255,255,255,0.05)"/>
+  <text x="492" y="367" font-size="7" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.2)" text-anchor="middle">— ResQfood —</text>
+</svg>
