@@ -15,7 +15,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:20;height:58px;padding:0 2.5rem;
 .nav-logo{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);text-decoration:none}
 .back-link{color:var(--ink);text-decoration:none;border:1px solid var(--sand);border-radius:100px;padding:.45rem 1rem;font-size:.85rem}
 .hero{min-height:52vh;padding:7rem 2.5rem 4rem;color:var(--white);display:flex;align-items:end;background:linear-gradient(160deg, #4A3020, #A0704A)}
-.hero-inner,.wrap{max-width:1000px;margin:0 auto;width:100%}
+.hero-inner,.wrap{max-width:1080px;margin:0 auto;width:100%}
 .eyebrow{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,253,249,.75);margin-bottom:.7rem}
 h1{font-family:var(--serif);font-size:clamp(2.1rem,5vw,4.2rem);line-height:1.16;letter-spacing:-.02em;max-width:820px}
 .hero-meta{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.4rem}
@@ -31,16 +31,18 @@ section{padding:4.5rem 2.5rem}
 .meta-value{font-family:var(--serif);font-weight:700;color:var(--ink);margin-top:.15rem}
 .story-lead{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.25rem;margin-bottom:1rem}
 .story-lead p{font-size:.95rem;color:var(--ink2);font-weight:300;line-height:1.9}
-.story-showcase{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;margin-bottom:1rem}
+.story-showcase{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem;margin-bottom:1rem;align-items:stretch}
+.story-showcase > :only-child{grid-column:1 / -1}
 .story-media,.story-note{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem}
 .story-media img{display:block;width:100%;border-radius:6px;border:1px solid var(--border);background:var(--bg2)}
 .story-media-caption{font-size:.8rem;color:var(--muted);margin-top:.65rem}
 .story-note h3{font-family:var(--serif);font-size:1.02rem;color:var(--ink);margin-bottom:.55rem}
 .story-note p{font-size:.9rem;color:var(--ink2);font-weight:300;line-height:1.82}
 .story-note .spotlight-list{margin-top:.85rem}
-.story-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;grid-auto-rows:1fr}
 .story-card h3{font-family:var(--serif);font-size:1.02rem;color:var(--ink);margin-bottom:.55rem}
-.story-card p{font-size:.9rem;color:var(--ink2);font-weight:300}
+.story-card{display:flex;flex-direction:column}
+.story-card p{font-size:.9rem;color:var(--ink2);font-weight:300;line-height:1.86}
 .app-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:1.2rem;align-items:start}
 .app-visual{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem}
 .app-visual img{display:block;width:100%;border-radius:6px;border:1px solid var(--border);background:var(--bg2)}
@@ -53,15 +55,6 @@ section{padding:4.5rem 2.5rem}
 .app-note:first-child{padding-top:0;border-top:0}
 .app-note h3{font-family:var(--serif);font-size:1rem;color:var(--ink);margin-bottom:.3rem}
 .app-note p{font-size:.86rem;color:var(--ink2);font-weight:300;line-height:1.78}
-.app-intro-text{font-size:.95rem;color:var(--ink2);font-weight:300;line-height:1.9;margin-bottom:1.8rem}
-.phone-gallery{display:flex;gap:1.5rem;overflow-x:auto;padding:.4rem 0 1.5rem;scrollbar-width:thin;scrollbar-color:var(--sand) transparent}
-.phone-gallery::-webkit-scrollbar{height:4px}
-.phone-gallery::-webkit-scrollbar-thumb{background:var(--sand);border-radius:4px}
-.phone-card{flex:0 0 185px}
-.phone-frame{border-radius:22px;overflow:hidden;border:1.5px solid var(--border);aspect-ratio:9/19.5;background:var(--bg2);margin-bottom:.8rem;box-shadow:0 8px 24px rgba(34,30,22,.09)}
-.phone-frame img{width:100%;height:100%;object-fit:cover;object-position:top}
-.phone-card h3{font-family:var(--serif);font-size:.92rem;color:var(--ink);font-weight:700;margin-bottom:.3rem}
-.phone-card p{font-size:.78rem;color:var(--muted);line-height:1.65;font-weight:300}
 .related{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .related-card{text-decoration:none;color:inherit;transition:transform .2s,border-color .2s}
 .related-card:hover{transform:translateY(-2px);border-color:var(--sand)}
@@ -78,7 +71,7 @@ section{padding:4.5rem 2.5rem}
 <main>
 <section><div class="wrap overview"><div><h2 class="section-title">Overview</h2><p class="summary">以當代農村永續生態平台為概念，規劃首頁、俗女共創、配工匠、集章地圖、永續縫補與 AR 場景等功能，建立地方文化與數位互動的連結。</p><ul class="spotlight-list"><li>地方文化 App 架構</li><li>使用流程設計</li><li>AR 場景想像</li></ul></div><div class="meta-grid"><div class="meta-card"><div class="meta-label">Year</div><div class="meta-value">2026</div></div><div class="meta-card"><div class="meta-label">Category</div><div class="meta-value">創業競賽</div></div><div class="meta-card"><div class="meta-label">Award</div><div class="meta-value">作品整理</div></div><div class="meta-card"><div class="meta-label">Focus</div><div class="meta-value">地方文化 App 架構 / 使用流程設計</div></div></div></div></section>
 <section><div class="wrap"><h2 class="section-title">作品介紹</h2><div class="story-lead"><p>以當代農村永續生態平台為概念，規劃首頁、俗女共創、配工匠、集章地圖、永續縫補與 AR 場景等功能，建立地方文化與數位互動的連結。 這頁整理的是我在這個題目裡如何定義問題、形成提案、安排內容架構，以及最後想讓外部看見的核心價值。</p></div><div class="story-showcase"><article class="story-note"><h3>內容補充</h3><p>我會先拆出問題、目標客群與價值主張，再往下整理商業模式、體驗流程與提案結構，讓想法從概念走到一個比較完整、可以被說服的創業方案。</p><ul class="spotlight-list"><li>地方文化 App 架構</li><li>使用流程設計</li><li>AR 場景想像</li></ul></article></div><div class="story-grid"><article class="story-card"><h3>目的</h3><p>這個作品想把農村文化體驗從單次旅行延伸成可持續互動的平台，讓使用者在離開現場後仍能和地方保持連結。</p></article><article class="story-card"><h3>發想</h3><p>發想來自我對地方旅遊的感受：真正吸引人的不是拍照打卡，而是能不能留下參與感，所以我把功能設計集中在共創、集章、工匠配對與縫補循環。</p></article><article class="story-card"><h3>核心設計</h3><p>核心設計以六個頁面串成完整體驗：首頁作為導覽入口，俗女共創與配工匠承接參與，集章地圖與 AR 場景強化探索，永續縫補則延伸到後續關係維護。</p></article><article class="story-card"><h3>執行方式</h3><p>我會先拆出問題、目標客群與價值主張，再往下整理商業模式、體驗流程與提案結構，讓想法從概念走到一個比較完整、可以被說服的創業方案。</p></article><article class="story-card"><h3>內容亮點</h3><p>這份作品的內容亮點主要集中在 地方文化 App 架構、使用流程設計、AR 場景想像，也因此能更完整地呈現我如何從主題理解一路走到企劃、設計或提案表達。</p></article><article class="story-card"><h3>成果</h3><p>成果上，這個提案建立了一個可被繼續細化的地方創生 App 雛形，也讓我在 UI/UX 敘事上更有產品化的意識。</p></article></div></div></section>
-<section><div class="wrap"><h2 class="section-title">App 設計</h2><p class="app-intro-text">俗女手帖的設計重點，是把一次性的農村走訪轉化成可以持續參與的數位體驗。我把地方文化、工藝互動、任務集章與 AR 探索放進同一個產品架構裡，希望使用者不是看過就結束，而是能透過 App 逐步建立和地方的關係。</p><div class="phone-gallery"><div class="phone-card"><div class="phone-frame"><img src="assets/suonv_phones/suonv_phone1.jpg" alt="首頁"/></div><h3>首頁</h3><p>導覽入口整合活動資訊、地方故事與互動任務，讓使用者一進來就能感受這是可以邊探索、邊參與的地方文化平台。</p></div><div class="phone-card"><div class="phone-frame"><img src="assets/suonv_phones/suonv_phone2.jpg" alt="俗女共創"/></div><h3>俗女共創</h3><p>把使用者從被動觀看者轉成參與者，鼓勵留下內容、回應地方議題，讓地方文化產生互動與歸屬感。</p></div><div class="phone-card"><div class="phone-frame"><img src="assets/suonv_phones/suonv_phone3.jpg" alt="配工匠"/></div><h3>配工匠</h3><p>透過更清楚的資訊呈現與媒合流程，讓使用者理解不同工匠專長，讓技藝交流從興趣變成可能發生的合作體驗。</p></div><div class="phone-card"><div class="phone-frame"><img src="assets/suonv_phones/suonv_phone4.jpg" alt="集章地圖"/></div><h3>集章地圖</h3><p>把探索路線整理成可視化任務機制，讓走訪村落的過程更有節奏，把地方移動路徑設計成有參與感的遊走體驗。</p></div><div class="phone-card"><div class="phone-frame"><img src="assets/suonv_phones/suonv_phone5.jpg" alt="永續縫補"/></div><h3>永續縫補</h3><p>延伸工藝與修補文化，讓使用者理解維修、再利用的價值，把地方文化和永續生活方式串接起來。</p></div><div class="phone-card"><div class="phone-frame"><img src="assets/suonv_phones/suonv_phone6.jpg" alt="AR 場景"/></div><h3>AR 場景</h3><p>透過擴增實境把抽象文化內容變成沉浸感的現場互動，讓使用者在離開場域後仍記得這段體驗的特色。</p></div></div></div></section>
+<section><div class="wrap"><h2 class="section-title">App 設計</h2><div class="app-layout"><div class="app-visual"><img src="file:///Users/youxinhua/Downloads/competitions/assets/suonv-app-overview.png" alt="俗女手帖 App App 畫面"/></div><div class="app-copy"><p class="app-intro">俗女手帖的設計重點，是把一次性的農村走訪轉化成可以持續參與的數位體驗。我把地方文化、工藝互動、任務集章與 AR 探索放進同一個產品架構裡，希望使用者不是看過就結束，而是能透過 App 逐步建立和地方的關係。</p><div class="app-notes"><article class="app-note"><h3>首頁</h3><p>首頁作為整個體驗的入口，整合活動資訊、地方故事與互動任務，讓使用者一進來就知道這不只是旅遊導覽，而是一個可以邊探索、邊參與、邊累積體驗的地方文化平台。</p></article><article class="app-note"><h3>俗女共創</h3><p>俗女共創頁把使用者從被動觀看者轉成參與者，鼓勵他們留下內容、回應地方議題或加入共創任務。這樣的設計是希望讓地方文化不只被展示，而是能和使用者之間產生互動與歸屬感。</p></article><article class="app-note"><h3>配工匠</h3><p>配工匠功能承接的是地方工藝的實際連結需求，透過更清楚的資訊呈現與媒合流程，讓使用者能理解不同工匠的專長，也讓技藝交流從『很有興趣』變成更有可能發生的合作或體驗。</p></article><article class="app-note"><h3>集章地圖</h3><p>集章地圖把原本分散的探索路線整理成可視化任務機制，讓走訪村落的過程更有節奏，也增加使用者持續完成任務的動機。它不只是地圖，而是把地方移動路徑設計成一種更有參與感的遊走體驗。</p></article><article class="app-note"><h3>永續縫補</h3><p>永續縫補把地方工藝與修補文化延伸進產品敘事裡，讓使用者不只停留在『看見』，而是開始理解維修、再利用與延長物件生命週期的價值，進一步把地方文化和永續生活方式串接起來。</p></article><article class="app-note"><h3>AR 場景</h3><p>AR 場景是我用來強化現地記憶點的一個設計想像，透過擴增實境把原本較抽象的文化內容變成更有沉浸感的現場互動，讓使用者在離開場域後，仍然記得這段體驗的特色與情緒。</p></article></div></div></div></div></section>
 <section><div class="wrap"><h2 class="section-title">Related</h2><div class="related"><a class="related-card" href="2025-%E6%8B%BE%E6%8B%88%E6%BA%AF%E6%9C%A8.html"><div class="related-year">2025 · 創業競賽</div><div class="related-title">拾拈溯木：創意建構故事盒</div><span class="small-link">查看詳情 →</span></a><a class="related-card" href="2024-%E5%B0%91%E5%B9%B4%E9%A0%AD%E5%AE%B6-%E9%9B%B2%E6%9E%97%E8%BE%B2%E7%A9%AB.html"><div class="related-year">2024 · 創業競賽</div><div class="related-title">全國少年頭家競賽：雲林農穫百貨園區</div><span class="small-link">查看詳情 →</span></a><a class="related-card" href="2024-%E6%96%B0%E5%89%B5%E4%B9%8B%E6%98%9F-%E4%B8%89%E9%9A%BB%E9%9B%9E%E8%85%BF%E6%8E%92.html"><div class="related-year">2024 · 創業競賽</div><div class="related-title">桃園新創之星 x 創天下：三隻雞腿排</div><span class="small-link">查看詳情 →</span></a></div></div></section>
 </main>
 <script id="competition-data" type="application/json">{"id":"2026-俗女手帖-app","title":"俗女手帖 App","category":"創業競賽","year":"2026"}</script>
