@@ -1,10 +1,11 @@
 const fs=require('fs');
 const path=require('path');
-const {pathToFileURL}=require('url');
 const root=path.resolve(__dirname,'..');
 const manifestPath=path.join(__dirname,'index.json');
 const templatePath=path.join(__dirname,'_template.html');
 const indexPath=path.join(root,'index.html');
+const assetsRoot=path.join(__dirname,'assets');
+const coversRoot=path.join(assetsRoot,'covers');
 const categoryGradients={'FinTech':'linear-gradient(160deg, #2C4A3E, #6B9070)','創業競賽':'linear-gradient(160deg, #4A3020, #A0704A)','AI':'linear-gradient(160deg, #2A3A4A, #5A7A8A)','法律':'linear-gradient(160deg, #3A3020, #8A7A50)','永續':'linear-gradient(160deg, #2A4030, #5A8060)','HR':'linear-gradient(160deg, #3A2A40, #7A5A80)','培訓':'linear-gradient(160deg, #402A2A, #806040)',default:'linear-gradient(160deg, #3A3530, #8A7A6A)'};
 function toPosix(value){return value.split(path.sep).join('/')}
 function resolveSource(folder){return path.resolve(root,folder)}
@@ -16,21 +17,26 @@ function inject(template,map){return template.replace(/{{(\w+)}}/g,(_,key)=>map[
 function assetFromCompetitionPage(value){
   if(!value)return '';
   const normalized=toPosix(value);
-  const relative=normalized.startsWith('competitions/assets/')
-    ? normalized.slice('competitions/'.length)
-    : normalized;
-  if(relative.startsWith('assets/')){
-    return pathToFileURL(path.join(__dirname,relative)).href;
-  }
-  return relative;
+  if(normalized.startsWith('competitions/assets/'))return normalized.slice('competitions/'.length);
+  if(normalized.startsWith('assets/'))return normalized;
+  return '';
 }
 function fileUrlFromRoot(value){
-  if(!value)return '';
-  const normalized=toPosix(value);
-  if(normalized.startsWith('assets/')||normalized.startsWith('competitions/assets/')){
-    return assetFromCompetitionPage(normalized);
-  }
-  return pathToFileURL(path.resolve(root,normalized)).href;
+  return assetFromCompetitionPage(value);
+}
+function publicCoverPath(item,coverImage){
+  if(!coverImage)return null;
+  const normalized=toPosix(coverImage);
+  if(normalized.startsWith('competitions/assets/'))return normalized;
+  if(normalized.startsWith('assets/'))return 'competitions/'+normalized;
+  const source=path.resolve(root,normalized);
+  if(!fs.existsSync(source))return null;
+  fs.mkdirSync(coversRoot,{recursive:true});
+  const ext=(path.extname(source)||'.png').toLowerCase();
+  const filename=`${item.id}${ext}`;
+  const target=path.join(coversRoot,filename);
+  fs.copyFileSync(source,target);
+  return 'competitions/assets/covers/'+filename;
 }
 function joinTags(item){return (item.tags||[]).join('、')}
 function deriveStoryLead(item){
@@ -111,7 +117,16 @@ function renderAppGallery(item){
 function updateIndex(data){if(!fs.existsSync(indexPath))return;let html=fs.readFileSync(indexPath,'utf8');const light=data.map(({files,filePatterns,spotlight,reflection,purpose,ideation,model,outcomes,focus,...item})=>item);html=html.replace(/const competitionData=\[[\s\S]*?\];\nconst carouselRoot=/,'const competitionData='+JSON.stringify(light)+';\nconst carouselRoot=');fs.writeFileSync(indexPath,html,'utf8')}
 const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
 const template=fs.readFileSync(templatePath,'utf8');
-manifest.competitions=manifest.competitions.map(item=>{const folder=resolveSource(item.sourceFolder);const meta=readMeta(folder);const merged={...item,...meta};const files=walk(folder,merged.filePatterns);const firstImage=files.find(file=>file.type==='image');return{...merged,coverImage:merged.coverImage??firstImage?.path??null,files}});
+manifest.competitions=manifest.competitions.map(item=>{
+  const folder=resolveSource(item.sourceFolder);
+  const meta=readMeta(folder);
+  const merged={...item,...meta};
+  const files=walk(folder,merged.filePatterns);
+  const firstImage=files.find(file=>file.type==='image');
+  const rawCover=merged.coverImage??firstImage?.path??null;
+  const coverImage=publicCoverPath(merged,rawCover);
+  return {...merged,coverImage,files};
+});
 fs.writeFileSync(manifestPath,JSON.stringify(manifest,null,2),'utf8');
 const expected=new Set(manifest.competitions.map(item=>item.id+'.html'));
 for(const file of fs.readdirSync(__dirname)){if(file.endsWith('.html')&&file!=='_template.html'&&!expected.has(file))fs.unlinkSync(path.join(__dirname,file))}

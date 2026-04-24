@@ -14,7 +14,7 @@
       ],
       "summary": "以 GreenPay 永續信用卡為核心，將金融服務、消費回饋與永續行為連結，從企劃書、示意圖到簡報素材完整呈現產品設計流程。",
       "sourceFolder": "04_競賽作品/01_FinTech競賽",
-      "coverImage": "04_競賽作品/01_FinTech競賽/20260321_競賽_FinTech競賽_信用卡草稿.png",
+      "coverImage": "competitions/assets/covers/2025-fintech-greenpay.png",
       "spotlight": [
         "永續信用卡產品概念",
         "金融服務使用者情境",
@@ -143,7 +143,7 @@
       ],
       "summary": "以航空與大型企業個股研究為主軸，整理產業分析、公司概覽、投資風險、財務分析與估值方法，形成完整投資研究提案。",
       "sourceFolder": "04_競賽作品/02_潛力種子盃",
-      "coverImage": "04_競賽作品/02_潛力種子盃/20260321_競賽_潛力種子盃_我想要搭飛機隊.png",
+      "coverImage": "competitions/assets/covers/2025-潛力種子盃-個股研究.png",
       "spotlight": [
         "Valuation methodologies",
         "產業與公司基本面分析",
@@ -882,7 +882,7 @@
       ],
       "summary": "整理 R 語言、Python、統計學習、財金時間序列、選擇權評價與程式交易相關教材與程式碼，展現財金資料分析的系統化學習軌跡。",
       "sourceFolder": "05_進修學習/01_R語言課程",
-      "coverImage": "05_進修學習/01_R語言課程/分組學期報告之程式範本/20260321_進修_R語言課程_分組學期報告之程式範本_CHAID.png.png",
+      "coverImage": "competitions/assets/covers/2025-r財金應用.png",
       "spotlight": [
         "R / Python 程式碼",
         "財金時間序列與計量",
@@ -2120,7 +2120,7 @@
       ],
       "summary": "系統性人資培訓課程，涵蓋組織行為、領導與追隨、個人差異、激勵動機、衝突溝通與組織文化等主題。",
       "sourceFolder": "05_進修學習/03_高潛力HR",
-      "coverImage": "05_進修學習/03_高潛力HR/游欣樺/20260321_進修_高潛力HR_游欣樺.png",
+      "coverImage": "competitions/assets/covers/2025-高潛力hr.png",
       "spotlight": [
         "組織行為六週課程",
         "HR CV 與學習護照",
