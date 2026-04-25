@@ -243,12 +243,11 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 .skill-cat{font-family:var(--serif);font-size:1.02rem;font-weight:700;color:var(--ink)}
 .skill-list{list-style:none;display:flex;flex-direction:column;gap:.62rem}
 .skill-item{display:grid;grid-template-columns:minmax(0,1fr);align-items:center;padding:.68rem .75rem .74rem;border:1px solid var(--border);border-radius:10px;background:var(--white);min-height:66px}
-.skill-main{min-width:0;display:flex;flex-direction:column;gap:.42rem}
-.skill-name{font-size:.94rem;color:var(--ink2);font-weight:600;line-height:1.4}
-.skill-meter{height:6px;background:var(--bg3);border-radius:100px;overflow:hidden;width:100%}
-.skill-fill{display:block;height:100%;border-radius:100px;background:var(--sage)}
-.skill-fill.mid{width:60%}
-.skill-fill.adv{width:85%}
+.skill-main{min-width:0;display:block}
+.skill-name{font-size:.95rem;color:var(--ink2);font-weight:600;line-height:1.4;display:flex;align-items:flex-start;gap:.45rem}
+.skill-name::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sage);margin-top:.42em;flex:0 0 7px}
+.skill-meter{display:none}
+.skill-fill{display:none}
 .skill-level{display:none}
 .skill-level.adv{background:rgba(107,144,112,.16);color:var(--sage-d)}
 .skill-level.mid{background:rgba(160,112,74,.16);color:var(--earth)}
@@ -631,37 +630,37 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
       <div class="skillcard">
         <div class="skill-head"><div class="skill-icon">📊</div><div class="skill-cat">數據分析</div></div>
         <ul class="skill-list">
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">Python（pandas, sklearn）</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span></li>
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">Power BI</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span></li>
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">R 語言</span><span class="skill-meter"><span class="skill-fill mid"></span></span></span></li>
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">Excel / SQL</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">Python（pandas, sklearn）</span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">Power BI</span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">R 語言</span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">Excel / SQL</span></span></li>
         </ul>
       </div>
       <div class="skillcard">
         <div class="skill-head"><div class="skill-icon">🤖</div><div class="skill-cat">AI 工具應用</div></div>
         <ul class="skill-list">
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">ChatGPT / Claude</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span></li>
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">Gemini / Google AI Studio</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span></li>
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">Perplexity / NotebookLM</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span></li>
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">生成式 AI × 行政自動化</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">ChatGPT / Claude</span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">Gemini / Google AI Studio</span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">Perplexity / NotebookLM</span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">生成式 AI × 行政自動化</span></span></li>
         </ul>
       </div>
       <div class="skillcard">
         <div class="skill-head"><div class="skill-icon">🧠</div><div class="skill-cat">人資 & 組織發展</div></div>
         <ul class="skill-list">
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">招募甄選 & SOP 建置</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span></li>
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">教育訓練設計 & 主持</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span></li>
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">ESG 政策規劃</span><span class="skill-meter"><span class="skill-fill mid"></span></span></span></li>
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">團體動力引導 & 主動傾聽</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">招募甄選 & SOP 建置</span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">教育訓練設計 & 主持</span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">ESG 政策規劃</span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">團體動力引導 & 主動傾聽</span></span></li>
         </ul>
       </div>
       <div class="skillcard">
         <div class="skill-head"><div class="skill-icon">📋</div><div class="skill-cat">專案管理</div></div>
         <ul class="skill-list">
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">Linear / Asana</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span></li>
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">Notion</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span></li>
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">QA 測試規劃</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span></li>
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">計畫書撰寫申請</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">Linear / Asana</span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">Notion</span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">QA 測試規劃</span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">計畫書撰寫申請</span></span></li>
         </ul>
       </div>
     </div>
