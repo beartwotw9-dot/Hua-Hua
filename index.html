@@ -826,6 +826,12 @@ let autoTimer=null;
 
 const groupOrder=['uiux','FinTech','創業競賽','AI','法律','永續','HR','培訓','其他'];
 const groupLabels={uiux:'UI/UX','FinTech':'FinTech','創業競賽':'創業競賽','AI':'AI','法律':'法律','永續':'永續','HR':'HR','培訓':'培訓','其他':'其他'};
+const hiddenCompetitionIds=new Set([
+  '2025-r財金應用',
+  '2025-記帳士',
+  '2025-高潛力hr'
+]);
+const displayedCompetitions=competitionData.filter(item=>!hiddenCompetitionIds.has(item.id));
 const uiuxIds=new Set([
   '2024-新創盃',
   '2026-永續生活實驗室',
@@ -856,20 +862,20 @@ function cardWidth(){
   return card ? card.getBoundingClientRect().width+20 : 340;
 }
 function visibleCards(){
-  return competitionData.filter(item=>matchesFilter(item,activeFilter));
+  return displayedCompetitions.filter(item=>matchesFilter(item,activeFilter));
 }
 function renderCategoryRail(){
   if(!categoryRail)return;
   const counts=groupOrder.map(key=>({
     key,
     label:groupLabels[key],
-    count:competitionData.filter(item=>getItemGroups(item).includes(key)).length
+    count:displayedCompetitions.filter(item=>getItemGroups(item).includes(key)).length
   })).filter(group=>group.count);
   categoryRail.innerHTML=counts.map(group=>`<a class="competition-category-chip" href="#projects" data-filter-jump="${group.key}"><strong>${group.label}</strong><span>${group.count} 件作品</span></a>`).join('');
 }
 function renderCompetitions(){
   if(!carouselTrack)return;
-  carouselTrack.innerHTML=competitionData.map(item=>{
+  carouselTrack.innerHTML=displayedCompetitions.map(item=>{
     const gradient=categoryGradients[item.category]||categoryGradients.default;
     const tags=item.tags.slice(0,3).map(tag=>`<span class="competition-tag">${tag}</span>`).join('');
     const media=item.coverImage
