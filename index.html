@@ -129,7 +129,7 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 .about-meta{display:flex;flex-direction:column;gap:.55rem}
 .about-meta-row{display:flex;align-items:flex-start;gap:.7rem;font-size:.82rem;color:var(--ink2)}
 .about-meta-icon{width:20px;flex-shrink:0;color:var(--sage);font-size:.9rem;text-align:center}
-.about-prose p{font-size:.95rem;color:var(--ink2);line-height:1.9;font-weight:300;margin-bottom:1rem}
+.about-prose p{font-size:1rem;color:var(--ink);line-height:1.92;font-weight:400;margin-bottom:1rem}
 .about-features{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.5rem}
 .afeature{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.1rem;transition:border-color .2s}
 .afeature:hover{border-color:var(--sage)}
@@ -253,22 +253,24 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 
 /* ── CONTACT ── */
 #contact{padding:6rem 0;background:var(--bg2)}
-.contact-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start}
-.contact-lead{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;line-height:1.25;color:var(--ink);margin-bottom:.9rem;letter-spacing:-.02em}
+.contact-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3.2rem;align-items:start}
+.contact-copy{max-width:540px}
+.contact-lead{font-family:var(--serif);font-size:clamp(2rem,4vw,3.15rem);font-weight:700;line-height:1.14;color:var(--ink);margin-bottom:1rem;letter-spacing:-.02em}
 .contact-lead em{font-style:italic;color:var(--sage)}
-.contact-sub{font-size:.9rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:2rem}
-.contact-links{display:flex;flex-direction:column;gap:.75rem}
-.contact-link{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--ink2);font-size:.9rem;transition:color .2s;padding:.5rem .8rem;border-radius:10px;border:1px solid transparent;transition:all .2s}
-.contact-link:hover{color:var(--sage);border-color:var(--border);background:var(--white)}
-.contact-icon{width:34px;height:34px;border-radius:9px;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
-.cf{display:flex;flex-direction:column;gap:.85rem}
-.cf label{font-size:.75rem;font-weight:500;color:var(--muted);letter-spacing:.04em;display:block;margin-bottom:.3rem}
-.cf input,.cf textarea{width:100%;background:var(--white);border:1px solid var(--border);border-radius:9px;padding:.7rem .9rem;color:var(--ink);font-family:var(--sans);font-size:.9rem;outline:none;transition:border-color .2s;resize:none}
-.cf input:focus,.cf textarea:focus{border-color:var(--sage)}
-.cf textarea{min-height:95px}
-.cf .btn-send{background:var(--ink);color:var(--white);border:none;padding:.72rem 1.8rem;border-radius:100px;font-family:var(--sans);font-weight:500;font-size:.9rem;cursor:pointer;transition:background .2s,transform .15s;align-self:flex-start}
-.cf .btn-send:hover{background:var(--sage);transform:translateY(-1px)}
-.form-success{display:none;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1rem;font-size:.92rem;color:var(--ink2)}
+.contact-sub{font-size:1.02rem;color:var(--ink2);line-height:1.74;font-weight:400;margin-bottom:2.1rem}
+.contact-links{display:flex;flex-direction:column;gap:.95rem}
+.contact-link{display:flex;align-items:center;gap:.9rem;text-decoration:none;color:var(--ink2);font-size:1rem;font-weight:500;padding:.62rem .75rem;border-radius:12px;border:1px solid transparent;transition:all .2s}
+.contact-link:hover{color:var(--sage-d);border-color:var(--border);background:var(--white)}
+.contact-icon{width:44px;height:44px;border-radius:12px;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.cf{display:flex;flex-direction:column;gap:1rem}
+.cf label{font-size:.76rem;font-weight:700;color:var(--ink2);letter-spacing:.08em;display:block;margin-bottom:.36rem;text-transform:uppercase}
+.cf input,.cf textarea{width:100%;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:.92rem 1rem;color:var(--ink);font-family:var(--sans);font-size:1.02rem;outline:none;transition:border-color .2s,box-shadow .2s;resize:none}
+.cf input::placeholder,.cf textarea::placeholder{color:var(--muted)}
+.cf input:focus,.cf textarea:focus{border-color:var(--sage);box-shadow:0 0 0 3px rgba(107,144,112,.12)}
+.cf textarea{min-height:126px}
+.cf .btn-send{background:var(--ink);color:var(--white);border:none;padding:.9rem 2rem;border-radius:999px;font-family:var(--sans);font-weight:600;font-size:1rem;cursor:pointer;transition:background .2s,transform .15s;align-self:flex-start}
+.cf .btn-send:hover{background:var(--sage-d);transform:translateY(-1px)}
+.form-success{display:none;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1rem 1.1rem;font-size:.95rem;color:var(--ink2)}
 
 /* ── FOOTER ── */
 footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
@@ -387,7 +389,7 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
         <h2 class="sec-title">關於我</h2>
         <div class="sec-rule"></div>
         <div class="about-prose">
-          <p>我是 Hua，財金系出身，但數字從來不是終點。<br>好奇心帶我走進人資、組織發展又走進產品思維。<br>每一段都在問同一件事：怎麼讓身邊的人好過一點？<br>開發工具也好，設計流程也好，提出一個方案也好，對我來說都是在解決人的問題。<br>我相信每一次真誠的溝通，都能讓合作走得更遠。</p>
+          <p>我是 Hua，財金系出身，但數字從來不是終點。<br>好奇心帶我走進人資、組織發展又走進產品思維。<br>每一段都在問同一件事：怎麼讓身邊的人好過一點？<br>開發工具也好，設計流程也好，<br>提出一個方案也好，對我來說都是在解決人的問題。<br>我相信每一次真誠的溝通，都能讓合作走得更遠。</p>
           <p>"Not all of us can do great things. But we can do small things with great love." — Mother Teresa</p>
         </div>
         <div class="about-features">
@@ -684,7 +686,7 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
 <section id="contact">
   <div class="section-wrap">
     <div class="contact-inner reveal">
-      <div>
+      <div class="contact-copy">
         <p class="sec-eyebrow">Contact</p>
         <p class="contact-lead">有想聊的，<br>歡迎<em>找我說話</em>。</p>
         <p class="contact-sub">對人資科技、組織發展、產品管理、ESG 相關的職缺或合作機會保持開放。<br>有任何想法，歡迎直接聯繫，我會盡快回覆。</p>
