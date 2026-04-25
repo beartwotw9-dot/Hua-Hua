@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>游欣樺 YU HSIN-HUA | 跨域產品人 × 人資專家</title>
+<meta name="description" content="游欣樺 Hsin-Hua Yu｜跨域產品人 × 人資專家，Finance × HR × PM，台北"/>
+<meta property="og:title" content="游欣樺 Portfolio 2026"/>
+<meta property="og:description" content="跨越資料與人心，讓決策有溫度。"/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAF8F4;
+  --bg2:#F4EFE6;
+  --bg3:#EDE6D8;
+  --white:#FFFDF9;
+  --sand:#E2D5C0;
+  --sage:#6B9070;
+  --sage-d:#4F7355;
+  --earth:#A0704A;
+  --amber:#C98B3A;
+  --ink:#221E16;
+  --ink2:#4A4336;
+  --muted:#8C7F6E;
+  --border:rgba(160,130,90,0.15);
+  --serif:'Noto Serif TC',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+html.dark{
+  --bg:#1C1914;
+  --bg2:#241F19;
+  --bg3:#302920;
+  --white:#2A241C;
+  --sand:#5C4E3D;
+  --sage:#87B18C;
+  --sage-d:#C8E1CB;
+  --earth:#CC9767;
+  --amber:#E0A65A;
+  --ink:#F5F1E9;
+  --ink2:#D8D0C4;
+  --muted:#A89B88;
+  --border:rgba(222,188,145,0.2);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--sand);border-radius:9px}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,248,244,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  padding:0 2.5rem;height:58px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .25s ease,backdrop-filter .25s ease;
+}
+html.dark nav{background:rgba(28,25,20,.88)}
+nav.scrolled{backdrop-filter:blur(12px);background:rgba(250,248,244,.78)}
+html.dark nav.scrolled{background:rgba(28,25,20,.72)}
+.nav-logo{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);letter-spacing:.02em;text-decoration:none}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-size:.82rem;color:var(--muted);text-decoration:none;font-weight:400;transition:color .2s;position:relative;padding-bottom:2px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;background:var(--sage);transform:scaleX(0);transition:transform .25s;transform-origin:left}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-links a.active{color:var(--ink)}
+.nav-links a.active::after{transform:scaleX(1)}
+.nav-cta{background:transparent!important;color:var(--muted)!important;padding-bottom:2px!important;font-weight:400!important}
+.nav-cta:hover{background:transparent!important;color:var(--ink)!important}
+.nav-cta::after{display:block!important}
+#mobile-btn{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;background:none;border:none}
+#mobile-btn span{display:block;width:22px;height:1.5px;background:var(--ink);transition:all .3s}
+#mobile-menu{display:none;background:var(--white);border-bottom:1px solid var(--border);padding:1rem 2.5rem 1.5rem;flex-direction:column;gap:.9rem}
+#mobile-menu a{font-size:.9rem;color:var(--muted);text-decoration:none}
+#mobile-menu a:hover{color:var(--ink)}
+.theme-toggle{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--white);color:var(--ink);display:grid;place-items:center;cursor:pointer;font-size:1rem;margin-left:1rem;transition:all .2s}
+.theme-toggle:hover{border-color:var(--sage);color:var(--sage)}
+#reading-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:9999;background:var(--sage)}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;align-items:center;padding:6rem 2.5rem 4rem;background:var(--bg)}
+.hero-inner{max-width:1000px;margin:0 auto;width:100%}
+.hero-layout{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:2.2rem;align-items:center}
+.hero-eyebrow{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:1.4rem}
+.hero-name{font-family:var(--serif);font-size:clamp(2.8rem,6vw,5.2rem);font-weight:700;line-height:1.08;letter-spacing:-.025em;color:var(--ink);margin-bottom:.5rem}
+.hero-name em{font-style:normal;color:var(--sage)}
+.hero-tagline{font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.5rem);font-weight:300;color:var(--muted);margin-bottom:1.6rem;letter-spacing:-.01em}
+.hero-desc{font-size:1rem;color:var(--ink2);font-weight:300;max-width:540px;line-height:1.9;margin-bottom:2.2rem}
+.hero-btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn-fill{background:var(--ink);color:var(--white);padding:.72rem 1.8rem;border-radius:100px;font-size:.9rem;font-weight:500;text-decoration:none;display:inline-block;transition:background .2s,transform .15s}
+.btn-fill:hover{background:var(--sage);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);padding:.72rem 1.8rem;border-radius:100px;border:1px solid var(--sand);font-size:.9rem;font-weight:400;text-decoration:none;display:inline-block;transition:all .2s}
+.btn-ghost:hover{border-color:var(--sage);color:var(--sage)}
+.btn-outline{background:transparent;color:var(--ink);padding:.72rem 1.3rem;border-radius:100px;border:1px solid var(--border);font-size:.88rem;font-weight:500;text-decoration:none;display:inline-block;transition:all .2s}
+.btn-outline:hover{border-color:var(--sage);color:var(--sage)}
+.hero-avatar-wrap{width:200px;height:200px;border-radius:50%;border:2px solid var(--sand);overflow:hidden;background:var(--bg2);justify-self:end;display:grid;place-items:center}
+#hero-avatar{width:100%;height:100%;object-fit:cover;display:block}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--border);border-left:1px solid var(--border);border-radius:12px;overflow:hidden}
+.hstat{padding:1.4rem 1rem;text-align:center;border-right:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--white);transition:background .2s}
+.hstat:hover{background:var(--bg2)}
+.hstat-n{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--sage);display:block;line-height:1}
+.hstat-l{font-size:.75rem;color:var(--muted);margin-top:.35rem;display:block}
+
+/* ── SECTION COMMONS ── */
+.section-wrap{max-width:1000px;margin:0 auto;padding:0 2.5rem}
+.sec-eyebrow{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:.5rem}
+.sec-title{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:700;letter-spacing:-.02em;color:var(--ink);margin-bottom:.6rem}
+.sec-rule{width:40px;height:2px;background:var(--sage);border-radius:2px;margin-bottom:2.8rem}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── ABOUT ── */
+#about{padding:6rem 0;background:var(--white)}
+.about-grid{display:grid;grid-template-columns:300px 1fr;gap:4rem;align-items:start}
+.about-card{background:var(--bg2);border-radius:16px;padding:2rem;border:1px solid var(--border);position:sticky;top:80px}
+.about-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--bg3),var(--sand));display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--earth);margin-bottom:1.2rem;border:2px solid var(--sand)}
+.about-name{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:.2rem}
+.about-sub{font-size:.8rem;color:var(--muted);margin-bottom:1.2rem}
+.about-meta{display:flex;flex-direction:column;gap:.55rem}
+.about-meta-row{display:flex;align-items:flex-start;gap:.7rem;font-size:.82rem;color:var(--ink2)}
+.about-meta-icon{width:20px;flex-shrink:0;color:var(--sage);font-size:.9rem;text-align:center}
+.about-prose p{font-size:.95rem;color:var(--ink2);line-height:1.9;font-weight:300;margin-bottom:1rem}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.5rem}
+.afeature{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.1rem;transition:border-color .2s}
+.afeature:hover{border-color:var(--sage)}
+.afeature-icon{font-size:1.3rem;margin-bottom:.5rem}
+.afeature h4{font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:.25rem}
+.afeature p{font-size:.78rem;color:var(--muted);line-height:1.6}
+
+/* ── EXPERIENCE ── */
+#experience{padding:6rem 0;background:var(--bg)}
+.exp-tabs{display:flex;gap:0;border:1px solid var(--border);border-radius:100px;overflow:hidden;width:fit-content;margin-bottom:2.5rem;background:var(--white)}
+.exp-tab{padding:.45rem 1.2rem;font-size:.8rem;font-weight:500;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap;border:none;background:none}
+.exp-tab.active{background:var(--ink);color:var(--white);border-radius:100px;box-shadow:inset 0 -2px 0 var(--sage)}
+.exp-panel{display:none;opacity:0}
+.exp-panel.active{display:block;opacity:1;animation:panelFade .3s ease}
+@keyframes panelFade{from{opacity:0}to{opacity:1}}
+.tl-list{position:relative;padding-left:1.8rem}
+.tl-list::before{content:'';position:absolute;left:6px;top:6px;bottom:0;width:1.5px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:2.2rem}
+.tl-dot{position:absolute;left:-1.8rem;top:4px;width:14px;height:14px;border-radius:50%;background:var(--white);border:2px solid var(--sage);transition:background .2s}
+.tl-item:hover .tl-dot{background:var(--sage)}
+.tl-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.4rem;margin-bottom:.2rem}
+.tl-role{font-size:1rem;font-weight:600;color:var(--ink)}
+.tl-badge{font-size:.72rem;padding:.25rem .8rem;border-radius:100px;background:var(--bg3);color:var(--earth);font-weight:500}
+.tl-org{font-size:.85rem;color:var(--sage);font-weight:500;margin-bottom:.6rem}
+.tl-list-items{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.tl-list-items li{font-size:.85rem;color:var(--ink2);line-height:1.65;padding-left:1rem;position:relative;font-weight:300}
+.tl-list-items li::before{content:'—';position:absolute;left:0;color:var(--sand)}
+.tl-list-items strong{color:var(--ink);font-weight:500}
+
+/* ── PROJECTS ── */
+#projects{padding:6rem 0;background:var(--white)}
+.competition-shell{position:relative}
+.competition-filters{display:none}
+.competition-filter{font-size:.78rem;padding:.4rem 1rem;border-radius:100px;border:1px solid var(--border);color:var(--muted);background:var(--white);cursor:pointer;transition:all .2s;font-family:var(--sans)}
+.competition-filter:hover,.competition-filter:focus-visible{border-color:var(--sage);color:var(--sage);outline:none}
+.competition-filter.active{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.competition-category-rail{display:flex;gap:.75rem;overflow-x:auto;padding:.2rem 0 .95rem;scrollbar-width:none}
+.competition-category-rail::-webkit-scrollbar{display:none}
+.competition-category-chip{flex:0 0 auto;display:flex;align-items:center;gap:.55rem;padding:.72rem 1rem;border-radius:999px;border:1px solid var(--border);background:var(--bg);text-decoration:none;color:var(--ink2);min-width:fit-content;transition:border-color .2s,transform .2s,background .2s}
+.competition-category-chip:hover,.competition-category-chip:focus-visible{border-color:var(--sage);background:var(--white);transform:translateY(-1px);outline:none}
+.competition-category-chip strong{font-size:.8rem;font-weight:700;color:var(--ink)}
+.competition-category-chip span{font-size:.72rem;color:var(--muted)}
+.carousel-wrap{position:relative}
+.competition-carousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:.4rem .2rem 1rem;scrollbar-width:none;outline:none}
+.competition-carousel::-webkit-scrollbar{display:none}
+.competition-card{flex:0 0 320px;height:460px;border:1px solid var(--border);border-radius:8px;background:var(--white);overflow:hidden;scroll-snap-align:start;text-decoration:none;color:inherit;box-shadow:0 12px 34px rgba(34,30,22,.06);transition:transform .35s ease,opacity .35s ease,border-color .25s,box-shadow .25s}
+.competition-card:hover,.competition-card:focus-visible{transform:translateY(-5px);border-color:var(--sand);box-shadow:0 18px 46px rgba(34,30,22,.1);outline:none}
+.competition-card.is-filtered{opacity:.22;transform:scale(.95);pointer-events:none}
+.competition-media{height:50%;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--white)}
+.competition-media img{width:100%;height:100%;object-fit:cover}
+.competition-monogram{font-family:var(--serif);font-size:3.2rem;font-weight:700;color:rgba(255,253,249,.82)}
+.competition-poster{width:100%;height:100%;padding:1.15rem 1.05rem;display:flex;flex-direction:column;justify-content:space-between;color:var(--white);background:var(--card-gradient)}
+.competition-poster-kicker{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,253,249,.82)}
+.competition-poster-title{font-family:var(--serif);font-size:1.6rem;line-height:1.08;font-weight:700;max-width:90%;word-break:break-word}
+.competition-poster-title.small{font-size:1.28rem;line-height:1.18}
+.competition-poster-meta{display:flex;flex-wrap:wrap;gap:.35rem}
+.competition-poster-meta span{font-size:.66rem;padding:.18rem .5rem;border-radius:999px;border:1px solid rgba(255,253,249,.28);background:rgba(255,253,249,.12);color:rgba(255,253,249,.9)}
+.competition-pill{position:absolute;top:14px;border-radius:100px;padding:.24rem .68rem;font-size:.68rem;font-weight:700;line-height:1;border:1px solid rgba(255,253,249,.45);background:rgba(255,253,249,.2);color:var(--white);backdrop-filter:blur(8px)}
+.competition-year{left:14px}
+.competition-award{right:14px;background:var(--amber);color:var(--ink);border-color:var(--amber)}
+.competition-award.muted{background:var(--bg3);color:var(--muted);border-color:var(--sand)}
+.competition-body{height:50%;padding:1rem 1.05rem 1.1rem;display:flex;flex-direction:column;background:var(--white)}
+.competition-category{align-self:flex-start;background:rgba(107,144,112,.12);color:var(--sage-d);border-radius:100px;padding:.18rem .62rem;font-size:.68rem;font-weight:700;margin-bottom:.55rem}
+.competition-title{font-family:var(--serif);font-size:1rem;line-height:1.45;color:var(--ink);font-weight:700;margin-bottom:.35rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.competition-summary{font-size:.8rem;color:var(--muted);line-height:1.6;font-weight:300;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.competition-tags{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:auto;padding-top:.65rem}
+.competition-tag{font-size:.66rem;color:var(--muted);background:var(--bg3);border-radius:100px;padding:.16rem .5rem;max-width:92px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.competition-link{display:inline-flex;align-items:center;gap:.3rem;color:var(--earth);font-size:.78rem;font-weight:700;margin-top:.65rem}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:42px;height:42px;border-radius:50%;border:1px solid var(--border);background:var(--white);color:var(--ink);cursor:pointer;box-shadow:0 10px 24px rgba(34,30,22,.09);font-size:1.2rem;line-height:1;transition:background .2s,color .2s,transform .2s}
+.carousel-arrow:hover,.carousel-arrow:focus-visible{background:var(--ink);color:var(--white);outline:none;transform:translateY(-50%) scale(1.04)}
+.carousel-arrow.prev{left:-54px}
+.carousel-arrow.next{right:-54px}
+.carousel-controls{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem}
+.carousel-dots{display:flex;gap:.45rem;align-items:center;justify-content:center}
+.carousel-dot{width:8px;height:8px;border-radius:50%;border:0;background:var(--sand);cursor:pointer;padding:0;transition:width .2s,background .2s}
+.carousel-dot.active{width:24px;border-radius:100px;background:var(--sage)}
+.carousel-toggle{border:1px solid var(--border);background:var(--white);color:var(--ink2);border-radius:100px;padding:.38rem .95rem;font-family:var(--sans);font-size:.75rem;cursor:pointer;transition:all .2s}
+.carousel-toggle:hover,.carousel-toggle:focus-visible{border-color:var(--sage);color:var(--sage);outline:none}
+
+/* ── AWARDS ── */
+#awards{padding:6rem 0;background:var(--bg)}
+.awards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.award-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.4rem;display:flex;gap:1.1rem;align-items:flex-start;transition:border-color .2s,transform .2s}
+.award-card:hover{border-color:var(--sand);transform:translateY(-2px)}
+.award-card.span2{grid-column:span 2}
+.award-icon{font-size:1.8rem;flex-shrink:0;line-height:1}
+.award-meta{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-bottom:.4rem}
+.award-badge{font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:100px}
+.badge-gold{background:#FEF3C7;color:#92400E}
+.badge-sage{background:rgba(107,144,112,.13);color:var(--sage-d)}
+.badge-earth{background:rgba(160,112,74,.13);color:var(--earth)}
+.award-year{font-size:.72rem;color:var(--muted)}
+.award-title{font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:.3rem}
+.award-desc{font-size:.78rem;color:var(--muted);line-height:1.6}
+.leadership-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.5rem}
+.lead-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.1rem;text-align:center;transition:border-color .2s}
+.lead-card:hover{border-color:var(--sage)}
+.lead-icon{font-size:1.6rem;margin-bottom:.5rem}
+.lead-title{font-size:.83rem;font-weight:600;color:var(--ink);margin-bottom:.2rem}
+.lead-sub{font-size:.75rem;color:var(--muted);line-height:1.5}
+
+/* ── SKILLS ── */
+#skills{padding:6rem 0;background:var(--white)}
+.skills-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.skillcard{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:1.5rem;transition:border-color .2s}
+.skillcard:hover{border-color:var(--sand)}
+.skill-icon{font-size:1.5rem;margin-bottom:.8rem}
+.skill-cat{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:1.2rem}
+.skill-bars{display:flex;flex-direction:column;gap:.9rem}
+.sbar-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem}
+.sbar-name{font-size:.8rem;color:var(--ink2);font-weight:400}
+.sbar-level{display:none}
+.sbar-track{height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+.sbar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--sage),var(--earth));width:0;transition:width .8s ease}
+.certs-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.cert-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.2rem}
+.cert-title{font-size:.83rem;font-weight:600;color:var(--ink);margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}
+.cert-pills{display:flex;flex-wrap:wrap;gap:.4rem}
+.cert-pill{font-size:.7rem;padding:.22rem .65rem;border-radius:100px;background:rgba(107,144,112,.1);color:var(--sage-d);font-weight:500}
+.cert-pill.earth{background:rgba(160,112,74,.1);color:var(--earth)}
+.cert-pill.muted{background:var(--bg3);color:var(--muted)}
+
+/* ── CONTACT ── */
+#contact{padding:6rem 0;background:var(--bg2)}
+.contact-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start}
+.contact-lead{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;line-height:1.25;color:var(--ink);margin-bottom:.9rem;letter-spacing:-.02em}
+.contact-lead em{font-style:italic;color:var(--sage)}
+.contact-sub{font-size:.9rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:2rem}
+.contact-links{display:flex;flex-direction:column;gap:.75rem}
+.contact-link{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--ink2);font-size:.9rem;transition:color .2s;padding:.5rem .8rem;border-radius:10px;border:1px solid transparent;transition:all .2s}
+.contact-link:hover{color:var(--sage);border-color:var(--border);background:var(--white)}
+.contact-icon{width:34px;height:34px;border-radius:9px;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.cf{display:flex;flex-direction:column;gap:.85rem}
+.cf label{font-size:.75rem;font-weight:500;color:var(--muted);letter-spacing:.04em;display:block;margin-bottom:.3rem}
+.cf input,.cf textarea{width:100%;background:var(--white);border:1px solid var(--border);border-radius:9px;padding:.7rem .9rem;color:var(--ink);font-family:var(--sans);font-size:.9rem;outline:none;transition:border-color .2s;resize:none}
+.cf input:focus,.cf textarea:focus{border-color:var(--sage)}
+.cf textarea{min-height:95px}
+.cf .btn-send{background:var(--ink);color:var(--white);border:none;padding:.72rem 1.8rem;border-radius:100px;font-family:var(--sans);font-weight:500;font-size:.9rem;cursor:pointer;transition:background .2s,transform .15s;align-self:flex-start}
+.cf .btn-send:hover{background:var(--sage);transform:translateY(-1px)}
+.form-success{display:none;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1rem;font-size:.92rem;color:var(--ink2)}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.foot-logo{font-family:var(--serif);font-size:.95rem;font-weight:700;color:rgba(255,255,255,.7)}
+.foot-copy{font-size:.75rem;color:rgba(255,255,255,.3)}
+.foot-back{font-size:.75rem;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+.foot-back:hover{color:rgba(255,255,255,.8)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .section-wrap{padding:0 1.25rem}
+  .competition-category-rail{padding-bottom:.8rem}
+  .competition-category-chip{padding:.65rem .9rem}
+  .competition-card{flex-basis:min(82vw,320px)}
+  .carousel-arrow{display:none}
+
+  .nav-links{display:none}
+  #mobile-btn{display:flex}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .theme-toggle{margin-left:.5rem}
+  .hero-layout{grid-template-columns:1fr;gap:1.2rem}
+  .hero-avatar-wrap{justify-self:center;order:-1}
+  .about-grid{grid-template-columns:1fr}
+  .about-card{position:static}
+    .awards-grid{grid-template-columns:1fr}
+  .award-card.span2{grid-column:span 1}
+  .skills-grid{grid-template-columns:1fr}
+  .certs-row{grid-template-columns:1fr}
+  .contact-inner{grid-template-columns:1fr}
+  .leadership-grid{grid-template-columns:1fr}
+}
+@media(min-width:769px) and (max-width:1180px){
+  .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:480px){
+  .competition-card{height:420px;flex-basis:82vw}
+
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<div id="reading-progress" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">游欣樺</a>
+  <ul class="nav-links">
+    <li><a href="#about">關於我</a></li>
+    <li><a href="#experience">經歷</a></li>
+    <li><a href="#awards">獎項</a></li>
+    <li><a href="#projects">競賽作品</a></li>
+    <li><a href="#skills">技能</a></li>
+    <li><a href="#contact" class="nav-cta">聯絡我</a></li>
+  </ul>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切換暗色模式">🌙</button>
+  <button id="mobile-btn" aria-label="選單">
+    <span id="b1"></span><span id="b2"></span><span id="b3"></span>
+  </button>
+</nav>
+<div id="mobile-menu">
+  <a href="#about">關於我</a>
+  <a href="#experience">經歷</a>
+  <a href="#awards">獎項</a>
+  <a href="#projects">競賽作品</a>
+  <a href="#skills">技能</a>
+  <a href="#contact">聯絡我</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-layout">
+      <div>
+        <p class="hero-eyebrow">YU, HSIN-HUA · Portfolio 2026</p>
+        <h1 class="hero-name">游欣樺<br><em>Hsin-Hua Yu</em></h1>
+        <p class="hero-tagline">跨越資料與人心，讓決策有溫度。</p>
+        <p class="hero-desc">財金系出身，深耕人資與組織發展，擅用 Python、Power BI 與生成式 AI 將複雜數據轉化為可執行的洞察。</p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-fill">瀏覽專案 →</a>
+          <a href="#contact" class="btn-ghost">與我聯繫</a>
+          <a href="/assets/resume.pdf" class="btn-outline" target="_blank" rel="noopener">下載履歷 PDF ↓</a>
+        </div>
+      </div>
+      <div class="hero-avatar-wrap">
+        <img id="hero-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23EDE6D8'/%3E%3C/svg%3E" alt="游欣樺頭像"/>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-n">3.79</span><span class="hstat-l">GPA · 系排第四</span></div>
+      <div class="hstat"><span class="hstat-n">14</span><span class="hstat-l">專業證照</span></div>
+      <div class="hstat"><span class="hstat-n">50+</span><span class="hstat-l">商業競賽場次</span></div>
+      <div class="hstat"><span class="hstat-n">1,000+</span><span class="hstat-l">財務紀錄筆數</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-wrap">
+    <div class="about-grid reveal">
+      <div class="about-card">
+        <div class="about-avatar">游</div>
+        <div class="about-name">游欣樺 Hsin-Hua Yu</div>
+        <div class="about-sub">跨域產品人 × 人資專家</div>
+        <div class="about-meta">
+          <div class="about-meta-row"><span class="about-meta-icon">📍</span><span>台北市</span></div>
+          <div class="about-meta-row"><span class="about-meta-icon">🎓</span><span>國立臺北商業大學 財務金融系</span></div>
+          <div class="about-meta-row"><span class="about-meta-icon">📅</span><span>預計 2026 年 6 月畢業</span></div>
+          <div class="about-meta-row"><span class="about-meta-icon">📧</span><a href="mailto:doratwotw@gmail.com" style="color:var(--sage);text-decoration:none">doratwotw@gmail.com</a></div>
+          <div class="about-meta-row"><span class="about-meta-icon">📞</span><span>0970-513-917</span></div>
+        </div>
+      </div>
+      <div>
+        <p class="sec-eyebrow">About Me</p>
+        <h2 class="sec-title">關於我</h2>
+        <div class="sec-rule"></div>
+        <div class="about-prose">
+          <p>我是 Hua，財金系出身，但數字從來不是終點。<br>好奇心帶我走進人資、組織發展又走進產品思維。<br>每一段都在問同一件事：怎麼讓身邊的人好過一點？<br>開發工具也好，設計流程也好，提出一個方案也好，對我來說都是在解決人的問題。<br>我相信每一次真誠的溝通，都能讓合作走得更遠。</p>
+          <p>"Not all of us can do great things. But we can do small things with great love." — Mother Teresa</p>
+        </div>
+        <div class="about-features">
+          <div class="afeature"><div class="afeature-icon">🌱</div><h4>永續思維</h4><p>持有 ESG 永續發展基礎能力測驗證照，曾主導碳權政策研究並於系所發表。</p></div>
+          <div class="afeature"><div class="afeature-icon">📊</div><h4>數據驅動</h4><p>Python × Power BI × 隨機森林，讓質化洞察有量化支撐。</p></div>
+          <div class="afeature"><div class="afeature-icon">🔗</div><h4>跨域連接</h4><p>財金 × 人資 × 產品，能在三種語境間自由切換並整合資源。</p></div>
+          <div class="afeature"><div class="afeature-icon">🎤</div><h4>引導與培訓</h4><p>95 小時非正規教育引導實務＋6 場內訓主持，擅長讓知識真正被接收。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:2.8rem">
+      <p class="sec-eyebrow" style="text-align:center">Experience</p>
+      <h2 class="sec-title">工作經歷</h2>
+      <div class="sec-rule" style="margin:0 auto 0"></div>
+    </div>
+    <div class="reveal">
+      <div class="exp-tabs">
+        <button class="exp-tab active" data-tab="work">職場經歷</button>
+        <button class="exp-tab" data-tab="org">組織活動</button>
+      </div>
+      <div class="exp-panel active" id="tab-work">
+        <div class="tl-list">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-head"><span class="tl-role">產品部實習生</span><span class="tl-badge">2026.03 — 至今</span></div>
+            <div class="tl-org">艾邁格股份有限公司（IMAG）· 台北</div>
+            <ul class="tl-list-items">
+              <li>規劃 SaaS 平台 Social War Room QA 測試，設計涵蓋 9 大模組約 <strong>50 個測試案例</strong></li>
+              <li>獨立撰寫並管理 Linear Bug Issues，問題分級追蹤至 4/30 上線驗收</li>
+              <li>主導 Asana → Linear Issue 遷移，整合留言與附件確保資訊不流失</li>
+              <li>針對 FriendPass 進行潛客開發，建立 <strong>60 筆</strong>目標客戶名單</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-head"><span class="tl-role">組織發展專員</span><span class="tl-badge">2026.04 — 至今</span></div>
+            <div class="tl-org">成鼎電工實業有限公司 · 台北</div>
+            <ul class="tl-list-items">
+              <li>與執行長合作負責全公司層級專案管理與跨部門任務落地</li>
+              <li>擔任教育訓練總負責人，完成 <strong>6 場</strong>內訓課程；參與專業標竿講師計畫</li>
+              <li>主導 DPA 獎項申請、團險規劃、職稱訂定、組織架構規劃等跨部門專案</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-head"><span class="tl-role">人力資源助理</span><span class="tl-badge" style="background:var(--bg2);color:var(--muted)">2025.12 — 2026.04</span></div>
+            <div class="tl-org">成鼎電工實業有限公司 · 台北</div>
+            <ul class="tl-list-items">
+              <li>獨立負責 20 場以上線上面試，旁聽逾 50 場；建立結構化面試流程</li>
+              <li>修訂 10 份以上內部管理規章；建立標準化入職流程</li>
+              <li>規劃並主持 4 場員工教育訓練，其中 1 場擔任主講人</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-head"><span class="tl-role">營運暨財務雙軌輪調實習生</span><span class="tl-badge" style="background:var(--bg2);color:var(--muted)">2025.01 — 2025.12</span></div>
+            <div class="tl-org">艾邁格股份有限公司（IMAG） · 台北</div>
+            <ul class="tl-list-items">
+              <li>獨立開發財務小工具，顯著降低資料輸入錯誤率</li>
+              <li>獨立處理超過 <strong>1,000 筆</strong>款項紀錄，支援 IPO 前期數據整併與合規審核</li>
+              <li>負責資產盤點專案，降低不必要辦公室行政支出</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-head"><span class="tl-role">財務長</span><span class="tl-badge" style="background:var(--bg2);color:var(--muted)">2024.05 — 2025.06</span></div>
+            <div class="tl-org">國立臺北商業大學第 20 屆財務金融系學會</div>
+            <ul class="tl-list-items">
+              <li>管理單學期逾 10 萬元公費現金，每月執行會計對帳確保帳務零誤差</li>
+              <li>主導系學會年度預算編列，整合跨部門資源配置</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="exp-panel" id="tab-org">
+        <div class="tl-list">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-head"><span class="tl-role">人資小週末學員</span><span class="tl-badge" style="background:var(--bg2);color:var(--muted)">2026.02 — 至今</span></div>
+            <div class="tl-org">人資小週末</div>
+            <ul class="tl-list-items">
+              <li>參與人資主題學習與職涯交流，補強招募、組織發展與職場溝通的實務視角</li>
+              <li>將課程與社群討論延伸到履歷優化、面試準備與 HR 專案觀察</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-head"><span class="tl-role">PM 組組員</span><span class="tl-badge" style="background:var(--bg2);color:var(--muted)">2026.04 — 至今</span></div>
+            <div class="tl-org">XChange</div>
+            <ul class="tl-list-items">
+              <li>參與產品管理組學習與專案討論，訓練需求拆解、使用者觀察與產品思維</li>
+              <li>透過跨背景成員交流，建立從問題定義到解法驗證的產品工作框架</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-head"><span class="tl-role">人資組組員</span><span class="tl-badge" style="background:var(--bg2);color:var(--muted)">2025.08 — 至今</span></div>
+            <div class="tl-org">起駛簡報表達教育協會</div>
+            <ul class="tl-list-items">
+              <li>負責跨部門溝通協調與進度追蹤，確保團隊資訊同步與合作方向一致。</li>
+              <li>支援人資行政工作，包含資源規劃與規章草擬，協助不同專案的人力配置更有效率。</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-head"><span class="tl-role">財務組組員</span><span class="tl-badge" style="background:var(--bg2);color:var(--muted)">2024.07 — 2025.08</span></div>
+            <div class="tl-org">起駛簡報表達教育協會 · 1 年 2 個月</div>
+            <ul class="tl-list-items">
+              <li>負責三場大型活動與日常營運單據稽核，確保約 <strong>NT$200,000</strong> 支出紀錄正確無誤。</li>
+              <li>與會計師事務所對接報稅與文件交接流程，協助完成合規申報與資料整理。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:2.8rem">
+      <p class="sec-eyebrow" style="text-align:center">Awards</p>
+      <h2 class="sec-title">榮譽與競賽獲獎</h2>
+      <div class="sec-rule" style="margin:0 auto 0"></div>
+    </div>
+    <div class="reveal awards-grid">
+      <div class="award-card">
+        <div class="award-icon">🥉</div>
+        <div>
+          <div class="award-meta"><span class="award-badge badge-gold">全國季軍</span><span class="award-year">2024</span></div>
+          <div class="award-title">第九屆新創盃全球創意創新創業企劃競賽</div>
+          <div class="award-desc">大專組網路行銷組。SWOT 市場分析、20+ 頁創業企劃書、APP 示意圖設計，整合財務規劃與行銷策略。</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">🏅</div>
+        <div>
+          <div class="award-meta"><span class="award-badge badge-sage">全國佳作（前 10%）</span><span class="award-year">2024</span></div>
+          <div class="award-title">全國大專財富管理競賽</div>
+          <div class="award-desc">對手 100+ 組。70% 核心資產 + 30% 衛星資產，預估年報酬率 10%+；領導 3 人團隊完成 15+ 次模擬提案。</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">🏆</div>
+        <div>
+          <div class="award-meta"><span class="award-badge badge-gold">全國前六強</span><span class="award-year">2024</span></div>
+          <div class="award-title">全國少年頭家競賽</div>
+          <div class="award-desc">全國佳作 × 決賽前六強。22 頁商業企劃書，SWOT & STP 分析雲林市場，方案獲企業導師推薦落地。</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">📈</div>
+        <div>
+          <div class="award-meta"><span class="award-badge badge-earth">優選</span><span class="award-year">2023</span></div>
+          <div class="award-title">龍華科大賽全國投資競賽</div>
+          <div class="award-desc">技術分析 × 基本面雙軌模擬投資組合管理，獲評審肯定市場時機判斷能力。</div>
+        </div>
+      </div>
+      <div class="award-card span2">
+        <div class="award-icon">🎙️</div>
+        <div>
+          <div class="award-meta"><span class="award-badge badge-sage">團體第一名</span><span class="award-year">2022</span></div>
+          <div class="award-title">全校新生盃辯論比賽</div>
+          <div class="award-desc">在辯論賽中展現邏輯思維、臨場應變與說服力，這些能力持續沿用至今日的 HR 面試與產品提案。</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:1rem">
+      <div class="leadership-grid">
+        <div class="lead-card"><div class="lead-icon">🏃</div><div class="lead-title">三校五系酒精路跑 總召</div><div class="lead-sub">2025 · 統籌 70 位工作人員</div></div>
+        <div class="lead-card"><div class="lead-icon">🍵</div><div class="lead-title">茶會總召</div><div class="lead-sub">2024 · 參與人數較往年成長 40%，滿意度 92%</div></div>
+        <div class="lead-card"><div class="lead-icon">🌻</div><div class="lead-title">人文城鄉共學計畫 隊輔</div><div class="lead-sub">2022 · 95 小時志服，領導 55 位小學員</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:2rem">
+      <p class="sec-eyebrow" style="text-align:center">Competition Archive</p>
+      <h2 class="sec-title">競賽作品集</h2>
+      <div class="sec-rule" style="margin:0 auto 0"></div>
+    </div>
+    <div class="reveal competition-shell" data-carousel-root>
+      <div class="competition-filters" aria-label="競賽分類篩選">
+        <button class="competition-filter active" data-filter="all">全部</button>
+        <button class="competition-filter" data-filter="uiux">UI/UX</button>
+        <button class="competition-filter" data-filter="FinTech">FinTech</button>
+        <button class="competition-filter" data-filter="創業競賽">創業競賽</button>
+        <button class="competition-filter" data-filter="AI">AI</button>
+        <button class="competition-filter" data-filter="法律">法律</button>
+        <button class="competition-filter" data-filter="永續">永續</button>
+        <button class="competition-filter" data-filter="HR">HR</button>
+        <button class="competition-filter" data-filter="培訓">培訓</button>
+        <button class="competition-filter" data-filter="其他">其他</button>
+      </div>
+      <div class="competition-category-rail" aria-label="競賽作品分類導覽"></div>
+      <div class="carousel-wrap">
+        <button class="carousel-arrow prev" type="button" aria-label="上一張">‹</button>
+        <div class="competition-carousel" tabindex="0" aria-label="競賽作品輪播"></div>
+        <button class="carousel-arrow next" type="button" aria-label="下一張">›</button>
+      </div>
+      <div class="carousel-controls">
+        <div class="carousel-dots" aria-label="輪播位置"></div>
+        <button class="carousel-toggle" type="button" aria-pressed="false">暫停</button>
+      </div>
+      <div class="competition-groups" aria-label="競賽作品分類清單"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:2.8rem">
+      <p class="sec-eyebrow" style="text-align:center">Skills</p>
+      <h2 class="sec-title">技能與工具</h2>
+      <div class="sec-rule" style="margin:0 auto 0"></div>
+    </div>
+    <div class="reveal skills-grid">
+      <div class="skillcard">
+        <div class="skill-icon">📊</div>
+        <div class="skill-cat">數據分析</div>
+        <div class="skill-bars">
+          <div><div class="sbar-label"><span class="sbar-name">Python（pandas, sklearn）</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="80"></div></div></div>
+          <div><div class="sbar-label"><span class="sbar-name">Power BI</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="82"></div></div></div>
+          <div><div class="sbar-label"><span class="sbar-name">R 語言</span><span class="sbar-level">中階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="65"></div></div></div>
+          <div><div class="sbar-label"><span class="sbar-name">Excel / SQL</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div></div>
+        </div>
+      </div>
+      <div class="skillcard">
+        <div class="skill-icon">🤖</div>
+        <div class="skill-cat">AI 工具應用</div>
+        <div class="skill-bars">
+          <div><div class="sbar-label"><span class="sbar-name">ChatGPT / Claude</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="90"></div></div></div>
+          <div><div class="sbar-label"><span class="sbar-name">Gemini / Google AI Studio</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div></div>
+          <div><div class="sbar-label"><span class="sbar-name">Perplexity / NotebookLM</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="80"></div></div></div>
+          <div><div class="sbar-label"><span class="sbar-name">生成式 AI × 行政自動化</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="87"></div></div></div>
+        </div>
+      </div>
+      <div class="skillcard">
+        <div class="skill-icon">🧠</div>
+        <div class="skill-cat">人資 & 組織發展</div>
+        <div class="skill-bars">
+          <div><div class="sbar-label"><span class="sbar-name">招募甄選 & SOP 建置</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div></div>
+          <div><div class="sbar-label"><span class="sbar-name">教育訓練設計 & 主持</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="82"></div></div></div>
+          <div><div class="sbar-label"><span class="sbar-name">ESG 政策規劃</span><span class="sbar-level">中階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="72"></div></div></div>
+          <div><div class="sbar-label"><span class="sbar-name">團體動力引導 & 主動傾聽</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="88"></div></div></div>
+        </div>
+      </div>
+      <div class="skillcard">
+        <div class="skill-icon">📋</div>
+        <div class="skill-cat">專案管理</div>
+        <div class="skill-bars">
+          <div><div class="sbar-label"><span class="sbar-name">Linear / Asana</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div></div>
+          <div><div class="sbar-label"><span class="sbar-name">Notion</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div></div>
+          <div><div class="sbar-label"><span class="sbar-name">QA 測試規劃</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div></div>
+          <div><div class="sbar-label"><span class="sbar-name">計畫書撰寫申請</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal certs-row">
+      <div class="cert-card">
+        <div class="cert-title">📜 專業證照（14 張）</div>
+        <div class="cert-pills">
+          <span class="cert-pill">證券商高級業務員</span>
+          <span class="cert-pill">期貨商業務員</span>
+          <span class="cert-pill earth">ESG 永續發展基礎能力</span>
+          <span class="cert-pill muted">Google 基礎數位行銷</span>
+          <span class="cert-pill muted">⋯ 等共 14 張</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-title">🌐 語言能力</div>
+        <div class="cert-pills">
+          <span class="cert-pill">中文（母語）</span>
+          <span class="cert-pill earth">英文（流利）</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-wrap">
+    <div class="contact-inner reveal">
+      <div>
+        <p class="sec-eyebrow">Contact</p>
+        <p class="contact-lead">有想聊的，<br>歡迎<em>找我說話</em>。</p>
+        <p class="contact-sub">對人資科技、組織發展、產品管理、ESG 相關的職缺或合作機會保持開放。<br>有任何想法，歡迎直接聯繫，我會盡快回覆。</p>
+        <div class="contact-links">
+          <a href="mailto:doratwotw@gmail.com" class="contact-link">
+            <div class="contact-icon">✉</div>doratwotw@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/hsin-hua-yu-a5337a2b5" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-icon">in</div>LinkedIn / 游欣樺
+          </a>
+        </div>
+      </div>
+      <form class="cf" id="contact-form" action="https://formspree.io/f/mwvayjzw" method="POST">
+        <div><label for="contact-name">Name</label><input id="contact-name" name="name" type="text" placeholder="你的名字" required></div>
+        <div><label for="contact-email">Email</label><input id="contact-email" name="email" type="email" placeholder="your@email.com" required></div>
+        <div><label for="contact-message">Message</label><textarea id="contact-message" name="message" placeholder="Hi，我想聊聊⋯" required></textarea></div>
+        <button class="btn-send" type="submit">送出訊息 →</button>
+      </form>
+      <div class="form-success" id="form-success">訊息已送出，我會在 48 小時內回覆 🙌</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="foot-logo">游欣樺 · YU HSIN-HUA</span>
+  <span class="foot-copy">© <span id="year"></span> 游欣樺 — 跨越資料與人心，讓決策有溫度。</span>
+  <a href="#hero" class="foot-back">回到頂端 ↑</a>
+</footer>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const rootEl=document.documentElement;
+const themeToggle=document.getElementById('theme-toggle');
+const savedTheme=localStorage.getItem('theme-preference');
+let isDark=savedTheme==='dark';
+if(isDark)rootEl.classList.add('dark');
+function syncThemeIcon(){if(themeToggle)themeToggle.textContent=rootEl.classList.contains('dark')?'☀️':'🌙'}
+syncThemeIcon();
+themeToggle?.addEventListener('click',()=>{
+  isDark=!rootEl.classList.contains('dark');
+  rootEl.classList.toggle('dark',isDark);
+  localStorage.setItem('theme-preference',isDark?'dark':'light');
+  syncThemeIcon();
+});
+
+// Mobile menu
+const mBtn=document.getElementById('mobile-btn'),mMenu=document.getElementById('mobile-menu');
+let mOpen=false;
+mBtn.addEventListener('click',()=>{
+  mOpen=!mOpen;
+  mMenu.style.display=mOpen?'flex':'none';
+  const[b1,b2,b3]=mBtn.querySelectorAll('span');
+  b1.style.transform=mOpen?'rotate(45deg) translate(4px,5px)':'none';
+  b2.style.opacity=mOpen?'0':'1';
+  b3.style.transform=mOpen?'rotate(-45deg) translate(4px,-5px)':'none';
+});
+mMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  mOpen=false;mMenu.style.display='none';
+  mBtn.querySelectorAll('span').forEach(s=>{s.style.transform='none';s.style.opacity='1'});
+}));
+
+const navEl=document.querySelector('nav');
+const progressBar=document.getElementById('reading-progress');
+function updateScrollUi(){
+  const scrolled=window.scrollY>80;
+  navEl?.classList.toggle('scrolled',scrolled);
+  const doc=document.documentElement;
+  const total=doc.scrollHeight-window.innerHeight;
+  const pct=total>0?(window.scrollY/total)*100:0;
+  if(progressBar)progressBar.style.width=`${Math.min(100,Math.max(0,pct))}%`;
+}
+window.addEventListener('scroll',updateScrollUi,{passive:true});
+updateScrollUi();
+
+// Scroll reveal
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// Skill bars
+const so=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    e.target.querySelectorAll('.sbar-fill').forEach(b=>{
+      const levelText=b.closest('div')?.querySelector('.sbar-level')?.textContent?.trim();
+      const width=levelText==='中階'?60:85;
+      b.style.width='0';
+      requestAnimationFrame(()=>{b.style.width=width+'%'});
+    });
+    so.unobserve(e.target);
+  });
+},{threshold:.2});
+document.querySelectorAll('.skillcard').forEach(el=>so.observe(el));
+
+// Experience tabs
+document.querySelectorAll('.exp-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.exp-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.exp-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-'+tab.dataset.tab).classList.add('active');
+  });
+});
+
+// Contact form (Formspree)
+const contactForm=document.getElementById('contact-form');
+const formSuccess=document.getElementById('form-success');
+contactForm?.addEventListener('submit',async(event)=>{
+  event.preventDefault();
+  const submitBtn=contactForm.querySelector('.btn-send');
+  if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='送出中...'}
+  try{
+    const response=await fetch(contactForm.action,{
+      method:'POST',
+      body:new FormData(contactForm),
+      headers:{'Accept':'application/json'}
+    });
+    if(!response.ok)throw new Error('submit failed');
+    contactForm.style.display='none';
+    if(formSuccess)formSuccess.style.display='block';
+  }catch(error){
+    if(submitBtn){submitBtn.disabled=false;submitBtn.textContent='送出訊息 →'}
+    alert('送出失敗，請稍後再試一次。');
+  }
+});
+
+// Competition carousel
+const categoryGradients={
+  'FinTech':'linear-gradient(160deg, #2C4A3E, #6B9070)',
+  '創業競賽':'linear-gradient(160deg, #4A3020, #A0704A)',
+  'AI':'linear-gradient(160deg, #2A3A4A, #5A7A8A)',
+  '法律':'linear-gradient(160deg, #3A3020, #8A7A50)',
+  '永續':'linear-gradient(160deg, #2A4030, #5A8060)',
+  'HR':'linear-gradient(160deg, #3A2A40, #7A5A80)',
+  '培訓':'linear-gradient(160deg, #402A2A, #806040)',
+  'default':'linear-gradient(160deg, #3A3530, #8A7A6A)'
+};
+const competitionData=[{"id":"2025-fintech-greenpay","title":"FinTech 金融服務校際創意競賽：GreenPay 永續信用卡","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["金融科技","永續信用卡","服務設計"],"summary":"以 GreenPay 永續信用卡為核心，將金融服務、消費回饋與永續行為連結，從企劃書、示意圖到簡報素材完整呈現產品設計流程。","sourceFolder":"04_競賽作品/01_FinTech競賽","coverImage":"competitions/assets/covers/2025-fintech-greenpay.png"},{"id":"2025-潛力種子盃-個股研究","title":"潛力種子盃個股研究競賽：我想要坐飛機隊","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["個股研究","估值模型","財務分析"],"summary":"以航空與大型企業個股研究為主軸，整理產業分析、公司概覽、投資風險、財務分析與估值方法，形成完整投資研究提案。","sourceFolder":"04_競賽作品/02_潛力種子盃","coverImage":"competitions/assets/covers/2025-潛力種子盃-個股研究.png"},{"id":"2025-ai金融科技-碳感未來","title":"AI 金融科技創新創意競賽：碳感未來","year":"2025","award":null,"awarded":false,"category":"AI","tags":["AI","金融科技","綠色轉型"],"summary":"「碳感未來：AI 引領綠色轉型」以 AI 應用連結金融科技與永續議題，呈現初審企劃書、團隊簡歷與完整提案資料。","sourceFolder":"04_競賽作品/03_AI金融科技競賽","coverImage":null},{"id":"2025-司法-ai個資風險","title":"司法相關競賽：AI 時代下個人資訊保障","year":"2025","award":null,"awarded":false,"category":"法律","tags":["司法","AI 風險","個資保障"],"summary":"聚焦 AI 時代下的個人資訊風險，從法律思辨、制度觀點與風險情境切入，訓練跨域議題分析與論述能力。","sourceFolder":"04_競賽作品/04_司法競賽","coverImage":null},{"id":"2026-永續生活實驗室","title":"ResQfood 拯救食物","year":"2026","award":null,"awarded":false,"category":"永續","tags":["永續創新","AI媒合","UX設計"],"summary":"以 AI 剩食即時媒合平台為主軸，結合探索地圖、店家列表、支付預約與 ESG 量化看板，回應剩食與小店行銷效率問題。","sourceFolder":"04_競賽作品/05_其他競賽","appIntro":"這個提案把 ResQfood 定位成一個兼顧使用者便利、店家營運效率與永續價值溝通的剩食平台。我在介面上特別強調「快速理解商品、快速完成預約、快速看見自己產生的影響」，希望把惜食從理念變成日常可持續使用的服務。","appScreens":[{"title":"探索地圖","caption":"首頁先用地圖建立附近可用資源的即時感，讓使用者一打開就能看到周邊有哪些店家、剩食種類與可預約時段，降低搜尋成本，也把平台的核心價值直接做成第一眼就能理解的體驗。"},{"title":"店家列表","caption":"列表模式補足地圖不容易比較的資訊層次，使用者可以更快速地比對店家距離、折扣幅度、餐點數量與評價狀態，讓決策從單純惜食理念延伸到實際購買時也足夠方便。"},{"title":"商品詳情","caption":"商品詳情頁聚焦在餐點內容、可取貨時間、數量限制與剩食說明，把常見的不確定感提前說清楚。這一頁的設計重點不是堆資訊，而是幫助使用者在短時間內建立信任並完成選擇。"},{"title":"支付預約","caption":"我把預約、付款與取貨流程整合在同一條路徑裡，目的是避免使用者在切換頁面時流失，也讓店家端更容易掌握預約數量。這段流程承接的是平台轉換率，所以介面上刻意壓低操作負擔。"},{"title":"個人惜食","caption":"個人頁把減碳、惜食次數與參與紀錄整理成可回顧的成果，讓永續不只是一次性的購買，而是能被累積、被看見、也能成為持續回來使用平台的動機。"},{"title":"商家管理","caption":"店家端不是只上架商品而已，而是把庫存管理、曝光安排與 AI 備料預測整合成一套後台思路。這讓 ResQfood 不只是一個消費者平台，也是一個能幫小型店家提升營運效率的工具。"}],"coverImage":null},{"id":"2025-拾拈溯木","title":"拾拈溯木：創意建構故事盒","year":"2025","award":null,"awarded":false,"category":"創業競賽","tags":["木育","募資構想","創業營運"],"summary":"以木育玩具與故事盒為核心，整合募資構想、U-start 計畫書、營運計畫與示範影片，呈現教育產品的創業落地路徑。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2025-模擬交易","title":"縱橫期海與投資模擬競賽","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["模擬交易","投資策略","心得報告"],"summary":"彙整大專院校模擬交易競賽與櫃買中心投資模擬心得，呈現交易紀律、策略復盤與市場判斷能力。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2024-少年頭家-雲林農穫","title":"全國少年頭家競賽：雲林農穫百貨園區","year":"2024","award":"全國前六強","awarded":true,"category":"創業競賽","tags":["商業企劃","地方創生","SWOT"],"summary":"以雲林在地農產與百貨園區構想為題，完成商業企劃、地方市場分析與落地方案，並進入全國前六強。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2024-新創之星-三隻雞腿排","title":"桃園新創之星 x 創天下：三隻雞腿排","year":"2024","award":null,"awarded":false,"category":"創業競賽","tags":["科技應用","創業構想","跨校合作"],"summary":"跨校團隊以科技應用組參與新創構想提案，從初賽構想書到創業構想書，訓練產品定位與商業模式表達。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2025-財務健康三明治","title":"財務健康三明治與行動支付研究","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["財務健康","行動支付","金融研究"],"summary":"聚焦財務健康、行動支付與金融服務提案，整合研究計畫、提案簡報與參考資料，呈現金融產品研究與溝通能力。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2024-新創盃","title":"知識共鳴 Chaptalk","year":"2024","award":"全國季軍","awarded":true,"category":"創業競賽","tags":["APP設計","商業企劃","UX"],"summary":"以書籍知識社群 APP 為核心，串連讀者、書商與實體書店，透過 AI 推薦與社群互動提升選書效率與閱讀轉化。","sourceFolder":"04_競賽作品/05_其他競賽","appVisual":"assets/chaptalk-preview.png","appIntro":"Chaptalk 的 App 設計不是單純把書籍資訊上線，而是希望把閱讀這件事重新做成一個更容易被分享、被探索、也能被轉化成實際購買與社群互動的服務。我在這裡練習的是，如何讓內容型產品同時兼顧使用者體驗、社群黏著與商業可行性。","appScreens":[{"title":"封面頁","caption":"封面頁先用書封主視覺、推薦語與清楚的功能定位建立第一眼辨識，讓使用者在很短時間內理解這不是一般的購書平台，而是一個把閱讀、分享與選書整理在一起的知識社群入口。"},{"title":"好書分享","caption":"好書分享頁把讀後心得、重點摘錄與互動回饋放在同一個場景中，讓內容不只是單向推薦，而是能被留言、被收藏、被延伸。這一頁的角色是把閱讀經驗轉成社群內容，提升平台的內容流動性。"},{"title":"分類搜尋","caption":"分類搜尋不是只做主題標籤，而是想處理選書時最常見的迷惘感，所以把使用情境、閱讀目的與主題分類一起整合進來，讓使用者可以從『我現在想解決什麼問題』去找到對應的書。"},{"title":"個人頁面","caption":"個人頁面把書單、偏好、分享紀錄與互動足跡整合成一個持續累積的閱讀輪廓，讓每一次收藏與分享都能回到個人的知識旅程裡，也為推薦與社群互動提供更穩定的基礎。"}],"coverImage":null},{"id":"2023-投資競賽","title":"龍華科大賽全國投資競賽","year":"2023","award":"優選","awarded":true,"category":"FinTech","tags":["投資","技術分析","基本面"],"summary":"以技術分析與基本面觀察進行模擬投資組合管理，透過交易心得與策略復盤展現市場時機判斷能力。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2022-辯論","title":"全校新生盃辯論比賽","year":"2022","award":"團體第一名","awarded":true,"category":"其他","tags":["辯論","邏輯思維","說服力"],"summary":"透過辯論訓練論點拆解、臨場回應與說服架構，這些能力延伸到 HR 面試、產品提案與商業簡報。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2025-r財金應用","title":"R 語言與多程式語言財經應用","year":"2025","award":null,"awarded":false,"category":"培訓","tags":["R","Python","財金計量"],"summary":"整理 R 語言、Python、統計學習、財金時間序列、選擇權評價與程式交易相關教材與程式碼，展現財金資料分析的系統化學習軌跡。","sourceFolder":"05_進修學習/01_R語言課程","coverImage":"competitions/assets/covers/2025-r財金應用.png"},{"id":"2025-記帳士","title":"記帳士備考與稅務會計學習","year":"2025","award":null,"awarded":false,"category":"培訓","tags":["記帳士","會計","稅務法規"],"summary":"收錄會計學概要、稅務法規、租稅申報實務與記帳相關法規模考教材，作為財會專業知識的補強紀錄。","sourceFolder":"05_進修學習/02_記帳士","coverImage":null},{"id":"2025-高潛力hr","title":"高潛力 HR 培訓計畫","year":"2025","award":null,"awarded":false,"category":"HR","tags":["HR","組織行為","組織發展"],"summary":"系統性人資培訓課程，涵蓋組織行為、領導與追隨、個人差異、激勵動機、衝突溝通與組織文化等主題。","sourceFolder":"05_進修學習/03_高潛力HR","coverImage":"competitions/assets/covers/2025-高潛力hr.png"},{"id":"2025-青年局ai職涯營","title":"青年局 AI 實戰職涯營","year":"2025","award":null,"awarded":false,"category":"培訓","tags":["AI","職涯","Vibe Coding"],"summary":"政府主辦 AI 職涯應用營隊，包含 AI 生成簡報、對話式自動化工作流、Vibe Coding 與「青年職涯焦慮舒緩 AI 聊天輔導員」Demo。","sourceFolder":"05_進修學習/04_青年局AI課","coverImage":null},{"id":"2026-茄芷袋-世代橋接設計","title":"茄芷袋世代橋接設計","year":"2026","award":null,"awarded":false,"category":"創業競賽","tags":["設計提案","地方創生","文化創新"],"summary":"以台南後壁菁寮俗女村為場域，重新定義茄芷袋的文化價值與市場語言，提出故事卡片、城市限定色與工法識別標籤三項設計方向。","sourceFolder":"04_競賽作品/05_其他競賽","appIntro":"這個案子雖然不是典型 App，但我仍然把它當成一個體驗設計題來整理。重點不是單張視覺漂不漂亮，而是如何透過資訊結構、故事入口與辨識系統，讓台北年輕人第一次接觸茄芷袋時就能理解它的文化背景、工藝價值與購買理由。","appScreens":[{"title":"故事卡片系統","caption":"故事卡片系統把製作者背景、地方記憶與工法資訊轉成更容易閱讀的內容單元，目的不是單純介紹商品，而是讓購買者在接觸商品前就先產生情感連結，理解自己帶走的是一段地方故事。"},{"title":"城市限定色系","caption":"城市限定色系嘗試把農村四季、土地感與地方景象翻成當代通路看得懂的色彩語言，讓原本帶有地方印象的工藝品，在進入選物店與年輕市場時仍然保有辨識度，同時看起來更接近日常使用情境。"},{"title":"工法識別標籤","caption":"工法識別標籤把複雜的手工流程濃縮成可視化符號，降低理解門檻，也讓消費者在短時間內看見手作價值。對我來說，這一塊設計的關鍵，是把『值得支持』轉成『我真的看得懂、也願意買』。"}],"coverImage":null},{"id":"2026-俗女手帖-app","title":"俗女手帖 App","year":"2026","award":null,"awarded":false,"category":"創業競賽","tags":["App企劃","UX設計","地方創生"],"summary":"以當代農村永續生態平台為概念，規劃首頁、俗女共創、配工匠、集章地圖、永續縫補與 AR 場景等功能，建立地方文化與數位互動的連結。","sourceFolder":"04_競賽作品/05_其他競賽","appVisual":"assets/suonv-app-overview.png","appIntro":"俗女手帖的設計重點，是把一次性的農村走訪轉化成可以持續參與的數位體驗。我把地方文化、工藝互動、任務集章與 AR 探索放進同一個產品架構裡，希望使用者不是看過就結束，而是能透過 App 逐步建立和地方的關係。","appScreens":[{"title":"首頁","caption":"首頁作為整個體驗的入口，整合活動資訊、地方故事與互動任務，讓使用者一進來就知道這不只是旅遊導覽，而是一個可以邊探索、邊參與、邊累積體驗的地方文化平台。"},{"title":"俗女共創","caption":"俗女共創頁把使用者從被動觀看者轉成參與者，鼓勵他們留下內容、回應地方議題或加入共創任務。這樣的設計是希望讓地方文化不只被展示，而是能和使用者之間產生互動與歸屬感。"},{"title":"配工匠","caption":"配工匠功能承接的是地方工藝的實際連結需求，透過更清楚的資訊呈現與媒合流程，讓使用者能理解不同工匠的專長，也讓技藝交流從『很有興趣』變成更有可能發生的合作或體驗。"},{"title":"集章地圖","caption":"集章地圖把原本分散的探索路線整理成可視化任務機制，讓走訪村落的過程更有節奏，也增加使用者持續完成任務的動機。它不只是地圖，而是把地方移動路徑設計成一種更有參與感的遊走體驗。"},{"title":"永續縫補","caption":"永續縫補把地方工藝與修補文化延伸進產品敘事裡，讓使用者不只停留在『看見』，而是開始理解維修、再利用與延長物件生命週期的價值，進一步把地方文化和永續生活方式串接起來。"},{"title":"AR 場景","caption":"AR 場景是我用來強化現地記憶點的一個設計想像，透過擴增實境把原本較抽象的文化內容變成更有沉浸感的現場互動，讓使用者在離開場域後，仍然記得這段體驗的特色與情緒。"}],"coverImage":null}];
+const carouselRoot=document.querySelector('[data-carousel-root]');
+const carouselTrack=carouselRoot?.querySelector('.competition-carousel');
+const dotsWrap=carouselRoot?.querySelector('.carousel-dots');
+const pauseBtn=carouselRoot?.querySelector('.carousel-toggle');
+const prevBtn=carouselRoot?.querySelector('.carousel-arrow.prev');
+const nextBtn=carouselRoot?.querySelector('.carousel-arrow.next');
+const categoryRail=carouselRoot?.querySelector('.competition-category-rail');
+let activeFilter='all';
+let isPaused=false;
+let autoTimer=null;
+
+const groupOrder=['uiux','FinTech','創業競賽','AI','法律','永續','HR','培訓','其他'];
+const groupLabels={uiux:'UI/UX','FinTech':'FinTech','創業競賽':'創業競賽','AI':'AI','法律':'法律','永續':'永續','HR':'HR','培訓':'培訓','其他':'其他'};
+const uiuxIds=new Set([
+  '2024-新創盃',
+  '2026-永續生活實驗室',
+  '2026-茄芷袋-世代橋接設計',
+  '2026-俗女手帖-app'
+]);
+
+function isUiUxProject(item){
+  return uiuxIds.has(item.id);
+}
+function getItemGroups(item){
+  const groups=[item.category];
+  if(isUiUxProject(item))groups.unshift('uiux');
+  return [...new Set(groups)];
+}
+function buildPosterTitle(item){
+  const title=item.title.replace(/：/g,'\n').replace(/\s{2,}/g,' ').trim();
+  return title.length>18 ? `<span class="competition-poster-title small">${title.replace(/\n/g,'<br>')}</span>` : `<span class="competition-poster-title">${title.replace(/\n/g,'<br>')}</span>`;
+}
+function matchesFilter(item,filter){
+  if(filter==='all')return true;
+  if(filter==='uiux')return isUiUxProject(item);
+  return item.category===filter;
+}
+
+function cardWidth(){
+  const card=carouselTrack?.querySelector('.competition-card:not(.is-filtered)');
+  return card ? card.getBoundingClientRect().width+20 : 340;
+}
+function visibleCards(){
+  return competitionData.filter(item=>matchesFilter(item,activeFilter));
+}
+function renderCategoryRail(){
+  if(!categoryRail)return;
+  const counts=groupOrder.map(key=>({
+    key,
+    label:groupLabels[key],
+    count:competitionData.filter(item=>getItemGroups(item).includes(key)).length
+  })).filter(group=>group.count);
+  categoryRail.innerHTML=counts.map(group=>`<a class="competition-category-chip" href="#projects" data-filter-jump="${group.key}"><strong>${group.label}</strong><span>${group.count} 件作品</span></a>`).join('');
+}
+function renderCompetitions(){
+  if(!carouselTrack)return;
+  carouselTrack.innerHTML=competitionData.map(item=>{
+    const gradient=categoryGradients[item.category]||categoryGradients.default;
+    const tags=item.tags.slice(0,3).map(tag=>`<span class="competition-tag">${tag}</span>`).join('');
+    const media=item.coverImage
+      ? `<img src="${item.coverImage}" alt="${item.title}">`
+      : `<div class="competition-poster">
+          <span class="competition-poster-kicker">${isUiUxProject(item)?'App 設計提案':item.category}</span>
+          ${buildPosterTitle(item)}
+          <div class="competition-poster-meta">${item.tags.slice(0,2).map(tag=>`<span>${tag}</span>`).join('')}</div>
+        </div>`;
+    return `<a class="competition-card" href="competitions/${encodeURIComponent(item.id)}.html" data-category="${item.category}" data-uiux="${isUiUxProject(item)?'true':'false'}" style="--card-gradient:${gradient}">
+      <div class="competition-media" style="background:${gradient}">
+        ${media}
+        <span class="competition-pill competition-year">${item.year}</span>
+        <span class="competition-pill competition-award ${item.awarded?'':'muted'}">${item.award||'參賽'}</span>
+      </div>
+      <div class="competition-body">
+        <span class="competition-category">${item.category}</span>
+        <h3 class="competition-title">${item.title}</h3>
+        <p class="competition-summary">${item.summary}</p>
+        <div class="competition-tags">${tags}</div>
+        <span class="competition-link">查看詳情 →</span>
+      </div>
+    </a>`;
+  }).join('');
+  applyCompetitionFilter();
+}
+function renderDots(){
+  if(!dotsWrap)return;
+  const count=Math.max(1,visibleCards().length);
+  dotsWrap.innerHTML=Array.from({length:count},(_,i)=>`<button class="carousel-dot ${i===0?'active':''}" type="button" aria-label="前往第 ${i+1} 張" data-index="${i}"></button>`).join('');
+}
+function activeCards(){
+  return [...carouselTrack.querySelectorAll('.competition-card:not(.is-filtered)')];
+}
+function scrollToCard(index){
+  const cards=activeCards();
+  if(!cards.length)return;
+  const target=cards[Math.max(0,Math.min(index,cards.length-1))];
+  carouselTrack.scrollTo({left:target.offsetLeft-carouselTrack.offsetLeft,behavior:'smooth'});
+}
+function currentIndex(){
+  const width=cardWidth();
+  return Math.round(carouselTrack.scrollLeft/width);
+}
+function updateDots(){
+  const idx=currentIndex();
+  dotsWrap?.querySelectorAll('.carousel-dot').forEach((dot,i)=>dot.classList.toggle('active',i===idx));
+}
+function applyCompetitionFilter(){
+  carouselTrack.querySelectorAll('.competition-card').forEach(card=>{
+    const show=activeFilter==='all'||(activeFilter==='uiux' ? card.dataset.uiux==='true' : card.dataset.category===activeFilter);
+    card.classList.toggle('is-filtered',!show);
+  });
+  carouselTrack.scrollTo({left:0,behavior:'smooth'});
+  renderDots();
+  updateDots();
+}
+function advanceCarousel(dir=1){
+  const cards=activeCards();
+  if(cards.length<2)return;
+  const next=(currentIndex()+dir+cards.length)%cards.length;
+  scrollToCard(next);
+}
+function startAuto(){
+  clearInterval(autoTimer);
+  autoTimer=setInterval(()=>{if(!isPaused)advanceCarousel(1)},4000);
+}
+carouselRoot?.querySelectorAll('.competition-filter').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    carouselRoot.querySelectorAll('.competition-filter').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter=btn.dataset.filter;
+    applyCompetitionFilter();
+  });
+});
+categoryRail?.addEventListener('click',e=>{
+  const chip=e.target.closest('[data-filter-jump]');
+  if(!chip)return;
+  e.preventDefault();
+  const targetBtn=carouselRoot.querySelector(`.competition-filter[data-filter="${chip.dataset.filterJump}"]`);
+  targetBtn?.click();
+});
+prevBtn?.addEventListener('click',()=>advanceCarousel(-1));
+nextBtn?.addEventListener('click',()=>advanceCarousel(1));
+dotsWrap?.addEventListener('click',e=>{
+  const dot=e.target.closest('.carousel-dot');
+  if(dot)scrollToCard(Number(dot.dataset.index));
+});
+pauseBtn?.addEventListener('click',()=>{
+  isPaused=!isPaused;
+  pauseBtn.textContent=isPaused?'播放':'暫停';
+  pauseBtn.setAttribute('aria-pressed',String(isPaused));
+});
+['mouseenter','focusin'].forEach(evt=>carouselRoot?.addEventListener(evt,()=>{isPaused=true}));
+['mouseleave','focusout'].forEach(evt=>carouselRoot?.addEventListener(evt,()=>{isPaused=pauseBtn?.getAttribute('aria-pressed')==='true'}));
+carouselTrack?.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'){e.preventDefault();advanceCarousel(1)}
+  if(e.key==='ArrowLeft'){e.preventDefault();advanceCarousel(-1)}
+});
+carouselTrack?.addEventListener('scroll',()=>requestAnimationFrame(updateDots),{passive:true});
+renderCompetitions();
+renderCategoryRail();
+startAuto();
+
+// Active nav
+const secs=document.querySelectorAll('section[id]');
+const nls=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id});
+  nls.forEach(l=>{
+    l.classList.toggle('active',l.getAttribute('href')==='#'+cur);
+  });
+},{passive:true});
+
+// Counter animation for hero stats
+const counters=document.querySelectorAll('.hstat-n');
+const co=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target;
+    const raw=el.dataset.target||el.textContent.trim();
+    el.dataset.target=raw;
+    const decimal=raw.includes('.');
+    const hasPlus=raw.includes('+');
+    const clean=raw.replace(/,/g,'').replace('+','');
+    const target=Number(clean);
+    const startTime=performance.now();
+    const duration=1200;
+    const easeOut=t=>1-Math.pow(1-t,3);
+    const step=now=>{
+      const progress=Math.min(1,(now-startTime)/duration);
+      const value=target*easeOut(progress);
+      if(decimal){
+        el.textContent=value.toFixed(2);
+      }else{
+        const rounded=Math.floor(value);
+        el.textContent=rounded.toLocaleString()+(hasPlus?'+':'');
+      }
+      if(progress<1){
+        requestAnimationFrame(step);
+      }else if(decimal){
+        el.textContent=target.toFixed(2);
+      }else{
+        el.textContent=Math.round(target).toLocaleString()+(hasPlus?'+':'');
+      }
+    };
+    requestAnimationFrame(step);
+    co.unobserve(el);
+  });
+},{threshold:.5});
+counters.forEach(el=>co.observe(el));
+</script>
+</body>
+</html>

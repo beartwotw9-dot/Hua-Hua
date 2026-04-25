@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ResQfood 拯救食物 | 競賽作品集</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#FAF8F4;--bg2:#F4EFE6;--bg3:#EDE6D8;--white:#FFFDF9;--sand:#E2D5C0;--sage:#6B9070;--sage-d:#4F7355;--earth:#A0704A;--amber:#C98B3A;--ink:#221E16;--ink2:#4A4336;--muted:#8C7F6E;--border:rgba(160,130,90,0.15);--serif:'Noto Serif TC',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.75}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:58px;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(250,248,244,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);text-decoration:none}
+.back-link{color:var(--ink);text-decoration:none;border:1px solid var(--sand);border-radius:100px;padding:.45rem 1rem;font-size:.85rem}
+.hero{min-height:52vh;padding:7rem 2.5rem 4rem;color:var(--white);display:flex;align-items:end;background:linear-gradient(160deg, #2A4030, #5A8060)}
+.hero-inner,.wrap{max-width:1080px;margin:0 auto;width:100%}
+.eyebrow{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,253,249,.75);margin-bottom:.7rem}
+h1{font-family:var(--serif);font-size:clamp(2.1rem,5vw,4.2rem);line-height:1.16;letter-spacing:-.02em;max-width:820px}
+.hero-meta{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.4rem}
+.pill{border-radius:100px;padding:.28rem .8rem;font-size:.75rem;font-weight:700;background:rgba(255,253,249,.18);border:1px solid rgba(255,253,249,.38);color:var(--white)}
+.pill.award{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+section{padding:4.5rem 2.5rem}
+.section-title{font-family:var(--serif);font-size:1.55rem;margin-bottom:1rem}
+.overview{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:start}
+.summary{color:var(--ink2);font-size:1rem;font-weight:300}.spotlight-list{margin-top:1.2rem;display:grid;gap:.45rem;list-style:none}.spotlight-list li{position:relative;padding-left:1rem;color:var(--ink2);font-size:.9rem}.spotlight-list li::before{content:"";position:absolute;left:0;top:.78rem;width:5px;height:5px;border-radius:50%;background:var(--sage)}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.meta-card,.story-card,.related-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem}
+.meta-label{font-size:.7rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.meta-value{font-family:var(--serif);font-weight:700;color:var(--ink);margin-top:.15rem}
+.story-lead{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.25rem;margin-bottom:1rem}
+.story-lead p{font-size:.95rem;color:var(--ink2);font-weight:300;line-height:1.9}
+.story-showcase{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem;margin-bottom:1rem;align-items:stretch}
+.story-showcase > :only-child{grid-column:1 / -1}
+.story-media,.story-note{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem}
+.story-media img{display:block;width:100%;border-radius:6px;border:1px solid var(--border);background:var(--bg2)}
+.story-media-caption{font-size:.8rem;color:var(--muted);margin-top:.65rem}
+.story-note h3{font-family:var(--serif);font-size:1.02rem;color:var(--ink);margin-bottom:.55rem}
+.story-note p{font-size:.9rem;color:var(--ink2);font-weight:300;line-height:1.82}
+.story-note .spotlight-list{margin-top:.85rem}
+.story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;grid-auto-rows:1fr}
+.story-card h3{font-family:var(--serif);font-size:1.02rem;color:var(--ink);margin-bottom:.55rem}
+.story-card{display:flex;flex-direction:column}
+.story-card p{font-size:.9rem;color:var(--ink2);font-weight:300;line-height:1.86}
+.app-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:1.2rem;align-items:start}
+.app-visual{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem}
+.app-visual img{display:block;width:100%;border-radius:6px;border:1px solid var(--border);background:var(--bg2)}
+.app-visual-fallback{aspect-ratio:16/10;border-radius:6px;border:1px solid var(--border);background:linear-gradient(135deg,var(--bg2),var(--white));display:grid;place-items:center;padding:1.5rem;text-align:center}
+.app-visual-fallback strong{font-family:var(--serif);font-size:1.5rem;color:var(--ink);line-height:1.25}
+.app-copy{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.15rem}
+.app-intro{font-size:.92rem;color:var(--ink2);font-weight:300;line-height:1.8;margin-bottom:1rem}
+.app-notes{display:grid;gap:.9rem}
+.app-note{padding-top:.9rem;border-top:1px solid var(--border)}
+.app-note:first-child{padding-top:0;border-top:0}
+.app-note h3{font-family:var(--serif);font-size:1rem;color:var(--ink);margin-bottom:.3rem}
+.app-note p{font-size:.86rem;color:var(--ink2);font-weight:300;line-height:1.78}
+.related{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.related-card{text-decoration:none;color:inherit;transition:transform .2s,border-color .2s}
+.related-card:hover{transform:translateY(-2px);border-color:var(--sand)}
+.related-year{font-size:.72rem;color:var(--muted)}
+.related-title{font-family:var(--serif);font-weight:700;margin:.25rem 0}
+.note{background:var(--bg2);border:1px dashed var(--sand);border-radius:8px;padding:1.1rem;color:var(--muted);font-size:.88rem}
+.small-link{font-family:var(--sans);border:1px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:100px;padding:.28rem .7rem;font-size:.72rem;text-decoration:none;cursor:pointer}
+@media(max-width:768px){nav{padding:0 1.25rem}.hero,section{padding-left:1.25rem;padding-right:1.25rem}.overview,.story-showcase,.story-grid,.app-layout,.related{grid-template-columns:1fr}.meta-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><a href="../index.html#hero" class="nav-logo">游欣樺</a><a class="back-link" href="../index.html#projects">← 返回</a></nav>
+<header class="hero"><div class="hero-inner"><p class="eyebrow">永續 · 2026</p><h1>ResQfood 拯救食物</h1><div class="hero-meta"><span class="pill award">作品介紹</span><span class="pill">永續創新</span><span class="pill">AI媒合</span><span class="pill">UX設計</span></div></div></header>
+<main>
+<section><div class="wrap overview"><div><h2 class="section-title">Overview</h2><p class="summary">以 AI 剩食即時媒合平台為主軸，結合探索地圖、店家列表、支付預約與 ESG 量化看板，回應剩食與小店行銷效率問題。</p><ul class="spotlight-list"><li>探索地圖與店家列表</li><li>AI 備料預測</li><li>ESG 量化看板</li></ul></div><div class="meta-grid"><div class="meta-card"><div class="meta-label">Year</div><div class="meta-value">2026</div></div><div class="meta-card"><div class="meta-label">Category</div><div class="meta-value">永續</div></div><div class="meta-card"><div class="meta-label">Award</div><div class="meta-value">作品整理</div></div><div class="meta-card"><div class="meta-label">Focus</div><div class="meta-value">探索地圖與店家列表 / AI 備料預測</div></div></div></div></section>
+<section><div class="wrap"><h2 class="section-title">作品介紹</h2><div class="story-lead"><p>以 AI 剩食即時媒合平台為主軸，結合探索地圖、店家列表、支付預約與 ESG 量化看板，回應剩食與小店行銷效率問題。 這頁整理的是我在這個題目裡如何定義問題、形成提案、安排內容架構，以及最後想讓外部看見的核心價值。</p></div><div class="story-showcase"><article class="story-note"><h3>內容補充</h3><p>執行上，我把問題拆成使用者端、供給端與平台端三個視角，同時整理行為誘因、運作流程與價值衡量方式，讓永續主題更接近實際產品提案。</p><ul class="spotlight-list"><li>探索地圖與店家列表</li><li>AI 備料預測</li><li>ESG 量化看板</li></ul></article></div><div class="story-grid"><article class="story-card"><h3>目的</h3><p>這個作品的目標是回應台灣大量剩食與小型店家行銷效率不足的問題，讓剩餘餐點能被即時媒合，而不是在營業結束前被浪費掉。</p></article><article class="story-card"><h3>發想</h3><p>發想來自我對惜食平台的觀察：真正卡住的不只是有沒有商品，而是資訊、時間與信任成本，因此我把設計重點放在「快速找到、快速理解、快速完成交易」。</p></article><article class="story-card"><h3>核心設計</h3><p>核心設計由使用者端與店家端並行構成：使用者端用即時地圖、商品詳情與支付預約縮短決策時間；店家端則透過 AI 備料預測與管理介面提升庫存與曝光效率。</p></article><article class="story-card"><h3>執行方式</h3><p>執行上，我把問題拆成使用者端、供給端與平台端三個視角，同時整理行為誘因、運作流程與價值衡量方式，讓永續主題更接近實際產品提案。</p></article><article class="story-card"><h3>內容亮點</h3><p>這份作品的內容亮點主要集中在 探索地圖與店家列表、AI 備料預測、ESG 量化看板，也因此能更完整地呈現我如何從主題理解一路走到企劃、設計或提案表達。</p></article><article class="story-card"><h3>成果</h3><p>成果上，這個作品形成一套完整的永續產品敘事，從問題定義、介面規劃到 ESG 價值表達都更接近真正可展示的產品提案。</p></article></div></div></section>
+<section><div class="wrap"><h2 class="section-title">App 設計</h2><div class="app-layout"><div class="app-visual"><div class="app-visual-fallback"><strong>ResQfood 拯救食物</strong></div></div><div class="app-copy"><p class="app-intro">這個提案把 ResQfood 定位成一個兼顧使用者便利、店家營運效率與永續價值溝通的剩食平台。我在介面上特別強調「快速理解商品、快速完成預約、快速看見自己產生的影響」，希望把惜食從理念變成日常可持續使用的服務。</p><div class="app-notes"><article class="app-note"><h3>探索地圖</h3><p>首頁先用地圖建立附近可用資源的即時感，讓使用者一打開就能看到周邊有哪些店家、剩食種類與可預約時段，降低搜尋成本，也把平台的核心價值直接做成第一眼就能理解的體驗。</p></article><article class="app-note"><h3>店家列表</h3><p>列表模式補足地圖不容易比較的資訊層次，使用者可以更快速地比對店家距離、折扣幅度、餐點數量與評價狀態，讓決策從單純惜食理念延伸到實際購買時也足夠方便。</p></article><article class="app-note"><h3>商品詳情</h3><p>商品詳情頁聚焦在餐點內容、可取貨時間、數量限制與剩食說明，把常見的不確定感提前說清楚。這一頁的設計重點不是堆資訊，而是幫助使用者在短時間內建立信任並完成選擇。</p></article><article class="app-note"><h3>支付預約</h3><p>我把預約、付款與取貨流程整合在同一條路徑裡，目的是避免使用者在切換頁面時流失，也讓店家端更容易掌握預約數量。這段流程承接的是平台轉換率，所以介面上刻意壓低操作負擔。</p></article><article class="app-note"><h3>個人惜食</h3><p>個人頁把減碳、惜食次數與參與紀錄整理成可回顧的成果，讓永續不只是一次性的購買，而是能被累積、被看見、也能成為持續回來使用平台的動機。</p></article><article class="app-note"><h3>商家管理</h3><p>店家端不是只上架商品而已，而是把庫存管理、曝光安排與 AI 備料預測整合成一套後台思路。這讓 ResQfood 不只是一個消費者平台，也是一個能幫小型店家提升營運效率的工具。</p></article></div></div></div></div></section>
+<section><div class="wrap"><h2 class="section-title">Related</h2><div class="related"><div class="note">尚無同分類作品。</div></div></div></section>
+</main>
+<script id="competition-data" type="application/json">{"id":"2026-永續生活實驗室","title":"ResQfood 拯救食物","category":"永續","year":"2026"}</script>
+</body>
+</html>
