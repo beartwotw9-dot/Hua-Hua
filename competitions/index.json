@@ -450,32 +450,32 @@
         {
           "title": "首頁探索",
           "caption": "以清楚分區承接使用者進站第一步，讓主題內容、推薦卡片與每日入口可以快速被理解。",
-          "image": "assets/suonv_phones/suonv_phone1.jpg"
+          "image": "assets/suonv_frames/frame1.jpg"
         },
         {
           "title": "主題任務",
           "caption": "把抽象成長目標拆成可執行任務，透過清楚的完成狀態回饋，建立使用者持續感。",
-          "image": "assets/suonv_phones/suonv_phone2.jpg"
+          "image": "assets/suonv_frames/frame2.jpg"
         },
         {
           "title": "互動回饋",
           "caption": "加入互動回饋與激勵機制，讓使用者在完成任務後得到即時正向訊號，強化循環。",
-          "image": "assets/suonv_phones/suonv_phone3.jpg"
+          "image": "assets/suonv_frames/frame3.jpg"
         },
         {
           "title": "個人紀錄",
           "caption": "以時間軸與統整視圖呈現累積成果，幫助使用者看見自己的變化並持續前進。",
-          "image": "assets/suonv_phones/suonv_phone4.jpg"
+          "image": "assets/suonv_frames/frame4.jpg"
         },
         {
           "title": "探索延伸",
           "caption": "把內容探索與推薦路徑再拉長，降低跳出率並提高二次互動機會。",
-          "image": "assets/suonv_phones/suonv_phone5.jpg"
+          "image": "assets/suonv_frames/frame5.jpg"
         },
         {
           "title": "成長儀表",
           "caption": "透過可回看的指標與紀錄，讓使用者更直觀理解自己累積的進展。",
-          "image": "assets/suonv_phones/suonv_phone6.jpg"
+          "image": "assets/suonv_frames/frame6.jpg"
         }
       ],
       "team": "",
@@ -573,6 +573,31 @@
       "outcomes": "完整交付計畫書與商模分析，並對接桃園合作機會，形成家長、治療師、機構、政府四方共益的多邊循環。",
       "files": [],
       "team": "EduBot 團隊"
+    },
+    {
+      "id": "2026-系統載入中",
+      "title": "系統載入中（青年局 AI 課）",
+      "year": "2026",
+      "award": null,
+      "awarded": false,
+      "category": "培訓",
+      "tags": [
+        "青年局",
+        "AI應用",
+        "提案設計",
+        "系統思維"
+      ],
+      "summary": "以「系統載入中」為主題，整合 AI 工具實作與提案敘事，呈現從問題定義、流程拆解到方案表達的完整學習成果。",
+      "sourceFolder": "05_進修學習/04_青年局AI課/標題頁——系統載入中",
+      "coverImage": null,
+      "purpose": "把青年局 AI 課程中的知識與實作經驗整理成可被快速理解的專案成果，讓內容不只停留在學習紀錄，而是可延伸成作品展示。",
+      "ideation": "發想從「如何把抽象 AI 能力變成可執行流程」出發，先拆出核心問題，再將工具、情境與成果串成一條清楚的敘事路徑。",
+      "model": "以問題定義、流程設計、工具應用與成果呈現四層架構組織內容，確保讀者能從脈絡一路看到具體做法。",
+      "execution": "透過提案頁面與內容模組化整理，將課堂實作與應用場景對齊，補上從學習到落地之間常見的斷層。",
+      "highlights": "重點在於把 AI 工具應用轉為可複用的流程思維，並強化視覺敘事與文字邏輯，讓提案更具說服力與可讀性。",
+      "outcomes": "完成「系統載入中」主題成果頁，建立從學習、整理到對外展示的一致版本，作為後續延伸專案的基礎。",
+      "files": [],
+      "team": "個人整理作品"
     }
   ]
 }
