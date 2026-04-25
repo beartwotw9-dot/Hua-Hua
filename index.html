@@ -238,12 +238,11 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 .skillcard:hover{border-color:var(--sand)}
 .skill-icon{font-size:1.5rem;margin-bottom:.8rem}
 .skill-cat{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:1.2rem}
-.skill-bars{display:flex;flex-direction:column;gap:.9rem}
-.sbar-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem}
-.sbar-name{font-size:.8rem;color:var(--ink2);font-weight:400}
-.sbar-level{display:none}
-.sbar-track{height:5px;background:var(--border);border-radius:3px;overflow:hidden}
-.sbar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--sage),var(--earth));width:0;transition:width .8s ease}
+.skill-list{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.skill-item{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:.45rem .55rem;border:1px solid var(--border);border-radius:10px;background:var(--white)}
+.skill-name{position:relative;padding-left:.95rem;font-size:.8rem;color:var(--ink2);font-weight:400;line-height:1.5}
+.skill-name::before{content:'';position:absolute;left:0;top:.58rem;width:6px;height:6px;border-radius:50%;background:var(--sage)}
+.skill-level{font-size:.66rem;color:var(--sage-d);background:rgba(107,144,112,.12);padding:.16rem .48rem;border-radius:999px;font-weight:700;white-space:nowrap}
 .certs-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
 .cert-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.2rem}
 .cert-title{font-size:.83rem;font-weight:600;color:var(--ink);margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}
@@ -355,7 +354,7 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
         </div>
       </div>
       <div class="hero-avatar-wrap">
-        <img id="hero-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23EDE6D8'/%3E%3C/svg%3E" alt="游欣樺頭像"/>
+        <img id="hero-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23EDE6D8'/%3E%3Cstop offset='100%25' stop-color='%23F4EFE6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23g)'/%3E%3Ccircle cx='200' cy='152' r='58' fill='%23D8CCB7'/%3E%3Cpath d='M92 325c14-64 55-97 108-97s94 33 108 97' fill='%23D8CCB7'/%3E%3Ctext x='200' y='366' text-anchor='middle' font-family='Georgia,serif' font-size='32' fill='%236B9070'%3EHua%3C/text%3E%3C/svg%3E" alt="游欣樺頭像"/>
       </div>
     </div>
     <div class="hero-stats">
@@ -621,42 +620,42 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
       <div class="skillcard">
         <div class="skill-icon">📊</div>
         <div class="skill-cat">數據分析</div>
-        <div class="skill-bars">
-          <div><div class="sbar-label"><span class="sbar-name">Python（pandas, sklearn）</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="80"></div></div></div>
-          <div><div class="sbar-label"><span class="sbar-name">Power BI</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="82"></div></div></div>
-          <div><div class="sbar-label"><span class="sbar-name">R 語言</span><span class="sbar-level">中階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="65"></div></div></div>
-          <div><div class="sbar-label"><span class="sbar-name">Excel / SQL</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div></div>
-        </div>
+        <ul class="skill-list">
+          <li class="skill-item"><span class="skill-name">Python（pandas, sklearn）</span><span class="skill-level">進階</span></li>
+          <li class="skill-item"><span class="skill-name">Power BI</span><span class="skill-level">進階</span></li>
+          <li class="skill-item"><span class="skill-name">R 語言</span><span class="skill-level">中階</span></li>
+          <li class="skill-item"><span class="skill-name">Excel / SQL</span><span class="skill-level">進階</span></li>
+        </ul>
       </div>
       <div class="skillcard">
         <div class="skill-icon">🤖</div>
         <div class="skill-cat">AI 工具應用</div>
-        <div class="skill-bars">
-          <div><div class="sbar-label"><span class="sbar-name">ChatGPT / Claude</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="90"></div></div></div>
-          <div><div class="sbar-label"><span class="sbar-name">Gemini / Google AI Studio</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div></div>
-          <div><div class="sbar-label"><span class="sbar-name">Perplexity / NotebookLM</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="80"></div></div></div>
-          <div><div class="sbar-label"><span class="sbar-name">生成式 AI × 行政自動化</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="87"></div></div></div>
-        </div>
+        <ul class="skill-list">
+          <li class="skill-item"><span class="skill-name">ChatGPT / Claude</span><span class="skill-level">進階</span></li>
+          <li class="skill-item"><span class="skill-name">Gemini / Google AI Studio</span><span class="skill-level">進階</span></li>
+          <li class="skill-item"><span class="skill-name">Perplexity / NotebookLM</span><span class="skill-level">進階</span></li>
+          <li class="skill-item"><span class="skill-name">生成式 AI × 行政自動化</span><span class="skill-level">進階</span></li>
+        </ul>
       </div>
       <div class="skillcard">
         <div class="skill-icon">🧠</div>
         <div class="skill-cat">人資 & 組織發展</div>
-        <div class="skill-bars">
-          <div><div class="sbar-label"><span class="sbar-name">招募甄選 & SOP 建置</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div></div>
-          <div><div class="sbar-label"><span class="sbar-name">教育訓練設計 & 主持</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="82"></div></div></div>
-          <div><div class="sbar-label"><span class="sbar-name">ESG 政策規劃</span><span class="sbar-level">中階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="72"></div></div></div>
-          <div><div class="sbar-label"><span class="sbar-name">團體動力引導 & 主動傾聽</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="88"></div></div></div>
-        </div>
+        <ul class="skill-list">
+          <li class="skill-item"><span class="skill-name">招募甄選 & SOP 建置</span><span class="skill-level">進階</span></li>
+          <li class="skill-item"><span class="skill-name">教育訓練設計 & 主持</span><span class="skill-level">進階</span></li>
+          <li class="skill-item"><span class="skill-name">ESG 政策規劃</span><span class="skill-level">中階</span></li>
+          <li class="skill-item"><span class="skill-name">團體動力引導 & 主動傾聽</span><span class="skill-level">進階</span></li>
+        </ul>
       </div>
       <div class="skillcard">
         <div class="skill-icon">📋</div>
         <div class="skill-cat">專案管理</div>
-        <div class="skill-bars">
-          <div><div class="sbar-label"><span class="sbar-name">Linear / Asana</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div></div>
-          <div><div class="sbar-label"><span class="sbar-name">Notion</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div></div>
-          <div><div class="sbar-label"><span class="sbar-name">QA 測試規劃</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div></div>
-          <div><div class="sbar-label"><span class="sbar-name">計畫書撰寫申請</span><span class="sbar-level">進階</span></div><div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div></div>
-        </div>
+        <ul class="skill-list">
+          <li class="skill-item"><span class="skill-name">Linear / Asana</span><span class="skill-level">進階</span></li>
+          <li class="skill-item"><span class="skill-name">Notion</span><span class="skill-level">進階</span></li>
+          <li class="skill-item"><span class="skill-name">QA 測試規劃</span><span class="skill-level">進階</span></li>
+          <li class="skill-item"><span class="skill-name">計畫書撰寫申請</span><span class="skill-level">進階</span></li>
+        </ul>
       </div>
     </div>
     <div class="reveal certs-row">
@@ -766,21 +765,6 @@ const ro=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
 },{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
-
-// Skill bars
-const so=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(!e.isIntersecting)return;
-    e.target.querySelectorAll('.sbar-fill').forEach(b=>{
-      const levelText=b.closest('div')?.querySelector('.sbar-level')?.textContent?.trim();
-      const width=levelText==='中階'?60:85;
-      b.style.width='0';
-      requestAnimationFrame(()=>{b.style.width=width+'%'});
-    });
-    so.unobserve(e.target);
-  });
-},{threshold:.2});
-document.querySelectorAll('.skillcard').forEach(el=>so.observe(el));
 
 // Experience tabs
 document.querySelectorAll('.exp-tab').forEach(tab=>{
