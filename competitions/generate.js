@@ -55,7 +55,7 @@ function publicCoverPath(item,coverImage){
 }
 function joinTags(item){return (item.tags||[]).join('、')}
 function deriveStoryLead(item){
-  const teamLead=item.team?`這個題目是團隊協作完成，成員包含：${item.team}。`:'';
+  const teamLead=item.team?'這個題目是團隊協作完成。':'';
   return item.storyLead || `${item.summary} ${teamLead}這頁整理的是我在這個題目裡如何定義問題、形成提案、安排內容架構，以及最後想讓外部看見的核心價值。`;
 }
 function derivePurpose(item){
@@ -137,7 +137,7 @@ function renderAppGallery(item){
 }
 function renderTeamBlock(item){
   if(!item.team)return '';
-  return '<div class="team-note"><strong>團隊協作：</strong>'+esc(item.team)+'</div>';
+  return '<div class="team-note"><strong>團隊協作</strong></div>';
 }
 function updateIndex(data){if(!fs.existsSync(indexPath))return;let html=fs.readFileSync(indexPath,'utf8');const light=data.map(({files,filePatterns,spotlight,reflection,purpose,ideation,model,outcomes,focus,appIntro,appScreens,appVisual,...item})=>item);html=html.replace(/const competitionData=\[[\s\S]*?\];\nconst carouselRoot=/,'const competitionData='+JSON.stringify(light)+';\nconst carouselRoot=');fs.writeFileSync(indexPath,html,'utf8')}
 const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
