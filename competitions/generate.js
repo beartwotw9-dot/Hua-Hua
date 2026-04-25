@@ -132,7 +132,7 @@ function renderAppGallery(item){
     const image=imagePath?'<div class="app-note-media"><img src="'+esc(imagePath)+'" alt="'+esc(item.title)+' - '+esc(screen.title)+' 畫面" loading="'+(index<2?'eager':'lazy')+'" decoding="async"/></div>':'';
     return '<article class="app-note">'+image+'<h3>'+esc(screen.title)+'</h3><p>'+esc(screen.caption||'介面重點整理。')+'</p></article>';
   }).join('');
-  return '<section><div class="wrap"><h2 class="section-title">App 設計</h2><div class="app-layout">'+visual+'<div class="app-copy">'+intro+'<div class="app-notes">'+notes+'</div></div></div></div></section>';
+  return '<section><div class="wrap"><h2 class="section-title">App 設計</h2><div class="app-layout"><div class="app-showcase">'+visual+'<div class="app-copy">'+intro+'</div></div><div class="app-notes">'+notes+'</div></div></div></section>';
 }
 function updateIndex(data){if(!fs.existsSync(indexPath))return;let html=fs.readFileSync(indexPath,'utf8');const light=data.map(({files,filePatterns,spotlight,reflection,purpose,ideation,model,outcomes,focus,appIntro,appScreens,appVisual,...item})=>item);html=html.replace(/const competitionData=\[[\s\S]*?\];\nconst carouselRoot=/,'const competitionData='+JSON.stringify(light)+';\nconst carouselRoot=');fs.writeFileSync(indexPath,html,'utf8')}
 const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));

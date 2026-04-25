@@ -43,18 +43,18 @@ section{padding:4.5rem 2.5rem}
 .story-card h3{font-family:var(--serif);font-size:1.02rem;color:var(--ink);margin-bottom:.55rem}
 .story-card{display:flex;flex-direction:column}
 .story-card p{font-size:.9rem;color:var(--ink2);font-weight:300;line-height:1.86}
-.app-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:1.2rem;align-items:start}
+.app-layout{display:grid;gap:1rem}
+.app-showcase{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:stretch}
 .app-visual{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem}
-.app-visual img{display:block;width:100%;border-radius:6px;border:1px solid var(--border);background:var(--bg2)}
+.app-visual img{display:block;width:100%;max-height:460px;object-fit:cover;border-radius:6px;border:1px solid var(--border);background:var(--bg2)}
 .app-visual-fallback{aspect-ratio:16/10;border-radius:6px;border:1px solid var(--border);background:linear-gradient(135deg,var(--bg2),var(--white));display:grid;place-items:center;padding:1.5rem;text-align:center}
 .app-visual-fallback strong{font-family:var(--serif);font-size:1.5rem;color:var(--ink);line-height:1.25}
 .app-copy{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.15rem}
-.app-intro{font-size:.92rem;color:var(--ink2);font-weight:300;line-height:1.8;margin-bottom:1rem}
-.app-notes{display:grid;gap:.9rem}
-.app-note{padding-top:.9rem;border-top:1px solid var(--border)}
-.app-note:first-child{padding-top:0;border-top:0}
+.app-intro{font-size:.92rem;color:var(--ink2);font-weight:300;line-height:1.8;margin:0}
+.app-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.app-note{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:.9rem;display:flex;flex-direction:column}
 .app-note-media{margin-bottom:.58rem}
-.app-note-media img{display:block;width:100%;border-radius:6px;border:1px solid var(--border);background:var(--bg2)}
+.app-note-media img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px;border:1px solid var(--border);background:var(--bg2)}
 .app-note h3{font-family:var(--serif);font-size:1rem;color:var(--ink);margin-bottom:.3rem}
 .app-note p{font-size:.86rem;color:var(--ink2);font-weight:300;line-height:1.78}
 .related{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
@@ -64,7 +64,7 @@ section{padding:4.5rem 2.5rem}
 .related-title{font-family:var(--serif);font-weight:700;margin:.25rem 0}
 .note{background:var(--bg2);border:1px dashed var(--sand);border-radius:8px;padding:1.1rem;color:var(--muted);font-size:.88rem}
 .small-link{font-family:var(--sans);border:1px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:100px;padding:.28rem .7rem;font-size:.72rem;text-decoration:none;cursor:pointer}
-@media(max-width:768px){nav{padding:0 1.25rem}.hero,section{padding-left:1.25rem;padding-right:1.25rem}.overview,.story-showcase,.story-grid,.app-layout,.related{grid-template-columns:1fr}.meta-grid{grid-template-columns:1fr}}
+@media(max-width:768px){nav{padding:0 1.25rem}.hero,section{padding-left:1.25rem;padding-right:1.25rem}.overview,.story-showcase,.story-grid,.app-layout,.app-showcase,.app-notes,.related{grid-template-columns:1fr}.meta-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
