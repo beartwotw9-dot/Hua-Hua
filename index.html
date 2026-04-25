@@ -4,7 +4,10 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>游欣樺 YU HSIN-HUA | 跨域產品人 × 人資專家</title>
-<meta name="description" content="游欣樺的個人作品集 — 財金出身、人資實戰、產品思維，用數據說人話的跨域探索者。"/>
+<meta name="description" content="游欣樺 Hsin-Hua Yu｜跨域產品人 × 人資專家，Finance × HR × PM，台北"/>
+<meta property="og:title" content="游欣樺 Portfolio 2026"/>
+<meta property="og:description" content="跨越資料與人心，讓決策有溫度。"/>
+<meta property="og:type" content="website"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
@@ -27,6 +30,21 @@
   --serif:'Noto Serif TC',Georgia,serif;
   --sans:'DM Sans',system-ui,sans-serif;
 }
+html.dark{
+  --bg:#1C1914;
+  --bg2:#241F19;
+  --bg3:#302920;
+  --white:#2A241C;
+  --sand:#5C4E3D;
+  --sage:#87B18C;
+  --sage-d:#C8E1CB;
+  --earth:#CC9767;
+  --amber:#E0A65A;
+  --ink:#F5F1E9;
+  --ink2:#D8D0C4;
+  --muted:#A89B88;
+  --border:rgba(222,188,145,0.2);
+}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
@@ -42,7 +60,11 @@ nav{
   border-bottom:1px solid var(--border);
   padding:0 2.5rem;height:58px;
   display:flex;align-items:center;justify-content:space-between;
+  transition:background .25s ease,backdrop-filter .25s ease;
 }
+html.dark nav{background:rgba(28,25,20,.88)}
+nav.scrolled{backdrop-filter:blur(12px);background:rgba(250,248,244,.78)}
+html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 .nav-logo{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);letter-spacing:.02em;text-decoration:none}
 .nav-links{display:flex;gap:1.8rem;list-style:none}
 .nav-links a{font-size:.82rem;color:var(--muted);text-decoration:none;font-weight:400;transition:color .2s;position:relative;padding-bottom:2px}
@@ -59,10 +81,14 @@ nav{
 #mobile-menu{display:none;background:var(--white);border-bottom:1px solid var(--border);padding:1rem 2.5rem 1.5rem;flex-direction:column;gap:.9rem}
 #mobile-menu a{font-size:.9rem;color:var(--muted);text-decoration:none}
 #mobile-menu a:hover{color:var(--ink)}
+.theme-toggle{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--white);color:var(--ink);display:grid;place-items:center;cursor:pointer;font-size:1rem;margin-left:1rem;transition:all .2s}
+.theme-toggle:hover{border-color:var(--sage);color:var(--sage)}
+#reading-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:9999;background:var(--sage)}
 
 /* ── HERO ── */
 #hero{min-height:100vh;display:flex;align-items:center;padding:6rem 2.5rem 4rem;background:var(--bg)}
 .hero-inner{max-width:1000px;margin:0 auto;width:100%}
+.hero-layout{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:2.2rem;align-items:center}
 .hero-eyebrow{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:1.4rem}
 .hero-name{font-family:var(--serif);font-size:clamp(2.8rem,6vw,5.2rem);font-weight:700;line-height:1.08;letter-spacing:-.025em;color:var(--ink);margin-bottom:.5rem}
 .hero-name em{font-style:normal;color:var(--sage)}
@@ -73,6 +99,10 @@ nav{
 .btn-fill:hover{background:var(--sage);transform:translateY(-1px)}
 .btn-ghost{background:transparent;color:var(--ink);padding:.72rem 1.8rem;border-radius:100px;border:1px solid var(--sand);font-size:.9rem;font-weight:400;text-decoration:none;display:inline-block;transition:all .2s}
 .btn-ghost:hover{border-color:var(--sage);color:var(--sage)}
+.btn-outline{background:transparent;color:var(--ink);padding:.72rem 1.3rem;border-radius:100px;border:1px solid var(--border);font-size:.88rem;font-weight:500;text-decoration:none;display:inline-block;transition:all .2s}
+.btn-outline:hover{border-color:var(--sage);color:var(--sage)}
+.hero-avatar-wrap{width:200px;height:200px;border-radius:50%;border:2px solid var(--sand);overflow:hidden;background:var(--bg2);justify-self:end;display:grid;place-items:center}
+#hero-avatar{width:100%;height:100%;object-fit:cover;display:block}
 .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--border);border-left:1px solid var(--border);border-radius:12px;overflow:hidden}
 .hstat{padding:1.4rem 1rem;text-align:center;border-right:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--white);transition:background .2s}
 .hstat:hover{background:var(--bg2)}
@@ -111,9 +141,10 @@ nav{
 #experience{padding:6rem 0;background:var(--bg)}
 .exp-tabs{display:flex;gap:0;border:1px solid var(--border);border-radius:100px;overflow:hidden;width:fit-content;margin-bottom:2.5rem;background:var(--white)}
 .exp-tab{padding:.45rem 1.2rem;font-size:.8rem;font-weight:500;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap;border:none;background:none}
-.exp-tab.active{background:var(--ink);color:var(--white);border-radius:100px}
-.exp-panel{display:none}
-.exp-panel.active{display:block}
+.exp-tab.active{background:var(--ink);color:var(--white);border-radius:100px;box-shadow:inset 0 -2px 0 var(--sage)}
+.exp-panel{display:none;opacity:0}
+.exp-panel.active{display:block;opacity:1;animation:panelFade .3s ease}
+@keyframes panelFade{from{opacity:0}to{opacity:1}}
 .tl-list{position:relative;padding-left:1.8rem}
 .tl-list::before{content:'';position:absolute;left:6px;top:6px;bottom:0;width:1.5px;background:var(--border)}
 .tl-item{position:relative;margin-bottom:2.2rem}
@@ -146,7 +177,7 @@ nav{
 .competition-carousel::-webkit-scrollbar{display:none}
 .competition-card{flex:0 0 320px;height:460px;border:1px solid var(--border);border-radius:8px;background:var(--white);overflow:hidden;scroll-snap-align:start;text-decoration:none;color:inherit;box-shadow:0 12px 34px rgba(34,30,22,.06);transition:transform .35s ease,opacity .35s ease,border-color .25s,box-shadow .25s}
 .competition-card:hover,.competition-card:focus-visible{transform:translateY(-5px);border-color:var(--sand);box-shadow:0 18px 46px rgba(34,30,22,.1);outline:none}
-.competition-card.is-filtered{opacity:0;transform:translateX(24px) scale(.96);pointer-events:none;position:absolute}
+.competition-card.is-filtered{opacity:.22;transform:scale(.95);pointer-events:none}
 .competition-media{height:50%;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--white)}
 .competition-media img{width:100%;height:100%;object-fit:cover}
 .competition-monogram{font-family:var(--serif);font-size:3.2rem;font-weight:700;color:rgba(255,253,249,.82)}
@@ -177,6 +208,24 @@ nav{
 .carousel-dot.active{width:24px;border-radius:100px;background:var(--sage)}
 .carousel-toggle{border:1px solid var(--border);background:var(--white);color:var(--ink2);border-radius:100px;padding:.38rem .95rem;font-family:var(--sans);font-size:.75rem;cursor:pointer;transition:all .2s}
 .carousel-toggle:hover,.carousel-toggle:focus-visible{border-color:var(--sage);color:var(--sage);outline:none}
+.project-library{margin-top:2rem}
+.project-library-filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1rem}
+.project-library-filter{border:1px solid var(--border);background:var(--white);color:var(--muted);border-radius:100px;padding:.36rem .9rem;font-size:.76rem;cursor:pointer}
+.project-library-filter.active{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.project-library-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.project-library-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1rem;display:flex;flex-direction:column;gap:.6rem;transition:opacity .26s ease,transform .26s ease,border-color .2s}
+.project-library-card.is-unmatched{opacity:.2;transform:scale(.95)}
+.project-library-card h3{font-family:var(--serif);font-size:1rem;line-height:1.4}
+.project-meta{display:flex;gap:.45rem;align-items:center}
+.project-year{font-size:.72rem;color:var(--muted)}
+.project-badge{font-size:.66rem;color:var(--sage-d);background:rgba(107,144,112,.14);padding:.16rem .5rem;border-radius:999px}
+.project-desc{font-size:.82rem;color:var(--muted);line-height:1.62;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.project-detail-btn{border:1px solid var(--border);background:var(--bg);color:var(--earth);border-radius:999px;padding:.32rem .8rem;align-self:flex-start;font-size:.74rem;cursor:pointer;font-weight:700}
+.project-modal{position:fixed;inset:0;background:rgba(34,30,22,.46);display:none;align-items:center;justify-content:center;z-index:600}
+.project-modal.open{display:flex}
+.project-modal-panel{width:min(520px,92vw);background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.2rem}
+.project-modal-head{display:flex;justify-content:space-between;gap:1rem;align-items:center;margin-bottom:.75rem}
+.project-modal-close{border:1px solid var(--border);background:var(--bg);width:32px;height:32px;border-radius:50%;cursor:pointer}
 
 /* ── AWARDS ── */
 #awards{padding:6rem 0;background:var(--bg)}
@@ -210,9 +259,9 @@ nav{
 .skill-bars{display:flex;flex-direction:column;gap:.9rem}
 .sbar-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem}
 .sbar-name{font-size:.8rem;color:var(--ink2);font-weight:400}
-.sbar-level{font-size:.68rem;color:var(--muted)}
+.sbar-level{display:none}
 .sbar-track{height:5px;background:var(--border);border-radius:3px;overflow:hidden}
-.sbar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--sage),var(--earth));width:0;transition:width 1.1s cubic-bezier(.4,0,.2,1)}
+.sbar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--sage),var(--earth));width:0;transition:width .8s ease}
 .certs-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
 .cert-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.2rem}
 .cert-title{font-size:.83rem;font-weight:600;color:var(--ink);margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}
@@ -238,6 +287,7 @@ nav{
 .cf textarea{min-height:95px}
 .cf .btn-send{background:var(--ink);color:var(--white);border:none;padding:.72rem 1.8rem;border-radius:100px;font-family:var(--sans);font-weight:500;font-size:.9rem;cursor:pointer;transition:background .2s,transform .15s;align-self:flex-start}
 .cf .btn-send:hover{background:var(--sage);transform:translateY(-1px)}
+.form-success{display:none;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1rem;font-size:.92rem;color:var(--ink2)}
 
 /* ── FOOTER ── */
 footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
@@ -257,6 +307,10 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
   .nav-links{display:none}
   #mobile-btn{display:flex}
   .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .theme-toggle{margin-left:.5rem}
+  .hero-layout{grid-template-columns:1fr;gap:1.2rem}
+  .hero-avatar-wrap{justify-self:center;order:-1}
+  .project-library-grid{grid-template-columns:1fr}
   .about-grid{grid-template-columns:1fr}
   .about-card{position:static}
     .awards-grid{grid-template-columns:1fr}
@@ -274,6 +328,7 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
 </style>
 </head>
 <body>
+<div id="reading-progress" aria-hidden="true"></div>
 
 <!-- NAV -->
 <nav>
@@ -286,6 +341,7 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
     <li><a href="#skills">技能</a></li>
     <li><a href="#contact" class="nav-cta">聯絡我</a></li>
   </ul>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切換暗色模式">🌙</button>
   <button id="mobile-btn" aria-label="選單">
     <span id="b1"></span><span id="b2"></span><span id="b3"></span>
   </button>
@@ -302,13 +358,21 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
 <!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
-    <p class="hero-eyebrow">YU, HSIN-HUA · Portfolio 2025</p>
-    <h1 class="hero-name">游欣樺<br><em>Hsin-Hua Yu</em></h1>
-    <p class="hero-tagline">跨越資料與人心，讓決策有溫度。</p>
-    <p class="hero-desc">財金系出身，深耕人資與組織發展，擅用 Python、Power BI 與生成式 AI 將複雜數據轉化為可執行的洞察。</p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn-fill">瀏覽專案 →</a>
-      <a href="#contact" class="btn-ghost">與我聯繫</a>
+    <div class="hero-layout">
+      <div>
+        <p class="hero-eyebrow">YU, HSIN-HUA · Portfolio 2026</p>
+        <h1 class="hero-name">游欣樺<br><em>Hsin-Hua Yu</em></h1>
+        <p class="hero-tagline">跨越資料與人心，讓決策有溫度。</p>
+        <p class="hero-desc">財金系出身，深耕人資與組織發展，擅用 Python、Power BI 與生成式 AI 將複雜數據轉化為可執行的洞察。</p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-fill">瀏覽專案 →</a>
+          <a href="#contact" class="btn-ghost">與我聯繫</a>
+          <a href="/assets/resume.pdf" class="btn-outline" target="_blank" rel="noopener">下載履歷 PDF ↓</a>
+        </div>
+      </div>
+      <div class="hero-avatar-wrap">
+        <img id="hero-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23EDE6D8'/%3E%3C/svg%3E" alt="游欣樺頭像"/>
+      </div>
     </div>
     <div class="hero-stats">
       <div class="hstat"><span class="hstat-n">3.79</span><span class="hstat-l">GPA · 系排第四</span></div>
@@ -558,6 +622,15 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
       </div>
       <div class="competition-groups" aria-label="競賽作品分類清單"></div>
     </div>
+    <div class="reveal project-library" id="project-library">
+      <div class="project-library-filters">
+        <button class="project-library-filter active" data-tag="all" type="button">全部</button>
+        <button class="project-library-filter" data-tag="產品" type="button">產品</button>
+        <button class="project-library-filter" data-tag="UIUX" type="button">UI/UX</button>
+        <button class="project-library-filter" data-tag="數據" type="button">數據</button>
+      </div>
+      <div class="project-library-grid" id="project-library-grid"></div>
+    </div>
   </div>
 </section>
 
@@ -640,12 +713,13 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
           </a>
         </div>
       </div>
-      <div class="cf">
-        <div><label>Name</label><input type="text" placeholder="你的名字"></div>
-        <div><label>Email</label><input type="email" placeholder="your@email.com"></div>
-        <div><label>Message</label><textarea placeholder="Hi，我想聊聊⋯"></textarea></div>
-        <button class="btn-send">送出訊息 →</button>
-      </div>
+      <form class="cf" id="contact-form" action="https://formspree.io/f/mwvayjzw" method="POST">
+        <div><label for="contact-name">Name</label><input id="contact-name" name="name" type="text" placeholder="你的名字" required></div>
+        <div><label for="contact-email">Email</label><input id="contact-email" name="email" type="email" placeholder="your@email.com" required></div>
+        <div><label for="contact-message">Message</label><textarea id="contact-message" name="message" placeholder="Hi，我想聊聊⋯" required></textarea></div>
+        <button class="btn-send" type="submit">送出訊息 →</button>
+      </form>
+      <div class="form-success" id="form-success">訊息已送出，我會在 48 小時內回覆 🙌</div>
     </div>
   </div>
 </section>
@@ -653,11 +727,36 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
 <!-- FOOTER -->
 <footer>
   <span class="foot-logo">游欣樺 · YU HSIN-HUA</span>
-  <span class="foot-copy">© 2025 游欣樺 — 跨越資料與人心，讓決策有溫度。</span>
+  <span class="foot-copy">© <span id="year"></span> 游欣樺 — 跨越資料與人心，讓決策有溫度。</span>
   <a href="#hero" class="foot-back">回到頂端 ↑</a>
 </footer>
+<div class="project-modal" id="project-modal" aria-hidden="true">
+  <div class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+    <div class="project-modal-head">
+      <h3 id="project-modal-title">專案詳情</h3>
+      <button class="project-modal-close" id="project-modal-close" type="button" aria-label="關閉">✕</button>
+    </div>
+    <p id="project-modal-text" class="project-desc" style="display:block;-webkit-line-clamp:unset">這裡會放詳細內容。</p>
+  </div>
+</div>
 
 <script>
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const rootEl=document.documentElement;
+const themeToggle=document.getElementById('theme-toggle');
+const savedTheme=localStorage.getItem('theme-preference');
+let isDark=savedTheme==='dark';
+if(isDark)rootEl.classList.add('dark');
+function syncThemeIcon(){if(themeToggle)themeToggle.textContent=rootEl.classList.contains('dark')?'☀️':'🌙'}
+syncThemeIcon();
+themeToggle?.addEventListener('click',()=>{
+  isDark=!rootEl.classList.contains('dark');
+  rootEl.classList.toggle('dark',isDark);
+  localStorage.setItem('theme-preference',isDark?'dark':'light');
+  syncThemeIcon();
+});
+
 // Mobile menu
 const mBtn=document.getElementById('mobile-btn'),mMenu=document.getElementById('mobile-menu');
 let mOpen=false;
@@ -674,6 +773,19 @@ mMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
   mBtn.querySelectorAll('span').forEach(s=>{s.style.transform='none';s.style.opacity='1'});
 }));
 
+const navEl=document.querySelector('nav');
+const progressBar=document.getElementById('reading-progress');
+function updateScrollUi(){
+  const scrolled=window.scrollY>80;
+  navEl?.classList.toggle('scrolled',scrolled);
+  const doc=document.documentElement;
+  const total=doc.scrollHeight-window.innerHeight;
+  const pct=total>0?(window.scrollY/total)*100:0;
+  if(progressBar)progressBar.style.width=`${Math.min(100,Math.max(0,pct))}%`;
+}
+window.addEventListener('scroll',updateScrollUi,{passive:true});
+updateScrollUi();
+
 // Scroll reveal
 const ro=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
@@ -685,8 +797,10 @@ const so=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(!e.isIntersecting)return;
     e.target.querySelectorAll('.sbar-fill').forEach(b=>{
-      const w=b.dataset.w;b.style.width='0';
-      setTimeout(()=>{b.style.width=w+'%'},100);
+      const levelText=b.closest('div')?.querySelector('.sbar-level')?.textContent?.trim();
+      const width=levelText==='中階'?60:85;
+      b.style.width='0';
+      requestAnimationFrame(()=>{b.style.width=width+'%'});
     });
     so.unobserve(e.target);
   });
@@ -701,6 +815,28 @@ document.querySelectorAll('.exp-tab').forEach(tab=>{
     tab.classList.add('active');
     document.getElementById('tab-'+tab.dataset.tab).classList.add('active');
   });
+});
+
+// Contact form (Formspree)
+const contactForm=document.getElementById('contact-form');
+const formSuccess=document.getElementById('form-success');
+contactForm?.addEventListener('submit',async(event)=>{
+  event.preventDefault();
+  const submitBtn=contactForm.querySelector('.btn-send');
+  if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='送出中...'}
+  try{
+    const response=await fetch(contactForm.action,{
+      method:'POST',
+      body:new FormData(contactForm),
+      headers:{'Accept':'application/json'}
+    });
+    if(!response.ok)throw new Error('submit failed');
+    contactForm.style.display='none';
+    if(formSuccess)formSuccess.style.display='block';
+  }catch(error){
+    if(submitBtn){submitBtn.disabled=false;submitBtn.textContent='送出訊息 →'}
+    alert('送出失敗，請稍後再試一次。');
+  }
 });
 
 // Competition carousel
@@ -876,6 +1012,63 @@ renderCompetitions();
 renderCategoryRail();
 startAuto();
 
+// Project library cards + modal (Task 2)
+const projectLibraryData=[
+  {title:'智慧訓練簽到系統',year:'2026',tag:'產品',desc:'以簽到流程優化與出勤資料追蹤為核心，整理需求與流程規格。'},
+  {title:'財務儀表板改版',year:'2026',tag:'數據',desc:'針對管理層資訊閱讀動線重整，強化 KPI 對齊與決策效率。'},
+  {title:'行動端表單 UX 優化',year:'2025',tag:'UIUX',desc:'改善手機端填寫體驗，降低流程中斷率與重填次數。'},
+  {title:'招募流程自動化',year:'2025',tag:'產品',desc:'整合招募流程節點與通知邏輯，縮短候選人等待時間。'},
+  {title:'ESG 指標視覺化',year:'2025',tag:'數據',desc:'將永續指標以可操作圖表呈現，提升跨部門溝通效率。'},
+  {title:'會員互動頁改版',year:'2025',tag:'UIUX',desc:'重新規劃資訊層級與互動元素，提升任務完成率。'}
+];
+const projectGrid=document.getElementById('project-library-grid');
+const projectFilters=[...document.querySelectorAll('.project-library-filter')];
+const projectModal=document.getElementById('project-modal');
+const projectModalTitle=document.getElementById('project-modal-title');
+const projectModalText=document.getElementById('project-modal-text');
+const projectModalClose=document.getElementById('project-modal-close');
+let activeProjectTag='all';
+function renderProjectLibrary(){
+  if(!projectGrid)return;
+  projectGrid.innerHTML=projectLibraryData.map((item,index)=>`
+    <article class="project-library-card ${activeProjectTag==='all'||item.tag===activeProjectTag?'':'is-unmatched'}" data-tag="${item.tag}">
+      <div class="project-meta"><span class="project-year">${item.year}</span><span class="project-badge">${item.tag}</span></div>
+      <h3>${item.title}</h3>
+      <p class="project-desc">${item.desc}</p>
+      <button type="button" class="project-detail-btn" data-project-index="${index}">查看詳情</button>
+    </article>
+  `).join('');
+}
+renderProjectLibrary();
+projectFilters.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    projectFilters.forEach(el=>el.classList.remove('active'));
+    btn.classList.add('active');
+    activeProjectTag=btn.dataset.tag;
+    renderProjectLibrary();
+  });
+});
+projectGrid?.addEventListener('click',e=>{
+  const button=e.target.closest('.project-detail-btn');
+  if(!button)return;
+  const item=projectLibraryData[Number(button.dataset.projectIndex)];
+  if(!item)return;
+  projectModalTitle.textContent=item.title;
+  projectModalText.textContent=`${item.year}｜${item.tag} — ${item.desc}（此區為佔位內容，後續可替換成正式專案說明）`;
+  projectModal?.classList.add('open');
+  projectModal?.setAttribute('aria-hidden','false');
+});
+projectModalClose?.addEventListener('click',()=>{
+  projectModal?.classList.remove('open');
+  projectModal?.setAttribute('aria-hidden','true');
+});
+projectModal?.addEventListener('click',e=>{
+  if(e.target===projectModal){
+    projectModal.classList.remove('open');
+    projectModal.setAttribute('aria-hidden','true');
+  }
+});
+
 
 // Active nav
 const secs=document.querySelectorAll('section[id]');
@@ -894,17 +1087,33 @@ const co=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(!e.isIntersecting)return;
     const el=e.target;
-    const target=el.textContent;
-    if(target.includes('.')){ co.unobserve(el); return; }
-    const num=parseInt(target.replace(/[^0-9]/g,''));
-    const suffix=target.replace(/[0-9]/g,'');
-    let start=0;
-    const step=Math.ceil(num/40);
-    const timer=setInterval(()=>{
-      start=Math.min(start+step,num);
-      el.textContent=start.toLocaleString()+suffix;
-      if(start>=num)clearInterval(timer);
-    },30);
+    const raw=el.dataset.target||el.textContent.trim();
+    el.dataset.target=raw;
+    const decimal=raw.includes('.');
+    const hasPlus=raw.includes('+');
+    const clean=raw.replace(/,/g,'').replace('+','');
+    const target=Number(clean);
+    const startTime=performance.now();
+    const duration=1200;
+    const easeOut=t=>1-Math.pow(1-t,3);
+    const step=now=>{
+      const progress=Math.min(1,(now-startTime)/duration);
+      const value=target*easeOut(progress);
+      if(decimal){
+        el.textContent=value.toFixed(2);
+      }else{
+        const rounded=Math.floor(value);
+        el.textContent=rounded.toLocaleString()+(hasPlus?'+':'');
+      }
+      if(progress<1){
+        requestAnimationFrame(step);
+      }else if(decimal){
+        el.textContent=target.toFixed(2);
+      }else{
+        el.textContent=Math.round(target).toLocaleString()+(hasPlus?'+':'');
+      }
+    };
+    requestAnimationFrame(step);
     co.unobserve(el);
   });
 },{threshold:.5});
