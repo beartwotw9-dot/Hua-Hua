@@ -234,15 +234,16 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 /* ── SKILLS ── */
 #skills{padding:6rem 0;background:var(--white)}
 .skills-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
-.skillcard{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:1.5rem;transition:border-color .2s}
-.skillcard:hover{border-color:var(--sand)}
-.skill-icon{font-size:1.5rem;margin-bottom:.8rem}
-.skill-cat{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:1.2rem}
-.skill-list{list-style:none;display:flex;flex-direction:column;gap:.55rem}
-.skill-item{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:.45rem .55rem;border:1px solid var(--border);border-radius:10px;background:var(--white)}
-.skill-name{position:relative;padding-left:.95rem;font-size:.8rem;color:var(--ink2);font-weight:400;line-height:1.5}
+.skillcard{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.2rem 1.2rem 1rem;transition:border-color .2s,transform .2s}
+.skillcard:hover{border-color:var(--sand);transform:translateY(-2px)}
+.skill-icon{font-size:1.2rem;margin-bottom:.55rem}
+.skill-cat{font-family:var(--serif);font-size:1.03rem;font-weight:700;color:var(--ink);margin-bottom:.8rem}
+.skill-list{list-style:none;display:flex;flex-direction:column;gap:.15rem}
+.skill-item{display:flex;align-items:flex-start;justify-content:space-between;gap:.7rem;padding:.55rem 0;border-bottom:1px dashed var(--border)}
+.skill-item:last-child{border-bottom:none}
+.skill-name{position:relative;padding-left:.95rem;font-size:.92rem;color:var(--ink2);font-weight:500;line-height:1.5}
 .skill-name::before{content:'';position:absolute;left:0;top:.58rem;width:6px;height:6px;border-radius:50%;background:var(--sage)}
-.skill-level{font-size:.66rem;color:var(--sage-d);background:rgba(107,144,112,.12);padding:.16rem .48rem;border-radius:999px;font-weight:700;white-space:nowrap}
+.skill-level{font-size:.76rem;color:var(--muted);font-weight:700;white-space:nowrap}
 .certs-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
 .cert-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.2rem}
 .cert-title{font-size:.83rem;font-weight:600;color:var(--ink);margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}
