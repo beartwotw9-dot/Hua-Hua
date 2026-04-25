@@ -92,8 +92,8 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 .hero-eyebrow{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:1.4rem}
 .hero-name{font-family:var(--serif);font-size:clamp(2.8rem,6vw,5.2rem);font-weight:700;line-height:1.08;letter-spacing:-.025em;color:var(--ink);margin-bottom:.5rem}
 .hero-name em{font-style:normal;color:var(--sage)}
-.hero-tagline{font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.5rem);font-weight:300;color:var(--muted);margin-bottom:1.6rem;letter-spacing:-.01em}
-.hero-desc{font-size:1rem;color:var(--ink2);font-weight:300;max-width:540px;line-height:1.9;margin-bottom:2.2rem}
+.hero-tagline{font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.5rem);font-weight:400;color:var(--ink2);margin-bottom:1.4rem;letter-spacing:-.01em}
+.hero-desc{font-size:1rem;color:var(--ink2);font-weight:400;max-width:620px;line-height:1.85;margin-bottom:2.2rem}
 .hero-btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:3rem}
 .btn-fill{background:var(--ink);color:var(--white);padding:.72rem 1.8rem;border-radius:100px;font-size:.9rem;font-weight:500;text-decoration:none;display:inline-block;transition:background .2s,transform .15s}
 .btn-fill:hover{background:var(--sage);transform:translateY(-1px)}
@@ -102,7 +102,7 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 .btn-outline{background:transparent;color:var(--ink);padding:.72rem 1.3rem;border-radius:100px;border:1px solid var(--border);font-size:.88rem;font-weight:500;text-decoration:none;display:inline-block;transition:all .2s}
 .btn-outline:hover{border-color:var(--sage);color:var(--sage)}
 .hero-avatar-wrap{width:200px;height:200px;border-radius:50%;border:2px solid var(--sand);overflow:hidden;background:var(--bg2);justify-self:end;display:grid;place-items:center}
-#hero-avatar{width:100%;height:100%;object-fit:cover;display:block}
+#hero-avatar{width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block}
 .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--border);border-left:1px solid var(--border);border-radius:12px;overflow:hidden}
 .hstat{padding:1.4rem 1rem;text-align:center;border-right:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--white);transition:background .2s}
 .hstat:hover{background:var(--bg2)}
@@ -110,7 +110,7 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 .hstat-l{font-size:.75rem;color:var(--muted);margin-top:.35rem;display:block}
 
 /* ── SECTION COMMONS ── */
-.section-wrap{max-width:1000px;margin:0 auto;padding:0 2.5rem}
+.section-wrap{max-width:1080px;margin:0 auto;padding:0 2.5rem}
 .sec-eyebrow{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:.5rem}
 .sec-title{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:700;letter-spacing:-.02em;color:var(--ink);margin-bottom:.6rem}
 .sec-rule{width:40px;height:2px;background:var(--sage);border-radius:2px;margin-bottom:2.8rem}
@@ -122,14 +122,15 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 /* ── ABOUT ── */
 #about{padding:6rem 0;background:var(--white)}
 .about-grid{display:grid;grid-template-columns:300px 1fr;gap:4rem;align-items:start}
-.about-card{background:var(--bg2);border-radius:16px;padding:2rem;border:1px solid var(--border);position:sticky;top:80px}
-.about-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--bg3),var(--sand));display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--earth);margin-bottom:1.2rem;border:2px solid var(--sand)}
+.about-card{background:var(--bg2);border-radius:16px;padding:2rem;border:1px solid var(--border);position:sticky;top:80px;box-shadow:0 14px 30px rgba(34,30,22,.04)}
+.about-avatar{width:96px;height:96px;border-radius:50%;margin-bottom:1.2rem;border:2px solid var(--sand);overflow:hidden;background:var(--bg3)}
+.about-avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;display:block}
 .about-name{font-family:var(--sans);font-size:1.22rem;font-weight:700;color:var(--ink);margin-bottom:.22rem;letter-spacing:.01em;line-height:1.35;font-variant-numeric:tabular-nums}
 .about-sub{font-family:var(--sans);font-size:.9rem;color:var(--ink2);margin-bottom:1.2rem;font-weight:600;letter-spacing:.01em;font-variant-numeric:tabular-nums}
 .about-meta{display:flex;flex-direction:column;gap:.55rem}
 .about-meta-row{display:flex;align-items:flex-start;gap:.7rem;font-size:.82rem;color:var(--ink2)}
 .about-meta-icon{width:20px;flex-shrink:0;color:var(--sage);font-size:.9rem;text-align:center}
-.about-prose p{font-size:1rem;color:var(--ink);line-height:1.92;font-weight:400;margin-bottom:1rem}
+.about-prose p{font-size:1rem;color:var(--ink2);line-height:1.9;font-weight:400;margin-bottom:1rem}
 .about-features{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.5rem}
 .afeature{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.1rem;transition:border-color .2s}
 .afeature:hover{border-color:var(--sage)}
@@ -146,18 +147,19 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 .exp-panel.active{display:block;opacity:1;animation:panelFade .3s ease}
 @keyframes panelFade{from{opacity:0}to{opacity:1}}
 .tl-list{position:relative;padding-left:1.8rem}
-.tl-list::before{content:'';position:absolute;left:6px;top:6px;bottom:0;width:1.5px;background:var(--border)}
-.tl-item{position:relative;margin-bottom:2.2rem}
-.tl-dot{position:absolute;left:-1.8rem;top:4px;width:14px;height:14px;border-radius:50%;background:var(--white);border:2px solid var(--sage);transition:background .2s}
+.tl-list::before{content:'';position:absolute;left:9px;top:14px;bottom:14px;width:1.5px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:1rem;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1rem 1rem 1rem 1.25rem}
+.tl-dot{position:absolute;left:-1.65rem;top:1rem;width:14px;height:14px;border-radius:50%;background:var(--white);border:2px solid var(--sage);transition:background .2s}
 .tl-item:hover .tl-dot{background:var(--sage)}
-.tl-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.4rem;margin-bottom:.2rem}
-.tl-role{font-size:1rem;font-weight:600;color:var(--ink)}
-.tl-badge{font-size:.72rem;padding:.25rem .8rem;border-radius:100px;background:var(--bg3);color:var(--earth);font-weight:500}
-.tl-org{font-size:.85rem;color:var(--sage);font-weight:500;margin-bottom:.6rem}
+.tl-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.4rem;margin-bottom:.35rem}
+.tl-role{font-size:1rem;font-weight:700;color:var(--ink);font-family:var(--sans)}
+.tl-badge{font-size:.72rem;padding:.25rem .8rem;border-radius:100px;background:var(--bg3);color:var(--earth);font-weight:600}
+.tl-badge.muted{background:var(--bg2);color:var(--muted)}
+.tl-org{font-size:.85rem;color:var(--sage);font-weight:600;margin-bottom:.6rem;font-family:var(--sans)}
 .tl-list-items{list-style:none;display:flex;flex-direction:column;gap:.4rem}
-.tl-list-items li{font-size:.85rem;color:var(--ink2);line-height:1.65;padding-left:1rem;position:relative;font-weight:300}
+.tl-list-items li{font-size:.86rem;color:var(--ink2);line-height:1.7;padding-left:1rem;position:relative;font-weight:400;font-family:var(--sans)}
 .tl-list-items li::before{content:'—';position:absolute;left:0;color:var(--sand)}
-.tl-list-items strong{color:var(--ink);font-weight:500}
+.tl-list-items strong{color:var(--ink);font-weight:600}
 
 /* ── PROJECTS ── */
 #projects{padding:6rem 0;background:var(--white)}
@@ -175,11 +177,11 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 .carousel-wrap{position:relative}
 .competition-carousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:.4rem .2rem 1rem;scrollbar-width:none;outline:none}
 .competition-carousel::-webkit-scrollbar{display:none}
-.competition-card{flex:0 0 320px;height:460px;border:1px solid var(--border);border-radius:8px;background:var(--white);overflow:hidden;scroll-snap-align:start;text-decoration:none;color:inherit;box-shadow:0 12px 34px rgba(34,30,22,.06);transition:transform .35s ease,opacity .35s ease,border-color .25s,box-shadow .25s}
+.competition-card{flex:0 0 320px;height:460px;border:1px solid var(--border);border-radius:8px;background:var(--white);overflow:hidden;scroll-snap-align:start;text-decoration:none;color:inherit;box-shadow:0 12px 34px rgba(34,30,22,.06);transition:transform .35s ease,opacity .35s ease,border-color .25s,box-shadow .25s;content-visibility:auto;contain-intrinsic-size:460px 320px}
 .competition-card:hover,.competition-card:focus-visible{transform:translateY(-5px);border-color:var(--sand);box-shadow:0 18px 46px rgba(34,30,22,.1);outline:none}
 .competition-card.is-filtered{opacity:.22;transform:scale(.95);pointer-events:none}
 .competition-media{height:50%;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--white)}
-.competition-media img{width:100%;height:100%;object-fit:cover}
+.competition-media img{width:100%;height:100%;object-fit:cover;display:block}
 .competition-monogram{font-family:var(--serif);font-size:3.2rem;font-weight:700;color:rgba(255,253,249,.82)}
 .competition-poster{width:100%;height:100%;padding:1.15rem 1.05rem;display:flex;flex-direction:column;justify-content:space-between;color:var(--white);background:var(--card-gradient)}
 .competition-poster-kicker{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,253,249,.82)}
@@ -233,37 +235,43 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 
 /* ── SKILLS ── */
 #skills{padding:6rem 0;background:var(--white)}
-.skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem}
-.skillcard{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.25rem 1.05rem;transition:border-color .2s,transform .2s}
-.skillcard:hover{border-color:var(--sand);transform:translateY(-2px)}
-.skill-icon{font-size:1.1rem;margin-bottom:.5rem;opacity:.8}
-.skill-cat{font-family:var(--serif);font-size:1.08rem;font-weight:700;color:var(--ink);margin-bottom:.86rem}
-.skill-list{list-style:none;display:flex;flex-direction:column;gap:.18rem}
-.skill-item{display:flex;align-items:flex-start;justify-content:space-between;gap:.7rem;padding:.6rem 0;border-bottom:1px dashed var(--border)}
-.skill-item:last-child{border-bottom:none}
-.skill-name{position:relative;padding-left:.95rem;font-size:.95rem;color:var(--ink2);font-weight:500;line-height:1.5}
-.skill-name::before{content:'';position:absolute;left:0;top:.58rem;width:6px;height:6px;border-radius:50%;background:var(--sage)}
-.skill-level{font-size:.76rem;color:var(--muted);font-weight:700;white-space:nowrap;letter-spacing:.02em}
-.certs-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
-.cert-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.2rem}
-.cert-title{font-size:.83rem;font-weight:600;color:var(--ink);margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}
-.cert-pills{display:flex;flex-wrap:wrap;gap:.4rem}
-.cert-pill{font-size:.7rem;padding:.22rem .65rem;border-radius:100px;background:rgba(107,144,112,.1);color:var(--sage-d);font-weight:500}
-.cert-pill.earth{background:rgba(160,112,74,.1);color:var(--earth)}
-.cert-pill.muted{background:var(--bg3);color:var(--muted)}
+.skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.skillcard{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:1.2rem;transition:border-color .2s,transform .2s,box-shadow .2s}
+.skillcard:hover{border-color:var(--sand);transform:translateY(-2px);box-shadow:0 10px 22px rgba(34,30,22,.05)}
+.skill-head{display:flex;align-items:center;gap:.55rem;margin-bottom:.8rem}
+.skill-icon{font-size:1rem}
+.skill-cat{font-family:var(--serif);font-size:1.02rem;font-weight:700;color:var(--ink)}
+.skill-list{list-style:none;display:flex;flex-direction:column;gap:.46rem}
+.skill-item{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.6rem;padding:.6rem .7rem;border:1px solid var(--border);border-radius:10px;background:var(--white);min-height:78px}
+.skill-main{min-width:0;display:flex;flex-direction:column;gap:.3rem}
+.skill-name{font-size:.9rem;color:var(--ink2);font-weight:500;line-height:1.4;min-height:2.5em;display:flex;align-items:center}
+.skill-meter{height:5px;background:var(--bg3);border-radius:100px;overflow:hidden;width:100%}
+.skill-fill{display:block;height:100%;border-radius:100px;background:var(--sage)}
+.skill-fill.mid{width:60%}
+.skill-fill.adv{width:85%}
+.skill-level{font-size:.72rem;font-weight:700;white-space:nowrap;letter-spacing:.02em;border-radius:999px;padding:.2rem .5rem;align-self:flex-start}
+.skill-level.adv{background:rgba(107,144,112,.16);color:var(--sage-d)}
+.skill-level.mid{background:rgba(160,112,74,.16);color:var(--earth)}
+.certs-row{display:grid;grid-template-columns:2fr 1fr;gap:1rem;margin-top:1rem}
+.cert-card{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:1.2rem}
+.cert-title{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}
+.cert-pills{display:flex;flex-wrap:wrap;gap:.45rem}
+.cert-pill{font-size:.75rem;padding:.26rem .68rem;border-radius:100px;background:rgba(107,144,112,.12);color:var(--sage-d);font-weight:500}
+.cert-pill.earth{background:rgba(160,112,74,.12);color:var(--earth)}
+.cert-pill.muted{background:var(--bg3);color:var(--ink2)}
 
 /* ── CONTACT ── */
 #contact{padding:6rem 0;background:var(--bg2)}
-.contact-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3.2rem;align-items:start}
+.contact-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2.4rem;align-items:start}
 .contact-copy{max-width:540px}
-.contact-lead{font-family:var(--serif);font-size:clamp(2rem,4vw,3.15rem);font-weight:700;line-height:1.14;color:var(--ink);margin-bottom:1rem;letter-spacing:-.02em}
-.contact-lead em{font-style:italic;color:var(--sage)}
-.contact-sub{font-size:1.02rem;color:var(--ink2);line-height:1.74;font-weight:400;margin-bottom:2.1rem}
+.contact-lead{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.14;color:var(--ink);margin-bottom:1rem;letter-spacing:-.02em}
+.contact-lead em{font-style:normal;color:inherit}
+.contact-sub{font-size:1.02rem;color:var(--ink2);line-height:1.74;font-weight:400;margin-bottom:1.6rem}
 .contact-links{display:flex;flex-direction:column;gap:.95rem}
 .contact-link{display:flex;align-items:center;gap:.9rem;text-decoration:none;color:var(--ink2);font-size:1rem;font-weight:500;padding:.62rem .75rem;border-radius:12px;border:1px solid transparent;transition:all .2s}
 .contact-link:hover{color:var(--sage-d);border-color:var(--border);background:var(--white)}
 .contact-icon{width:44px;height:44px;border-radius:12px;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.cf{display:flex;flex-direction:column;gap:1rem}
+.cf{display:flex;flex-direction:column;gap:1rem;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.1rem}
 .cf label{font-size:.76rem;font-weight:700;color:var(--ink2);letter-spacing:.08em;display:block;margin-bottom:.36rem;text-transform:uppercase}
 .cf input,.cf textarea{width:100%;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:.92rem 1rem;color:var(--ink);font-family:var(--sans);font-size:1.02rem;outline:none;transition:border-color .2s,box-shadow .2s;resize:none}
 .cf input::placeholder,.cf textarea::placeholder{color:var(--muted)}
@@ -353,11 +361,10 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
         <div class="hero-btns">
           <a href="#projects" class="btn-fill">瀏覽專案 →</a>
           <a href="#contact" class="btn-ghost">與我聯繫</a>
-          <a href="/assets/resume.pdf" class="btn-outline" target="_blank" rel="noopener">下載履歷 PDF ↓</a>
         </div>
       </div>
       <div class="hero-avatar-wrap">
-        <img id="hero-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23EDE6D8'/%3E%3Cstop offset='100%25' stop-color='%23F4EFE6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23g)'/%3E%3Ccircle cx='200' cy='152' r='58' fill='%23D8CCB7'/%3E%3Cpath d='M92 325c14-64 55-97 108-97s94 33 108 97' fill='%23D8CCB7'/%3E%3Ctext x='200' y='366' text-anchor='middle' font-family='Georgia,serif' font-size='32' fill='%236B9070'%3EHua%3C/text%3E%3C/svg%3E" alt="游欣樺頭像"/>
+        <img id="hero-avatar" src="assets/images/hero-avatar.jpg" alt="游欣樺頭像"/>
       </div>
     </div>
     <div class="hero-stats">
@@ -374,7 +381,7 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
   <div class="section-wrap">
     <div class="about-grid reveal">
       <div class="about-card">
-        <div class="about-avatar">游</div>
+        <div class="about-avatar"><img src="assets/images/hero-avatar.jpg" alt="游欣樺個人照"></div>
         <div class="about-name">游欣樺 Hsin-Hua Yu</div>
         <div class="about-sub">跨域產品人 × 人資專家</div>
         <div class="about-meta">
@@ -390,7 +397,8 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
         <h2 class="sec-title">關於我</h2>
         <div class="sec-rule"></div>
         <div class="about-prose">
-          <p>我是 Hua，財金系出身，但數字從來不是終點。<br>好奇心帶我走進人資、組織發展又走進產品思維。<br>每一段都在問同一件事：怎麼讓身邊的人好過一點？<br>開發工具也好，設計流程也好，<br>提出一個方案也好，對我來說都是在解決人的問題。<br>我相信每一次真誠的溝通，都能讓合作走得更遠。</p>
+          <p>我是 Hua，財金系出身，但數字從來不是終點。好奇心帶我走進人資、組織發展，又走進產品思維。每一段都在問同一件事：怎麼讓身邊的人好過一點？</p>
+          <p>開發工具也好，設計流程也好，提出一個方案也好，對我來說都是在解決人的問題。我相信每一次真誠的溝通，都能讓合作走得更遠。</p>
           <p>"Not all of us can do great things. But we can do small things with great love." — Mother Teresa</p>
         </div>
         <div class="about-features">
@@ -424,8 +432,8 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
             <div class="tl-head"><span class="tl-role">產品部實習生</span><span class="tl-badge">2026.03 — 至今</span></div>
             <div class="tl-org">艾邁格股份有限公司（IMAG）· 台北</div>
             <ul class="tl-list-items">
-              <li>規劃 SaaS 平台 Social War Room QA 測試，設計涵蓋 9 大模組約 <strong>50 個測試案例</strong></li>
-              <li>獨立撰寫並管理 Linear Bug Issues，問題分級追蹤至 4/30 上線驗收</li>
+              <li>規劃 SaaS 平台 Social War Room QA 測試，設計涵蓋 <strong>9</strong> 大模組約 <strong>50 個測試案例</strong></li>
+              <li>獨立撰寫並管理 Linear Bug Issues，問題分級追蹤至 <strong>4/30</strong> 上線驗收</li>
               <li>主導 Asana → Linear Issue 遷移，整合留言與附件確保資訊不流失</li>
               <li>針對 FriendPass 進行潛客開發，建立 <strong>60 筆</strong>目標客戶名單</li>
             </ul>
@@ -442,17 +450,17 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">人力資源助理</span><span class="tl-badge" style="background:var(--bg2);color:var(--muted)">2025.12 — 2026.04</span></div>
+            <div class="tl-head"><span class="tl-role">人力資源助理</span><span class="tl-badge muted">2025.12 — 2026.04</span></div>
             <div class="tl-org">成鼎電工實業有限公司 · 台北</div>
             <ul class="tl-list-items">
-              <li>獨立負責 20 場以上線上面試，旁聽逾 50 場；建立結構化面試流程</li>
-              <li>修訂 10 份以上內部管理規章；建立標準化入職流程</li>
-              <li>規劃並主持 4 場員工教育訓練，其中 1 場擔任主講人</li>
+              <li>獨立負責 <strong>20 場以上</strong>線上面試，旁聽逾 <strong>50 場</strong>；建立結構化面試流程</li>
+              <li>修訂 <strong>10 份以上</strong>內部管理規章；建立標準化入職流程</li>
+              <li>規劃並主持 <strong>4 場</strong>員工教育訓練，其中 <strong>1 場</strong>擔任主講人</li>
             </ul>
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">營運暨財務雙軌輪調實習生</span><span class="tl-badge" style="background:var(--bg2);color:var(--muted)">2025.01 — 2025.12</span></div>
+            <div class="tl-head"><span class="tl-role">營運暨財務雙軌輪調實習生</span><span class="tl-badge muted">2025.01 — 2025.12</span></div>
             <div class="tl-org">艾邁格股份有限公司（IMAG） · 台北</div>
             <ul class="tl-list-items">
               <li>獨立開發財務小工具，顯著降低資料輸入錯誤率</li>
@@ -462,10 +470,10 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">財務長</span><span class="tl-badge" style="background:var(--bg2);color:var(--muted)">2024.05 — 2025.06</span></div>
+            <div class="tl-head"><span class="tl-role">財務長</span><span class="tl-badge muted">2024.05 — 2025.06</span></div>
             <div class="tl-org">國立臺北商業大學第 20 屆財務金融系學會</div>
             <ul class="tl-list-items">
-              <li>管理單學期逾 10 萬元公費現金，每月執行會計對帳確保帳務零誤差</li>
+              <li>管理單學期逾 <strong>10 萬元</strong>公費現金，每月執行會計對帳確保帳務零誤差</li>
               <li>主導系學會年度預算編列，整合跨部門資源配置</li>
             </ul>
           </div>
@@ -475,7 +483,7 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
         <div class="tl-list">
           <div class="tl-item">
             <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">人資小週末學員</span><span class="tl-badge" style="background:var(--bg2);color:var(--muted)">2026.02 — 至今</span></div>
+            <div class="tl-head"><span class="tl-role">人資小週末學員</span><span class="tl-badge muted">2026.02 — 至今</span></div>
             <div class="tl-org">人資小週末</div>
             <ul class="tl-list-items">
               <li>參與人資主題學習與職涯交流，補強招募、組織發展與職場溝通的實務視角</li>
@@ -484,7 +492,7 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">PM 組組員</span><span class="tl-badge" style="background:var(--bg2);color:var(--muted)">2026.04 — 至今</span></div>
+            <div class="tl-head"><span class="tl-role">PM 組組員</span><span class="tl-badge muted">2026.04 — 至今</span></div>
             <div class="tl-org">XChange</div>
             <ul class="tl-list-items">
               <li>參與產品管理組學習與專案討論，訓練需求拆解、使用者觀察與產品思維</li>
@@ -493,7 +501,7 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">人資組組員</span><span class="tl-badge" style="background:var(--bg2);color:var(--muted)">2025.08 — 至今</span></div>
+            <div class="tl-head"><span class="tl-role">人資組組員</span><span class="tl-badge muted">2025.08 — 至今</span></div>
             <div class="tl-org">起駛簡報表達教育協會</div>
             <ul class="tl-list-items">
               <li>負責跨部門溝通協調與進度追蹤，確保團隊資訊同步與合作方向一致。</li>
@@ -502,7 +510,7 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">財務組組員</span><span class="tl-badge" style="background:var(--bg2);color:var(--muted)">2024.07 — 2025.08</span></div>
+            <div class="tl-head"><span class="tl-role">財務組組員</span><span class="tl-badge muted">2024.07 — 2025.08</span></div>
             <div class="tl-org">起駛簡報表達教育協會 · 1 年 2 個月</div>
             <ul class="tl-list-items">
               <li>負責三場大型活動與日常營運單據稽核，確保約 <strong>NT$200,000</strong> 支出紀錄正確無誤。</li>
@@ -621,43 +629,39 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
     </div>
     <div class="reveal skills-grid">
       <div class="skillcard">
-        <div class="skill-icon">📊</div>
-        <div class="skill-cat">數據分析</div>
+        <div class="skill-head"><div class="skill-icon">📊</div><div class="skill-cat">數據分析</div></div>
         <ul class="skill-list">
-          <li class="skill-item"><span class="skill-name">Python（pandas, sklearn）</span><span class="skill-level">進階</span></li>
-          <li class="skill-item"><span class="skill-name">Power BI</span><span class="skill-level">進階</span></li>
-          <li class="skill-item"><span class="skill-name">R 語言</span><span class="skill-level">中階</span></li>
-          <li class="skill-item"><span class="skill-name">Excel / SQL</span><span class="skill-level">進階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">Python（pandas, sklearn）</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span><span class="skill-level adv">進階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">Power BI</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span><span class="skill-level adv">進階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">R 語言</span><span class="skill-meter"><span class="skill-fill mid"></span></span></span><span class="skill-level mid">中階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">Excel / SQL</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span><span class="skill-level adv">進階</span></li>
         </ul>
       </div>
       <div class="skillcard">
-        <div class="skill-icon">🤖</div>
-        <div class="skill-cat">AI 工具應用</div>
+        <div class="skill-head"><div class="skill-icon">🤖</div><div class="skill-cat">AI 工具應用</div></div>
         <ul class="skill-list">
-          <li class="skill-item"><span class="skill-name">ChatGPT / Claude</span><span class="skill-level">進階</span></li>
-          <li class="skill-item"><span class="skill-name">Gemini / Google AI Studio</span><span class="skill-level">進階</span></li>
-          <li class="skill-item"><span class="skill-name">Perplexity / NotebookLM</span><span class="skill-level">進階</span></li>
-          <li class="skill-item"><span class="skill-name">生成式 AI × 行政自動化</span><span class="skill-level">進階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">ChatGPT / Claude</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span><span class="skill-level adv">進階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">Gemini / Google AI Studio</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span><span class="skill-level adv">進階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">Perplexity / NotebookLM</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span><span class="skill-level adv">進階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">生成式 AI × 行政自動化</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span><span class="skill-level adv">進階</span></li>
         </ul>
       </div>
       <div class="skillcard">
-        <div class="skill-icon">🧠</div>
-        <div class="skill-cat">人資 & 組織發展</div>
+        <div class="skill-head"><div class="skill-icon">🧠</div><div class="skill-cat">人資 & 組織發展</div></div>
         <ul class="skill-list">
-          <li class="skill-item"><span class="skill-name">招募甄選 & SOP 建置</span><span class="skill-level">進階</span></li>
-          <li class="skill-item"><span class="skill-name">教育訓練設計 & 主持</span><span class="skill-level">進階</span></li>
-          <li class="skill-item"><span class="skill-name">ESG 政策規劃</span><span class="skill-level">中階</span></li>
-          <li class="skill-item"><span class="skill-name">團體動力引導 & 主動傾聽</span><span class="skill-level">進階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">招募甄選 & SOP 建置</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span><span class="skill-level adv">進階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">教育訓練設計 & 主持</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span><span class="skill-level adv">進階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">ESG 政策規劃</span><span class="skill-meter"><span class="skill-fill mid"></span></span></span><span class="skill-level mid">中階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">團體動力引導 & 主動傾聽</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span><span class="skill-level adv">進階</span></li>
         </ul>
       </div>
       <div class="skillcard">
-        <div class="skill-icon">📋</div>
-        <div class="skill-cat">專案管理</div>
+        <div class="skill-head"><div class="skill-icon">📋</div><div class="skill-cat">專案管理</div></div>
         <ul class="skill-list">
-          <li class="skill-item"><span class="skill-name">Linear / Asana</span><span class="skill-level">進階</span></li>
-          <li class="skill-item"><span class="skill-name">Notion</span><span class="skill-level">進階</span></li>
-          <li class="skill-item"><span class="skill-name">QA 測試規劃</span><span class="skill-level">進階</span></li>
-          <li class="skill-item"><span class="skill-name">計畫書撰寫申請</span><span class="skill-level">進階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">Linear / Asana</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span><span class="skill-level adv">進階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">Notion</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span><span class="skill-level adv">進階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">QA 測試規劃</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span><span class="skill-level adv">進階</span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">計畫書撰寫申請</span><span class="skill-meter"><span class="skill-fill adv"></span></span></span><span class="skill-level adv">進階</span></li>
         </ul>
       </div>
     </div>
@@ -665,18 +669,27 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
       <div class="cert-card">
         <div class="cert-title">📜 專業證照（14 張）</div>
         <div class="cert-pills">
-          <span class="cert-pill">證券商高級業務員</span>
+          <span class="cert-pill">證券商高級業務人員</span>
+          <span class="cert-pill">證券商業務人員</span>
           <span class="cert-pill">期貨商業務員</span>
-          <span class="cert-pill earth">ESG 永續發展基礎能力</span>
+          <span class="cert-pill">投資顧問事業業務員</span>
+          <span class="cert-pill">信託業業務人員</span>
+          <span class="cert-pill">銀行內部控制與內部稽核測驗</span>
+          <span class="cert-pill">金融市場常識與職業道德</span>
+          <span class="cert-pill">資產證券化</span>
+          <span class="cert-pill">人身保險業務員</span>
+          <span class="cert-pill">財產保險業務員</span>
+          <span class="cert-pill">債權委外催收人員專業能力測驗</span>
+          <span class="cert-pill earth">ESG 永續發展基礎能力測驗</span>
           <span class="cert-pill muted">Google 基礎數位行銷</span>
-          <span class="cert-pill muted">⋯ 等共 14 張</span>
+          <span class="cert-pill muted">Gemini Certified Faculty</span>
         </div>
       </div>
       <div class="cert-card">
         <div class="cert-title">🌐 語言能力</div>
         <div class="cert-pills">
           <span class="cert-pill">中文（母語）</span>
-          <span class="cert-pill earth">英文（流利）</span>
+          <span class="cert-pill earth">英文（中等）</span>
         </div>
       </div>
     </div>
@@ -689,7 +702,7 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
     <div class="contact-inner reveal">
       <div class="contact-copy">
         <p class="sec-eyebrow">Contact</p>
-        <p class="contact-lead">有想聊的，<br>歡迎<em>找我說話</em>。</p>
+        <p class="contact-lead">有想聊的，<br>歡迎找我說話。</p>
         <p class="contact-sub">對人資科技、組織發展、產品管理、ESG 相關的職缺或合作機會保持開放。<br>有任何想法，歡迎直接聯繫，我會盡快回覆。</p>
         <div class="contact-links">
           <a href="mailto:doratwotw@gmail.com" class="contact-link">
@@ -812,7 +825,7 @@ const categoryGradients={
   '培訓':'linear-gradient(160deg, #402A2A, #806040)',
   'default':'linear-gradient(160deg, #3A3530, #8A7A6A)'
 };
-const competitionData=[{"id":"2025-fintech-greenpay","title":"FinTech 金融服務校際創意競賽：GreenPay 永續信用卡","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["金融科技","永續信用卡","服務設計"],"summary":"以 GreenPay 永續信用卡為核心，將金融服務、消費回饋與永續行為連結，從企劃書、示意圖到簡報素材完整呈現產品設計流程。","sourceFolder":"04_競賽作品/01_FinTech競賽","coverImage":"competitions/assets/covers/2025-fintech-greenpay.png"},{"id":"2025-潛力種子盃-個股研究","title":"潛力種子盃個股研究競賽：我想要坐飛機隊","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["個股研究","估值模型","財務分析"],"summary":"以航空與大型企業個股研究為主軸，整理產業分析、公司概覽、投資風險、財務分析與估值方法，形成完整投資研究提案。","sourceFolder":"04_競賽作品/02_潛力種子盃","coverImage":"competitions/assets/covers/2025-潛力種子盃-個股研究.png"},{"id":"2025-ai金融科技-碳感未來","title":"AI 金融科技創新創意競賽：碳感未來","year":"2025","award":null,"awarded":false,"category":"AI","tags":["AI","金融科技","綠色轉型"],"summary":"「碳感未來：AI 引領綠色轉型」以 AI 應用連結金融科技與永續議題，呈現初審企劃書、團隊簡歷與完整提案資料。","sourceFolder":"04_競賽作品/03_AI金融科技競賽","coverImage":null},{"id":"2025-司法-ai個資風險","title":"司法相關競賽：AI 時代下個人資訊保障","year":"2025","award":null,"awarded":false,"category":"法律","tags":["司法","AI 風險","個資保障"],"summary":"聚焦 AI 時代下的個人資訊風險，從法律思辨、制度觀點與風險情境切入，訓練跨域議題分析與論述能力。","sourceFolder":"04_競賽作品/04_司法競賽","coverImage":null},{"id":"2026-永續生活實驗室","title":"ResQfood 拯救食物","year":"2026","award":null,"awarded":false,"category":"永續","tags":["永續創新","AI媒合","UX設計"],"summary":"以 AI 剩食即時媒合平台為主軸，結合探索地圖、店家列表、支付預約與 ESG 量化看板，回應剩食與小店行銷效率問題。","sourceFolder":"04_競賽作品/05_其他競賽","appIntro":"這個提案把 ResQfood 定位成一個兼顧使用者便利、店家營運效率與永續價值溝通的剩食平台。我在介面上特別強調「快速理解商品、快速完成預約、快速看見自己產生的影響」，希望把惜食從理念變成日常可持續使用的服務。","appScreens":[{"title":"探索地圖","caption":"首頁先用地圖建立附近可用資源的即時感，讓使用者一打開就能看到周邊有哪些店家、剩食種類與可預約時段，降低搜尋成本，也把平台的核心價值直接做成第一眼就能理解的體驗。"},{"title":"店家列表","caption":"列表模式補足地圖不容易比較的資訊層次，使用者可以更快速地比對店家距離、折扣幅度、餐點數量與評價狀態，讓決策從單純惜食理念延伸到實際購買時也足夠方便。"},{"title":"商品詳情","caption":"商品詳情頁聚焦在餐點內容、可取貨時間、數量限制與剩食說明，把常見的不確定感提前說清楚。這一頁的設計重點不是堆資訊，而是幫助使用者在短時間內建立信任並完成選擇。"},{"title":"支付預約","caption":"我把預約、付款與取貨流程整合在同一條路徑裡，目的是避免使用者在切換頁面時流失，也讓店家端更容易掌握預約數量。這段流程承接的是平台轉換率，所以介面上刻意壓低操作負擔。"},{"title":"個人惜食","caption":"個人頁把減碳、惜食次數與參與紀錄整理成可回顧的成果，讓永續不只是一次性的購買，而是能被累積、被看見、也能成為持續回來使用平台的動機。"},{"title":"商家管理","caption":"店家端不是只上架商品而已，而是把庫存管理、曝光安排與 AI 備料預測整合成一套後台思路。這讓 ResQfood 不只是一個消費者平台，也是一個能幫小型店家提升營運效率的工具。"}],"coverImage":null},{"id":"2025-拾拈溯木","title":"拾拈溯木：創意建構故事盒","year":"2025","award":null,"awarded":false,"category":"創業競賽","tags":["木育","募資構想","創業營運"],"summary":"以木育玩具與故事盒為核心，整合募資構想、U-start 計畫書、營運計畫與示範影片，呈現教育產品的創業落地路徑。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2025-模擬交易","title":"縱橫期海與投資模擬競賽","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["模擬交易","投資策略","心得報告"],"summary":"彙整大專院校模擬交易競賽與櫃買中心投資模擬心得，呈現交易紀律、策略復盤與市場判斷能力。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2024-少年頭家-雲林農穫","title":"全國少年頭家競賽：雲林農穫百貨園區","year":"2024","award":"全國前六強","awarded":true,"category":"創業競賽","tags":["商業企劃","地方創生","SWOT"],"summary":"以雲林在地農產與百貨園區構想為題，完成商業企劃、地方市場分析與落地方案，並進入全國前六強。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2024-新創之星-三隻雞腿排","title":"桃園新創之星 x 創天下：三隻雞腿排","year":"2024","award":null,"awarded":false,"category":"創業競賽","tags":["科技應用","創業構想","跨校合作"],"summary":"跨校團隊以科技應用組參與新創構想提案，從初賽構想書到創業構想書，訓練產品定位與商業模式表達。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2025-財務健康三明治","title":"財務健康三明治與行動支付研究","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["財務健康","行動支付","金融研究"],"summary":"聚焦財務健康、行動支付與金融服務提案，整合研究計畫、提案簡報與參考資料，呈現金融產品研究與溝通能力。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2024-新創盃","title":"知識共鳴 Chaptalk","year":"2024","award":"全國季軍","awarded":true,"category":"創業競賽","tags":["APP設計","商業企劃","UX"],"summary":"以書籍知識社群 APP 為核心，串連讀者、書商與實體書店，透過 AI 推薦與社群互動提升選書效率與閱讀轉化。","sourceFolder":"04_競賽作品/05_其他競賽","appVisual":"assets/chaptalk-preview.png","appIntro":"Chaptalk 的 App 設計不是單純把書籍資訊上線，而是希望把閱讀這件事重新做成一個更容易被分享、被探索、也能被轉化成實際購買與社群互動的服務。我在這裡練習的是，如何讓內容型產品同時兼顧使用者體驗、社群黏著與商業可行性。","appScreens":[{"title":"封面頁","caption":"封面頁先用書封主視覺、推薦語與清楚的功能定位建立第一眼辨識，讓使用者在很短時間內理解這不是一般的購書平台，而是一個把閱讀、分享與選書整理在一起的知識社群入口。"},{"title":"好書分享","caption":"好書分享頁把讀後心得、重點摘錄與互動回饋放在同一個場景中，讓內容不只是單向推薦，而是能被留言、被收藏、被延伸。這一頁的角色是把閱讀經驗轉成社群內容，提升平台的內容流動性。"},{"title":"分類搜尋","caption":"分類搜尋不是只做主題標籤，而是想處理選書時最常見的迷惘感，所以把使用情境、閱讀目的與主題分類一起整合進來，讓使用者可以從『我現在想解決什麼問題』去找到對應的書。"},{"title":"個人頁面","caption":"個人頁面把書單、偏好、分享紀錄與互動足跡整合成一個持續累積的閱讀輪廓，讓每一次收藏與分享都能回到個人的知識旅程裡，也為推薦與社群互動提供更穩定的基礎。"}],"coverImage":null},{"id":"2023-投資競賽","title":"龍華科大賽全國投資競賽","year":"2023","award":"優選","awarded":true,"category":"FinTech","tags":["投資","技術分析","基本面"],"summary":"以技術分析與基本面觀察進行模擬投資組合管理，透過交易心得與策略復盤展現市場時機判斷能力。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2022-辯論","title":"全校新生盃辯論比賽","year":"2022","award":"團體第一名","awarded":true,"category":"其他","tags":["辯論","邏輯思維","說服力"],"summary":"透過辯論訓練論點拆解、臨場回應與說服架構，這些能力延伸到 HR 面試、產品提案與商業簡報。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2025-r財金應用","title":"R 語言與多程式語言財經應用","year":"2025","award":null,"awarded":false,"category":"培訓","tags":["R","Python","財金計量"],"summary":"整理 R 語言、Python、統計學習、財金時間序列、選擇權評價與程式交易相關教材與程式碼，展現財金資料分析的系統化學習軌跡。","sourceFolder":"05_進修學習/01_R語言課程","coverImage":"competitions/assets/covers/2025-r財金應用.png"},{"id":"2025-記帳士","title":"記帳士備考與稅務會計學習","year":"2025","award":null,"awarded":false,"category":"培訓","tags":["記帳士","會計","稅務法規"],"summary":"收錄會計學概要、稅務法規、租稅申報實務與記帳相關法規模考教材，作為財會專業知識的補強紀錄。","sourceFolder":"05_進修學習/02_記帳士","coverImage":null},{"id":"2025-高潛力hr","title":"高潛力 HR 培訓計畫","year":"2025","award":null,"awarded":false,"category":"HR","tags":["HR","組織行為","組織發展"],"summary":"系統性人資培訓課程，涵蓋組織行為、領導與追隨、個人差異、激勵動機、衝突溝通與組織文化等主題。","sourceFolder":"05_進修學習/03_高潛力HR","coverImage":"competitions/assets/covers/2025-高潛力hr.png"},{"id":"2025-青年局ai職涯營","title":"青年局 AI 實戰職涯營","year":"2025","award":null,"awarded":false,"category":"培訓","tags":["AI","職涯","Vibe Coding"],"summary":"政府主辦 AI 職涯應用營隊，包含 AI 生成簡報、對話式自動化工作流、Vibe Coding 與「青年職涯焦慮舒緩 AI 聊天輔導員」Demo。","sourceFolder":"05_進修學習/04_青年局AI課","coverImage":null},{"id":"2026-茄芷袋-世代橋接設計","title":"茄芷袋世代橋接設計","year":"2026","award":null,"awarded":false,"category":"創業競賽","tags":["設計提案","地方創生","文化創新"],"summary":"以台南後壁菁寮俗女村為場域，重新定義茄芷袋的文化價值與市場語言，提出故事卡片、城市限定色與工法識別標籤三項設計方向。","sourceFolder":"04_競賽作品/05_其他競賽","appIntro":"這個案子雖然不是典型 App，但我仍然把它當成一個體驗設計題來整理。重點不是單張視覺漂不漂亮，而是如何透過資訊結構、故事入口與辨識系統，讓台北年輕人第一次接觸茄芷袋時就能理解它的文化背景、工藝價值與購買理由。","appScreens":[{"title":"故事卡片系統","caption":"故事卡片系統把製作者背景、地方記憶與工法資訊轉成更容易閱讀的內容單元，目的不是單純介紹商品，而是讓購買者在接觸商品前就先產生情感連結，理解自己帶走的是一段地方故事。"},{"title":"城市限定色系","caption":"城市限定色系嘗試把農村四季、土地感與地方景象翻成當代通路看得懂的色彩語言，讓原本帶有地方印象的工藝品，在進入選物店與年輕市場時仍然保有辨識度，同時看起來更接近日常使用情境。"},{"title":"工法識別標籤","caption":"工法識別標籤把複雜的手工流程濃縮成可視化符號，降低理解門檻，也讓消費者在短時間內看見手作價值。對我來說，這一塊設計的關鍵，是把『值得支持』轉成『我真的看得懂、也願意買』。"}],"coverImage":null},{"id":"2026-俗女手帖-app","title":"俗女手帖 App","year":"2026","award":null,"awarded":false,"category":"創業競賽","tags":["App企劃","UX設計","地方創生"],"summary":"以當代農村永續生態平台為概念，規劃首頁、俗女共創、配工匠、集章地圖、永續縫補與 AR 場景等功能，建立地方文化與數位互動的連結。","sourceFolder":"04_競賽作品/05_其他競賽","appVisual":"assets/suonv-app-overview.png","appIntro":"俗女手帖的設計重點，是把一次性的農村走訪轉化成可以持續參與的數位體驗。我把地方文化、工藝互動、任務集章與 AR 探索放進同一個產品架構裡，希望使用者不是看過就結束，而是能透過 App 逐步建立和地方的關係。","appScreens":[{"title":"首頁","caption":"首頁作為整個體驗的入口，整合活動資訊、地方故事與互動任務，讓使用者一進來就知道這不只是旅遊導覽，而是一個可以邊探索、邊參與、邊累積體驗的地方文化平台。"},{"title":"俗女共創","caption":"俗女共創頁把使用者從被動觀看者轉成參與者，鼓勵他們留下內容、回應地方議題或加入共創任務。這樣的設計是希望讓地方文化不只被展示，而是能和使用者之間產生互動與歸屬感。"},{"title":"配工匠","caption":"配工匠功能承接的是地方工藝的實際連結需求，透過更清楚的資訊呈現與媒合流程，讓使用者能理解不同工匠的專長，也讓技藝交流從『很有興趣』變成更有可能發生的合作或體驗。"},{"title":"集章地圖","caption":"集章地圖把原本分散的探索路線整理成可視化任務機制，讓走訪村落的過程更有節奏，也增加使用者持續完成任務的動機。它不只是地圖，而是把地方移動路徑設計成一種更有參與感的遊走體驗。"},{"title":"永續縫補","caption":"永續縫補把地方工藝與修補文化延伸進產品敘事裡，讓使用者不只停留在『看見』，而是開始理解維修、再利用與延長物件生命週期的價值，進一步把地方文化和永續生活方式串接起來。"},{"title":"AR 場景","caption":"AR 場景是我用來強化現地記憶點的一個設計想像，透過擴增實境把原本較抽象的文化內容變成更有沉浸感的現場互動，讓使用者在離開場域後，仍然記得這段體驗的特色與情緒。"}],"coverImage":null}];
+const competitionData=[{"id":"2025-fintech-greenpay","title":"FinTech 金融服務校際創意競賽：GreenPay 永續信用卡","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["金融科技","永續信用卡","服務設計"],"summary":"以 GreenPay 永續信用卡為核心，將金融服務、消費回饋與永續行為連結，從企劃書、示意圖到簡報素材完整呈現產品設計流程。","sourceFolder":"04_競賽作品/01_FinTech競賽","coverImage":"competitions/assets/covers/2025-fintech-greenpay.png"},{"id":"2025-潛力種子盃-個股研究","title":"潛力種子盃個股研究競賽：我想要坐飛機隊","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["個股研究","估值模型","財務分析"],"summary":"以航空與大型企業個股研究為主軸，整理產業分析、公司概覽、投資風險、財務分析與估值方法，形成完整投資研究提案。","sourceFolder":"04_競賽作品/02_潛力種子盃","coverImage":"competitions/assets/covers/2025-潛力種子盃-個股研究.png"},{"id":"2025-ai金融科技-碳感未來","title":"AI 金融科技創新創意競賽：碳感未來","year":"2025","award":null,"awarded":false,"category":"AI","tags":["AI","金融科技","綠色轉型"],"summary":"「碳感未來：AI 引領綠色轉型」以 AI 應用連結金融科技與永續議題，呈現初審企劃書、團隊簡歷與完整提案資料。","sourceFolder":"04_競賽作品/03_AI金融科技競賽","coverImage":null},{"id":"2025-司法-ai個資風險","title":"司法相關競賽：AI 時代下個人資訊保障","year":"2025","award":null,"awarded":false,"category":"法律","tags":["司法","AI 風險","個資保障"],"summary":"聚焦 AI 時代下的個人資訊風險，從法律思辨、制度觀點與風險情境切入，訓練跨域議題分析與論述能力。","sourceFolder":"04_競賽作品/04_司法競賽","coverImage":null},{"id":"2026-永續生活實驗室","title":"ResQfood 拯救食物","year":"2026","award":null,"awarded":false,"category":"永續","tags":["永續創新","AI媒合","UX設計"],"summary":"以 AI 剩食即時媒合平台為主軸，結合探索地圖、店家列表、支付預約與 ESG 量化看板，回應剩食與小店行銷效率問題。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":"competitions/assets/resqfood-composite.jpg"},{"id":"2025-拾拈溯木","title":"拾拈溯木：創意建構故事盒","year":"2025","award":null,"awarded":false,"category":"創業競賽","tags":["木育","募資構想","創業營運"],"summary":"以木育玩具與故事盒為核心，整合募資構想、U-start 計畫書、營運計畫與示範影片，呈現教育產品的創業落地路徑。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2025-模擬交易","title":"縱橫期海與投資模擬競賽","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["模擬交易","投資策略","心得報告"],"summary":"彙整大專院校模擬交易競賽與櫃買中心投資模擬心得，呈現交易紀律、策略復盤與市場判斷能力。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2024-少年頭家-雲林農穫","title":"全國少年頭家競賽：雲林農穫百貨園區","year":"2024","award":"全國前六強","awarded":true,"category":"創業競賽","tags":["商業企劃","地方創生","SWOT"],"summary":"以雲林在地農產與百貨園區構想為題，完成商業企劃、地方市場分析與落地方案，並進入全國前六強。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2024-新創之星-三隻雞腿排","title":"桃園新創之星 x 創天下：三隻雞腿排","year":"2024","award":null,"awarded":false,"category":"創業競賽","tags":["科技應用","創業構想","跨校合作"],"summary":"跨校團隊以科技應用組參與新創構想提案，從初賽構想書到創業構想書，訓練產品定位與商業模式表達。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2025-財務健康三明治","title":"財務健康三明治與行動支付研究","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["財務健康","行動支付","金融研究"],"summary":"聚焦財務健康、行動支付與金融服務提案，整合研究計畫、提案簡報與參考資料，呈現金融產品研究與溝通能力。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2024-新創盃","title":"知識共鳴 Chaptalk","year":"2024","award":"全國季軍","awarded":true,"category":"創業競賽","tags":["APP設計","商業企劃","UX"],"summary":"以書籍知識社群 APP 為核心，串連讀者、書商與實體書店，透過 AI 推薦與社群互動提升選書效率與閱讀轉化。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":"competitions/assets/chaptalk-preview.png"},{"id":"2023-投資競賽","title":"龍華科大賽全國投資競賽","year":"2023","award":"優選","awarded":true,"category":"FinTech","tags":["投資","技術分析","基本面"],"summary":"以技術分析與基本面觀察進行模擬投資組合管理，透過交易心得與策略復盤展現市場時機判斷能力。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2022-辯論","title":"全校新生盃辯論比賽","year":"2022","award":"團體第一名","awarded":true,"category":"其他","tags":["辯論","邏輯思維","說服力"],"summary":"透過辯論訓練論點拆解、臨場回應與說服架構，這些能力延伸到 HR 面試、產品提案與商業簡報。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2025-r財金應用","title":"R 語言與多程式語言財經應用","year":"2025","award":null,"awarded":false,"category":"培訓","tags":["R","Python","財金計量"],"summary":"整理 R 語言、Python、統計學習、財金時間序列、選擇權評價與程式交易相關教材與程式碼，展現財金資料分析的系統化學習軌跡。","sourceFolder":"05_進修學習/01_R語言課程","coverImage":"competitions/assets/covers/2025-r財金應用.png"},{"id":"2025-記帳士","title":"記帳士備考與稅務會計學習","year":"2025","award":null,"awarded":false,"category":"培訓","tags":["記帳士","會計","稅務法規"],"summary":"收錄會計學概要、稅務法規、租稅申報實務與記帳相關法規模考教材，作為財會專業知識的補強紀錄。","sourceFolder":"05_進修學習/02_記帳士","coverImage":null},{"id":"2025-高潛力hr","title":"高潛力 HR 培訓計畫","year":"2025","award":null,"awarded":false,"category":"HR","tags":["HR","組織行為","組織發展"],"summary":"系統性人資培訓課程，涵蓋組織行為、領導與追隨、個人差異、激勵動機、衝突溝通與組織文化等主題。","sourceFolder":"05_進修學習/03_高潛力HR","coverImage":"competitions/assets/covers/2025-高潛力hr.png"},{"id":"2025-青年局ai職涯營","title":"青年局 AI 實戰職涯營","year":"2025","award":null,"awarded":false,"category":"培訓","tags":["AI","職涯","Vibe Coding"],"summary":"政府主辦 AI 職涯應用營隊，包含 AI 生成簡報、對話式自動化工作流、Vibe Coding 與「青年職涯焦慮舒緩 AI 聊天輔導員」Demo。","sourceFolder":"05_進修學習/04_青年局AI課","coverImage":null},{"id":"2026-茄芷袋-世代橋接設計","title":"茄芷袋世代橋接設計","year":"2026","award":null,"awarded":false,"category":"創業競賽","tags":["設計提案","地方創生","文化創新"],"summary":"以台南後壁菁寮俗女村為場域，重新定義茄芷袋的文化價值與市場語言，提出故事卡片、城市限定色與工法識別標籤三項設計方向。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":"competitions/assets/jiaqidai-preview.svg"},{"id":"2026-俗女手帖-app","title":"俗女手帖 App","year":"2026","award":null,"awarded":false,"category":"創業競賽","tags":["App企劃","UX設計","地方創生"],"summary":"以當代農村永續生態平台為概念，規劃首頁、俗女共創、配工匠、集章地圖、永續縫補與 AR 場景等功能，建立地方文化與數位互動的連結。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":"competitions/assets/suonv-app-overview.png"}];
 const carouselRoot=document.querySelector('[data-carousel-root]');
 const carouselTrack=carouselRoot?.querySelector('.competition-carousel');
 const dotsWrap=carouselRoot?.querySelector('.carousel-dots');
@@ -823,6 +836,10 @@ const categoryRail=carouselRoot?.querySelector('.competition-category-rail');
 let activeFilter='all';
 let isPaused=false;
 let autoTimer=null;
+let dotsRaf=0;
+let isCarouselInView=false;
+let isPageVisible=!document.hidden;
+const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const groupOrder=['uiux','FinTech','創業競賽','AI','法律','永續','HR','培訓','其他'];
 const groupLabels={uiux:'UI/UX','FinTech':'FinTech','創業競賽':'創業競賽','AI':'AI','法律':'法律','永續':'永續','HR':'HR','培訓':'培訓','其他':'其他'};
@@ -879,7 +896,7 @@ function renderCompetitions(){
     const gradient=categoryGradients[item.category]||categoryGradients.default;
     const tags=item.tags.slice(0,3).map(tag=>`<span class="competition-tag">${tag}</span>`).join('');
     const media=item.coverImage
-      ? `<img src="${item.coverImage}" alt="${item.title}">`
+      ? `<img src="${item.coverImage}" alt="${item.title}" loading="lazy" decoding="async" fetchpriority="low">`
       : `<div class="competition-poster">
           <span class="competition-poster-kicker">${isUiUxProject(item)?'App 設計提案':item.category}</span>
           ${buildPosterTitle(item)}
@@ -914,7 +931,10 @@ function scrollToCard(index){
   const cards=activeCards();
   if(!cards.length)return;
   const target=cards[Math.max(0,Math.min(index,cards.length-1))];
-  carouselTrack.scrollTo({left:target.offsetLeft-carouselTrack.offsetLeft,behavior:'smooth'});
+  carouselTrack.scrollTo({
+    left:target.offsetLeft-carouselTrack.offsetLeft,
+    behavior:prefersReducedMotion?'auto':'smooth'
+  });
 }
 function currentIndex(){
   const width=cardWidth();
@@ -929,9 +949,10 @@ function applyCompetitionFilter(){
     const show=activeFilter==='all'||(activeFilter==='uiux' ? card.dataset.uiux==='true' : card.dataset.category===activeFilter);
     card.classList.toggle('is-filtered',!show);
   });
-  carouselTrack.scrollTo({left:0,behavior:'smooth'});
+  carouselTrack.scrollTo({left:0,behavior:prefersReducedMotion?'auto':'smooth'});
   renderDots();
   updateDots();
+  scheduleAuto();
 }
 function advanceCarousel(dir=1){
   const cards=activeCards();
@@ -939,9 +960,16 @@ function advanceCarousel(dir=1){
   const next=(currentIndex()+dir+cards.length)%cards.length;
   scrollToCard(next);
 }
-function startAuto(){
-  clearInterval(autoTimer);
-  autoTimer=setInterval(()=>{if(!isPaused)advanceCarousel(1)},4000);
+function canAutoPlay(){
+  return !prefersReducedMotion && isCarouselInView && isPageVisible && !isPaused && activeCards().length>1;
+}
+function scheduleAuto(){
+  clearTimeout(autoTimer);
+  if(!canAutoPlay())return;
+  autoTimer=setTimeout(()=>{
+    advanceCarousel(1);
+    scheduleAuto();
+  },4000);
 }
 carouselRoot?.querySelectorAll('.competition-filter').forEach(btn=>{
   btn.addEventListener('click',()=>{
@@ -968,17 +996,41 @@ pauseBtn?.addEventListener('click',()=>{
   isPaused=!isPaused;
   pauseBtn.textContent=isPaused?'播放':'暫停';
   pauseBtn.setAttribute('aria-pressed',String(isPaused));
+  scheduleAuto();
 });
-['mouseenter','focusin'].forEach(evt=>carouselRoot?.addEventListener(evt,()=>{isPaused=true}));
-['mouseleave','focusout'].forEach(evt=>carouselRoot?.addEventListener(evt,()=>{isPaused=pauseBtn?.getAttribute('aria-pressed')==='true'}));
+['mouseenter','focusin'].forEach(evt=>carouselRoot?.addEventListener(evt,()=>{
+  isPaused=true;
+  scheduleAuto();
+}));
+['mouseleave','focusout'].forEach(evt=>carouselRoot?.addEventListener(evt,()=>{
+  isPaused=pauseBtn?.getAttribute('aria-pressed')==='true';
+  scheduleAuto();
+}));
 carouselTrack?.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight'){e.preventDefault();advanceCarousel(1)}
   if(e.key==='ArrowLeft'){e.preventDefault();advanceCarousel(-1)}
 });
-carouselTrack?.addEventListener('scroll',()=>requestAnimationFrame(updateDots),{passive:true});
+carouselTrack?.addEventListener('scroll',()=>{
+  if(dotsRaf)return;
+  dotsRaf=requestAnimationFrame(()=>{
+    updateDots();
+    dotsRaf=0;
+  });
+},{passive:true});
+if(carouselRoot){
+  const carouselObserver=new IntersectionObserver(entries=>{
+    isCarouselInView=entries.some(entry=>entry.isIntersecting);
+    scheduleAuto();
+  },{threshold:0.25});
+  carouselObserver.observe(carouselRoot);
+}
+document.addEventListener('visibilitychange',()=>{
+  isPageVisible=!document.hidden;
+  scheduleAuto();
+});
 renderCompetitions();
 renderCategoryRail();
-startAuto();
+scheduleAuto();
 
 // Active nav
 const secs=document.querySelectorAll('section[id]');

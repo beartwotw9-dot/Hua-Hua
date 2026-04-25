@@ -21,8 +21,23 @@ function assetFromCompetitionPage(value){
   if(normalized.startsWith('assets/'))return normalized;
   return '';
 }
+function versionedAsset(url){
+  if(!url)return '';
+  const clean=url.split('?')[0];
+  let target='';
+  if(clean.startsWith('assets/')){
+    target=path.join(__dirname,clean);
+  }else if(clean.startsWith('competitions/assets/')){
+    target=path.join(root,clean);
+  }else{
+    return clean;
+  }
+  if(!fs.existsSync(target))return clean;
+  const stamp=Math.floor(fs.statSync(target).mtimeMs);
+  return clean+'?v='+stamp;
+}
 function fileUrlFromRoot(value){
-  return assetFromCompetitionPage(value);
+  return versionedAsset(assetFromCompetitionPage(value));
 }
 function publicCoverPath(item,coverImage){
   if(!coverImage)return null;
@@ -109,12 +124,17 @@ function deriveFocus(item){
 }
 function renderAppGallery(item){
   if(!item.appScreens||!item.appScreens.length)return '';
-  const visual=item.appVisual?'<div class="app-visual"><img src="'+esc(assetFromCompetitionPage(item.appVisual))+'" alt="'+esc(item.title)+' App 畫面"/></div>':'<div class="app-visual"><div class="app-visual-fallback"><strong>'+esc(item.title)+'</strong></div></div>';
+  const visualPath=versionedAsset(assetFromCompetitionPage(item.appVisual));
+  const visual=item.appVisual&&visualPath?'<div class="app-visual"><img src="'+esc(visualPath)+'" alt="'+esc(item.title)+' App 畫面" loading="eager" decoding="sync"/></div>':'<div class="app-visual"><div class="app-visual-fallback"><strong>'+esc(item.title)+'</strong></div></div>';
   const intro=item.appIntro?'<p class="app-intro">'+esc(item.appIntro)+'</p>':'';
-  const notes=item.appScreens.map(screen=>'<article class="app-note"><h3>'+esc(screen.title)+'</h3><p>'+esc(screen.caption||'介面重點整理。')+'</p></article>').join('');
+  const notes=item.appScreens.map((screen,index)=>{
+    const imagePath=versionedAsset(assetFromCompetitionPage(screen.image||''));
+    const image=imagePath?'<div class="app-note-media"><img src="'+esc(imagePath)+'" alt="'+esc(item.title)+' - '+esc(screen.title)+' 畫面" loading="'+(index<2?'eager':'lazy')+'" decoding="async"/></div>':'';
+    return '<article class="app-note">'+image+'<h3>'+esc(screen.title)+'</h3><p>'+esc(screen.caption||'介面重點整理。')+'</p></article>';
+  }).join('');
   return '<section><div class="wrap"><h2 class="section-title">App 設計</h2><div class="app-layout">'+visual+'<div class="app-copy">'+intro+'<div class="app-notes">'+notes+'</div></div></div></div></section>';
 }
-function updateIndex(data){if(!fs.existsSync(indexPath))return;let html=fs.readFileSync(indexPath,'utf8');const light=data.map(({files,filePatterns,spotlight,reflection,purpose,ideation,model,outcomes,focus,...item})=>item);html=html.replace(/const competitionData=\[[\s\S]*?\];\nconst carouselRoot=/,'const competitionData='+JSON.stringify(light)+';\nconst carouselRoot=');fs.writeFileSync(indexPath,html,'utf8')}
+function updateIndex(data){if(!fs.existsSync(indexPath))return;let html=fs.readFileSync(indexPath,'utf8');const light=data.map(({files,filePatterns,spotlight,reflection,purpose,ideation,model,outcomes,focus,appIntro,appScreens,appVisual,...item})=>item);html=html.replace(/const competitionData=\[[\s\S]*?\];\nconst carouselRoot=/,'const competitionData='+JSON.stringify(light)+';\nconst carouselRoot=');fs.writeFileSync(indexPath,html,'utf8')}
 const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
 const template=fs.readFileSync(templatePath,'utf8');
 manifest.competitions=manifest.competitions.map(item=>{
