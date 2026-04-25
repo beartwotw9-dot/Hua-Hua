@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>FinTech 金融服務校際創意競賽：GreenPay 永續信用卡 | 競賽作品集</title>
+<title>易綠卡 GreenPay 永續信用卡（FinTech 校際） | 競賽作品集</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
@@ -25,6 +25,8 @@ section{padding:4.5rem 2.5rem}
 .section-title{font-family:var(--serif);font-size:1.55rem;margin-bottom:1rem}
 .overview{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:start}
 .summary{color:var(--ink2);font-size:1rem;font-weight:300}.spotlight-list{margin-top:1.2rem;display:grid;gap:.45rem;list-style:none}.spotlight-list li{position:relative;padding-left:1rem;color:var(--ink2);font-size:.9rem}.spotlight-list li::before{content:"";position:absolute;left:0;top:.78rem;width:5px;height:5px;border-radius:50%;background:var(--sage)}
+.team-note{margin-top:.7rem;padding:.6rem .75rem;border:1px solid var(--border);background:var(--white);border-radius:8px;font-size:.84rem;color:var(--ink2);line-height:1.65}
+.team-note strong{color:var(--ink);font-weight:700}
 .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
 .meta-card,.story-card,.related-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem}
 .meta-label{font-size:.7rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
@@ -43,20 +45,26 @@ section{padding:4.5rem 2.5rem}
 .story-card h3{font-family:var(--serif);font-size:1.02rem;color:var(--ink);margin-bottom:.55rem}
 .story-card{display:flex;flex-direction:column}
 .story-card p{font-size:.9rem;color:var(--ink2);font-weight:300;line-height:1.86}
-.app-layout{display:grid;gap:1rem}
-.app-showcase{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:stretch}
-.app-visual{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem}
-.app-visual img{display:block;width:100%;max-height:460px;object-fit:cover;border-radius:6px;border:1px solid var(--border);background:var(--bg2)}
-.app-visual-fallback{aspect-ratio:16/10;border-radius:6px;border:1px solid var(--border);background:linear-gradient(135deg,var(--bg2),var(--white));display:grid;place-items:center;padding:1.5rem;text-align:center}
-.app-visual-fallback strong{font-family:var(--serif);font-size:1.5rem;color:var(--ink);line-height:1.25}
-.app-copy{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.15rem}
-.app-intro{font-size:.92rem;color:var(--ink2);font-weight:300;line-height:1.8;margin:0}
-.app-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
-.app-note{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:.9rem;display:flex;flex-direction:column}
-.app-note-media{margin-bottom:.58rem}
-.app-note-media img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px;border:1px solid var(--border);background:var(--bg2)}
-.app-note h3{font-family:var(--serif);font-size:1rem;color:var(--ink);margin-bottom:.3rem}
-.app-note p{font-size:.86rem;color:var(--ink2);font-weight:300;line-height:1.78}
+.app-intro-block{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem 1.1rem;margin-bottom:1rem}
+.app-intro{font-size:.92rem;color:var(--ink2);font-weight:300;line-height:1.82;margin:0}
+.app-carousel{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.8rem}
+.app-nav-btn{width:40px;height:40px;border-radius:999px;border:1px solid var(--border);background:var(--white);color:var(--ink);font-size:1.4rem;line-height:1;display:grid;place-items:center;cursor:pointer}
+.app-nav-btn:hover{border-color:var(--sand)}
+.app-track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:.1rem .1rem .35rem}
+.app-track::-webkit-scrollbar{display:none}
+.app-slide{flex:0 0 min(320px,76vw);scroll-snap-align:start;background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.app-phone{padding:1rem .95rem .75rem;background:var(--bg2);border-bottom:1px solid var(--border)}
+.app-notch{display:block;width:34%;height:10px;border-radius:999px;background:var(--sand);margin:0 auto .6rem}
+.app-shot{border-radius:26px;border:1px solid var(--sand);padding:.45rem;background:var(--white);overflow:hidden}
+.app-shot img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:20px;background:var(--bg3)}
+.app-shot-fallback{aspect-ratio:9/16;border-radius:20px;background:var(--bg3);display:grid;place-items:center;padding:1rem;text-align:center}
+.app-shot-fallback strong{font-family:var(--serif);color:var(--ink)}
+.app-slide-body{padding:.85rem .95rem 1rem}
+.app-slide-body h3{font-family:var(--serif);font-size:1rem;color:var(--ink);margin-bottom:.35rem}
+.app-slide-body p{font-size:.86rem;color:var(--ink2);font-weight:300;line-height:1.75}
+.app-dots{display:flex;justify-content:center;gap:.42rem;margin-top:.9rem}
+.app-dot{width:7px;height:7px;border-radius:50%;border:none;background:var(--sand);cursor:pointer}
+.app-dot.active{width:18px;border-radius:999px;background:var(--sage)}
 .related{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .related-card{text-decoration:none;color:inherit;transition:transform .2s,border-color .2s}
 .related-card:hover{transform:translateY(-2px);border-color:var(--sand)}
@@ -64,18 +72,53 @@ section{padding:4.5rem 2.5rem}
 .related-title{font-family:var(--serif);font-weight:700;margin:.25rem 0}
 .note{background:var(--bg2);border:1px dashed var(--sand);border-radius:8px;padding:1.1rem;color:var(--muted);font-size:.88rem}
 .small-link{font-family:var(--sans);border:1px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:100px;padding:.28rem .7rem;font-size:.72rem;text-decoration:none;cursor:pointer}
-@media(max-width:768px){nav{padding:0 1.25rem}.hero,section{padding-left:1.25rem;padding-right:1.25rem}.overview,.story-showcase,.story-grid,.app-layout,.app-showcase,.app-notes,.related{grid-template-columns:1fr}.meta-grid{grid-template-columns:1fr}}
+@media(max-width:768px){nav{padding:0 1.25rem}.hero,section{padding-left:1.25rem;padding-right:1.25rem}.overview,.story-showcase,.story-grid,.related{grid-template-columns:1fr}.meta-grid{grid-template-columns:1fr}.app-carousel{grid-template-columns:1fr}.app-nav-btn{display:none}.app-slide{flex-basis:82vw}}
 </style>
 </head>
 <body>
 <nav><a href="../index.html#hero" class="nav-logo">游欣樺</a><a class="back-link" href="../index.html#projects">← 返回</a></nav>
-<header class="hero"><div class="hero-inner"><p class="eyebrow">FinTech · 2025</p><h1>FinTech 金融服務校際創意競賽：GreenPay 永續信用卡</h1><div class="hero-meta"><span class="pill award">作品介紹</span><span class="pill">金融科技</span><span class="pill">永續信用卡</span><span class="pill">服務設計</span></div></div></header>
+<header class="hero"><div class="hero-inner"><p class="eyebrow">FinTech · 2025</p><h1>易綠卡 GreenPay 永續信用卡（FinTech 校際）</h1><div class="hero-meta"><span class="pill award">作品介紹</span><span class="pill">FinTech</span><span class="pill">ESG</span><span class="pill">永續信用卡</span><span class="pill">碳足跡</span></div></div></header>
 <main>
-<section><div class="wrap overview"><div><h2 class="section-title">Overview</h2><p class="summary">以 GreenPay 永續信用卡為核心，將金融服務、消費回饋與永續行為連結，從企劃書、示意圖到簡報素材完整呈現產品設計流程。</p><ul class="spotlight-list"><li>永續信用卡產品概念</li><li>金融服務使用者情境</li><li>企劃書與簡報完整迭代</li></ul></div><div class="meta-grid"><div class="meta-card"><div class="meta-label">Year</div><div class="meta-value">2025</div></div><div class="meta-card"><div class="meta-label">Category</div><div class="meta-value">FinTech</div></div><div class="meta-card"><div class="meta-label">Award</div><div class="meta-value">作品整理</div></div><div class="meta-card"><div class="meta-label">Focus</div><div class="meta-value">永續信用卡產品概念 / 金融服務使用者情境</div></div></div></div></section>
-<section><div class="wrap"><h2 class="section-title">作品介紹</h2><div class="story-lead"><p>以 GreenPay 永續信用卡為核心，將金融服務、消費回饋與永續行為連結，從企劃書、示意圖到簡報素材完整呈現產品設計流程。 這頁整理的是我在這個題目裡如何定義問題、形成提案、安排內容架構，以及最後想讓外部看見的核心價值。</p></div><div class="story-showcase"><div class="story-media"><img src="assets/covers/2025-fintech-greenpay.png?v=1777105956988" alt="FinTech 金融服務校際創意競賽：GreenPay 永續信用卡 作品畫面"/><p class="story-media-caption">精選作品畫面與主視覺整理。</p></div><article class="story-note"><h3>內容補充</h3><p>執行上，我先整理市場脈絡與使用情境，再把分析、提案與展示內容收束成同一條敘事線，讓 金融科技、永續信用卡、服務設計 不只停留在研究，而能被看成一個具體產品或服務構想。</p><ul class="spotlight-list"><li>永續信用卡產品概念</li><li>金融服務使用者情境</li><li>企劃書與簡報完整迭代</li></ul></article></div><div class="story-grid"><article class="story-card"><h3>目的</h3><p>這個作品希望把 金融科技、永續信用卡、服務設計 轉化成更容易被理解與採用的方案，讓評審能看見我如何用財金背景處理真實市場問題。</p></article><article class="story-card"><h3>發想</h3><p>發想來自我對金融產品使用情境的觀察：如果金融服務要真正被採用，除了專業性，還需要更清楚的使用者價值與體驗設計。</p></article><article class="story-card"><h3>核心設計</h3><p>核心設計聚焦在產品定位、使用流程、獲客邏輯與價值交換，並用 永續信用卡產品概念、金融服務使用者情境、企劃書與簡報完整迭代 支撐提案說服力。</p></article><article class="story-card"><h3>執行方式</h3><p>執行上，我先整理市場脈絡與使用情境，再把分析、提案與展示內容收束成同一條敘事線，讓 金融科技、永續信用卡、服務設計 不只停留在研究，而能被看成一個具體產品或服務構想。</p></article><article class="story-card"><h3>內容亮點</h3><p>這份作品的內容亮點主要集中在 永續信用卡產品概念、金融服務使用者情境、企劃書與簡報完整迭代，也因此能更完整地呈現我如何從主題理解一路走到企劃、設計或提案表達。</p></article><article class="story-card"><h3>成果</h3><p>成果上，這個作品讓我完成從研究、整理到表達的一整段流程，也成為我後續做提案與跨域整合的重要基礎。</p></article></div></div></section>
+<section><div class="wrap overview"><div><h2 class="section-title">Overview</h2><p class="summary">將碳足跡量化與點數回饋結合信用卡使用情境，讓日常消費轉化為可追蹤、可獎勵的減碳行動。</p><div class="team-note"><strong>團隊協作：</strong>龜蜜龜蜜團隊</div><ul class="spotlight-list"><li>永續信用卡產品概念</li><li>金融服務使用者情境</li><li>企劃書與簡報完整迭代</li></ul></div><div class="meta-grid"><div class="meta-card"><div class="meta-label">Year</div><div class="meta-value">2025</div></div><div class="meta-card"><div class="meta-label">Category</div><div class="meta-value">FinTech</div></div><div class="meta-card"><div class="meta-label">Award</div><div class="meta-value">作品整理</div></div><div class="meta-card"><div class="meta-label">Focus</div><div class="meta-value">永續信用卡產品概念 / 金融服務使用者情境</div></div></div></div></section>
+<section><div class="wrap"><h2 class="section-title">作品介紹</h2><div class="story-lead"><p>將碳足跡量化與點數回饋結合信用卡使用情境，讓日常消費轉化為可追蹤、可獎勵的減碳行動。 這個題目是團隊協作完成，成員包含：龜蜜龜蜜團隊。這頁整理的是我在這個題目裡如何定義問題、形成提案、安排內容架構，以及最後想讓外部看見的核心價值。</p></div><div class="story-showcase"><div class="story-media"><img src="assets/covers/2025-fintech-greenpay.png?v=1777105956988" alt="易綠卡 GreenPay 永續信用卡（FinTech 校際） 作品畫面"/><p class="story-media-caption">精選作品畫面與主視覺整理。</p></div><article class="story-note"><h3>內容補充</h3><p>建立綠色商家聯盟，串接 LINE 與銀行 App 的個人化永續報告、排行榜與好友挑戰，同時在銀行端建置 ESG 儀表板。</p><ul class="spotlight-list"><li>永續信用卡產品概念</li><li>金融服務使用者情境</li><li>企劃書與簡報完整迭代</li></ul></article></div><div class="story-grid"><article class="story-card"><h3>目的</h3><p>推出面向年輕族群的永續信用卡，將減碳行為嵌入日常消費決策，並讓銀行端可累積可揭露的 ESG 成果。</p></article><article class="story-card"><h3>發想</h3><p>永續行為若缺乏即時誘因難以長期維持。若能把減碳數據、回饋機制與社群互動合併，永續將從口號變成可持續的行為。</p></article><article class="story-card"><h3>核心設計</h3><p>每筆交易即時計算碳足跡，設計一般回饋與綠色點數雙軌制，綠色點數可兌換永續商品、樹苗或公益抵換。</p></article><article class="story-card"><h3>執行方式</h3><p>建立綠色商家聯盟，串接 LINE 與銀行 App 的個人化永續報告、排行榜與好友挑戰，同時在銀行端建置 ESG 儀表板。</p></article><article class="story-card"><h3>內容亮點</h3><p>把抽象環保行為轉成可量化、可比較、可分享的使用體驗，建立使用者、商家與銀行三方正循環。</p></article><article class="story-card"><h3>成果</h3><p>完成校際競賽提案並交付產品、商模與報告框架，具備落地為銀行內部創新專案的可行性。</p></article></div></div></section>
 
-<section><div class="wrap"><h2 class="section-title">Related</h2><div class="related"><a class="related-card" href="2025-%E6%BD%9B%E5%8A%9B%E7%A8%AE%E5%AD%90%E7%9B%83-%E5%80%8B%E8%82%A1%E7%A0%94%E7%A9%B6.html"><div class="related-year">2025 · FinTech</div><div class="related-title">潛力種子盃個股研究競賽：我想要坐飛機隊</div><span class="small-link">查看詳情 →</span></a><a class="related-card" href="2025-%E6%A8%A1%E6%93%AC%E4%BA%A4%E6%98%93.html"><div class="related-year">2025 · FinTech</div><div class="related-title">縱橫期海與投資模擬競賽</div><span class="small-link">查看詳情 →</span></a><a class="related-card" href="2025-%E8%B2%A1%E5%8B%99%E5%81%A5%E5%BA%B7%E4%B8%89%E6%98%8E%E6%B2%BB.html"><div class="related-year">2025 · FinTech</div><div class="related-title">財務健康三明治與行動支付研究</div><span class="small-link">查看詳情 →</span></a></div></div></section>
+<section><div class="wrap"><h2 class="section-title">Related</h2><div class="related"><a class="related-card" href="2025-%E8%B2%A1%E5%8B%99%E5%81%A5%E5%BA%B7%E4%B8%89%E6%98%8E%E6%B2%BB.html"><div class="related-year">2024 · FinTech</div><div class="related-title">財務健康三明治</div><span class="small-link">查看詳情 →</span></a><a class="related-card" href="2023-%E6%8A%95%E8%B3%87%E7%AB%B6%E8%B3%BD.html"><div class="related-year">2024 · FinTech</div><div class="related-title">櫃買中心投資模擬競賽心得</div><span class="small-link">查看詳情 →</span></a><a class="related-card" href="2025-%E6%A8%A1%E6%93%AC%E4%BA%A4%E6%98%93.html"><div class="related-year">2025 · FinTech</div><div class="related-title">縱橫期海 Trade like a pro 模擬交易心得</div><span class="small-link">查看詳情 →</span></a></div></div></section>
 </main>
-<script id="competition-data" type="application/json">{"id":"2025-fintech-greenpay","title":"FinTech 金融服務校際創意競賽：GreenPay 永續信用卡","category":"FinTech","year":"2025"}</script>
+<script id="competition-data" type="application/json">{"id":"2025-fintech-greenpay","title":"易綠卡 GreenPay 永續信用卡（FinTech 校際）","category":"FinTech","year":"2025"}</script>
+<script>
+document.querySelectorAll('[data-app-carousel]').forEach((carousel)=>{
+  const track=carousel.querySelector('.app-track');
+  const slides=[...track.querySelectorAll('.app-slide')];
+  const dotsWrap=carousel.parentElement.querySelector('.app-dots');
+  if(!slides.length||!dotsWrap)return;
+  const prevBtn=carousel.querySelector('.app-nav-btn.prev');
+  const nextBtn=carousel.querySelector('.app-nav-btn.next');
+  const dots=slides.map((_,index)=>{
+    const dot=document.createElement('button');
+    dot.type='button';
+    dot.className='app-dot';
+    dot.setAttribute('aria-label','切換到第 '+(index+1)+' 張');
+    dot.addEventListener('click',()=>track.scrollTo({left:slides[index].offsetLeft-track.offsetLeft,behavior:'smooth'}));
+    dotsWrap.appendChild(dot);
+    return dot;
+  });
+  const syncActive=()=>{
+    const midpoint=track.scrollLeft+track.clientWidth/2;
+    let activeIndex=0;
+    let minDist=Infinity;
+    slides.forEach((slide,index)=>{
+      const center=slide.offsetLeft+slide.clientWidth/2;
+      const dist=Math.abs(center-midpoint);
+      if(dist<minDist){minDist=dist;activeIndex=index;}
+    });
+    dots.forEach((dot,index)=>dot.classList.toggle('active',index===activeIndex));
+  };
+  const step=()=>slides[0]?.clientWidth+16||340;
+  prevBtn?.addEventListener('click',()=>track.scrollBy({left:-step(),behavior:'smooth'}));
+  nextBtn?.addEventListener('click',()=>track.scrollBy({left:step(),behavior:'smooth'}));
+  track.addEventListener('scroll',syncActive,{passive:true});
+  syncActive();
+});
+</script>
 </body>
 </html>

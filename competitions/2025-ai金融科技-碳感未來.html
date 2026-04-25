@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>AI 金融科技創新創意競賽：碳感未來 | 競賽作品集</title>
+<title>三隻小羊 碳感未來 AI 減碳 ERP（AI 金融科技） | 競賽作品集</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
@@ -25,6 +25,8 @@ section{padding:4.5rem 2.5rem}
 .section-title{font-family:var(--serif);font-size:1.55rem;margin-bottom:1rem}
 .overview{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:start}
 .summary{color:var(--ink2);font-size:1rem;font-weight:300}.spotlight-list{margin-top:1.2rem;display:grid;gap:.45rem;list-style:none}.spotlight-list li{position:relative;padding-left:1rem;color:var(--ink2);font-size:.9rem}.spotlight-list li::before{content:"";position:absolute;left:0;top:.78rem;width:5px;height:5px;border-radius:50%;background:var(--sage)}
+.team-note{margin-top:.7rem;padding:.6rem .75rem;border:1px solid var(--border);background:var(--white);border-radius:8px;font-size:.84rem;color:var(--ink2);line-height:1.65}
+.team-note strong{color:var(--ink);font-weight:700}
 .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
 .meta-card,.story-card,.related-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem}
 .meta-label{font-size:.7rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
@@ -43,20 +45,26 @@ section{padding:4.5rem 2.5rem}
 .story-card h3{font-family:var(--serif);font-size:1.02rem;color:var(--ink);margin-bottom:.55rem}
 .story-card{display:flex;flex-direction:column}
 .story-card p{font-size:.9rem;color:var(--ink2);font-weight:300;line-height:1.86}
-.app-layout{display:grid;gap:1rem}
-.app-showcase{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:stretch}
-.app-visual{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem}
-.app-visual img{display:block;width:100%;max-height:460px;object-fit:cover;border-radius:6px;border:1px solid var(--border);background:var(--bg2)}
-.app-visual-fallback{aspect-ratio:16/10;border-radius:6px;border:1px solid var(--border);background:linear-gradient(135deg,var(--bg2),var(--white));display:grid;place-items:center;padding:1.5rem;text-align:center}
-.app-visual-fallback strong{font-family:var(--serif);font-size:1.5rem;color:var(--ink);line-height:1.25}
-.app-copy{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.15rem}
-.app-intro{font-size:.92rem;color:var(--ink2);font-weight:300;line-height:1.8;margin:0}
-.app-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
-.app-note{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:.9rem;display:flex;flex-direction:column}
-.app-note-media{margin-bottom:.58rem}
-.app-note-media img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px;border:1px solid var(--border);background:var(--bg2)}
-.app-note h3{font-family:var(--serif);font-size:1rem;color:var(--ink);margin-bottom:.3rem}
-.app-note p{font-size:.86rem;color:var(--ink2);font-weight:300;line-height:1.78}
+.app-intro-block{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem 1.1rem;margin-bottom:1rem}
+.app-intro{font-size:.92rem;color:var(--ink2);font-weight:300;line-height:1.82;margin:0}
+.app-carousel{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.8rem}
+.app-nav-btn{width:40px;height:40px;border-radius:999px;border:1px solid var(--border);background:var(--white);color:var(--ink);font-size:1.4rem;line-height:1;display:grid;place-items:center;cursor:pointer}
+.app-nav-btn:hover{border-color:var(--sand)}
+.app-track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:.1rem .1rem .35rem}
+.app-track::-webkit-scrollbar{display:none}
+.app-slide{flex:0 0 min(320px,76vw);scroll-snap-align:start;background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.app-phone{padding:1rem .95rem .75rem;background:var(--bg2);border-bottom:1px solid var(--border)}
+.app-notch{display:block;width:34%;height:10px;border-radius:999px;background:var(--sand);margin:0 auto .6rem}
+.app-shot{border-radius:26px;border:1px solid var(--sand);padding:.45rem;background:var(--white);overflow:hidden}
+.app-shot img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:20px;background:var(--bg3)}
+.app-shot-fallback{aspect-ratio:9/16;border-radius:20px;background:var(--bg3);display:grid;place-items:center;padding:1rem;text-align:center}
+.app-shot-fallback strong{font-family:var(--serif);color:var(--ink)}
+.app-slide-body{padding:.85rem .95rem 1rem}
+.app-slide-body h3{font-family:var(--serif);font-size:1rem;color:var(--ink);margin-bottom:.35rem}
+.app-slide-body p{font-size:.86rem;color:var(--ink2);font-weight:300;line-height:1.75}
+.app-dots{display:flex;justify-content:center;gap:.42rem;margin-top:.9rem}
+.app-dot{width:7px;height:7px;border-radius:50%;border:none;background:var(--sand);cursor:pointer}
+.app-dot.active{width:18px;border-radius:999px;background:var(--sage)}
 .related{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .related-card{text-decoration:none;color:inherit;transition:transform .2s,border-color .2s}
 .related-card:hover{transform:translateY(-2px);border-color:var(--sand)}
@@ -64,18 +72,53 @@ section{padding:4.5rem 2.5rem}
 .related-title{font-family:var(--serif);font-weight:700;margin:.25rem 0}
 .note{background:var(--bg2);border:1px dashed var(--sand);border-radius:8px;padding:1.1rem;color:var(--muted);font-size:.88rem}
 .small-link{font-family:var(--sans);border:1px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:100px;padding:.28rem .7rem;font-size:.72rem;text-decoration:none;cursor:pointer}
-@media(max-width:768px){nav{padding:0 1.25rem}.hero,section{padding-left:1.25rem;padding-right:1.25rem}.overview,.story-showcase,.story-grid,.app-layout,.app-showcase,.app-notes,.related{grid-template-columns:1fr}.meta-grid{grid-template-columns:1fr}}
+@media(max-width:768px){nav{padding:0 1.25rem}.hero,section{padding-left:1.25rem;padding-right:1.25rem}.overview,.story-showcase,.story-grid,.related{grid-template-columns:1fr}.meta-grid{grid-template-columns:1fr}.app-carousel{grid-template-columns:1fr}.app-nav-btn{display:none}.app-slide{flex-basis:82vw}}
 </style>
 </head>
 <body>
 <nav><a href="../index.html#hero" class="nav-logo">游欣樺</a><a class="back-link" href="../index.html#projects">← 返回</a></nav>
-<header class="hero"><div class="hero-inner"><p class="eyebrow">AI · 2025</p><h1>AI 金融科技創新創意競賽：碳感未來</h1><div class="hero-meta"><span class="pill award">作品介紹</span><span class="pill">AI</span><span class="pill">金融科技</span><span class="pill">綠色轉型</span></div></div></header>
+<header class="hero"><div class="hero-inner"><p class="eyebrow">AI · 2025</p><h1>三隻小羊 碳感未來 AI 減碳 ERP（AI 金融科技）</h1><div class="hero-meta"><span class="pill award">作品介紹</span><span class="pill">AI</span><span class="pill">ERP</span><span class="pill">碳盤查</span><span class="pill">綠色金融</span></div></div></header>
 <main>
-<section><div class="wrap overview"><div><h2 class="section-title">Overview</h2><p class="summary">「碳感未來：AI 引領綠色轉型」以 AI 應用連結金融科技與永續議題，呈現初審企劃書、團隊簡歷與完整提案資料。</p><ul class="spotlight-list"><li>AI × 綠色金融</li><li>碳管理情境設計</li><li>競賽企劃書撰寫</li></ul></div><div class="meta-grid"><div class="meta-card"><div class="meta-label">Year</div><div class="meta-value">2025</div></div><div class="meta-card"><div class="meta-label">Category</div><div class="meta-value">AI</div></div><div class="meta-card"><div class="meta-label">Award</div><div class="meta-value">作品整理</div></div><div class="meta-card"><div class="meta-label">Focus</div><div class="meta-value">AI × 綠色金融 / 碳管理情境設計</div></div></div></div></section>
-<section><div class="wrap"><h2 class="section-title">作品介紹</h2><div class="story-lead"><p>「碳感未來：AI 引領綠色轉型」以 AI 應用連結金融科技與永續議題，呈現初審企劃書、團隊簡歷與完整提案資料。 這頁整理的是我在這個題目裡如何定義問題、形成提案、安排內容架構，以及最後想讓外部看見的核心價值。</p></div><div class="story-showcase"><article class="story-note"><h3>內容補充</h3><p>執行方式上，我先定義使用場景與需求，再決定 AI 要扮演什麼角色，並把技術、流程與價值說明整理成同一個提案結構。</p><ul class="spotlight-list"><li>AI × 綠色金融</li><li>碳管理情境設計</li><li>競賽企劃書撰寫</li></ul></article></div><div class="story-grid"><article class="story-card"><h3>目的</h3><p>這個提案希望把 AI 技術放進真實應用場景，讓創新不只停留在工具展示，而是能回應明確問題與使用需求。</p></article><article class="story-card"><h3>發想</h3><p>發想從「AI 可以做什麼」轉成「哪個問題值得被解」，因此我先定義場景，再選擇技術如何介入。</p></article><article class="story-card"><h3>核心設計</h3><p>核心設計以問題場景、技術角色、資料流與使用者體驗為主軸，確保 AI 是解法的一部分，而不是附加亮點。</p></article><article class="story-card"><h3>執行方式</h3><p>執行方式上，我先定義使用場景與需求，再決定 AI 要扮演什麼角色，並把技術、流程與價值說明整理成同一個提案結構。</p></article><article class="story-card"><h3>內容亮點</h3><p>這份作品的內容亮點主要集中在 AI × 綠色金融、碳管理情境設計、競賽企劃書撰寫，也因此能更完整地呈現我如何從主題理解一路走到企劃、設計或提案表達。</p></article><article class="story-card"><h3>成果</h3><p>成果上，這個作品讓我完成從研究、整理到表達的一整段流程，也成為我後續做提案與跨域整合的重要基礎。</p></article></div></div></section>
+<section><div class="wrap overview"><div><h2 class="section-title">Overview</h2><p class="summary">將碳盤查模組嵌入中小企業 ERP，透過 AI 自動計算排放並連動綠色金融，提高減碳揭露與融資可得性。</p><div class="team-note"><strong>團隊協作：</strong>三隻小羊團隊</div><ul class="spotlight-list"><li>AI × 綠色金融</li><li>碳管理情境設計</li><li>競賽企劃書撰寫</li></ul></div><div class="meta-grid"><div class="meta-card"><div class="meta-label">Year</div><div class="meta-value">2025</div></div><div class="meta-card"><div class="meta-label">Category</div><div class="meta-value">AI</div></div><div class="meta-card"><div class="meta-label">Award</div><div class="meta-value">作品整理</div></div><div class="meta-card"><div class="meta-label">Focus</div><div class="meta-value">AI × 綠色金融 / 碳管理情境設計</div></div></div></div></section>
+<section><div class="wrap"><h2 class="section-title">作品介紹</h2><div class="story-lead"><p>將碳盤查模組嵌入中小企業 ERP，透過 AI 自動計算排放並連動綠色金融，提高減碳揭露與融資可得性。 這個題目是團隊協作完成，成員包含：三隻小羊團隊。這頁整理的是我在這個題目裡如何定義問題、形成提案、安排內容架構，以及最後想讓外部看見的核心價值。</p></div><div class="story-showcase"><article class="story-note"><h3>內容補充</h3><p>採盤查、分析、行動三步驟導入，與銀行及會計師合作提供認證等級報表，並採 SaaS 分級訂閱服務不同規模企業。</p><ul class="spotlight-list"><li>AI × 綠色金融</li><li>碳管理情境設計</li><li>競賽企劃書撰寫</li></ul></article></div><div class="story-grid"><article class="story-card"><h3>目的</h3><p>協助中小企業把減碳管理變成日常流程，降低人力與資料整合負擔，回應國際供應鏈與 ESG 揭露要求。</p></article><article class="story-card"><h3>發想</h3><p>CBAM 與 ESG 壓力提高，但中小企業在資源、人力、系統上常不足，碳資料與財務資料分散導致揭露品質不穩。</p></article><article class="story-card"><h3>核心設計</h3><p>AI 驅動 ERP 碳感模組，自動計算範疇一二三排放並輸出 GHG Protocol 報表，並連結銀行永續連動貸款方案。</p></article><article class="story-card"><h3>執行方式</h3><p>採盤查、分析、行動三步驟導入，與銀行及會計師合作提供認證等級報表，並採 SaaS 分級訂閱服務不同規模企業。</p></article><article class="story-card"><h3>內容亮點</h3><p>將碳數據與會計流程置於同一資料管線，避免重工與資訊落差；AI 持續學習可逐步提升減碳建議精準度。</p></article><article class="story-card"><h3>成果</h3><p>完成 AI 金融科技競賽提案，商業模式涵蓋訂閱、授信合作與顧問服務，具備可規模化的雙邊網絡潛力。</p></article></div></div></section>
 
-<section><div class="wrap"><h2 class="section-title">Related</h2><div class="related"><div class="note">尚無同分類作品。</div></div></div></section>
+<section><div class="wrap"><h2 class="section-title">Related</h2><div class="related"><a class="related-card" href="2025-line-pets.html"><div class="related-year">2025 · AI</div><div class="related-title">LINE PETs 情感連結新解方（LINE FRESH）</div><span class="small-link">查看詳情 →</span></a><a class="related-card" href="2026-edubot.html"><div class="related-year">2026 · AI</div><div class="related-title">EduBot 早療家庭行動系統（115 年度創新創業競賽）</div><span class="small-link">查看詳情 →</span></a></div></div></section>
 </main>
-<script id="competition-data" type="application/json">{"id":"2025-ai金融科技-碳感未來","title":"AI 金融科技創新創意競賽：碳感未來","category":"AI","year":"2025"}</script>
+<script id="competition-data" type="application/json">{"id":"2025-ai金融科技-碳感未來","title":"三隻小羊 碳感未來 AI 減碳 ERP（AI 金融科技）","category":"AI","year":"2025"}</script>
+<script>
+document.querySelectorAll('[data-app-carousel]').forEach((carousel)=>{
+  const track=carousel.querySelector('.app-track');
+  const slides=[...track.querySelectorAll('.app-slide')];
+  const dotsWrap=carousel.parentElement.querySelector('.app-dots');
+  if(!slides.length||!dotsWrap)return;
+  const prevBtn=carousel.querySelector('.app-nav-btn.prev');
+  const nextBtn=carousel.querySelector('.app-nav-btn.next');
+  const dots=slides.map((_,index)=>{
+    const dot=document.createElement('button');
+    dot.type='button';
+    dot.className='app-dot';
+    dot.setAttribute('aria-label','切換到第 '+(index+1)+' 張');
+    dot.addEventListener('click',()=>track.scrollTo({left:slides[index].offsetLeft-track.offsetLeft,behavior:'smooth'}));
+    dotsWrap.appendChild(dot);
+    return dot;
+  });
+  const syncActive=()=>{
+    const midpoint=track.scrollLeft+track.clientWidth/2;
+    let activeIndex=0;
+    let minDist=Infinity;
+    slides.forEach((slide,index)=>{
+      const center=slide.offsetLeft+slide.clientWidth/2;
+      const dist=Math.abs(center-midpoint);
+      if(dist<minDist){minDist=dist;activeIndex=index;}
+    });
+    dots.forEach((dot,index)=>dot.classList.toggle('active',index===activeIndex));
+  };
+  const step=()=>slides[0]?.clientWidth+16||340;
+  prevBtn?.addEventListener('click',()=>track.scrollBy({left:-step(),behavior:'smooth'}));
+  nextBtn?.addEventListener('click',()=>track.scrollBy({left:step(),behavior:'smooth'}));
+  track.addEventListener('scroll',syncActive,{passive:true});
+  syncActive();
+});
+</script>
 </body>
 </html>

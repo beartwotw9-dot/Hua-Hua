@@ -234,28 +234,28 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 .lead-sub{font-size:.75rem;color:var(--muted);line-height:1.5}
 
 /* ── SKILLS ── */
-#skills{padding:6rem 0;background:var(--white)}
-.skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
-.skillcard{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:1.25rem;transition:border-color .2s,transform .2s,box-shadow .2s}
+#skills{padding:5rem 0;background:var(--white)}
+.skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.skillcard{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1rem;transition:border-color .2s,transform .2s,box-shadow .2s}
 .skillcard:hover{border-color:var(--sand);transform:translateY(-2px);box-shadow:0 10px 22px rgba(34,30,22,.05)}
-.skill-head{display:flex;align-items:center;gap:.55rem;margin-bottom:.8rem}
-.skill-icon{font-size:1rem}
-.skill-cat{font-family:var(--serif);font-size:1.02rem;font-weight:700;color:var(--ink)}
-.skill-list{list-style:none;display:flex;flex-direction:column;gap:.62rem}
-.skill-item{display:grid;grid-template-columns:minmax(0,1fr);align-items:center;padding:.68rem .75rem .74rem;border:1px solid var(--border);border-radius:10px;background:var(--white);min-height:66px}
+.skill-head{display:flex;align-items:center;gap:.5rem;margin-bottom:.65rem}
+.skill-icon{font-size:.96rem}
+.skill-cat{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--ink)}
+.skill-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.skill-item{display:grid;grid-template-columns:minmax(0,1fr);align-items:center;padding:.55rem .7rem;border:1px solid var(--border);border-radius:10px;background:var(--white);min-height:52px}
 .skill-main{min-width:0;display:block}
-.skill-name{font-size:.95rem;color:var(--ink2);font-weight:600;line-height:1.4;display:flex;align-items:flex-start;gap:.45rem}
-.skill-name::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sage);margin-top:.42em;flex:0 0 7px}
+.skill-name{font-size:.85rem;color:var(--ink2);font-weight:600;line-height:1.38;display:flex;align-items:flex-start;gap:.42rem}
+.skill-name::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--sage);margin-top:.42em;flex:0 0 6px}
 .skill-meter{display:none}
 .skill-fill{display:none}
 .skill-level{display:none}
 .skill-level.adv{background:rgba(107,144,112,.16);color:var(--sage-d)}
 .skill-level.mid{background:rgba(160,112,74,.16);color:var(--earth)}
-.certs-row{display:grid;grid-template-columns:2fr 1fr;gap:1rem;margin-top:1rem}
-.cert-card{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:1.2rem}
-.cert-title{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}
-.cert-pills{display:flex;flex-wrap:wrap;gap:.45rem}
-.cert-pill{font-size:.75rem;padding:.26rem .68rem;border-radius:100px;background:rgba(107,144,112,.12);color:var(--sage-d);font-weight:500}
+.certs-row{display:grid;grid-template-columns:2fr 1fr;gap:.8rem;margin-top:.8rem}
+.cert-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1rem}
+.cert-title{font-size:.84rem;font-weight:700;color:var(--ink);margin-bottom:.65rem;display:flex;align-items:center;gap:.36rem}
+.cert-pills{display:flex;flex-wrap:wrap;gap:.38rem}
+.cert-pill{font-size:.68rem;padding:.22rem .58rem;border-radius:100px;background:rgba(107,144,112,.12);color:var(--sage-d);font-weight:500}
 .cert-pill.earth{background:rgba(160,112,74,.12);color:var(--earth)}
 .cert-pill.muted{background:var(--bg3);color:var(--ink2)}
 
@@ -269,7 +269,8 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 .contact-links{display:flex;flex-direction:column;gap:.95rem}
 .contact-link{display:flex;align-items:center;gap:.9rem;text-decoration:none;color:var(--ink2);font-size:1rem;font-weight:500;padding:.62rem .75rem;border-radius:12px;border:1px solid transparent;transition:all .2s}
 .contact-link:hover{color:var(--sage-d);border-color:var(--border);background:var(--white)}
-.contact-icon{width:44px;height:44px;border-radius:12px;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.contact-icon{width:42px;height:42px;border-radius:12px;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--ink2)}
+.contact-icon svg{width:18px;height:18px;display:block;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .cf{display:flex;flex-direction:column;gap:1rem;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.1rem}
 .cf label{font-size:.76rem;font-weight:700;color:var(--ink2);letter-spacing:.08em;display:block;margin-bottom:.36rem;text-transform:uppercase}
 .cf input,.cf textarea{width:100%;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:.92rem 1rem;color:var(--ink);font-family:var(--sans);font-size:1.02rem;outline:none;transition:border-color .2s,box-shadow .2s;resize:none}
@@ -367,7 +368,7 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
       </div>
     </div>
     <div class="hero-stats">
-      <div class="hstat"><span class="hstat-n">3.79</span><span class="hstat-l">GPA · 系排第四</span></div>
+      <div class="hstat"><span class="hstat-n">3.79</span><span class="hstat-l">GPA 3.79 / 4.0 · 系排第四</span></div>
       <div class="hstat"><span class="hstat-n">14</span><span class="hstat-l">專業證照</span></div>
       <div class="hstat"><span class="hstat-n">50+</span><span class="hstat-l">商業競賽場次</span></div>
       <div class="hstat"><span class="hstat-n">1,000+</span><span class="hstat-l">財務紀錄筆數</span></div>
@@ -705,10 +706,24 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
         <p class="contact-sub">對人資科技、組織發展、產品管理、ESG 相關的職缺或合作機會保持開放。<br>有任何想法，歡迎直接聯繫，我會盡快回覆。</p>
         <div class="contact-links">
           <a href="mailto:doratwotw@gmail.com" class="contact-link">
-            <div class="contact-icon">✉</div>doratwotw@gmail.com
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 7h18v10H3z"></path>
+                <path d="m4 8 8 6 8-6"></path>
+              </svg>
+            </div>
+            doratwotw@gmail.com
           </a>
           <a href="https://www.linkedin.com/in/hsin-hua-yu-a5337a2b5" target="_blank" rel="noopener" class="contact-link">
-            <div class="contact-icon">in</div>LinkedIn / 游欣樺
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 10v7"></path>
+                <path d="M7 7.5h.01"></path>
+                <path d="M12 17v-4a2.5 2.5 0 0 1 5 0v4"></path>
+                <path d="M12 10v7"></path>
+              </svg>
+            </div>
+            LinkedIn / 游欣樺
           </a>
         </div>
       </div>
@@ -824,7 +839,7 @@ const categoryGradients={
   '培訓':'linear-gradient(160deg, #402A2A, #806040)',
   'default':'linear-gradient(160deg, #3A3530, #8A7A6A)'
 };
-const competitionData=[{"id":"2025-fintech-greenpay","title":"FinTech 金融服務校際創意競賽：GreenPay 永續信用卡","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["金融科技","永續信用卡","服務設計"],"summary":"以 GreenPay 永續信用卡為核心，將金融服務、消費回饋與永續行為連結，從企劃書、示意圖到簡報素材完整呈現產品設計流程。","sourceFolder":"04_競賽作品/01_FinTech競賽","coverImage":"competitions/assets/covers/2025-fintech-greenpay.png"},{"id":"2025-潛力種子盃-個股研究","title":"潛力種子盃個股研究競賽：我想要坐飛機隊","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["個股研究","估值模型","財務分析"],"summary":"以航空與大型企業個股研究為主軸，整理產業分析、公司概覽、投資風險、財務分析與估值方法，形成完整投資研究提案。","sourceFolder":"04_競賽作品/02_潛力種子盃","coverImage":"competitions/assets/covers/2025-潛力種子盃-個股研究.png"},{"id":"2025-ai金融科技-碳感未來","title":"AI 金融科技創新創意競賽：碳感未來","year":"2025","award":null,"awarded":false,"category":"AI","tags":["AI","金融科技","綠色轉型"],"summary":"「碳感未來：AI 引領綠色轉型」以 AI 應用連結金融科技與永續議題，呈現初審企劃書、團隊簡歷與完整提案資料。","sourceFolder":"04_競賽作品/03_AI金融科技競賽","coverImage":null},{"id":"2025-司法-ai個資風險","title":"司法相關競賽：AI 時代下個人資訊保障","year":"2025","award":null,"awarded":false,"category":"法律","tags":["司法","AI 風險","個資保障"],"summary":"聚焦 AI 時代下的個人資訊風險，從法律思辨、制度觀點與風險情境切入，訓練跨域議題分析與論述能力。","sourceFolder":"04_競賽作品/04_司法競賽","coverImage":null},{"id":"2026-永續生活實驗室","title":"ResQfood 拯救食物","year":"2026","award":null,"awarded":false,"category":"永續","tags":["永續創新","AI媒合","UX設計"],"summary":"以 AI 剩食即時媒合平台為主軸，結合探索地圖、店家列表、支付預約與 ESG 量化看板，回應剩食與小店行銷效率問題。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":"competitions/assets/resqfood-composite.jpg"},{"id":"2025-拾拈溯木","title":"拾拈溯木：創意建構故事盒","year":"2025","award":null,"awarded":false,"category":"創業競賽","tags":["木育","募資構想","創業營運"],"summary":"以木育玩具與故事盒為核心，整合募資構想、U-start 計畫書、營運計畫與示範影片，呈現教育產品的創業落地路徑。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2025-模擬交易","title":"縱橫期海與投資模擬競賽","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["模擬交易","投資策略","心得報告"],"summary":"彙整大專院校模擬交易競賽與櫃買中心投資模擬心得，呈現交易紀律、策略復盤與市場判斷能力。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2024-少年頭家-雲林農穫","title":"全國少年頭家競賽：雲林農穫百貨園區","year":"2024","award":"全國前六強","awarded":true,"category":"創業競賽","tags":["商業企劃","地方創生","SWOT"],"summary":"以雲林在地農產與百貨園區構想為題，完成商業企劃、地方市場分析與落地方案，並進入全國前六強。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2024-新創之星-三隻雞腿排","title":"桃園新創之星 x 創天下：三隻雞腿排","year":"2024","award":null,"awarded":false,"category":"創業競賽","tags":["科技應用","創業構想","跨校合作"],"summary":"跨校團隊以科技應用組參與新創構想提案，從初賽構想書到創業構想書，訓練產品定位與商業模式表達。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2025-財務健康三明治","title":"財務健康三明治與行動支付研究","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["財務健康","行動支付","金融研究"],"summary":"聚焦財務健康、行動支付與金融服務提案，整合研究計畫、提案簡報與參考資料，呈現金融產品研究與溝通能力。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2024-新創盃","title":"知識共鳴 Chaptalk","year":"2024","award":"全國季軍","awarded":true,"category":"創業競賽","tags":["APP設計","商業企劃","UX"],"summary":"以書籍知識社群 APP 為核心，串連讀者、書商與實體書店，透過 AI 推薦與社群互動提升選書效率與閱讀轉化。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":"competitions/assets/chaptalk-preview.png"},{"id":"2023-投資競賽","title":"龍華科大賽全國投資競賽","year":"2023","award":"優選","awarded":true,"category":"FinTech","tags":["投資","技術分析","基本面"],"summary":"以技術分析與基本面觀察進行模擬投資組合管理，透過交易心得與策略復盤展現市場時機判斷能力。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2022-辯論","title":"全校新生盃辯論比賽","year":"2022","award":"團體第一名","awarded":true,"category":"其他","tags":["辯論","邏輯思維","說服力"],"summary":"透過辯論訓練論點拆解、臨場回應與說服架構，這些能力延伸到 HR 面試、產品提案與商業簡報。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null},{"id":"2025-r財金應用","title":"R 語言與多程式語言財經應用","year":"2025","award":null,"awarded":false,"category":"培訓","tags":["R","Python","財金計量"],"summary":"整理 R 語言、Python、統計學習、財金時間序列、選擇權評價與程式交易相關教材與程式碼，展現財金資料分析的系統化學習軌跡。","sourceFolder":"05_進修學習/01_R語言課程","coverImage":"competitions/assets/covers/2025-r財金應用.png"},{"id":"2025-記帳士","title":"記帳士備考與稅務會計學習","year":"2025","award":null,"awarded":false,"category":"培訓","tags":["記帳士","會計","稅務法規"],"summary":"收錄會計學概要、稅務法規、租稅申報實務與記帳相關法規模考教材，作為財會專業知識的補強紀錄。","sourceFolder":"05_進修學習/02_記帳士","coverImage":null},{"id":"2025-高潛力hr","title":"高潛力 HR 培訓計畫","year":"2025","award":null,"awarded":false,"category":"HR","tags":["HR","組織行為","組織發展"],"summary":"系統性人資培訓課程，涵蓋組織行為、領導與追隨、個人差異、激勵動機、衝突溝通與組織文化等主題。","sourceFolder":"05_進修學習/03_高潛力HR","coverImage":"competitions/assets/covers/2025-高潛力hr.png"},{"id":"2025-青年局ai職涯營","title":"青年局 AI 實戰職涯營","year":"2025","award":null,"awarded":false,"category":"培訓","tags":["AI","職涯","Vibe Coding"],"summary":"政府主辦 AI 職涯應用營隊，包含 AI 生成簡報、對話式自動化工作流、Vibe Coding 與「青年職涯焦慮舒緩 AI 聊天輔導員」Demo。","sourceFolder":"05_進修學習/04_青年局AI課","coverImage":null},{"id":"2026-茄芷袋-世代橋接設計","title":"茄芷袋世代橋接設計","year":"2026","award":null,"awarded":false,"category":"創業競賽","tags":["設計提案","地方創生","文化創新"],"summary":"以台南後壁菁寮俗女村為場域，重新定義茄芷袋的文化價值與市場語言，提出故事卡片、城市限定色與工法識別標籤三項設計方向。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":"competitions/assets/jiaqidai-preview.svg"},{"id":"2026-俗女手帖-app","title":"俗女手帖 App","year":"2026","award":null,"awarded":false,"category":"創業競賽","tags":["App企劃","UX設計","地方創生"],"summary":"以當代農村永續生態平台為概念，規劃首頁、俗女共創、配工匠、集章地圖、永續縫補與 AR 場景等功能，建立地方文化與數位互動的連結。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":"competitions/assets/suonv-app-overview.png"}];
+const competitionData=[{"id":"2024-少年頭家-雲林農穫","title":"雲林農穫百貨園區（你濃我農小隊）","year":"2024","award":null,"awarded":false,"category":"創業競賽","tags":["創業競賽","雲林","地方創生","永續園區"],"summary":"以高鐵近郊為基地，整合農業、商業與文化體驗，打造兼具觀光導流與在地服務的複合型百貨園區。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null,"execution":"與在地連鎖生鮮及農會合作導入產地直銷，並串接 DIY 體驗如花生小學堂與潤餅實作。頂樓太陽能供電降低營運能耗，社群行銷結合打卡點與主題活動擴大聲量。","highlights":"主軸聚焦在地化、體驗化、共融化、永續化。以可負擔價格搭配多元品項，提高大眾採用率，同時讓小農有穩定曝光與銷售場景。","team":"你濃我農小隊：崔庭瑀、游欣樺、施筑馨、賴致諺"},{"id":"2024-新創之星-三隻雞腿排","title":"等下要吃什麼 APP（三隻雞腿排）","year":"2024","award":null,"awarded":false,"category":"創業競賽","tags":["App設計","AI推薦","餐飲科技","創業競賽"],"summary":"以 AI 推薦與雙階段篩選解決「今天吃什麼」決策疲勞，兼顧預算、營養、飲食限制與外送整合。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null,"execution":"以歷史行為與評價持續訓練推薦模型，串接食安資料庫提供風險提醒，並用卡路里追蹤與長期飲食分析提升留存。商業端對接外送平台與店家合作。","highlights":"核心價值是「健康、省時、實惠」三者並重。團隊分工完整，從策略、技術到財務與商務都能對應，具備從提案走向產品化的可行性。","team":"三隻雞腿排：崔庭瑀、游欣樺、賴致諺"},{"id":"2025-財務健康三明治","title":"財務健康三明治","year":"2024","award":null,"awarded":false,"category":"FinTech","tags":["財務規劃","健康管理","三明治族群","FinTech"],"summary":"針對 30–50 歲三明治族群，整合記帳、預算、營養追蹤與長照媒合，建立儲蓄與健康雙主軸平台。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null,"execution":"模組化推進飲食、交通、房租、水電、長照、教育支出分類，並加入投資社群討論、分齡飲食建議與長照服務媒合，形成完整家庭支持鏈。","highlights":"亮點在於把財務健康與生活健康放在同一個儀表板，讓家庭可用同一套資料節奏共同調整決策，而不是各自為政。"},{"id":"2023-投資競賽","title":"櫃買中心投資模擬競賽心得","year":"2024","award":null,"awarded":false,"category":"FinTech","tags":["投資模擬","策略驗證","風險管理","團隊協作"],"summary":"以模擬交易驗證投資策略與風控紀律，建立盤前研究、盤中執行、盤後檢討的完整實戰節奏。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null,"execution":"團隊分工為產業追蹤、技術面判讀、風險檢視三軸，所有交易皆記錄理由並回看得失，遇到虧損時優先處理流程與紀律而非情緒。","highlights":"強調「交易心態」與「團隊默契」的管理，避免只看報酬忽略過程品質，讓每次失誤都可被轉化為可追溯的學習資產。"},{"id":"2024-新創盃","title":"Chaptalk 閱讀社群應用程式（創意與創業大賽）","year":"2024","award":"全國季軍","awarded":true,"category":"UI/UX","tags":["UI/UX","閱讀社群","App設計","AI推薦"],"summary":"以情緒書單、社群互動與商家後台串接打造閱讀生態系，改善閱讀碎片化並建立實體書店新通路。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":"competitions/assets/chaptalk-preview.png","execution":"九大模組同步規劃，串接電子書平台、二手書流通、線下讀書會與 UGC 生態，並以訂閱制與活動合作建立收入路徑。","highlights":"情緒書單與多維度書評機制顯著提升內容匹配度；實體書店合作網絡補足純數位平台的在地觸達缺口。","team":"創意與創業大賽團隊（Chaptalk 專案）"},{"id":"2025-司法-ai個資風險","title":"司法競賽 ─ 醫療資料二次利用 HIST 方案","year":"2025","award":null,"awarded":false,"category":"法律","tags":["司法競賽","醫療資料","隱私保護","HIST"],"summary":"以 PETs 與分級沙盒建構醫療資料二次利用治理框架，在創新與個資保護間提出可落地的制度方案。","sourceFolder":"04_競賽作品/04_司法競賽","coverImage":null,"execution":"同步推進法規對照與技術工具包，導入動態同意、持續稽核與透明報告，建立法規、技術、治理三位一體的運作框架。","highlights":"把「隱私保護」從阻礙轉為創新底座，讓研究單位、公部門、機構與當事人四方都能在同一治理架構中找到平衡點。","team":"eeoo team：楊雨姮、游欣樺與團隊成員"},{"id":"2025-fintech-greenpay","title":"易綠卡 GreenPay 永續信用卡（FinTech 校際）","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["FinTech","ESG","永續信用卡","碳足跡"],"summary":"將碳足跡量化與點數回饋結合信用卡使用情境，讓日常消費轉化為可追蹤、可獎勵的減碳行動。","sourceFolder":"04_競賽作品/01_FinTech競賽","coverImage":"competitions/assets/covers/2025-fintech-greenpay.png","execution":"建立綠色商家聯盟，串接 LINE 與銀行 App 的個人化永續報告、排行榜與好友挑戰，同時在銀行端建置 ESG 儀表板。","highlights":"把抽象環保行為轉成可量化、可比較、可分享的使用體驗，建立使用者、商家與銀行三方正循環。","team":"龜蜜龜蜜團隊"},{"id":"2025-模擬交易","title":"縱橫期海 Trade like a pro 模擬交易心得","year":"2025","award":null,"awarded":false,"category":"FinTech","tags":["期貨","選擇權","模擬交易","風險控管"],"summary":"以期貨與選擇權模擬競賽建立策略迭代流程，從技術面走向多因子模型，強化資金管理與風控紀律。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null,"execution":"落實盤前情報、盤中紀律、盤後回顧三步驟；團隊分工負責產業追蹤、技術判讀與資金控管，全部交易皆記錄並回測。","highlights":"策略從單一指標進化為結構化模型，並透過停損規則與持倉管理降低情緒交易，讓績效與風險控制同時提升。","team":"金天發大財隊"},{"id":"2025-line-pets","title":"LINE PETs 情感連結新解方（LINE FRESH）","year":"2025","award":null,"awarded":false,"category":"AI","tags":["LINE","情緒AI","數位陪伴","社群互動"],"summary":"以主動式訊息與情緒辨識打造 AI 陪伴系統，將日常互動、任務機制與 LINE 生態整合為長期陪伴體驗。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null,"execution":"以 LIFF、Messaging API、Beacon 建立技術骨架，並導入任務與勳章機制、原創角色合作、線下活動串聯，提高留存與黏著。","highlights":"核心差異在於主動式陪伴設計，能依語境給出不同情緒回應，讓 AI 互動更貼近真實關係而非工具式回覆。","team":"LINE FRESH 提案團隊：楊雨姮、簡以庭、游欣樺"},{"id":"2025-ai金融科技-碳感未來","title":"三隻小羊 碳感未來 AI 減碳 ERP（AI 金融科技）","year":"2025","award":null,"awarded":false,"category":"AI","tags":["AI","ERP","碳盤查","綠色金融"],"summary":"將碳盤查模組嵌入中小企業 ERP，透過 AI 自動計算排放並連動綠色金融，提高減碳揭露與融資可得性。","sourceFolder":"04_競賽作品/03_AI金融科技競賽","coverImage":null,"execution":"採盤查、分析、行動三步驟導入，與銀行及會計師合作提供認證等級報表，並採 SaaS 分級訂閱服務不同規模企業。","highlights":"將碳數據與會計流程置於同一資料管線，避免重工與資訊落差；AI 持續學習可逐步提升減碳建議精準度。","team":"三隻小羊團隊"},{"id":"2026-永續生活實驗室","title":"食在肚子餓 ResQfood（永續生活實驗室獎）","year":"2026","award":null,"awarded":false,"category":"UI/UX","tags":["UI/UX","App設計","剩食媒合","永續"],"summary":"鎖定小型店家剩食痛點，打造 AI 預測 + 即時媒合雙端平台，讓惜食行動可被量化並轉化為 ESG 成果。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":"competitions/assets/resqfood-composite.jpg","execution":"初期鎖定雙北校園與辦公商圈，採店家訂閱 + 交易分潤模式，並輸出可供對外使用的 ESG 成果指標，降低中小店家永續溝通門檻。","highlights":"從被動報廢轉為主動預測，透過 AI 與 UI 流程設計同時優化店家備料與消費者找餐路徑，形成雙邊可持續正循環。","team":"食在肚子餓隊：楊雨姮、徐民祐、游欣樺、簡以庭"},{"id":"2025-潛力種子盃-個股研究","title":"我想要坐飛機 大立光電個股研究（潛力種子盃）","year":"2026","award":null,"awarded":false,"category":"FinTech","tags":["個股研究","財務分析","估值模型","潛力種子盃"],"summary":"以 DCF、PER、EV/EBITDA 三模型交叉驗證，完成大立光產業、財務、策略與風險的系統化研究。","sourceFolder":"04_競賽作品/02_潛力種子盃","coverImage":"competitions/assets/covers/2025-潛力種子盃-個股研究.png","execution":"團隊分工追蹤技術趨勢、毛利率與現金流循環，並獨立整理匯率、客戶集中、技術替代與地緣政治風險。","highlights":"從假設、推導到敏感度分析均可追溯，讓投資結論具備可質疑、可修正、可重用的研究品質。","team":"我想要坐飛機隊：潘靜萱、盧琬姍、游欣樺、陳孟臻、張伃昕"},{"id":"2026-木育故事盒","title":"創意建構故事盒（114 年度木育玩具創作競賽）","year":"2026","award":null,"awarded":false,"category":"永續","tags":["木育","幼教","在地素材","永續設計"],"summary":"以漂流木與回收木材打造可拆組故事教具，結合原創繪本與角色扮演，兼顧幼兒學習與循環永續。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null,"execution":"完成概念、撿材、清潔、切割鑽孔、打磨上漆等六道工序，並於幼兒園進行共讀、搭建、角色扮演的情境測試。","highlights":"同時訓練語言表達、精細動作、空間建構與創造力，且可作為幼兒園語文區與積木區的常設教具。","team":"國立臺東大學幼教系團隊：邱惠婷、林佳昀"},{"id":"2025-拾拈溯木","title":"拾拈溯木 創意建構故事盒（U-start 創新創業計畫）","year":"2026","award":null,"awarded":false,"category":"創業競賽","tags":["U-start","創業計畫","木育","永續品牌"],"summary":"將木育故事盒商品化，建立產品銷售、教學服務與企業合作三段式商業模式，推進永續教具新創落地。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null,"execution":"建立採料、加工、品管供應鏈，串接在地師傅與內容設計；行銷採社群、短影音、線下展覽三路推進並建立品牌 IP。","highlights":"把「永續、教育、創意」三軸整合成可被市場理解的產品敘事，並預留主題化、節慶化、客製化擴充能力。","team":"拾拈溯木團隊（U-start）"},{"id":"2026-edubot","title":"EduBot 早療家庭行動系統（115 年度創新創業競賽）","year":"2026","award":null,"awarded":false,"category":"AI","tags":["早療","AI轉譯","健康科技","創新創業"],"summary":"把冗長聯評報告轉為家庭可執行的每日任務，串接家長端與治療師端，補上早療服務從診間到日常的斷點。","sourceFolder":"04_競賽作品/05_其他競賽","coverImage":null,"execution":"六大模組整合報告轉譯、提醒、追蹤、儀表板與回診報告。商業模式採 B2C Freemium、B2B 訂閱、B2G 試點並落實資安治理。","highlights":"核心突破在於把「今天該做什麼」說清楚，讓治療服務從診間延伸到 365 天家庭日常，並累積高價值行為數據資產。","team":"EduBot 團隊"}];
 const carouselRoot=document.querySelector('[data-carousel-root]');
 const carouselTrack=carouselRoot?.querySelector('.competition-carousel');
 const dotsWrap=carouselRoot?.querySelector('.carousel-dots');

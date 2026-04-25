@@ -55,7 +55,8 @@ function publicCoverPath(item,coverImage){
 }
 function joinTags(item){return (item.tags||[]).join('、')}
 function deriveStoryLead(item){
-  return item.storyLead || `${item.summary} 這頁整理的是我在這個題目裡如何定義問題、形成提案、安排內容架構，以及最後想讓外部看見的核心價值。`;
+  const teamLead=item.team?`這個題目是團隊協作完成，成員包含：${item.team}。`:'';
+  return item.storyLead || `${item.summary} ${teamLead}這頁整理的是我在這個題目裡如何定義問題、形成提案、安排內容架構，以及最後想讓外部看見的核心價值。`;
 }
 function derivePurpose(item){
   if(item.purpose)return item.purpose;
@@ -124,15 +125,19 @@ function deriveFocus(item){
 }
 function renderAppGallery(item){
   if(!item.appScreens||!item.appScreens.length)return '';
-  const visualPath=versionedAsset(assetFromCompetitionPage(item.appVisual));
-  const visual=item.appVisual&&visualPath?'<div class="app-visual"><img src="'+esc(visualPath)+'" alt="'+esc(item.title)+' App 畫面" loading="eager" decoding="sync"/></div>':'<div class="app-visual"><div class="app-visual-fallback"><strong>'+esc(item.title)+'</strong></div></div>';
-  const intro=item.appIntro?'<p class="app-intro">'+esc(item.appIntro)+'</p>':'';
-  const notes=item.appScreens.map((screen,index)=>{
+  const intro=item.appIntro?'<div class="app-intro-block"><p class="app-intro">'+esc(item.appIntro)+'</p></div>':'';
+  const cards=item.appScreens.map((screen,index)=>{
     const imagePath=versionedAsset(assetFromCompetitionPage(screen.image||''));
-    const image=imagePath?'<div class="app-note-media"><img src="'+esc(imagePath)+'" alt="'+esc(item.title)+' - '+esc(screen.title)+' 畫面" loading="'+(index<2?'eager':'lazy')+'" decoding="async"/></div>':'';
-    return '<article class="app-note">'+image+'<h3>'+esc(screen.title)+'</h3><p>'+esc(screen.caption||'介面重點整理。')+'</p></article>';
+    const image=imagePath
+      ?'<img src="'+esc(imagePath)+'" alt="'+esc(item.title)+' - '+esc(screen.title)+' 畫面" loading="'+(index<2?'eager':'lazy')+'" decoding="async"/>'
+      :'<div class="app-shot-fallback"><strong>'+esc(screen.title||'App 畫面')+'</strong></div>';
+    return '<article class="app-slide"><div class="app-phone"><span class="app-notch"></span><div class="app-shot">'+image+'</div></div><div class="app-slide-body"><h3>'+esc(screen.title||'介面重點')+'</h3><p>'+esc(screen.caption||'介面重點整理。')+'</p></div></article>';
   }).join('');
-  return '<section><div class="wrap"><h2 class="section-title">App 設計</h2><div class="app-layout"><div class="app-showcase">'+visual+'<div class="app-copy">'+intro+'</div></div><div class="app-notes">'+notes+'</div></div></div></section>';
+  return '<section><div class="wrap"><h2 class="section-title">App 設計</h2>'+intro+'<div class="app-carousel" data-app-carousel><button class="app-nav-btn prev" type="button" aria-label="上一張">‹</button><div class="app-track" tabindex="0">'+cards+'</div><button class="app-nav-btn next" type="button" aria-label="下一張">›</button></div><div class="app-dots" aria-label="App 畫面切換"></div></div></section>';
+}
+function renderTeamBlock(item){
+  if(!item.team)return '';
+  return '<div class="team-note"><strong>團隊協作：</strong>'+esc(item.team)+'</div>';
 }
 function updateIndex(data){if(!fs.existsSync(indexPath))return;let html=fs.readFileSync(indexPath,'utf8');const light=data.map(({files,filePatterns,spotlight,reflection,purpose,ideation,model,outcomes,focus,appIntro,appScreens,appVisual,...item})=>item);html=html.replace(/const competitionData=\[[\s\S]*?\];\nconst carouselRoot=/,'const competitionData='+JSON.stringify(light)+';\nconst carouselRoot=');fs.writeFileSync(indexPath,html,'utf8')}
 const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
@@ -150,7 +155,7 @@ manifest.competitions=manifest.competitions.map(item=>{
 fs.writeFileSync(manifestPath,JSON.stringify(manifest,null,2),'utf8');
 const expected=new Set(manifest.competitions.map(item=>item.id+'.html'));
 for(const file of fs.readdirSync(__dirname)){if(file.endsWith('.html')&&file!=='_template.html'&&!expected.has(file))fs.unlinkSync(path.join(__dirname,file))}
-for(const item of manifest.competitions){const related=manifest.competitions.filter(other=>other.id!==item.id&&other.category===item.category).slice(0,3).map(other=>'<a class="related-card" href="'+encodeURIComponent(other.id)+'.html"><div class="related-year">'+esc(other.year)+' · '+esc(other.category)+'</div><div class="related-title">'+esc(other.title)+'</div><span class="small-link">查看詳情 →</span></a>').join('')||'<div class="note">尚無同分類作品。</div>';const tags=item.tags.map(tag=>'<span class="pill">'+esc(tag)+'</span>').join('');const spotlightItems=(item.spotlight||[]).map(point=>'<li>'+esc(point)+'</li>').join('');const html=inject(template,{title:esc(item.title),year:esc(item.year),category:esc(item.category),summary:esc(item.summary),awardText:esc(item.award||'作品整理'),focus:esc(deriveFocus(item)),storyLead:esc(deriveStoryLead(item)),purpose:esc(derivePurpose(item)),ideation:esc(deriveIdeation(item)),model:esc(deriveModel(item)),execution:esc(deriveExecution(item)),highlights:esc(deriveHighlights(item)),outcomes:esc(deriveOutcomes(item)),storyShowcase:renderStoryShowcase(item,spotlightItems),gradient:categoryGradients[item.category]||categoryGradients.default,awardBadge:'<span class="pill award">'+esc(item.award||'作品介紹')+'</span>',tags,spotlight:spotlightItems?'<ul class="spotlight-list">'+spotlightItems+'</ul>':'',appGallery:renderAppGallery(item),related,json:JSON.stringify({id:item.id,title:item.title,category:item.category,year:item.year}).replace(/<\//g,'<\\/')});fs.writeFileSync(path.join(__dirname,item.id+'.html'),html,'utf8')}
+for(const item of manifest.competitions){const related=manifest.competitions.filter(other=>other.id!==item.id&&other.category===item.category).slice(0,3).map(other=>'<a class="related-card" href="'+encodeURIComponent(other.id)+'.html"><div class="related-year">'+esc(other.year)+' · '+esc(other.category)+'</div><div class="related-title">'+esc(other.title)+'</div><span class="small-link">查看詳情 →</span></a>').join('')||'<div class="note">尚無同分類作品。</div>';const tags=item.tags.map(tag=>'<span class="pill">'+esc(tag)+'</span>').join('');const spotlightItems=(item.spotlight||[]).map(point=>'<li>'+esc(point)+'</li>').join('');const html=inject(template,{title:esc(item.title),year:esc(item.year),category:esc(item.category),summary:esc(item.summary),awardText:esc(item.award||'作品整理'),focus:esc(deriveFocus(item)),storyLead:esc(deriveStoryLead(item)),purpose:esc(derivePurpose(item)),ideation:esc(deriveIdeation(item)),model:esc(deriveModel(item)),execution:esc(deriveExecution(item)),highlights:esc(deriveHighlights(item)),outcomes:esc(deriveOutcomes(item)),storyShowcase:renderStoryShowcase(item,spotlightItems),teamBlock:renderTeamBlock(item),gradient:categoryGradients[item.category]||categoryGradients.default,awardBadge:'<span class="pill award">'+esc(item.award||'作品介紹')+'</span>',tags,spotlight:spotlightItems?'<ul class="spotlight-list">'+spotlightItems+'</ul>':'',appGallery:renderAppGallery(item),related,json:JSON.stringify({id:item.id,title:item.title,category:item.category,year:item.year}).replace(/<\//g,'<\\/')});fs.writeFileSync(path.join(__dirname,item.id+'.html'),html,'utf8')}
 updateIndex(manifest.competitions);
 const awarded=manifest.competitions.filter(item=>item.awarded).length;
 const fileCount=manifest.competitions.reduce((sum,item)=>sum+item.files.length,0);
