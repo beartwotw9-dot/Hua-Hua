@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>游欣樺 YU HSIN-HUA | 跨域產品人 × 人資專家</title>
-<meta name="description" content="游欣樺 Hsin-Hua Yu｜跨域產品人 × 人資專家，Finance × HR × PM，台北"/>
+<title>游欣樺 Dora Yu | Finance × Product × Organizational Development</title>
+<meta name="description" content="游欣樺 Dora Yu｜Finance × Product × Organizational Development，Designing better systems for people to learn, work, and grow."/>
 <meta property="og:title" content="游欣樺 Portfolio 2026"/>
 <meta property="og:description" content="跨越資料與人心，讓決策有溫度。"/>
 <meta property="og:type" content="website"/>
@@ -140,12 +140,7 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 
 /* ── EXPERIENCE ── */
 #experience{padding:6rem 0;background:var(--bg)}
-.exp-tabs{display:flex;gap:0;border:1px solid var(--border);border-radius:100px;overflow:hidden;width:fit-content;margin-bottom:2.5rem;background:var(--white)}
-.exp-tab{padding:.45rem 1.2rem;font-size:.8rem;font-weight:500;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap;border:none;background:none}
-.exp-tab.active{background:var(--ink);color:var(--white);border-radius:100px;box-shadow:inset 0 -2px 0 var(--sage)}
-.exp-panel{display:none;opacity:0}
-.exp-panel.active{display:block;opacity:1;animation:panelFade .3s ease}
-@keyframes panelFade{from{opacity:0}to{opacity:1}}
+.sub-arc{font-size:.78rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem}
 .tl-list{position:relative;padding-left:1.8rem}
 .tl-list::before{content:'';position:absolute;left:9px;top:14px;bottom:14px;width:1.5px;background:var(--border)}
 .tl-item{position:relative;margin-bottom:1rem;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1rem 1rem 1rem 1.25rem}
@@ -235,6 +230,20 @@ html.dark nav.scrolled{background:rgba(28,25,20,.72)}
 .lead-title{font-size:.83rem;font-weight:600;color:var(--ink);margin-bottom:.2rem}
 .lead-sub{font-size:.75rem;color:var(--muted);line-height:1.5}
 
+/* ── COMMUNITIES / EDUCATION ── */
+#communities,#education{padding:5.4rem 0;background:var(--white)}
+#education{background:var(--bg)}
+.community-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+.mini-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1rem 1.05rem}
+.mini-card h3{font-family:var(--serif);font-size:1rem;line-height:1.35;color:var(--ink);margin-bottom:.35rem}
+.mini-meta{font-size:.78rem;color:var(--sage);font-weight:600;margin-bottom:.55rem}
+.mini-list{list-style:none;display:flex;flex-direction:column;gap:.38rem}
+.mini-list li{font-size:.86rem;color:var(--ink2);line-height:1.7;padding-left:.9rem;position:relative}
+.mini-list li::before{content:'•';position:absolute;left:0;color:var(--sage)}
+.edu-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.2rem 1.3rem;max-width:860px}
+.edu-school{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--ink)}
+.edu-dept{font-size:.95rem;color:var(--ink2);margin:.2rem 0 .85rem}
+
 /* ── SKILLS ── */
 #skills{padding:5rem 0;background:var(--white)}
 .skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
@@ -312,6 +321,7 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
   .certs-row{grid-template-columns:1fr}
   .contact-inner{grid-template-columns:1fr}
   .leadership-grid{grid-template-columns:1fr}
+  .community-grid{grid-template-columns:1fr}
 }
 @media(min-width:769px) and (max-width:1180px){
   .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -332,8 +342,8 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
   <ul class="nav-links">
     <li><a href="#about">關於我</a></li>
     <li><a href="#experience">經歷</a></li>
-    <li><a href="#awards">獎項</a></li>
-    <li><a href="#projects">競賽作品</a></li>
+    <li><a href="#projects">專案</a></li>
+    <li><a href="#communities">組織與社群</a></li>
     <li><a href="#skills">技能</a></li>
     <li><a href="#contact" class="nav-cta">聯絡我</a></li>
   </ul>
@@ -345,8 +355,8 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
 <div id="mobile-menu">
   <a href="#about">關於我</a>
   <a href="#experience">經歷</a>
-  <a href="#awards">獎項</a>
-  <a href="#projects">競賽作品</a>
+  <a href="#projects">專案</a>
+  <a href="#communities">組織與社群</a>
   <a href="#skills">技能</a>
   <a href="#contact">聯絡我</a>
 </div>
@@ -357,9 +367,9 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
     <div class="hero-layout">
       <div>
         <p class="hero-eyebrow">YU, HSIN-HUA · Portfolio 2026</p>
-        <h1 class="hero-name">游欣樺<br><em>Hsin-Hua Yu</em></h1>
-        <p class="hero-tagline">跨越資料與人心，讓決策有溫度。</p>
-        <p class="hero-desc">財金系出身，深耕人資與組織發展，擅用 Python、Power BI 與生成式 AI 將複雜數據轉化為可執行的洞察。</p>
+        <h1 class="hero-name">游欣樺 Dora Yu</h1>
+        <p class="hero-tagline">Finance | Product | Organizational Development</p>
+        <p class="hero-desc"><strong>Designing better systems for people to learn, work, and grow.</strong><br>我關注財務、組織與產品交會的地方，並持續探索如何透過更好的系統設計，支持人們學習、工作與成長。</p>
         <div class="hero-btns">
           <a href="#projects" class="btn-fill">瀏覽專案 →</a>
           <a href="#contact" class="btn-ghost">與我聯繫</a>
@@ -399,9 +409,9 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
         <h2 class="sec-title">關於我</h2>
         <div class="sec-rule"></div>
         <div class="about-prose">
-          <p>我是 Hua，財金系出身，但數字從來不是終點。好奇心帶我走進人資、組織發展，又走進產品思維。每一段都在問同一件事：怎麼讓身邊的人好過一點？</p>
-          <p>開發工具也好，設計流程也好，提出一個方案也好，對我來說都是在解決人的問題。我相信每一次真誠的溝通，都能讓合作走得更遠。</p>
-          <p>"Not all of us can do great things. But we can do small things with great love." — Mother Teresa</p>
+          <p>我的工作與興趣，聚焦在財務、組織與產品的交會。</p>
+          <p>我關注分析思維與組織理解，如何支持更好的決策、更穩定的系統，以及更有品質的執行。</p>
+          <p>以財務背景為起點，我也持續在 HR、產品工作與數位實作中累積經驗，逐步形成一套跨領域的解題方式，結合商業分析、流程思維與生成式 AI 工具，把想法轉成可落地的方案。</p>
         </div>
         <div class="about-features">
           <div class="afeature"><div class="afeature-icon">🌱</div><h4>永續思維</h4><p>持有 ESG 永續發展基礎能力測驗證照，曾主導碳權政策研究並於系所發表。</p></div>
@@ -423,174 +433,98 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
       <div class="sec-rule" style="margin:0 auto 0"></div>
     </div>
     <div class="reveal">
-      <div class="exp-tabs">
-        <button class="exp-tab active" data-tab="work">職場經歷</button>
-        <button class="exp-tab" data-tab="org">組織活動</button>
-      </div>
-      <div class="exp-panel active" id="tab-work">
-        <div class="tl-list">
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">產品部實習生</span><span class="tl-badge">2026.03 — 至今</span></div>
-            <div class="tl-org">艾邁格股份有限公司（IMAG）· 台北</div>
-            <ul class="tl-list-items">
-              <li>規劃 SaaS 平台 Social War Room QA 測試，設計涵蓋 <strong>9</strong> 大模組約 <strong>50 個測試案例</strong></li>
-              <li>獨立撰寫並管理 Linear Bug Issues，問題分級追蹤至上線驗收</li>
-              <li>主導 Asana → Linear Issue 遷移，整合留言與附件確保資訊不流失</li>
-              <li>針對 FriendPass 進行潛客開發，建立 <strong>60 筆</strong>目標客戶名單</li>
-            </ul>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">組織發展專員</span><span class="tl-badge">2026.04 — 至今</span></div>
-            <div class="tl-org">成鼎電工實業有限公司 · 台北</div>
-            <ul class="tl-list-items">
-              <li>與執行長合作負責全公司層級專案管理與跨部門任務落地</li>
-              <li>擔任教育訓練總負責人，完成 <strong>6 場</strong>內訓課程</li>
-              <li>主導 DPA 獎項申請、團險規劃、職稱訂定、組織架構規劃等跨部門專案</li>
-            </ul>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">人力資源助理</span><span class="tl-badge muted">2025.12 — 2026.04</span></div>
-            <div class="tl-org">成鼎電工實業有限公司 · 台北</div>
-            <ul class="tl-list-items">
-              <li>獨立負責 <strong>20 場以上</strong>線上面試，旁聽逾 <strong>50 場</strong>；建立結構化面試流程</li>
-              <li>修訂 <strong>10 份以上</strong>內部管理規章；建立標準化入職流程</li>
-              <li>規劃並主持 <strong>4 場</strong>員工教育訓練，其中 <strong>1 場</strong>擔任主講人</li>
-            </ul>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">營運暨財務雙軌輪調實習生</span><span class="tl-badge muted">2025.01 — 2025.12</span></div>
-            <div class="tl-org">艾邁格股份有限公司（IMAG） · 台北</div>
-            <ul class="tl-list-items">
-              <li>獨立開發財務小工具，顯著降低資料輸入錯誤率</li>
-              <li>獨立處理超過 <strong>1,000 筆</strong>款項紀錄，支援 IPO 前期數據整併與合規審核</li>
-              <li>負責資產盤點專案，降低不必要辦公室行政支出</li>
-            </ul>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">財務長</span><span class="tl-badge muted">2024.05 — 2025.06</span></div>
-            <div class="tl-org">國立臺北商業大學第 20 屆財務金融系學會</div>
-            <ul class="tl-list-items">
-              <li>管理單學期逾 <strong>10 萬元</strong>公費現金，每月執行會計對帳確保帳務零誤差</li>
-              <li>主導系學會年度預算編列，整合跨部門資源配置</li>
-            </ul>
-          </div>
+      <p class="sub-arc">Finance → Operations → Product → Organizational Development</p>
+      <div class="tl-list">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-head"><span class="tl-role">Organizational Development & Project Associate</span><span class="tl-badge">2026.04 — 至今</span></div>
+          <div class="tl-org">成鼎電工實業有限公司 · 台北</div>
+          <ul class="tl-list-items">
+            <li>Partnered directly with the CEO to drive cross-functional delivery of company-level initiatives.</li>
+            <li>擔任教育訓練總負責人，完成 <strong>6</strong> 場內訓課程規劃與執行。</li>
+            <li>主導 DPA 獎項申請、團險規劃、職稱制度與組織架構設計等跨部門專案。</li>
+          </ul>
         </div>
-      </div>
-      <div class="exp-panel" id="tab-org">
-        <div class="tl-list">
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">人資小週末學員</span><span class="tl-badge muted">2026.02 — 至今</span></div>
-            <div class="tl-org">人資小週末</div>
-            <ul class="tl-list-items">
-              <li>參與人資主題學習與職涯交流，補強招募、組織發展與職場溝通的實務視角</li>
-              <li>將課程與社群討論延伸到履歷優化、面試準備與 HR 專案觀察</li>
-            </ul>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">PM 組組員</span><span class="tl-badge muted">2026.04 — 至今</span></div>
-            <div class="tl-org">XChange</div>
-            <ul class="tl-list-items">
-              <li>參與產品管理組學習與專案討論，訓練需求拆解、使用者觀察與產品思維</li>
-              <li>透過跨背景成員交流，建立從問題定義到解法驗證的產品工作框架</li>
-            </ul>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">人資組組員</span><span class="tl-badge muted">2025.08 — 至今</span></div>
-            <div class="tl-org">起駛簡報表達教育協會</div>
-            <ul class="tl-list-items">
-              <li>負責跨部門溝通協調與進度追蹤，確保團隊資訊同步與合作方向一致。</li>
-              <li>支援人資行政工作，包含資源規劃與規章草擬，協助不同專案的人力配置更有效率。</li>
-            </ul>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-head"><span class="tl-role">財務組組員</span><span class="tl-badge muted">2024.07 — 2025.08</span></div>
-            <div class="tl-org">起駛簡報表達教育協會 · 1 年 2 個月</div>
-            <ul class="tl-list-items">
-              <li>負責三場大型活動與日常營運單據稽核，確保約 <strong>NT$200,000</strong> 支出紀錄正確無誤。</li>
-              <li>與會計師事務所對接報稅與文件交接流程，協助完成合規申報與資料整理。</li>
-            </ul>
-          </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-head"><span class="tl-role">Product Management Intern</span><span class="tl-badge">2026.03 — 至今</span></div>
+          <div class="tl-org">FriendLab（艾邁格 IMAG）· 台北</div>
+          <ul class="tl-list-items">
+            <li>規劃 Social War Room QA 測試，涵蓋 <strong>9</strong> 大模組與 <strong>50+</strong> 測試案例，支援產品驗證流程。</li>
+            <li>負責 Linear Bug Issue 管理，並主導 Asana 至 Linear 任務遷移，提升執行透明度並保留協作脈絡。</li>
+            <li>建立 <strong>60</strong> 筆 FriendPass 潛在客戶名單，支援成長拓展與合作開發。</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-head"><span class="tl-role">Human Resources & Talent Development Intern</span><span class="tl-badge muted">2025.12 — 2026.04</span></div>
+          <div class="tl-org">成鼎電工實業有限公司 · 台北</div>
+          <ul class="tl-list-items">
+            <li>獨立執行 <strong>20+</strong> 場線上面試，旁聽逾 <strong>50</strong> 場，協助建立結構化面試流程。</li>
+            <li>修訂 <strong>10+</strong> 份內部管理規章，並建立標準化入職流程。</li>
+            <li>規劃並主持 <strong>4</strong> 場員工教育訓練，其中 <strong>1</strong> 場擔任主講人。</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-head"><span class="tl-role">Operations Intern</span><span class="tl-badge muted">2025.01 — 2025.12</span></div>
+          <div class="tl-org">IMAG · 台北</div>
+          <ul class="tl-list-items">
+            <li>參與 HR Tech 與營運專案，包含 SOP 優化與流程自動化。</li>
+            <li>協助技術人才搜尋與候選人初步篩選，支援後端工程職缺招募。</li>
+            <li>優化招募行政與作業流程，提升跨部門協作與營運效率。</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-head"><span class="tl-role">Finance Intern</span><span class="tl-badge muted">2025.01 — 2025.12</span></div>
+          <div class="tl-org">IMAG · 台北</div>
+          <ul class="tl-list-items">
+            <li>協助 IPO 準備期間財務文件管理與流程數位化。</li>
+            <li>管理 <strong>1,000+</strong> 筆付款紀錄，提升追蹤性與作業效率。</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-head"><span class="tl-role">Director of Finance</span><span class="tl-badge muted">2024.05 — 2025.06</span></div>
+          <div class="tl-org">國立臺北商業大學第 20 屆財務金融系學會</div>
+          <ul class="tl-list-items">
+            <li>管理單學期逾 <strong>10 萬元</strong>公費現金，每月完成會計對帳。</li>
+            <li>主導年度預算編列與跨組資源配置。</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- AWARDS -->
-<section id="awards">
+<!-- EDUCATION -->
+<section id="education">
   <div class="section-wrap">
-    <div class="reveal" style="text-align:center;margin-bottom:2.8rem">
-      <p class="sec-eyebrow" style="text-align:center">Awards</p>
-      <h2 class="sec-title">榮譽與競賽獲獎</h2>
+    <div class="reveal" style="text-align:center;margin-bottom:2rem">
+      <p class="sec-eyebrow" style="text-align:center">Education</p>
+      <h2 class="sec-title">學歷</h2>
       <div class="sec-rule" style="margin:0 auto 0"></div>
     </div>
-    <div class="reveal awards-grid">
-      <div class="award-card">
-        <div class="award-icon">🥉</div>
-        <div>
-          <div class="award-meta"><span class="award-badge badge-gold">全國季軍</span><span class="award-year">2024</span></div>
-          <div class="award-title">第九屆新創盃全球創意創新創業企劃競賽</div>
-          <div class="award-desc">大專組網路行銷組。SWOT 市場分析、20+ 頁創業企劃書、APP 示意圖設計，整合財務規劃與行銷策略。</div>
-        </div>
-      </div>
-      <div class="award-card">
-        <div class="award-icon">🏅</div>
-        <div>
-          <div class="award-meta"><span class="award-badge badge-sage">全國佳作（前 10%）</span><span class="award-year">2024</span></div>
-          <div class="award-title">全國大專財富管理競賽</div>
-          <div class="award-desc">對手 100+ 組。70% 核心資產 + 30% 衛星資產，預估年報酬率 10%+；領導 3 人團隊完成 15+ 次模擬提案。</div>
-        </div>
-      </div>
-      <div class="award-card">
-        <div class="award-icon">🏆</div>
-        <div>
-          <div class="award-meta"><span class="award-badge badge-gold">全國前六強</span><span class="award-year">2024</span></div>
-          <div class="award-title">全國少年頭家競賽</div>
-          <div class="award-desc">全國佳作 × 決賽前六強。22 頁商業企劃書，SWOT & STP 分析雲林市場，方案獲企業導師推薦落地。</div>
-        </div>
-      </div>
-      <div class="award-card">
-        <div class="award-icon">📈</div>
-        <div>
-          <div class="award-meta"><span class="award-badge badge-earth">優選</span><span class="award-year">2023</span></div>
-          <div class="award-title">龍華科大賽全國投資競賽</div>
-          <div class="award-desc">技術分析 × 基本面雙軌模擬投資組合管理，獲評審肯定市場時機判斷能力。</div>
-        </div>
-      </div>
-      <div class="award-card span2">
-        <div class="award-icon">🎙️</div>
-        <div>
-          <div class="award-meta"><span class="award-badge badge-sage">團體第一名</span><span class="award-year">2022</span></div>
-          <div class="award-title">全校新生盃辯論比賽</div>
-          <div class="award-desc">在辯論賽中展現邏輯思維、臨場應變與說服力，這些能力持續沿用至今日的 HR 面試與產品提案。</div>
-        </div>
-      </div>
-    </div>
-    <div class="reveal" style="margin-top:1rem">
-      <div class="leadership-grid">
-        <div class="lead-card"><div class="lead-icon">🏃</div><div class="lead-title">三校五系酒精路跑 總召</div><div class="lead-sub">2025 · 統籌 70 位工作人員</div></div>
-        <div class="lead-card"><div class="lead-icon">🍵</div><div class="lead-title">茶會總召</div><div class="lead-sub">2024 · 參與人數較往年成長 40%，滿意度 92%</div></div>
-        <div class="lead-card"><div class="lead-icon">🌻</div><div class="lead-title">人文城鄉共學計畫 隊輔</div><div class="lead-sub">2022 · 95 小時志服，領導 55 位小學員</div></div>
-      </div>
+    <div class="reveal edu-card">
+      <div class="edu-school">國立臺北商業大學</div>
+      <div class="edu-dept">財務金融系</div>
+      <ul class="mini-list">
+        <li>財金系系排前五，GPA 3.79/4.0。</li>
+        <li>取得 10+ 財金相關證照，並獲商業與理財競賽獎項。</li>
+        <li>透過學生自治、活動策劃與跨團隊協作累積領導與專案經驗。</li>
+      </ul>
     </div>
   </div>
 </section>
+
 
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-wrap">
     <div class="reveal" style="text-align:center;margin-bottom:2rem">
-      <p class="sec-eyebrow" style="text-align:center">Competition Archive</p>
-      <h2 class="sec-title">競賽作品集</h2>
+      <p class="sec-eyebrow" style="text-align:center">Projects</p>
+      <h2 class="sec-title">專案</h2>
       <div class="sec-rule" style="margin:0 auto 0"></div>
     </div>
     <div class="reveal competition-shell" data-carousel-root>
@@ -617,6 +551,51 @@ footer{background:var(--ink);color:var(--white);padding:1.5rem 2.5rem;display:fl
         <button class="carousel-toggle" type="button" aria-pressed="false">暫停</button>
       </div>
       <div class="competition-groups" aria-label="競賽作品分類清單"></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITIES -->
+<section id="communities">
+  <div class="section-wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:2rem">
+      <p class="sec-eyebrow" style="text-align:center">Leadership & Communities</p>
+      <h2 class="sec-title">組織與社群參與</h2>
+      <div class="sec-rule" style="margin:0 auto 0"></div>
+    </div>
+    <div class="reveal community-grid">
+      <article class="mini-card">
+        <h3>HR Learning Fellow</h3>
+        <div class="mini-meta">人資小週末（學員） · 2026.02 — 至今</div>
+        <ul class="mini-list">
+          <li>參與 HR 主題課程與職涯交流，強化實務觀點。</li>
+          <li>延伸學習內容到履歷優化與面試準備。</li>
+        </ul>
+      </article>
+      <article class="mini-card">
+        <h3>Product Management Cohort Member</h3>
+        <div class="mini-meta">XChange · 2026.04 — 至今</div>
+        <ul class="mini-list">
+          <li>參與產品管理專題討論，練習需求拆解與驗證。</li>
+          <li>與跨背景成員共作，累積產品溝通方法。</li>
+        </ul>
+      </article>
+      <article class="mini-card">
+        <h3>People Operations Team Member</h3>
+        <div class="mini-meta">起駛簡報表達教育協會 · 2025.08 — 至今</div>
+        <ul class="mini-list">
+          <li>跨部門協作與進度追蹤，維持團隊執行節奏。</li>
+          <li>支援資源規劃與規章草擬。</li>
+        </ul>
+      </article>
+      <article class="mini-card">
+        <h3>Finance Team Member</h3>
+        <div class="mini-meta">起駛簡報表達教育協會 · 2024.07 — 2025.08</div>
+        <ul class="mini-list">
+          <li>稽核 3 場大型活動單據與日常支出紀錄。</li>
+          <li>協作完成報稅文件與會計交接流程。</li>
+        </ul>
+      </article>
     </div>
   </div>
 </section>
@@ -797,16 +776,6 @@ const ro=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
 },{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
-
-// Experience tabs
-document.querySelectorAll('.exp-tab').forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    document.querySelectorAll('.exp-tab').forEach(t=>t.classList.remove('active'));
-    document.querySelectorAll('.exp-panel').forEach(p=>p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById('tab-'+tab.dataset.tab).classList.add('active');
-  });
-});
 
 // Contact form (Formspree)
 const contactForm=document.getElementById('contact-form');
