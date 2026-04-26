@@ -137,7 +137,7 @@ function renderAppGallery(item){
 }
 function renderTeamBlock(item){
   if(!item.team)return '';
-  return '<div class="team-note"><strong>團隊協作</strong></div>';
+  return '<div class="team-note"><strong>團隊協作</strong>：'+esc(item.team)+'</div>';
 }
 function updateIndex(data){if(!fs.existsSync(indexPath))return;let html=fs.readFileSync(indexPath,'utf8');const light=data.map(({files,filePatterns,spotlight,reflection,purpose,ideation,model,outcomes,focus,appIntro,appScreens,appVisual,...item})=>item);html=html.replace(/const competitionData=\[[\s\S]*?\];\nconst carouselRoot=/,'const competitionData='+JSON.stringify(light)+';\nconst carouselRoot=');fs.writeFileSync(indexPath,html,'utf8')}
 const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
