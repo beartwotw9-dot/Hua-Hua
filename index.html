@@ -1563,13 +1563,11 @@ function renderCompetitions(){
       : (competitionCopy[item.id]?.summary||'Project summary is being updated.');
     const localizedCategory=useZh?(item.category==='UI/UX'?'UI/UX':item.category):(categoryLabelsEn[item.category]||item.category);
     const localizedTags=useZh?item.tags:item.tags.map(tag=>tagLabelsEn[tag]||tag);
-    const media=item.coverImage
-      ? `<img src="${item.coverImage}" alt="${localizedTitle}" loading="lazy" decoding="async" fetchpriority="low">`
-      : `<div class="competition-poster">
-          <span class="competition-poster-kicker">${isUiUxProject(item)?(useZh?i18n.zh.projects.appConcept:'App Design Concept'):localizedCategory}</span>
-          ${buildPosterTitle(item,useZh)}
-          <div class="competition-poster-meta">${localizedTags.slice(0,2).map(tag=>`<span>${tag}</span>`).join('')}</div>
-        </div>`;
+    const media=`<div class="competition-poster">
+        <span class="competition-poster-kicker">${isUiUxProject(item)?(useZh?i18n.zh.projects.appConcept:'App Design Concept'):localizedCategory}</span>
+        ${buildPosterTitle(item,useZh)}
+        <div class="competition-poster-meta">${localizedTags.slice(0,2).map(tag=>`<span>${tag}</span>`).join('')}</div>
+      </div>`;
     return `<a class="competition-card ${isMaintenance?'is-maintenance':''}" href="${isMaintenance?'#projects':`competitions/${encodeURIComponent(item.id)}.html`}" ${isMaintenance?'aria-disabled="true" tabindex="-1"':''} data-category="${item.category}" data-uiux="${isUiUxProject(item)?'true':'false'}" style="--card-gradient:${gradient}">
       <div class="competition-media" style="background:${gradient}">
         ${media}
