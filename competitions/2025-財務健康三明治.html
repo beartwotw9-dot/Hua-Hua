@@ -84,8 +84,14 @@ section{padding:4.5rem 2.5rem}
 
 <section><div class="wrap"><h2 class="section-title">Related</h2><div class="related"><a class="related-card" href="2023-%E6%8A%95%E8%B3%87%E7%AB%B6%E8%B3%BD.html"><div class="related-year">2024 · FinTech</div><div class="related-title">櫃買中心投資模擬競賽</div><span class="small-link">查看詳情 →</span></a><a class="related-card" href="2025-fintech-greenpay.html"><div class="related-year">2025 · FinTech</div><div class="related-title">易綠卡 GreenPay 永續信用卡（FinTech 校際）</div><span class="small-link">查看詳情 →</span></a><a class="related-card" href="2025-%E6%A8%A1%E6%93%AC%E4%BA%A4%E6%98%93.html"><div class="related-year">2025 · FinTech</div><div class="related-title">縱橫期海 Trade like a pro 模擬交易</div><span class="small-link">查看詳情 →</span></a></div></div></section>
 </main>
-<script id="competition-data" type="application/json">{"id":"2025-財務健康三明治","title":"財務健康三明治","category":"FinTech","year":"2024"}</script>
+<script id="competition-data" type="application/json">{"id":"2025-財務健康三明治","title":"財務健康三明治","category":"FinTech","year":"2024","lang":"zh"}</script>
 <script>
+const pageDataEl=document.getElementById('competition-data');
+let lang='zh';
+try{
+  const pageData=JSON.parse(pageDataEl?.textContent||'{}');
+  lang=pageData.lang==='en'?'en':'zh';
+}catch(_e){lang='zh';}
 document.querySelectorAll('[data-app-carousel]').forEach((carousel)=>{
   const track=carousel.querySelector('.app-track');
   const slides=[...track.querySelectorAll('.app-slide')];
@@ -97,7 +103,7 @@ document.querySelectorAll('[data-app-carousel]').forEach((carousel)=>{
     const dot=document.createElement('button');
     dot.type='button';
     dot.className='app-dot';
-    dot.setAttribute('aria-label','切換到第 '+(index+1)+' 張');
+    dot.setAttribute('aria-label', lang === 'en' ? ('Go to slide ' + (index + 1)) : ('切換到第 ' + (index + 1) + ' 張'));
     dot.addEventListener('click',()=>track.scrollTo({left:slides[index].offsetLeft-track.offsetLeft,behavior:'smooth'}));
     dotsWrap.appendChild(dot);
     return dot;

@@ -7,6 +7,95 @@ const indexPath=path.join(root,'index.html');
 const assetsRoot=path.join(__dirname,'assets');
 const coversRoot=path.join(assetsRoot,'covers');
 const categoryGradients={'FinTech':'linear-gradient(160deg, #2C4A3E, #6B9070)','創業競賽':'linear-gradient(160deg, #4A3020, #A0704A)','AI':'linear-gradient(160deg, #2A3A4A, #5A7A8A)','法律':'linear-gradient(160deg, #3A3020, #8A7A50)','永續':'linear-gradient(160deg, #2A4030, #5A8060)','HR':'linear-gradient(160deg, #3A2A40, #7A5A80)','培訓':'linear-gradient(160deg, #402A2A, #806040)',default:'linear-gradient(160deg, #3A3530, #8A7A6A)'};
+const categoryEn={'FinTech':'FinTech','創業競賽':'Entrepreneurship','AI':'AI','法律':'Legal','永續':'Sustainability','HR':'HR','培訓':'Training','UI/UX':'UI/UX','其他':'Other'};
+const awardEnMap={'作品整理':'Project Summary','作品介紹':'Project Story','團體第一名':'1st Place (Team)','全國季軍':'National 3rd Place','全國佳作（前10%）':'National Merit (Top 10%)','全國前六強':'National Top 6','優選':'Outstanding','全國季軍（大專組）':'National 3rd Place (College)','全國第21名':'National Rank #21','全國第22名':'National Rank #22','全國季軍（網路行銷組）':'National 3rd Place (Marketing Track)'};
+const tagEnMap={'司法競賽':'Legal Challenge','醫療資料':'Medical Data','隱私保護':'Privacy Protection','HIST':'HIST','期貨':'Futures','選擇權':'Options','模擬交易':'Paper Trading','AI':'AI','ERP':'ERP','碳盤查':'Carbon Inventory','綠色金融':'Green Finance','投資模擬':'Investment Simulation','策略驗證':'Strategy Validation','風險管理':'Risk Management','UI/UX':'UI/UX','閱讀社群':'Reading Community','App設計':'App Design','AI推薦':'AI Recommendations','金融科技':'FinTech','永續信用卡':'Sustainable Credit Card','服務設計':'Service Design','科技應用':'Tech Application','跨校合作':'Cross-school Teamwork','創業構想':'Startup Concept','財務健康':'Financial Wellness','行動支付':'Mobile Payment','金融研究':'Financial Research','個股研究':'Stock Research','估值模型':'Valuation Model','財務分析':'Financial Analysis','永續':'Sustainability','模擬交易等':'Paper Trading & More','多元':'Multi-Track','新創':'Startup','商業企劃':'Business Planning','潛力':'Potential','司法':'Legal','法律思辨':'Legal Reasoning','人資':'HR','組織發展':'Org Development','職涯':'Career','青年局':'Youth Affairs'};
+const enProjectMap={
+  '2024-少年頭家-雲林農穫':{
+    title:'Yunlin Harvest Mall District',
+    summary:'A startup proposal integrating local agriculture, retail, and cultural experiences into a mixed-use district near the high-speed rail area.',
+    team:'Team Collaboration: Ni Nong Wo Nong Team (Ting-Yu Cui, Hsin-Hua Yu, Zhu-Xin Shi, Zhi-Yan Lai)'
+  },
+  '2024-新創之星-三隻雞腿排':{
+    title:'What Should We Eat App',
+    summary:'An AI-assisted meal decision app designed to reduce food-choice fatigue while balancing budget, nutrition, dietary constraints, and delivery.',
+    team:'Team Collaboration: Three Drumsticks Team (Ting-Yu Cui, Hsin-Hua Yu, Zhi-Yan Lai)'
+  },
+  '2025-財務健康三明治':{
+    title:'Financial Wellness Sandwich',
+    summary:'A dual-track concept combining family financial planning and health management for the sandwich generation.',
+    team:'Team Collaboration'
+  },
+  '2023-投資競賽':{
+    title:'TPEx Investment Simulation',
+    summary:'A simulation-based trading project focused on strategy discipline, technical and fundamental judgment, and team execution routines.',
+    team:'Team Collaboration'
+  },
+  '2024-新創盃':{
+    title:'Chaptalk Reading Community App',
+    summary:'A reading community product concept connecting mood-based recommendations, social interaction, and local bookstore collaboration.',
+    team:'Team Collaboration'
+  },
+  '2025-司法-ai個資風險':{
+    title:'Legal Challenge — HIST Framework for Secondary Medical Data Use',
+    summary:'A legal-tech proposal combining PETs, risk-tier governance, and regulatory framing for secondary medical data utilization.',
+    team:'Team Collaboration: eeoo Team (Yu-Han Yang, Hsin-Hua Yu, and team members)'
+  },
+  '2025-fintech-greenpay':{
+    title:'GreenPay Sustainable Credit Card',
+    summary:'A FinTech concept linking daily spending behavior with measurable low-carbon incentives and ESG-aligned user engagement.',
+    team:'Team Collaboration: Gui Mi Gui Mi Team'
+  },
+  '2025-模擬交易':{
+    title:'Trade Like a Pro — Paper Trading',
+    summary:'A futures and options simulation project focused on risk controls, multi-factor strategy development, and repeatable execution routines.',
+    team:'Team Collaboration: Jin Tian Fa Da Cai Team'
+  },
+  '2025-line-pets':{
+    title:'LINE PETs Emotional Companion',
+    summary:'A proactive AI companion concept on LINE, combining emotional signals, daily nudges, and interaction loops for long-term engagement.',
+    team:'Team Collaboration: LINE FRESH Proposal Team (Yu-Han Yang, Yi-Ting Jian, Hsin-Hua Yu)'
+  },
+  '2025-ai金融科技-碳感未來':{
+    title:'CarbonSense Future AI Decarbonization ERP',
+    summary:'An AI-enabled ERP concept for SMB carbon inventory and green-finance readiness through scenario-based decarbonization workflows.',
+    team:'Team Collaboration: Three Lambs Team'
+  },
+  '2026-永續生活實驗室':{
+    title:'ResQfood',
+    summary:'A UI/UX concept for surplus-food matching that connects store-side forecasting with user-side discovery and reservation flows.',
+    team:'Team Collaboration: ResQfood Team (Yu-Han Yang, Min-You Xu, Hsin-Hua Yu, Yi-Ting Jian)'
+  },
+  '2026-俗女手帖-app':{
+    title:'Sunu Handbook App',
+    summary:'A personal UI/UX project turning local lifestyle storytelling into a mobile product experience with clear user flows and interaction design.',
+    team:'Individual Project'
+  },
+  '2025-潛力種子盃-個股研究':{
+    title:'Largan Precision Equity Research',
+    summary:'A stock research project covering industry context, valuation models, risk analysis, and structured investment conclusions.',
+    team:'Team Collaboration: I Want to Fly Team (Jing-Xuan Pan, Wan-Shan Lu, Hsin-Hua Yu, Meng-Zhen Chen, Yu-Xin Zhang)'
+  },
+  '2025-拾拈溯木':{
+    title:'Shi Nian Su Mu — Creative Story Construction Box',
+    summary:'A startup proposal translating wood-education values into a product-service model with educational and sustainability outcomes.',
+    team:'Team Collaboration: Shi Nian Su Mu Team (U-start)'
+  },
+  '2026-edubot':{
+    title:'EduBot Early-Intervention Family Action System',
+    summary:'A product concept that transforms clinical reports into daily family actions and structured follow-through for early-intervention contexts.',
+    team:'Team Collaboration: EduBot Team'
+  },
+  '2026-系統載入中':{
+    title:'System Loading (Under Maintenance)',
+    summary:'This project page is temporarily under maintenance and will be updated after assets are finalized.',
+    team:'Individual Curation Project'
+  }
+};
+const i18nPage={
+  zh:{brandName:'游欣樺',backText:'← 返回',overviewLabel:'Overview',yearLabel:'Year',categoryLabel:'Category',awardLabel:'Award',focusLabel:'Focus',storyLabel:'作品介紹',purposeLabel:'目的',ideationLabel:'發想',modelLabel:'核心設計',executionLabel:'執行方式',highlightsLabel:'內容亮點',outcomesLabel:'成果',relatedLabel:'Related',viewDetails:'查看詳情 →',noRelated:'尚無同分類作品。',teamOnly:'團隊協作',teamLabel:'團隊協作',appDesign:'App 設計',appScreen:'App 畫面',appCaption:'介面重點整理。'},
+  en:{brandName:'Dora Yu',backText:'← Back',overviewLabel:'Overview',yearLabel:'Year',categoryLabel:'Category',awardLabel:'Award',focusLabel:'Focus',storyLabel:'Project Story',purposeLabel:'Purpose',ideationLabel:'Ideation',modelLabel:'Core Design',executionLabel:'Execution',highlightsLabel:'Highlights',outcomesLabel:'Outcomes',relatedLabel:'Related',viewDetails:'View Details →',noRelated:'No related projects yet.',teamOnly:'Team Collaboration',teamLabel:'Team Collaboration',appDesign:'App Design',appScreen:'App Screen',appCaption:'Key interface note.'}
+};
 function toPosix(value){return value.split(path.sep).join('/')}
 function resolveSource(folder){return path.resolve(root,folder)}
 function matchPatterns(file,patterns){if(!patterns||!patterns.length)return true;const haystack=(file.name+' '+file.path).toLowerCase();return patterns.some(pattern=>haystack.includes(String(pattern).toLowerCase()))}
@@ -57,6 +146,69 @@ function joinTags(item){return (item.tags||[]).join('、')}
 function deriveStoryLead(item){
   const teamLead=item.team?'這個題目是團隊協作完成。':'';
   return item.storyLead || `${item.summary} ${teamLead}這頁整理的是我在這個題目裡如何定義問題、形成提案、安排內容架構，以及最後想讓外部看見的核心價值。`;
+}
+function toEnglishText(value){
+  if(!value)return '';
+  const text=String(value).trim();
+  if(!text)return '';
+  if(/[一-龥]/u.test(text))return '';
+  return text;
+}
+function enTitle(item){return toEnglishText(item.titleEn||'')||toEnglishText(enProjectMap[item.id]?.title)||'Project'}
+function enSummary(item){return toEnglishText(item.summaryEn||'')||toEnglishText(enProjectMap[item.id]?.summary)||'Project summary is being updated.'}
+function enCategory(item){return categoryEn[item.category]||item.category||'Project'}
+function enAward(item){return awardEnMap[item.award]||item.award||'Project Summary'}
+function enTagValue(tag){
+  const mapped=tagEnMap[tag];
+  if(mapped)return mapped;
+  if(/[一-龥]/u.test(String(tag||'')))return 'Project';
+  return String(tag||'').trim()||'Project';
+}
+function enTags(item){return (item.tags||[]).map(enTagValue)}
+function enFocus(item){
+  if(item.focusEn)return item.focusEn;
+  if(item.focus){
+    return String(item.focus).split('/').map(s=>s.trim()).map(enTagValue).join(' / ');
+  }
+  const tags=enTags(item).slice(0,2);
+  return tags.join(' / ')||'Project Story';
+}
+function deriveStoryLeadEn(item){
+  const teamLead=item.team?'This project was completed through team collaboration. ':'';
+  return item.storyLeadEn || `${enSummary(item)} ${teamLead}This page highlights how we defined the problem, structured the proposal, and presented the final value clearly.`;
+}
+function derivePurposeEn(item){
+  if(item.purposeEn)return item.purposeEn;
+  if(item.category==='FinTech')return 'Turn a financial concept into a usable, understandable solution that links product value with practical user needs.';
+  if(item.category==='創業競賽')return 'Translate a real pain point into a concrete startup proposal and validate market need, user scenario, and execution feasibility.';
+  if(item.category==='AI')return 'Apply AI to a clear real-world problem, ensuring technology supports the solution instead of becoming decoration.';
+  if(item.category==='法律')return 'Present a structured governance proposal balancing innovation, legal safeguards, and individual rights.';
+  if(item.category==='永續')return 'Convert sustainability goals into practical product and behavior design that can be adopted in daily use.';
+  if(item.category==='HR'||item.category==='培訓')return 'Build practical HR and organizational capabilities that can be directly applied in real team and project settings.';
+  return 'Organize a cross-domain topic into a clear and practical project output.';
+}
+function deriveIdeationEn(item){
+  if(item.ideationEn)return item.ideationEn;
+  return 'The concept started from a concrete observed gap, then expanded through user context, stakeholder constraints, and execution logic.';
+}
+function deriveModelEn(item){
+  if(item.modelEn)return item.modelEn;
+  return 'The core design combines user scenario, value proposition, execution path, and measurable outcomes into one coherent structure.';
+}
+function deriveExecutionEn(item){
+  if(item.executionEn)return item.executionEn;
+  return 'Execution followed a step-by-step approach: clarify context, define key decisions, structure proposal content, and align outputs with target reviewers and users.';
+}
+function deriveHighlightsEn(item){
+  if(item.highlightsEn)return item.highlightsEn;
+  const tags=enTags(item).slice(0,3);
+  if(tags.length)return `Highlights include ${tags.join(', ')}, with clear framing from concept to presentation.`;
+  return 'Highlights focus on clarity, structure, and actionable project delivery.';
+}
+function deriveOutcomesEn(item){
+  if(item.outcomesEn)return item.outcomesEn;
+  if(item.award)return `Outcome: ${enAward(item)}. The project also strengthened proposal structure, communication, and cross-functional problem solving.`;
+  return 'Outcome: completed a full cycle from research to proposal delivery, with reusable methods for later cross-domain projects.';
 }
 function derivePurpose(item){
   if(item.purpose)return item.purpose;
@@ -114,35 +266,61 @@ function deriveHighlights(item){
   if(tags.length)return `這份作品特別聚焦在 ${tags.join('、')} 等幾個面向，讓主題不只被描述，而是能被具體拆解、展示與延伸。`;
   return `這份作品的亮點在於把原本分散的想法與資料整理成有重點的展示內容，讓外部能更快理解我處理這個題目的方式。`;
 }
-function renderStoryShowcase(item,spotlightHtml){
+function renderStoryShowcase(item,spotlightHtml,lang='zh'){
+  const t=i18nPage[lang];
   const image=item.coverImage?`<div class="story-media"><img src="${esc(fileUrlFromRoot(item.coverImage))}" alt="${esc(item.title)} 作品畫面"/><p class="story-media-caption">精選作品畫面與主視覺整理。</p></div>`:'';
-  const note=`<article class="story-note"><h3>內容補充</h3><p>${esc(deriveExecution(item))}</p>${spotlightHtml?`<ul class="spotlight-list">${spotlightHtml}</ul>`:''}</article>`;
+  const noteTitle=lang==='zh'?'內容補充':'Additional Notes';
+  const noteBody=lang==='zh'?deriveExecution(item):deriveExecutionEn(item);
+  const imageCaption=lang==='zh'?'精選作品畫面與主視覺整理。':'Selected visuals and key interface snapshots.';
+  const imageBlock=item.coverImage?`<div class="story-media"><img src="${esc(fileUrlFromRoot(item.coverImage))}" alt="${esc(item.title)} ${t.appScreen}"/><p class="story-media-caption">${imageCaption}</p></div>`:'';
+  const note=`<article class="story-note"><h3>${noteTitle}</h3><p>${esc(noteBody)}</p>${spotlightHtml?`<ul class="spotlight-list">${spotlightHtml}</ul>`:''}</article>`;
   if(!image&&!spotlightHtml)return '';
-  return `<div class="story-showcase">${image||''}${note}</div>`;
+  return `<div class="story-showcase">${imageBlock||''}${note}</div>`;
 }
 function deriveFocus(item){
   return item.focus || (item.spotlight&&item.spotlight.length ? item.spotlight.slice(0,2).join(' / ') : (item.tags||[]).slice(0,2).join(' / ') || '作品介紹');
 }
-function renderAppGallery(item){
+function renderAppGallery(item,lang='zh'){
+  const t=i18nPage[lang];
   if(!item.appScreens||!item.appScreens.length)return '';
-  const intro=item.appIntro?'<div class="app-intro-block"><p class="app-intro">'+esc(item.appIntro)+'</p></div>':'';
+  const introText=lang==='en'
+    ?(item.appIntroEn||'This section presents key app flows and interaction decisions through selected mobile screens.')
+    :(item.appIntro||'');
+  const intro=introText?'<div class="app-intro-block"><p class="app-intro">'+esc(introText)+'</p></div>':'';
   const cards=item.appScreens.map((screen,index)=>{
     const imagePath=versionedAsset(assetFromCompetitionPage(screen.image||''));
+    const screenTitle=lang==='en'
+      ?(screen.titleEn||`${t.appScreen} ${index+1}`)
+      :(screen.title||`${t.appScreen} ${index+1}`);
+    const screenCaption=lang==='en'
+      ?(screen.captionEn||t.appCaption)
+      :(screen.caption||t.appCaption);
     const image=imagePath
-      ?'<img src="'+esc(imagePath)+'" alt="'+esc(item.title)+' - '+esc(screen.title)+' 畫面" loading="'+(index<2?'eager':'lazy')+'" decoding="async"/>'
-      :'<div class="app-shot-fallback"><strong>'+esc(screen.title||'App 畫面')+'</strong></div>';
-    return '<article class="app-slide"><div class="app-phone"><span class="app-notch"></span><div class="app-shot">'+image+'</div></div><div class="app-slide-body"><h3>'+esc(screen.title||'介面重點')+'</h3><p>'+esc(screen.caption||'介面重點整理。')+'</p></div></article>';
+      ?'<img src="'+esc(imagePath)+'" alt="'+esc(item.title)+' - '+esc(screenTitle)+'" loading="'+(index<2?'eager':'lazy')+'" decoding="async"/>'
+      :'<div class="app-shot-fallback"><strong>'+esc(screenTitle)+'</strong></div>';
+    return '<article class="app-slide"><div class="app-phone"><span class="app-notch"></span><div class="app-shot">'+image+'</div></div><div class="app-slide-body"><h3>'+esc(screenTitle)+'</h3><p>'+esc(screenCaption)+'</p></div></article>';
   }).join('');
-  return '<section><div class="wrap"><h2 class="section-title">App 設計</h2>'+intro+'<div class="app-carousel" data-app-carousel><button class="app-nav-btn prev" type="button" aria-label="上一張">‹</button><div class="app-track" tabindex="0">'+cards+'</div><button class="app-nav-btn next" type="button" aria-label="下一張">›</button></div><div class="app-dots" aria-label="App 畫面切換"></div></div></section>';
+  const prevAria=lang==='zh'?'上一張':'Previous';
+  const nextAria=lang==='zh'?'下一張':'Next';
+  const dotsAria=lang==='zh'?'App 畫面切換':'App gallery dots';
+  return '<section><div class="wrap"><h2 class="section-title">'+t.appDesign+'</h2>'+intro+'<div class="app-carousel" data-app-carousel><button class="app-nav-btn prev" type="button" aria-label="'+prevAria+'">‹</button><div class="app-track" tabindex="0">'+cards+'</div><button class="app-nav-btn next" type="button" aria-label="'+nextAria+'">›</button></div><div class="app-dots" aria-label="'+dotsAria+'"></div></div></section>';
 }
-function renderTeamBlock(item){
+function renderTeamBlock(item,lang='zh'){
+  const t=i18nPage[lang];
   if(!item.team)return '';
-  const teamText=String(item.team).trim();
+  const rawTeam=lang==='en'
+    ?(item.teamEn||enProjectMap[item.id]?.team||'')
+    :item.team;
+  const teamText=String(rawTeam).trim();
   if(!teamText)return '';
-  if(/^(團體協作|團隊協作)$/u.test(teamText)){
-    return '<div class="team-note"><strong>團隊協作</strong></div>';
+  if(/^(團體協作|團隊協作|Team Collaboration)$/u.test(teamText)){
+    return '<div class="team-note"><strong>'+t.teamOnly+'</strong></div>';
   }
-  return '<div class="team-note"><strong>團隊協作</strong>：'+esc(teamText)+'</div>';
+  if(lang==='en'&&/^Team Collaboration\s*:/i.test(teamText)){
+    return '<div class="team-note"><strong>'+esc(teamText)+'</strong></div>';
+  }
+  const sep=lang==='en'?':':'：';
+  return '<div class="team-note"><strong>'+t.teamLabel+'</strong>'+sep+' '+esc(teamText)+'</div>';
 }
 function updateIndex(data){if(!fs.existsSync(indexPath))return;let html=fs.readFileSync(indexPath,'utf8');const light=data.map(({files,filePatterns,spotlight,reflection,purpose,ideation,model,outcomes,focus,appIntro,appScreens,appVisual,...item})=>item);html=html.replace(/const competitionData=\[[\s\S]*?\];\nconst carouselRoot=/,'const competitionData='+JSON.stringify(light)+';\nconst carouselRoot=');fs.writeFileSync(indexPath,html,'utf8')}
 const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
@@ -158,9 +336,82 @@ manifest.competitions=manifest.competitions.map(item=>{
   return {...merged,coverImage,files};
 });
 fs.writeFileSync(manifestPath,JSON.stringify(manifest,null,2),'utf8');
-const expected=new Set(manifest.competitions.map(item=>item.id+'.html'));
+const expected=new Set(manifest.competitions.flatMap(item=>[item.id+'.html',item.id+'-en.html']));
 for(const file of fs.readdirSync(__dirname)){if(file.endsWith('.html')&&file!=='_template.html'&&!expected.has(file))fs.unlinkSync(path.join(__dirname,file))}
-for(const item of manifest.competitions){const related=manifest.competitions.filter(other=>other.id!==item.id&&other.category===item.category).slice(0,3).map(other=>'<a class="related-card" href="'+encodeURIComponent(other.id)+'.html"><div class="related-year">'+esc(other.year)+' · '+esc(other.category)+'</div><div class="related-title">'+esc(other.title)+'</div><span class="small-link">查看詳情 →</span></a>').join('')||'<div class="note">尚無同分類作品。</div>';const tags=item.tags.map(tag=>'<span class="pill">'+esc(tag)+'</span>').join('');const spotlightItems=(item.spotlight||[]).map(point=>'<li>'+esc(point)+'</li>').join('');const html=inject(template,{title:esc(item.title),year:esc(item.year),category:esc(item.category),summary:esc(item.summary),awardText:esc(item.award||'作品整理'),focus:esc(deriveFocus(item)),storyLead:esc(deriveStoryLead(item)),purpose:esc(derivePurpose(item)),ideation:esc(deriveIdeation(item)),model:esc(deriveModel(item)),execution:esc(deriveExecution(item)),highlights:esc(deriveHighlights(item)),outcomes:esc(deriveOutcomes(item)),storyShowcase:renderStoryShowcase(item,spotlightItems),teamBlock:renderTeamBlock(item),gradient:categoryGradients[item.category]||categoryGradients.default,awardBadge:'<span class="pill award">'+esc(item.award||'作品介紹')+'</span>',tags,spotlight:spotlightItems?'<ul class="spotlight-list">'+spotlightItems+'</ul>':'',appGallery:renderAppGallery(item),related,json:JSON.stringify({id:item.id,title:item.title,category:item.category,year:item.year}).replace(/<\//g,'<\\/')});fs.writeFileSync(path.join(__dirname,item.id+'.html'),html,'utf8')}
+function renderPage(item,lang='zh'){
+  const t=i18nPage[lang];
+  const isZh=lang==='zh';
+  const related=manifest.competitions
+    .filter(other=>other.id!==item.id&&other.category===item.category)
+    .slice(0,3)
+    .map(other=>{
+      const href=encodeURIComponent(other.id)+(isZh?'.html':'-en.html');
+      const title=isZh?other.title:enTitle(other);
+      const category=isZh?other.category:enCategory(other);
+      return '<a class="related-card" href="'+href+'"><div class="related-year">'+esc(other.year)+' · '+esc(category)+'</div><div class="related-title">'+esc(title)+'</div><span class="small-link">'+t.viewDetails+'</span></a>';
+    }).join('')||'<div class="note">'+t.noRelated+'</div>';
+  const tags=(isZh?item.tags:enTags(item)).map(tag=>'<span class="pill">'+esc(tag)+'</span>').join('');
+  const spotlightItems=(item.spotlight||[]).map(point=>'<li>'+esc(isZh?point:enTagValue(point))+'</li>').join('');
+  const category=isZh?item.category:enCategory(item);
+  const title=isZh?item.title:enTitle(item);
+  const summary=isZh?item.summary:enSummary(item);
+  const awardText=isZh?(item.award||'作品整理'):enAward(item);
+  const focus=isZh?deriveFocus(item):enFocus(item);
+  const storyLead=isZh?deriveStoryLead(item):deriveStoryLeadEn(item);
+  const purpose=isZh?derivePurpose(item):derivePurposeEn(item);
+  const ideation=isZh?deriveIdeation(item):deriveIdeationEn(item);
+  const model=isZh?deriveModel(item):deriveModelEn(item);
+  const execution=isZh?deriveExecution(item):deriveExecutionEn(item);
+  const highlights=isZh?deriveHighlights(item):deriveHighlightsEn(item);
+  const outcomes=isZh?deriveOutcomes(item):deriveOutcomesEn(item);
+  const html=inject(template,{
+    langAttr:isZh?'zh-Hant':'en',
+    pageTitleSuffix:isZh?'競賽作品集':'Project Archive',
+    brandName:t.brandName,
+    backText:t.backText,
+    overviewLabel:t.overviewLabel,
+    yearLabel:t.yearLabel,
+    categoryLabel:t.categoryLabel,
+    awardLabel:t.awardLabel,
+    focusLabel:t.focusLabel,
+    storyLabel:t.storyLabel,
+    purposeLabel:t.purposeLabel,
+    ideationLabel:t.ideationLabel,
+    modelLabel:t.modelLabel,
+    executionLabel:t.executionLabel,
+    highlightsLabel:t.highlightsLabel,
+    outcomesLabel:t.outcomesLabel,
+    relatedLabel:t.relatedLabel,
+    title:esc(title),
+    year:esc(item.year),
+    category:esc(category),
+    summary:esc(summary),
+    awardText:esc(awardText),
+    focus:esc(focus),
+    storyLead:esc(storyLead),
+    purpose:esc(purpose),
+    ideation:esc(ideation),
+    model:esc(model),
+    execution:esc(execution),
+    highlights:esc(highlights),
+    outcomes:esc(outcomes),
+    storyShowcase:renderStoryShowcase(item,spotlightItems,lang),
+    teamBlock:renderTeamBlock(item,lang),
+    gradient:categoryGradients[item.category]||categoryGradients.default,
+    awardBadge:'<span class="pill award">'+esc(awardText)+'</span>',
+    tags,
+    spotlight:spotlightItems?'<ul class="spotlight-list">'+spotlightItems+'</ul>':'',
+    appGallery:renderAppGallery(item,lang),
+    related,
+    json:JSON.stringify({id:item.id,title,category,year:item.year,lang}).replace(/<\//g,'<\\/')
+  });
+  const fileName=item.id+(isZh?'.html':'-en.html');
+  fs.writeFileSync(path.join(__dirname,fileName),html,'utf8');
+}
+for(const item of manifest.competitions){
+  renderPage(item,'zh');
+  renderPage(item,'en');
+}
 updateIndex(manifest.competitions);
 const awarded=manifest.competitions.filter(item=>item.awarded).length;
 const fileCount=manifest.competitions.reduce((sum,item)=>sum+item.files.length,0);

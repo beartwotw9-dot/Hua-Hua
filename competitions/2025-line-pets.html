@@ -77,15 +77,21 @@ section{padding:4.5rem 2.5rem}
 </head>
 <body>
 <nav><a href="../index.html#hero" class="nav-logo">游欣樺</a><a class="back-link" href="../index.html#projects">← 返回</a></nav>
-<header class="hero"><div class="hero-inner"><p class="eyebrow">AI · 2025</p><h1>LINE PETs 情感連結新解方</h1><div class="hero-meta"><span class="pill award">作品介紹</span><span class="pill">LINE</span><span class="pill">情緒AI</span><span class="pill">數位陪伴</span><span class="pill">社群互動</span></div></div></header>
+<header class="hero"><div class="hero-inner"><p class="eyebrow">AI · 2025</p><h1>LINE PETs 情感連結新解方</h1><div class="hero-meta"><span class="pill award">作品整理</span><span class="pill">LINE</span><span class="pill">情緒AI</span><span class="pill">數位陪伴</span><span class="pill">社群互動</span></div></div></header>
 <main>
-<section><div class="wrap overview"><div><h2 class="section-title">Overview</h2><p class="summary">以主動式訊息與情緒辨識打造 AI 陪伴系統，將日常互動、任務機制與 LINE 生態整合為長期陪伴體驗。</p><div class="team-note"><strong>團隊協作</strong>：LINE FRESH 提案團隊：楊雨姮、簡以庭、游欣樺</div></div><div class="meta-grid"><div class="meta-card"><div class="meta-label">Year</div><div class="meta-value">2025</div></div><div class="meta-card"><div class="meta-label">Category</div><div class="meta-value">AI</div></div><div class="meta-card"><div class="meta-label">Award</div><div class="meta-value">作品整理</div></div><div class="meta-card"><div class="meta-label">Focus</div><div class="meta-value">LINE / 情緒AI</div></div></div></div></section>
+<section><div class="wrap overview"><div><h2 class="section-title">Overview</h2><p class="summary">以主動式訊息與情緒辨識打造 AI 陪伴系統，將日常互動、任務機制與 LINE 生態整合為長期陪伴體驗。</p><div class="team-note"><strong>團隊協作</strong>： LINE FRESH 提案團隊：楊雨姮、簡以庭、游欣樺</div></div><div class="meta-grid"><div class="meta-card"><div class="meta-label">Year</div><div class="meta-value">2025</div></div><div class="meta-card"><div class="meta-label">Category</div><div class="meta-value">AI</div></div><div class="meta-card"><div class="meta-label">Award</div><div class="meta-value">作品整理</div></div><div class="meta-card"><div class="meta-label">Focus</div><div class="meta-value">LINE / 情緒AI</div></div></div></div></section>
 <section><div class="wrap"><h2 class="section-title">作品介紹</h2><div class="story-lead"><p>以主動式訊息與情緒辨識打造 AI 陪伴系統，將日常互動、任務機制與 LINE 生態整合為長期陪伴體驗。 這個題目是團隊協作完成。這頁整理的是我在這個題目裡如何定義問題、形成提案、安排內容架構，以及最後想讓外部看見的核心價值。</p></div><div class="story-grid"><article class="story-card"><h3>目的</h3><p>建立可被日常使用的情緒支持系統，透過 LINE 高普及平台把陪伴從被動聊天升級為主動關懷。</p></article><article class="story-card"><h3>發想</h3><p>孤獨感與情緒支持需求持續升高，尤其高齡與獨居族群更明顯。既有聊天機器人大多被動回應，缺乏持續關係感。</p></article><article class="story-card"><h3>核心設計</h3><p>結合情緒辨識、主動提醒與寵物互動成長系統，讓使用者在同一介面完成陪伴互動、情緒支持與生活節奏管理。</p></article><article class="story-card"><h3>執行方式</h3><p>以 LIFF、Messaging API、Beacon 建立技術骨架，並導入任務與勳章機制、原創角色合作、線下活動串聯，提高留存與黏著。</p></article><article class="story-card"><h3>內容亮點</h3><p>核心差異在於主動式陪伴設計，能依語境給出不同情緒回應，讓 AI 互動更貼近真實關係而非工具式回覆。</p></article><article class="story-card"><h3>成果</h3><p>完成 LINE FRESH 校園競賽提案，驗證情緒 AI 與平台互動可形成可持續經營的數位陪伴模型。</p></article></div></div></section>
 
 <section><div class="wrap"><h2 class="section-title">Related</h2><div class="related"><a class="related-card" href="2025-ai%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80-%E7%A2%B3%E6%84%9F%E6%9C%AA%E4%BE%86.html"><div class="related-year">2025 · AI</div><div class="related-title">碳感未來 AI 減碳 ERP</div><span class="small-link">查看詳情 →</span></a><a class="related-card" href="2026-edubot.html"><div class="related-year">2026 · AI</div><div class="related-title">EduBot 早療家庭行動系統（115 年度創新創業競賽）</div><span class="small-link">查看詳情 →</span></a></div></div></section>
 </main>
-<script id="competition-data" type="application/json">{"id":"2025-line-pets","title":"LINE PETs 情感連結新解方","category":"AI","year":"2025"}</script>
+<script id="competition-data" type="application/json">{"id":"2025-line-pets","title":"LINE PETs 情感連結新解方","category":"AI","year":"2025","lang":"zh"}</script>
 <script>
+const pageDataEl=document.getElementById('competition-data');
+let lang='zh';
+try{
+  const pageData=JSON.parse(pageDataEl?.textContent||'{}');
+  lang=pageData.lang==='en'?'en':'zh';
+}catch(_e){lang='zh';}
 document.querySelectorAll('[data-app-carousel]').forEach((carousel)=>{
   const track=carousel.querySelector('.app-track');
   const slides=[...track.querySelectorAll('.app-slide')];
@@ -97,7 +103,7 @@ document.querySelectorAll('[data-app-carousel]').forEach((carousel)=>{
     const dot=document.createElement('button');
     dot.type='button';
     dot.className='app-dot';
-    dot.setAttribute('aria-label','切換到第 '+(index+1)+' 張');
+    dot.setAttribute('aria-label', lang === 'en' ? ('Go to slide ' + (index + 1)) : ('切換到第 ' + (index + 1) + ' 張'));
     dot.addEventListener('click',()=>track.scrollTo({left:slides[index].offsetLeft-track.offsetLeft,behavior:'smooth'}));
     dotsWrap.appendChild(dot);
     return dot;

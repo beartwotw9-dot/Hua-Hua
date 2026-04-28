@@ -103,3 +103,152 @@ The portfolio now indexes:
 These are symlinks to the organized folder on Desktop, so the archive can display the files without duplicating or modifying the original materials.
 
 Use `filePatterns` in `competitions/index.json` when multiple portfolio pages share the same source folder but should show different files.
+
+---
+
+# Chandra OCR
+
+Chandra is the document ingestion layer for the AI research workflow in this repo:
+
+```text
+Raw PDF / Image
+-> Chandra OCR
+-> Markdown / HTML / JSON
+-> Research notes / RAG / Notion-ready summaries
+```
+
+Use Chandra OCR when you need stronger document intelligence than plain text extraction:
+
+- complex PDFs
+- scanned forms
+- tables
+- handwriting
+- math-heavy documents
+- RAG preprocessing
+
+Chandra converts PDFs and images into structured Markdown, HTML, and JSON while preserving layout details. In this repo, outputs should go under `outputs/chandra/<source_file_name>/`.
+
+The reusable ingestion module is [scripts/chandra_ingest.py](/Users/youxinhua/Documents/New%20project/scripts/chandra_ingest.py). It runs Chandra and writes a small `ingestion_manifest.json` inside each document output folder so downstream AI workflows can reliably discover the generated artifacts.
+
+## Install
+
+Choose the install that matches your runtime:
+
+```bash
+# HuggingFace local inference (recommended for simple local use)
+pip install "chandra-ocr[hf]"
+
+# Basic install for vLLM-backed usage
+pip install chandra-ocr
+
+# Optional app UI
+pip install "chandra-ocr[app]"
+```
+
+Environment notes:
+
+- Python `>=3.10` is required by `chandra-ocr`.
+- `--method hf` runs locally and is the easiest CLI-first option.
+- `--method vllm` expects a running vLLM server. You can start the packaged helper with `chandra_vllm`.
+
+## Output Convention
+
+Send Chandra output to `./outputs/chandra`.
+
+For each source file, Chandra creates a subfolder such as:
+
+```text
+outputs/chandra/invoice.pdf/
+├── invoice.pdf.md
+├── invoice.pdf.html
+├── invoice.pdf_metadata.json
+├── ingestion_manifest.json
+└── extracted images...
+```
+
+That gives you Markdown, HTML, metadata JSON, extracted images when available, plus a manifest that points downstream tools to the right files.
+
+The root output folder also gets:
+
+```text
+outputs/chandra/ingestion_index.json
+```
+
+This makes it easier to pass a batch of OCR results into research pipelines or RAG indexing jobs.
+
+## Run A Single File
+
+Use the repo wrapper:
+
+```bash
+# Default method is hf
+npm run ocr:chandra -- ./path/to/input.pdf
+
+# Explicit hf
+npm run ocr:chandra -- ./path/to/input.pdf --method hf
+
+# vLLM
+npm run ocr:chandra -- ./path/to/input.pdf --method vllm
+```
+
+Or call the ingestion module directly:
+
+```bash
+python3 scripts/chandra_ingest.py ./path/to/input.pdf --method hf
+```
+
+You can still call Chandra directly if you only want raw OCR output:
+
+```bash
+chandra input.pdf ./outputs/chandra --method hf
+chandra input.pdf ./outputs/chandra --method vllm
+```
+
+## Run A Folder
+
+Process an entire directory of PDFs or images:
+
+```bash
+npm run ocr:chandra -- ./documents --method hf
+
+# Direct CLI equivalent
+chandra ./documents ./outputs/chandra --method hf
+
+# Ingestion module
+python3 scripts/chandra_ingest.py ./documents --method hf
+```
+
+## Method Choice: `hf` vs `vllm`
+
+- Use `hf` for the lightest local workflow and simplest setup on one machine.
+- Use `vllm` when you already have GPU inference infrastructure or want a separate inference server for batch processing.
+- Start the helper server with `chandra_vllm`, then run `chandra ... --method vllm`.
+
+## Research Workflow Notes
+
+This setup is intended to be the first stage of a document intelligence pipeline:
+
+1. Put raw PDFs, scans, or images into a source folder.
+2. Run the Chandra ingestion script to create structured outputs.
+3. Feed the generated Markdown or HTML into AI research, note extraction, RAG chunking, or Notion-ready summary workflows.
+4. Use `*_metadata.json` and `ingestion_manifest.json` when you need file-level provenance or artifact discovery.
+
+## Wrapper Script
+
+This repo includes a small wrapper at [scripts/chandra_ocr.sh](/Users/youxinhua/Documents/New%20project/scripts/chandra_ocr.sh) to keep commands consistent.
+
+Examples:
+
+```bash
+# Single file
+bash scripts/chandra_ocr.sh input.pdf
+
+# Folder
+bash scripts/chandra_ocr.sh ./documents --method hf
+
+# Pass through extra Chandra flags such as page ranges
+bash scripts/chandra_ocr.sh input.pdf --method hf --page-range 1-5
+
+# Rebuild manifests without rerunning OCR
+python3 scripts/chandra_ingest.py ./documents --skip-ocr
+```

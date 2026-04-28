@@ -1568,7 +1568,7 @@ function renderCompetitions(){
         ${buildPosterTitle(item,useZh)}
         <div class="competition-poster-meta">${localizedTags.slice(0,2).map(tag=>`<span>${tag}</span>`).join('')}</div>
       </div>`;
-    return `<a class="competition-card ${isMaintenance?'is-maintenance':''}" href="${isMaintenance?'#projects':`competitions/${encodeURIComponent(item.id)}.html`}" ${isMaintenance?'aria-disabled="true" tabindex="-1"':''} data-category="${item.category}" data-uiux="${isUiUxProject(item)?'true':'false'}" style="--card-gradient:${gradient}">
+    return `<a class="competition-card ${isMaintenance?'is-maintenance':''}" href="${isMaintenance?'#projects':`competitions/${encodeURIComponent(item.id)}${useZh?'':'-en'}.html`}" ${isMaintenance?'aria-disabled="true" tabindex="-1"':''} data-id="${item.id}" data-category="${item.category}" data-uiux="${isUiUxProject(item)?'true':'false'}" style="--card-gradient:${gradient}">
       <div class="competition-media" style="background:${gradient}">
         ${media}
         <span class="competition-pill competition-year">${item.year}</span>
@@ -1678,6 +1678,15 @@ pauseBtn?.addEventListener('click',()=>{
 carouselTrack?.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight'){e.preventDefault();advanceCarousel(1)}
   if(e.key==='ArrowLeft'){e.preventDefault();advanceCarousel(-1)}
+});
+carouselTrack?.addEventListener('click',e=>{
+  const card=e.target.closest('.competition-card');
+  if(!card||card.classList.contains('is-maintenance'))return;
+  const id=card.dataset.id;
+  if(!id)return;
+  e.preventDefault();
+  const suffix=currentLang==='zh'?'':'-en';
+  window.location.href=`competitions/${encodeURIComponent(id)}${suffix}.html`;
 });
 carouselTrack?.addEventListener('scroll',()=>{
   if(dotsRaf)return;
