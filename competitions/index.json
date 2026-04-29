@@ -33,7 +33,13 @@
       "execution": "與在地連鎖生鮮及農會合作導入產地直銷，並串接 DIY 體驗如花生小學堂與潤餅實作。頂樓太陽能供電降低營運能耗，社群行銷結合打卡點與主題活動擴大聲量。",
       "highlights": "主軸聚焦在地化、體驗化、共融化、永續化。以可負擔價格搭配多元品項，提高大眾採用率，同時讓小農有穩定曝光與銷售場景。",
       "outcomes": "完成完整構想書，預估投資報酬率超過 20%，三年目標鎖定營業額 500 萬與 3 萬參觀人次，具備帶動觀光與就業的地方地標潛力。",
-      "team": "你濃我農小隊：崔庭瑀、游欣樺、施筑馨、賴致諺"
+      "team": "你濃我農小隊：崔庭瑀、游欣樺、施筑馨、賴致諺",
+      "spotlightEn": [
+        "Local market analysis",
+        "Business proposal",
+        "Mentor feedback"
+      ],
+      "focusEn": "Local market analysis / Business proposal"
     },
     {
       "id": "2024-新創之星-三隻雞腿排",
@@ -68,7 +74,13 @@
       "execution": "以歷史行為與評價持續訓練推薦模型，串接食安資料庫提供風險提醒，並用卡路里追蹤與長期飲食分析提升留存。商業端對接外送平台與店家合作。",
       "highlights": "核心價值是「健康、省時、實惠」三者並重。團隊分工完整，從策略、技術到財務與商務都能對應，具備從提案走向產品化的可行性。",
       "outcomes": "完成創業構想書並提出可落地的產品藍圖，方案可同時服務都市白領、健康意識族群與特殊飲食需求者，形成使用者、平台與店家的三方共利。",
-      "team": "三隻雞腿排：崔庭瑀、游欣樺、賴致諺"
+      "team": "三隻雞腿排：崔庭瑀、游欣樺、賴致諺",
+      "spotlightEn": [
+        "Tech-track proposal",
+        "Cross-school team collaboration",
+        "Startup concept paper"
+      ],
+      "focusEn": "App design / AI recommendations"
     },
     {
       "id": "2025-財務健康三明治",
@@ -104,7 +116,13 @@
       "execution": "模組化推進飲食、交通、房租、水電、長照、教育支出分類，並加入投資社群討論、分齡飲食建議與長照服務媒合，形成完整家庭支持鏈。",
       "highlights": "亮點在於把財務健康與生活健康放在同一個儀表板，讓家庭可用同一套資料節奏共同調整決策，而不是各自為政。",
       "outcomes": "提案完整呈現儲蓄、健康、長照、社群四大模組，預期能同時提升財務韌性、健康管理效率與家庭協作品質。",
-      "team": "團體協作"
+      "team": "團體協作",
+      "spotlightEn": [
+        "Financial-service research",
+        "Proposal pitch",
+        "Mobile-payment scenarios"
+      ],
+      "focusEn": "Financial-service research / Proposal pitch"
     },
     {
       "id": "2023-投資競賽",
@@ -140,7 +158,13 @@
       "execution": "團隊分工為產業追蹤、技術面判讀、風險檢視三軸，所有交易皆記錄理由並回看得失，遇到虧損時優先處理流程與紀律而非情緒。",
       "highlights": "強調「交易心態」與「團隊默契」的管理，避免只看報酬忽略過程品質，讓每次失誤都可被轉化為可追溯的學習資產。",
       "outcomes": "完成全期賽事與心得報告，建立可複用的研究與檢討框架，在風險控管、資金配置與團隊溝通上都有明確成長。",
-      "team": "團體協作"
+      "team": "團體協作",
+      "spotlightEn": [
+        "Technical analysis",
+        "Fundamental analysis",
+        "Portfolio management"
+      ],
+      "focusEn": "Investment simulation / Strategy validation"
     },
     {
       "id": "2024-新創盃",
@@ -175,22 +199,30 @@
         {
           "title": "封面頁",
           "caption": "封面頁先用書封主視覺、推薦語與清楚的功能定位建立第一眼辨識，讓使用者在很短時間內理解這不是一般的購書平台，而是一個把閱讀、分享與選書整理在一起的知識社群入口。",
-          "image": "assets/chaptalk_phones/phone1_cover.jpg"
+          "image": "assets/chaptalk_phones/phone1_cover.jpg",
+          "titleEn": "Cover",
+          "captionEn": "The cover uses the book's main visual, the recommendation copy, and a clear product positioning to anchor first-glance recognition — making it immediately obvious that this is not just another bookstore but a community-driven reading experience."
         },
         {
           "title": "好書分享",
           "caption": "好書分享頁把讀後心得、重點摘錄與互動回饋放在同一個場景中，讓內容不只是單向推薦，而是能被留言、被收藏、被延伸。這一頁的角色是把閱讀經驗轉成社群內容，提升平台的內容流動性。",
-          "image": "assets/chaptalk_phones/phone2_share.jpg"
+          "image": "assets/chaptalk_phones/phone2_share.jpg",
+          "titleEn": "Book Sharing",
+          "captionEn": "The book-sharing page brings together reflections, key excerpts, and interactive feedback, turning content from one-way recommendation into something users can comment on, save, and build on."
         },
         {
           "title": "分類搜尋",
           "caption": "分類搜尋不是只做主題標籤，而是想處理選書時最常見的迷惘感，所以把使用情境、閱讀目的與主題分類一起整合進來，讓使用者可以從『我現在想解決什麼問題』去找到對應的書。",
-          "image": "assets/chaptalk_phones/phone4_search.jpg"
+          "image": "assets/chaptalk_phones/phone4_search.jpg",
+          "titleEn": "Category Search",
+          "captionEn": "Category search goes beyond topic tags. It tackles the common confusion of choosing a book by combining context, reading purpose, and themes, so users can enter from whichever angle feels right."
         },
         {
           "title": "個人頁面",
           "caption": "個人頁面把書單、偏好、分享紀錄與互動足跡整合成一個持續累積的閱讀輪廓，讓每一次收藏與分享都能回到個人的知識旅程裡，也為推薦與社群互動提供更穩定的基礎。",
-          "image": "assets/chaptalk_phones/phone3_shop.jpg"
+          "image": "assets/chaptalk_phones/phone3_shop.jpg",
+          "titleEn": "Profile",
+          "captionEn": "The profile consolidates booklists, preferences, sharing history, and interaction footprints into a continuously growing reading profile, so each save and share keeps building both the user's journey and the recommendation engine."
         }
       ],
       "coverImage": "competitions/assets/chaptalk-preview.png",
@@ -201,7 +233,13 @@
       "outcomes": "完成競賽計畫書並獲全國季軍，明確驗證「內容推薦 + 社群互動 + 商業轉化」可共存，具備擴大經營潛力。",
       "execution": "九大模組同步規劃，串接電子書平台、二手書流通、線下讀書會與 UGC 生態，並以訂閱制與活動合作建立收入路徑。",
       "highlights": "情緒書單與多維度書評機制顯著提升內容匹配度；實體書店合作網絡補足純數位平台的在地觸達缺口。",
-      "team": "團體協作"
+      "team": "團體協作",
+      "spotlightEn": [
+        "App interface design",
+        "20+ page business plan",
+        "Market research and financial planning"
+      ],
+      "focusEn": "UI/UX / Reading community"
     },
     {
       "id": "2025-司法-ai個資風險",
@@ -232,7 +270,13 @@
       "execution": "同步推進法規對照與技術工具包，導入動態同意、持續稽核與透明報告，建立法規、技術、治理三位一體的運作框架。",
       "highlights": "把「隱私保護」從阻礙轉為創新底座，讓研究單位、公部門、機構與當事人四方都能在同一治理架構中找到平衡點。",
       "outcomes": "完成提案與書面報告，提出可分階段落地的政策建議，為台灣醫療資料二次利用建立具實務價值的跨域對話模型。",
-      "team": "eeoo team：楊雨姮、游欣樺與團隊成員"
+      "team": "eeoo team：楊雨姮、游欣樺與團隊成員",
+      "spotlightEn": [
+        "AI risk identification",
+        "Personal-data protection argument",
+        "Legal-issue articulation"
+      ],
+      "focusEn": "Legal challenge / Medical data"
     },
     {
       "id": "2025-fintech-greenpay",
@@ -263,7 +307,13 @@
       "execution": "建立綠色商家聯盟，串接 LINE 與銀行 App 的個人化永續報告、排行榜與好友挑戰，同時在銀行端建置 ESG 儀表板。",
       "highlights": "把抽象環保行為轉成可量化、可比較、可分享的使用體驗，建立使用者、商家與銀行三方正循環。",
       "outcomes": "完成校際競賽提案並交付產品、商模與報告框架，具備落地為銀行內部創新專案的可行性。",
-      "team": "龜蜜龜蜜團隊"
+      "team": "龜蜜龜蜜團隊",
+      "spotlightEn": [
+        "Sustainable credit-card product concept",
+        "Financial-service user scenarios",
+        "Full proposal & pitch iteration"
+      ],
+      "focusEn": "FinTech / ESG"
     },
     {
       "id": "2025-模擬交易",
@@ -299,7 +349,13 @@
       "execution": "落實盤前情報、盤中紀律、盤後回顧三步驟；團隊分工負責產業追蹤、技術判讀與資金控管，全部交易皆記錄並回測。",
       "highlights": "策略從單一指標進化為結構化模型，並透過停損規則與持倉管理降低情緒交易，讓績效與風險控制同時提升。",
       "outcomes": "完成競賽心得與策略報告，並獲指導老師簽核建議，後續可延伸至量化與波動率模型，持續強化實戰穩定性。",
-      "team": "金天發大財隊"
+      "team": "金天發大財隊",
+      "spotlightEn": [
+        "Trading-strategy review",
+        "Market-timing judgment",
+        "Reflection report"
+      ],
+      "focusEn": "Futures / Options"
     },
     {
       "id": "2025-line-pets",
@@ -324,7 +380,8 @@
       "highlights": "核心差異在於主動式陪伴設計，能依語境給出不同情緒回應，讓 AI 互動更貼近真實關係而非工具式回覆。",
       "outcomes": "完成 LINE FRESH 校園競賽提案，驗證情緒 AI 與平台互動可形成可持續經營的數位陪伴模型。",
       "files": [],
-      "team": "LINE FRESH 提案團隊：楊雨姮、簡以庭、游欣樺"
+      "team": "LINE FRESH 提案團隊：楊雨姮、簡以庭、游欣樺",
+      "focusEn": "LINE / Emotional AI"
     },
     {
       "id": "2025-ai金融科技-碳感未來",
@@ -355,7 +412,13 @@
       "execution": "採盤查、分析、行動三步驟導入，與銀行及會計師合作提供認證等級報表，並採 SaaS 分級訂閱服務不同規模企業。",
       "highlights": "將碳數據與會計流程置於同一資料管線，避免重工與資訊落差；AI 持續學習可逐步提升減碳建議精準度。",
       "outcomes": "完成 AI 金融科技競賽提案，商業模式涵蓋訂閱、授信合作與顧問服務，具備可規模化的雙邊網絡潛力。",
-      "team": "三隻小羊"
+      "team": "三隻小羊",
+      "spotlightEn": [
+        "AI × Green finance",
+        "Carbon-management scenario design",
+        "Competition proposal writing"
+      ],
+      "focusEn": "AI / Carbon ERP"
     },
     {
       "id": "2026-永續生活實驗室",
@@ -386,32 +449,44 @@
         {
           "title": "探索地圖",
           "caption": "首頁先用地圖建立附近可用資源的即時感，讓使用者一打開就能看到周邊有哪些店家、剩食種類與可預約時段，降低搜尋成本，也把平台的核心價值直接做成第一眼就能理解的體驗。",
-          "image": "assets/resqfood-img1.jpeg"
+          "image": "assets/resqfood-img1.jpeg",
+          "titleEn": "Discovery Map",
+          "captionEn": "The home view uses a map to surface real-time nearby resources, so users immediately see which stores, surplus types, and reservation slots are open — lowering search cost and embedding the platform into everyday routines."
         },
         {
           "title": "店家列表",
           "caption": "列表模式補足地圖不容易比較的資訊層次，使用者可以更快速地比對店家距離、折扣幅度、餐點數量與評價狀態，讓決策從單純惜食理念延伸到實際購買時也足夠方便。",
-          "image": "assets/resqfood-img2.jpeg"
+          "image": "assets/resqfood-img2.jpeg",
+          "titleEn": "Store List",
+          "captionEn": "List mode adds the comparison layer the map lacks, letting users quickly weigh distance, discount, item count, and rating, so the decision moves from a values-only impulse to a practical choice."
         },
         {
           "title": "商品詳情",
           "caption": "商品詳情頁聚焦在餐點內容、可取貨時間、數量限制與剩食說明，把常見的不確定感提前說清楚。這一頁的設計重點不是堆資訊，而是幫助使用者在短時間內建立信任並完成選擇。",
-          "image": "assets/resqfood-img3.jpeg"
+          "image": "assets/resqfood-img3.jpeg",
+          "titleEn": "Item Details",
+          "captionEn": "The item page focuses on contents, pickup window, quantity limits, and a clear surplus note, addressing common uncertainty up front. The aim is not to pile on info but to remove last-mile hesitation."
         },
         {
           "title": "支付預約",
           "caption": "我把預約、付款與取貨流程整合在同一條路徑裡，目的是避免使用者在切換頁面時流失，也讓店家端更容易掌握預約數量。這段流程承接的是平台轉換率，所以介面上刻意壓低操作負擔。",
-          "image": "assets/resqfood-img4.jpeg"
+          "image": "assets/resqfood-img4.jpeg",
+          "titleEn": "Reserve & Pay",
+          "captionEn": "Reservation, payment, and pickup are integrated into one path to avoid drop-off when switching pages, and to give the merchant a cleaner reservation count. This step also continues the trust thread from earlier screens."
         },
         {
           "title": "個人惜食",
           "caption": "個人頁把減碳、惜食次數與參與紀錄整理成可回顧的成果，讓永續不只是一次性的購買，而是能被累積、被看見、也能成為持續回來使用平台的動機。",
-          "image": "assets/resqfood-img5.jpeg"
+          "image": "assets/resqfood-img5.jpeg",
+          "titleEn": "Personal Saved",
+          "captionEn": "The personal page tracks carbon savings, food-rescue counts, and participation history into a reviewable record — turning sustainability from a one-off purchase into something that accumulates and motivates return visits."
         },
         {
           "title": "商家管理",
           "caption": "店家端不是只上架商品而已，而是把庫存管理、曝光安排與 AI 備料預測整合成一套後台思路。這讓 ResQfood 不只是一個消費者平台，也是一個能幫小型店家提升營運效率的工具。",
-          "image": "assets/resqfood-img6.jpeg"
+          "image": "assets/resqfood-img6.jpeg",
+          "titleEn": "Merchant Console",
+          "captionEn": "The merchant side is more than item listings — it integrates inventory, exposure scheduling, and AI prep forecasting into one back-office workflow, making ResQfood not only a marketplace but an operational tool."
         }
       ],
       "coverImage": "competitions/assets/resqfood-composite.jpg",
@@ -423,7 +498,13 @@
       "appVisual": "assets/resqfood-composite.jpg",
       "execution": "初期鎖定雙北校園與辦公商圈，採店家訂閱 + 交易分潤模式，並輸出可供對外使用的 ESG 成果指標，降低中小店家永續溝通門檻。",
       "highlights": "從被動報廢轉為主動預測，透過 AI 與 UI 流程設計同時優化店家備料與消費者找餐路徑，形成雙邊可持續正循環。",
-      "team": "食在肚子餓隊：楊雨姮、徐民祐、游欣樺、簡以庭"
+      "team": "食在肚子餓隊：楊雨姮、徐民祐、游欣樺、簡以庭",
+      "spotlightEn": [
+        "Discovery map and store directory",
+        "AI prep-and-stock forecasting",
+        "ESG quantitative dashboard"
+      ],
+      "focusEn": "UI/UX / App design"
     },
     {
       "id": "2026-俗女手帖-app",
@@ -452,37 +533,50 @@
         {
           "title": "首頁探索",
           "caption": "以清楚分區承接使用者進站第一步，讓主題內容、推薦卡片與每日入口可以快速被理解。",
-          "image": "assets/suonv_frames/frame1.jpg"
+          "image": "assets/suonv_frames/frame1.jpg",
+          "titleEn": "Home Discovery",
+          "captionEn": "A clearly zoned home view receives the user on first entry, so theme content, recommended cards, and the daily entry point are immediately understandable."
         },
         {
           "title": "主題任務",
           "caption": "把抽象成長目標拆成可執行任務，透過清楚的完成狀態回饋，建立使用者持續感。",
-          "image": "assets/suonv_frames/frame2.jpg"
+          "image": "assets/suonv_frames/frame2.jpg",
+          "titleEn": "Theme Tasks",
+          "captionEn": "Abstract growth goals are broken down into actionable tasks, with clear completion-state feedback that builds a sustained sense of momentum."
         },
         {
           "title": "互動回饋",
           "caption": "加入互動回饋與激勵機制，讓使用者在完成任務後得到即時正向訊號，強化循環。",
-          "image": "assets/suonv_frames/frame3.jpg"
+          "image": "assets/suonv_frames/frame3.jpg",
+          "titleEn": "Interactive Feedback",
+          "captionEn": "Interactive feedback and reward cues give immediate positive signals after each completed task, reinforcing the engagement loop."
         },
         {
           "title": "個人紀錄",
           "caption": "以時間軸與統整視圖呈現累積成果，幫助使用者看見自己的變化並持續前進。",
-          "image": "assets/suonv_frames/frame4.jpg"
+          "image": "assets/suonv_frames/frame4.jpg",
+          "titleEn": "Personal Records",
+          "captionEn": "A timeline plus aggregate views surface accumulated outcomes, helping users see their own change and keep moving forward."
         },
         {
           "title": "探索延伸",
           "caption": "把內容探索與推薦路徑再拉長，降低跳出率並提高二次互動機會。",
-          "image": "assets/suonv_frames/frame5.jpg"
+          "image": "assets/suonv_frames/frame5.jpg",
+          "titleEn": "Extended Discovery",
+          "captionEn": "Discovery and recommendation paths are extended to lower bounce rate and improve the chance of secondary engagement."
         },
         {
           "title": "成長儀表",
           "caption": "透過可回看的指標與紀錄，讓使用者更直觀理解自己累積的進展。",
-          "image": "assets/suonv_frames/frame6.jpg"
+          "image": "assets/suonv_frames/frame6.jpg",
+          "titleEn": "Growth Dashboard",
+          "captionEn": "Reviewable indicators and records give users a more intuitive view of their accumulated progress."
         }
       ],
       "team": "",
       "coverImage": null,
-      "files": []
+      "files": [],
+      "focusEn": "Content experience / Task interaction"
     },
     {
       "id": "2025-潛力種子盃-個股研究",
@@ -513,7 +607,13 @@
       "execution": "團隊分工追蹤技術趨勢、毛利率與現金流循環，並獨立整理匯率、客戶集中、技術替代與地緣政治風險。",
       "highlights": "從假設、推導到敏感度分析均可追溯，讓投資結論具備可質疑、可修正、可重用的研究品質。",
       "outcomes": "完成六大區塊報告交付，建立可延續的個股研究方法論，為後續其他標的分析奠定標準流程。",
-      "team": "我想要坐飛機隊：潘靜萱、盧琬姍、游欣樺、陳孟臻、張伃昕"
+      "team": "我想要坐飛機隊：潘靜萱、盧琬姍、游欣樺、陳孟臻、張伃昕",
+      "spotlightEn": [
+        "Valuation methodologies",
+        "Industry & company fundamentals analysis",
+        "Investment-risk breakdown"
+      ],
+      "focusEn": "Stock research / Financial analysis"
     },
     {
       "id": "2025-拾拈溯木",
@@ -549,7 +649,13 @@
       "execution": "建立採料、加工、品管供應鏈，串接在地師傅與內容設計；行銷採社群、短影音、線下展覽三路推進並建立品牌 IP。",
       "highlights": "把「永續、教育、創意」三軸整合成可被市場理解的產品敘事，並預留主題化、節慶化、客製化擴充能力。",
       "outcomes": "完成 U-start 計畫書與 20 頁營運版，幼兒園實測回饋正向，從研發到服務流程已具備進入育成體系條件。",
-      "team": "拾拈溯木團隊（U-start）"
+      "team": "拾拈溯木團隊（U-start）",
+      "spotlightEn": [
+        "Education product design",
+        "Fundraising and operations plan",
+        "Story-box demo"
+      ],
+      "focusEn": "U-start / Education product design"
     },
     {
       "id": "2026-edubot",
@@ -574,7 +680,8 @@
       "highlights": "核心突破在於把「今天該做什麼」說清楚，讓治療服務從診間延伸到 365 天家庭日常，並累積高價值行為數據資產。",
       "outcomes": "完整交付計畫書與商模分析，並對接桃園合作機會，形成家長、治療師、機構、政府四方共益的多邊循環。",
       "files": [],
-      "team": "EduBot 團隊"
+      "team": "EduBot 團隊",
+      "focusEn": "Early intervention / AI translation"
     },
     {
       "id": "2026-系統載入中",
@@ -600,7 +707,8 @@
       "highlights": "重點在於把 AI 工具應用轉為可複用的流程思維，並強化視覺敘事與文字邏輯，讓提案更具說服力與可讀性。",
       "outcomes": "完成「系統載入中」主題成果頁，建立從學習、整理到對外展示的一致版本，作為後續延伸專案的基礎。",
       "files": [],
-      "team": "個人整理作品"
+      "team": "個人整理作品",
+      "focusEn": "Youth Affairs / AI applications"
     }
   ]
 }

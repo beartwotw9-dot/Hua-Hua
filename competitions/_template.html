@@ -103,7 +103,7 @@ document.querySelectorAll('[data-app-carousel]').forEach((carousel)=>{
     const dot=document.createElement('button');
     dot.type='button';
     dot.className='app-dot';
-    dot.setAttribute('aria-label', lang === 'en' ? ('Go to slide ' + (index + 1)) : ('切換到第 ' + (index + 1) + ' 張'));
+    dot.setAttribute('aria-label', '{{goToSlideLabel}}' + (index + 1) + '{{goToSlideSuffix}}');
     dot.addEventListener('click',()=>track.scrollTo({left:slides[index].offsetLeft-track.offsetLeft,behavior:'smooth'}));
     dotsWrap.appendChild(dot);
     return dot;

@@ -9,7 +9,7 @@ const coversRoot=path.join(assetsRoot,'covers');
 const categoryGradients={'FinTech':'linear-gradient(160deg, #2C4A3E, #6B9070)','創業競賽':'linear-gradient(160deg, #4A3020, #A0704A)','AI':'linear-gradient(160deg, #2A3A4A, #5A7A8A)','法律':'linear-gradient(160deg, #3A3020, #8A7A50)','永續':'linear-gradient(160deg, #2A4030, #5A8060)','HR':'linear-gradient(160deg, #3A2A40, #7A5A80)','培訓':'linear-gradient(160deg, #402A2A, #806040)',default:'linear-gradient(160deg, #3A3530, #8A7A6A)'};
 const categoryEn={'FinTech':'FinTech','創業競賽':'Entrepreneurship','AI':'AI','法律':'Legal','永續':'Sustainability','HR':'HR','培訓':'Training','UI/UX':'UI/UX','其他':'Other'};
 const awardEnMap={'作品整理':'Project Summary','作品介紹':'Project Story','團體第一名':'1st Place (Team)','全國季軍':'National 3rd Place','全國佳作（前10%）':'National Merit (Top 10%)','全國前六強':'National Top 6','優選':'Outstanding','全國季軍（大專組）':'National 3rd Place (College)','全國第21名':'National Rank #21','全國第22名':'National Rank #22','全國季軍（網路行銷組）':'National 3rd Place (Marketing Track)'};
-const tagEnMap={'司法競賽':'Legal Challenge','醫療資料':'Medical Data','隱私保護':'Privacy Protection','HIST':'HIST','期貨':'Futures','選擇權':'Options','模擬交易':'Paper Trading','AI':'AI','ERP':'ERP','碳盤查':'Carbon Inventory','綠色金融':'Green Finance','投資模擬':'Investment Simulation','策略驗證':'Strategy Validation','風險管理':'Risk Management','UI/UX':'UI/UX','閱讀社群':'Reading Community','App設計':'App Design','AI推薦':'AI Recommendations','金融科技':'FinTech','永續信用卡':'Sustainable Credit Card','服務設計':'Service Design','科技應用':'Tech Application','跨校合作':'Cross-school Teamwork','創業構想':'Startup Concept','財務健康':'Financial Wellness','行動支付':'Mobile Payment','金融研究':'Financial Research','個股研究':'Stock Research','估值模型':'Valuation Model','財務分析':'Financial Analysis','永續':'Sustainability','模擬交易等':'Paper Trading & More','多元':'Multi-Track','新創':'Startup','商業企劃':'Business Planning','潛力':'Potential','司法':'Legal','法律思辨':'Legal Reasoning','人資':'HR','組織發展':'Org Development','職涯':'Career','青年局':'Youth Affairs'};
+const tagEnMap={'司法競賽':'Legal Challenge','醫療資料':'Medical Data','隱私保護':'Privacy Protection','HIST':'HIST','期貨':'Futures','選擇權':'Options','模擬交易':'Paper Trading','AI':'AI','ERP':'ERP','碳盤查':'Carbon Inventory','綠色金融':'Green Finance','投資模擬':'Investment Simulation','策略驗證':'Strategy Validation','風險管理':'Risk Management','UI/UX':'UI/UX','閱讀社群':'Reading Community','App設計':'App Design','AI推薦':'AI Recommendations','金融科技':'FinTech','永續信用卡':'Sustainable Credit Card','服務設計':'Service Design','科技應用':'Tech Application','跨校合作':'Cross-school Teamwork','創業構想':'Startup Concept','財務健康':'Financial Wellness','行動支付':'Mobile Payment','金融研究':'Financial Research','個股研究':'Equity Research','估值模型':'Valuation Model','財務分析':'Financial Analysis','永續':'Sustainability','模擬交易等':'Paper Trading & More','多元':'Multi-Track','新創':'Startup','商業企劃':'Business Planning','潛力':'Potential','司法':'Legal','法律思辨':'Legal Reasoning','人資':'HR','組織發展':'Org Development','職涯':'Career','青年局':'Youth Affairs','創業競賽':'Entrepreneurship','雲林':'Yunlin','地方創生':'Local Revitalization','永續園區':'Sustainable District','餐飲科技':'Food Tech','財務規劃':'Financial Planning','健康管理':'Health Management','三明治族群':'Sandwich Generation','團隊協作':'Team Collaboration','碳足跡':'Carbon Footprint','風險控管':'Risk Control','LINE':'LINE','情緒AI':'Emotional AI','數位陪伴':'Digital Companionship','社群互動':'Social Interaction','剩食媒合':'Food Rescue Matching','女性成長':'Women Growth','個人作品':'Personal Project','潛力種子盃':'Rising Seed Challenge','U-start':'U-start','創業計畫':'Startup Proposal','木育':'Wood Education','永續品牌':'Sustainable Brand','早療':'Early Intervention','AI轉譯':'AI Translation','健康科技':'Health Tech','創新創業':'Innovation & Entrepreneurship','AI應用':'AI Application','提案設計':'Proposal Design','系統思維':'Systems Thinking'};
 const enProjectMap={
   '2024-少年頭家-雲林農穫':{
     title:'Yunlin Harvest Mall District',
@@ -93,7 +93,7 @@ const enProjectMap={
   }
 };
 const i18nPage={
-  zh:{brandName:'游欣樺',backText:'← 返回',overviewLabel:'Overview',yearLabel:'Year',categoryLabel:'Category',awardLabel:'Award',focusLabel:'Focus',storyLabel:'作品介紹',purposeLabel:'目的',ideationLabel:'發想',modelLabel:'核心設計',executionLabel:'執行方式',highlightsLabel:'內容亮點',outcomesLabel:'成果',relatedLabel:'Related',viewDetails:'查看詳情 →',noRelated:'尚無同分類作品。',teamOnly:'團隊協作',teamLabel:'團隊協作',appDesign:'App 設計',appScreen:'App 畫面',appCaption:'介面重點整理。'},
+  zh:{brandName:'游欣樺',backText:'← 返回',overviewLabel:'作品概覽',yearLabel:'年份',categoryLabel:'類別',awardLabel:'獎項',focusLabel:'聚焦主題',storyLabel:'作品介紹',purposeLabel:'目的',ideationLabel:'發想',modelLabel:'核心設計',executionLabel:'執行方式',highlightsLabel:'內容亮點',outcomesLabel:'成果',relatedLabel:'相關作品',viewDetails:'查看詳情 →',noRelated:'尚無同分類作品。',teamOnly:'團隊協作',teamLabel:'團隊協作',appDesign:'App 設計',appScreen:'App 畫面',appCaption:'介面重點整理。'},
   en:{brandName:'Dora Yu',backText:'← Back',overviewLabel:'Overview',yearLabel:'Year',categoryLabel:'Category',awardLabel:'Award',focusLabel:'Focus',storyLabel:'Project Story',purposeLabel:'Purpose',ideationLabel:'Ideation',modelLabel:'Core Design',executionLabel:'Execution',highlightsLabel:'Highlights',outcomesLabel:'Outcomes',relatedLabel:'Related',viewDetails:'View Details →',noRelated:'No related projects yet.',teamOnly:'Team Collaboration',teamLabel:'Team Collaboration',appDesign:'App Design',appScreen:'App Screen',appCaption:'Key interface note.'}
 };
 function toPosix(value){return value.split(path.sep).join('/')}
@@ -165,6 +165,11 @@ function enTagValue(tag){
   return String(tag||'').trim()||'Project';
 }
 function enTags(item){return (item.tags||[]).map(enTagValue)}
+function enSpotlights(item){
+  return (item.spotlightEn||[])
+    .map(toEnglishText)
+    .filter(Boolean);
+}
 function enFocus(item){
   if(item.focusEn)return item.focusEn;
   if(item.focus){
@@ -174,41 +179,53 @@ function enFocus(item){
   return tags.join(' / ')||'Project Story';
 }
 function deriveStoryLeadEn(item){
-  const teamLead=item.team?'This project was completed through team collaboration. ':'';
-  return item.storyLeadEn || `${enSummary(item)} ${teamLead}This page highlights how we defined the problem, structured the proposal, and presented the final value clearly.`;
+  if(item.storyLeadEn)return item.storyLeadEn;
+  const parts=[enSummary(item)];
+  if(item.team)parts.push('Completed through team collaboration.');
+  if(item.focusEn)parts.push(`Focus: ${item.focusEn}.`);
+  else{
+    const spots=enSpotlights(item).slice(0,2);
+    if(spots.length)parts.push(`Key areas: ${spots.join(' and ')}.`);
+  }
+  return parts.join(' ');
 }
 function derivePurposeEn(item){
   if(item.purposeEn)return item.purposeEn;
-  if(item.category==='FinTech')return 'Turn a financial concept into a usable, understandable solution that links product value with practical user needs.';
-  if(item.category==='創業競賽')return 'Translate a real pain point into a concrete startup proposal and validate market need, user scenario, and execution feasibility.';
-  if(item.category==='AI')return 'Apply AI to a clear real-world problem, ensuring technology supports the solution instead of becoming decoration.';
-  if(item.category==='法律')return 'Present a structured governance proposal balancing innovation, legal safeguards, and individual rights.';
-  if(item.category==='永續')return 'Convert sustainability goals into practical product and behavior design that can be adopted in daily use.';
-  if(item.category==='HR'||item.category==='培訓')return 'Build practical HR and organizational capabilities that can be directly applied in real team and project settings.';
-  return 'Organize a cross-domain topic into a clear and practical project output.';
+  const focus=enFocus(item);
+  if(focus&&focus!=='Project Story')return `Develop a clear project direction around ${focus} and make the idea understandable, relevant, and usable.`;
+  return 'Develop a clear project direction and turn the idea into a usable, well-structured output.';
 }
 function deriveIdeationEn(item){
   if(item.ideationEn)return item.ideationEn;
-  return 'The concept started from a concrete observed gap, then expanded through user context, stakeholder constraints, and execution logic.';
+  return 'The direction started from a concrete gap in the problem space and was refined through user context, constraints, and proposal scope.';
 }
 function deriveModelEn(item){
   if(item.modelEn)return item.modelEn;
-  return 'The core design combines user scenario, value proposition, execution path, and measurable outcomes into one coherent structure.';
+  const spots=enSpotlights(item).slice(0,3);
+  if(spots.length)return `The project structure was built around ${spots.join(', ')}, tying the concept, supporting materials, and final narrative together.`;
+  return 'The project structure connected the core concept, supporting materials, and final narrative into one coherent output.';
 }
 function deriveExecutionEn(item){
   if(item.executionEn)return item.executionEn;
-  return 'Execution followed a step-by-step approach: clarify context, define key decisions, structure proposal content, and align outputs with target reviewers and users.';
+  const spots=enSpotlights(item).slice(0,3);
+  if(spots.length)return `Execution centered on ${spots.join(', ')}, with the deliverable organized into a clear proposal and presentation-ready structure.`;
+  if(item.appScreens&&item.appScreens.length)return 'Execution focused on organizing the core user flow, interface decisions, and presentation materials into one consistent app concept.';
+  return 'Execution focused on clarifying the problem, organizing the materials, and shaping a presentation-ready final output.';
 }
 function deriveHighlightsEn(item){
   if(item.highlightsEn)return item.highlightsEn;
+  const spots=enSpotlights(item).slice(0,3);
+  if(spots.length)return `Key highlights: ${spots.join('; ')}.`;
   const tags=enTags(item).slice(0,3);
-  if(tags.length)return `Highlights include ${tags.join(', ')}, with clear framing from concept to presentation.`;
-  return 'Highlights focus on clarity, structure, and actionable project delivery.';
+  if(tags.length)return `Key highlights: ${tags.join('; ')}.`;
+  return 'Key highlights include a clear structure, focused scope, and presentation-ready output.';
 }
 function deriveOutcomesEn(item){
   if(item.outcomesEn)return item.outcomesEn;
-  if(item.award)return `Outcome: ${enAward(item)}. The project also strengthened proposal structure, communication, and cross-functional problem solving.`;
-  return 'Outcome: completed a full cycle from research to proposal delivery, with reusable methods for later cross-domain projects.';
+  const award=enAward(item);
+  if(item.award&&award!=='Project Summary')return `Outcome: ${award}. The project resulted in a finished deliverable with a clear narrative and reusable project structure.`;
+  if(item.appScreens&&item.appScreens.length)return 'Outcome: a complete app concept with selected screens, interaction rationale, and a structured presentation flow.';
+  return 'Outcome: a finished project deliverable with a clear narrative, supporting materials, and a reusable structure.';
 }
 function derivePurpose(item){
   if(item.purpose)return item.purpose;
@@ -268,13 +285,13 @@ function deriveHighlights(item){
 }
 function renderStoryShowcase(item,spotlightHtml,lang='zh'){
   const t=i18nPage[lang];
-  const image=item.coverImage?`<div class="story-media"><img src="${esc(fileUrlFromRoot(item.coverImage))}" alt="${esc(item.title)} 作品畫面"/><p class="story-media-caption">精選作品畫面與主視覺整理。</p></div>`:'';
   const noteTitle=lang==='zh'?'內容補充':'Additional Notes';
   const noteBody=lang==='zh'?deriveExecution(item):deriveExecutionEn(item);
   const imageCaption=lang==='zh'?'精選作品畫面與主視覺整理。':'Selected visuals and key interface snapshots.';
-  const imageBlock=item.coverImage?`<div class="story-media"><img src="${esc(fileUrlFromRoot(item.coverImage))}" alt="${esc(item.title)} ${t.appScreen}"/><p class="story-media-caption">${imageCaption}</p></div>`:'';
+  const localizedTitle=lang==='en'?enTitle(item):item.title;
+  const imageBlock=item.coverImage?`<div class="story-media"><img src="${esc(fileUrlFromRoot(item.coverImage))}" alt="${esc(localizedTitle)} ${t.appScreen}"/><p class="story-media-caption">${imageCaption}</p></div>`:'';
   const note=`<article class="story-note"><h3>${noteTitle}</h3><p>${esc(noteBody)}</p>${spotlightHtml?`<ul class="spotlight-list">${spotlightHtml}</ul>`:''}</article>`;
-  if(!image&&!spotlightHtml)return '';
+  if(!imageBlock&&!spotlightHtml)return '';
   return `<div class="story-showcase">${imageBlock||''}${note}</div>`;
 }
 function deriveFocus(item){
@@ -283,6 +300,7 @@ function deriveFocus(item){
 function renderAppGallery(item,lang='zh'){
   const t=i18nPage[lang];
   if(!item.appScreens||!item.appScreens.length)return '';
+  const localizedTitle=lang==='en'?enTitle(item):item.title;
   const introText=lang==='en'
     ?(item.appIntroEn||'This section presents key app flows and interaction decisions through selected mobile screens.')
     :(item.appIntro||'');
@@ -296,7 +314,7 @@ function renderAppGallery(item,lang='zh'){
       ?(screen.captionEn||t.appCaption)
       :(screen.caption||t.appCaption);
     const image=imagePath
-      ?'<img src="'+esc(imagePath)+'" alt="'+esc(item.title)+' - '+esc(screenTitle)+'" loading="'+(index<2?'eager':'lazy')+'" decoding="async"/>'
+      ?'<img src="'+esc(imagePath)+'" alt="'+esc(localizedTitle)+' - '+esc(screenTitle)+'" loading="'+(index<2?'eager':'lazy')+'" decoding="async"/>'
       :'<div class="app-shot-fallback"><strong>'+esc(screenTitle)+'</strong></div>';
     return '<article class="app-slide"><div class="app-phone"><span class="app-notch"></span><div class="app-shot">'+image+'</div></div><div class="app-slide-body"><h3>'+esc(screenTitle)+'</h3><p>'+esc(screenCaption)+'</p></div></article>';
   }).join('');
@@ -351,7 +369,10 @@ function renderPage(item,lang='zh'){
       return '<a class="related-card" href="'+href+'"><div class="related-year">'+esc(other.year)+' · '+esc(category)+'</div><div class="related-title">'+esc(title)+'</div><span class="small-link">'+t.viewDetails+'</span></a>';
     }).join('')||'<div class="note">'+t.noRelated+'</div>';
   const tags=(isZh?item.tags:enTags(item)).map(tag=>'<span class="pill">'+esc(tag)+'</span>').join('');
-  const spotlightItems=(item.spotlight||[]).map(point=>'<li>'+esc(isZh?point:enTagValue(point))+'</li>').join('');
+  const spotlightSource=isZh
+    ?(item.spotlight||[])
+    :(enSpotlights(item).length?enSpotlights(item):(item.spotlight||[]).map(enTagValue));
+  const spotlightItems=spotlightSource.map(point=>'<li>'+esc(point)+'</li>').join('');
   const category=isZh?item.category:enCategory(item);
   const title=isZh?item.title:enTitle(item);
   const summary=isZh?item.summary:enSummary(item);
@@ -382,6 +403,8 @@ function renderPage(item,lang='zh'){
     highlightsLabel:t.highlightsLabel,
     outcomesLabel:t.outcomesLabel,
     relatedLabel:t.relatedLabel,
+    goToSlideLabel:isZh?'切換到第 ':'Go to slide ',
+    goToSlideSuffix:isZh?' 張':'',
     title:esc(title),
     year:esc(item.year),
     category:esc(category),
@@ -403,7 +426,7 @@ function renderPage(item,lang='zh'){
     spotlight:spotlightItems?'<ul class="spotlight-list">'+spotlightItems+'</ul>':'',
     appGallery:renderAppGallery(item,lang),
     related,
-    json:JSON.stringify({id:item.id,title,category,year:item.year,lang}).replace(/<\//g,'<\\/')
+    json:JSON.stringify({lang}).replace(/<\//g,'<\\/')
   });
   const fileName=item.id+(isZh?'.html':'-en.html');
   fs.writeFileSync(path.join(__dirname,fileName),html,'utf8');
