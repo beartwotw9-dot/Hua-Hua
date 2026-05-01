@@ -144,8 +144,9 @@ function publicCoverPath(item,coverImage){
 }
 function joinTags(item){return (item.tags||[]).join('、')}
 function deriveStoryLead(item){
-  const teamLead=item.team?'這個題目是團隊協作完成。':'';
-  return item.storyLead || `${item.summary} ${teamLead}這頁整理的是我在這個題目裡如何定義問題、形成提案、安排內容架構，以及最後想讓外部看見的核心價值。`;
+  if(item.storyLead)return item.storyLead;
+  const teamLead=item.team?' 這個題目是團隊協作完成。':'';
+  return `${item.summary}${teamLead} 這頁整理的是這個提案從問題設定、內容設計到最後成果的完整脈絡。`;
 }
 function toEnglishText(value){
   if(!value)return '';
@@ -181,112 +182,101 @@ function enFocus(item){
 function deriveStoryLeadEn(item){
   if(item.storyLeadEn)return item.storyLeadEn;
   const parts=[enSummary(item)];
-  if(item.team)parts.push('Completed through team collaboration.');
-  if(item.focusEn)parts.push(`Focus: ${item.focusEn}.`);
-  else{
-    const spots=enSpotlights(item).slice(0,2);
-    if(spots.length)parts.push(`Key areas: ${spots.join(' and ')}.`);
-  }
+  if(item.team)parts.push('This project was completed through team collaboration.');
+  parts.push('This page outlines the project from problem framing to final deliverables.');
   return parts.join(' ');
 }
 function derivePurposeEn(item){
   if(item.purposeEn)return item.purposeEn;
-  const focus=enFocus(item);
-  if(focus&&focus!=='Project Story')return `Develop a clear project direction around ${focus} and make the idea understandable, relevant, and usable.`;
-  return 'Develop a clear project direction and turn the idea into a usable, well-structured output.';
+  if(item.category==='UI/UX')return 'This project was built to turn an idea into a clearer interface concept and user flow.';
+  if(item.category==='FinTech')return 'This project was built to turn a finance-related topic into a clearer product or service concept.';
+  if(item.category==='創業競賽')return 'This project was built to turn a problem into a more complete startup proposal.';
+  if(item.category==='AI')return 'This project was built to place AI inside a more concrete use case instead of describing the technology in the abstract.';
+  if(item.category==='法律')return 'This project was built to organize a legal and technology issue into a clearer argument and proposal.';
+  return 'This project was built to organize the topic into a clear and presentable piece of work.';
 }
 function deriveIdeationEn(item){
   if(item.ideationEn)return item.ideationEn;
-  return 'The direction started from a concrete gap in the problem space and was refined through user context, constraints, and proposal scope.';
+  return 'The idea started from the topic itself and was refined by clarifying the user context, the main problem, and what the final deliverable needed to communicate.';
 }
 function deriveModelEn(item){
   if(item.modelEn)return item.modelEn;
   const spots=enSpotlights(item).slice(0,3);
-  if(spots.length)return `The project structure was built around ${spots.join(', ')}, tying the concept, supporting materials, and final narrative together.`;
-  return 'The project structure connected the core concept, supporting materials, and final narrative into one coherent output.';
+  if(spots.length)return `The content was mainly organized around ${spots.join(', ')}.`;
+  return 'The content was organized into a simple structure that made the project easier to explain and review.';
 }
 function deriveExecutionEn(item){
   if(item.executionEn)return item.executionEn;
   const spots=enSpotlights(item).slice(0,3);
-  if(spots.length)return `Execution centered on ${spots.join(', ')}, with the deliverable organized into a clear proposal and presentation-ready structure.`;
-  if(item.appScreens&&item.appScreens.length)return 'Execution focused on organizing the core user flow, interface decisions, and presentation materials into one consistent app concept.';
-  return 'Execution focused on clarifying the problem, organizing the materials, and shaping a presentation-ready final output.';
+  if(item.appScreens&&item.appScreens.length)return 'The work focused on organizing screens, user flow, and interface decisions into one consistent app concept.';
+  if(spots.length)return `The final deliverable was organized around ${spots.join(', ')}.`;
+  return 'The work focused on organizing the materials into a version that could be clearly presented.';
 }
 function deriveHighlightsEn(item){
   if(item.highlightsEn)return item.highlightsEn;
   const spots=enSpotlights(item).slice(0,3);
-  if(spots.length)return `Key highlights: ${spots.join('; ')}.`;
+  if(spots.length)return `Key points included ${spots.join(', ')}.`;
   const tags=enTags(item).slice(0,3);
-  if(tags.length)return `Key highlights: ${tags.join('; ')}.`;
-  return 'Key highlights include a clear structure, focused scope, and presentation-ready output.';
+  if(tags.length)return `Key points included ${tags.join(', ')}.`;
+  return 'The main value of the project was a clear structure and a focused presentation.';
 }
 function deriveOutcomesEn(item){
   if(item.outcomesEn)return item.outcomesEn;
   const award=enAward(item);
-  if(item.award&&award!=='Project Summary')return `Outcome: ${award}. The project resulted in a finished deliverable with a clear narrative and reusable project structure.`;
-  if(item.appScreens&&item.appScreens.length)return 'Outcome: a complete app concept with selected screens, interaction rationale, and a structured presentation flow.';
-  return 'Outcome: a finished project deliverable with a clear narrative, supporting materials, and a reusable structure.';
+  if(item.award&&award!=='Project Summary')return `Outcome: ${award}.`;
+  if(item.appScreens&&item.appScreens.length)return 'Outcome: a finished app concept with selected screens and a presentable flow.';
+  if(item.category==='FinTech')return 'Outcome: a finished finance-related proposal or analysis piece.';
+  if(item.category==='創業競賽')return 'Outcome: a finished startup proposal.';
+  return 'Outcome: a finished and presentable project deliverable.';
 }
 function derivePurpose(item){
   if(item.purpose)return item.purpose;
-  const tags=joinTags(item);
-  if(item.category==='FinTech')return `這個作品希望把 ${tags||'金融服務'} 轉化成更容易被理解與採用的方案，讓評審能看見我如何用財金背景處理真實市場問題。`;
-  if(item.category==='創業競賽')return `這個作品的目標是把一個具體痛點整理成可落地的創業提案，驗證市場需求、使用情境與執行可行性。`;
-  if(item.category==='AI')return `這個提案希望把 AI 技術放進真實應用場景，讓創新不只停留在工具展示，而是能回應明確問題與使用需求。`;
-  if(item.category==='法律')return `這個作品聚焦在制度、風險與人之間的關係，目標是用清楚論述呈現我對科技與法律議題的理解。`;
-  if(item.category==='永續')return `這個作品希望從生活與社會議題出發，提出兼顧價值與可執行性的永續方案。`;
-  if(item.category==='HR')return `這段經歷的核心目標是把人資知識轉成可應用的實務能力，建立我對組織、人才與制度的理解。`;
-  return `這個作品是我把 ${tags||'跨域學習'} 轉化成具體成果的整理，讓外部能快速理解主題、做法與產出。`;
+  if(item.category==='UI/UX')return '這個作品主要是在整理介面概念、使用流程和整體產品方向。';
+  if(item.category==='FinTech')return '這個作品主要是在整理金融主題，並把它轉成比較清楚的產品或研究提案。';
+  if(item.category==='創業競賽')return '這個作品主要是在把問題整理成一份比較完整的創業提案。';
+  if(item.category==='AI')return '這個作品主要是在思考 AI 可以放進什麼情境，並把它整理成可說明的應用概念。';
+  if(item.category==='法律')return '這個作品主要是在把法律與科技議題整理成較清楚的論述與提案。';
+  return '這個作品主要是在把題目整理成一份清楚、可展示的成果。';
 }
 function deriveIdeation(item){
   if(item.ideation)return item.ideation;
-  if(item.category==='FinTech')return `發想來自我對金融產品使用情境的觀察：如果金融服務要真正被採用，除了專業性，還需要更清楚的使用者價值與體驗設計。`;
-  if(item.category==='創業競賽')return `發想起點通常是生活痛點、在地需求或特定族群的未被滿足需求，再往下延伸成完整提案。`;
-  if(item.category==='AI')return `發想從「AI 可以做什麼」轉成「哪個問題值得被解」，因此我先定義場景，再選擇技術如何介入。`;
-  if(item.category==='法律')return `發想來自我對科技發展與制度風險的好奇，想釐清當新技術進入日常後，個人權益如何被保護。`;
-  if(item.category==='永續')return `發想從永續議題與日常行為落差出發，思考怎麼把抽象價值轉成可被理解與參與的方案。`;
-  if(item.category==='HR')return `發想來自我對人的決策與組織運作的興趣，因此不只記錄課程內容，也整理自己如何把知識轉成工作方法。`;
-  return `發想來自學習過程中的關鍵問題與實作經驗，整理出一個能代表我思考方式的作品版本。`;
+  return '發想是從題目本身的情境和問題意識出發，再往下整理內容範圍、使用對象和最後要呈現的重點。';
 }
 function deriveModel(item){
   if(item.model)return item.model;
-  const spots=(item.spotlight||[]).join('、');
-  if(item.category==='創業競賽')return `我把商業模式拆成目標客群、價值主張、執行流程與資源配置四個面向，再用 ${spots||'企劃與簡報'} 讓整體結構更完整。`;
-  if(item.category==='FinTech')return `核心設計聚焦在產品定位、使用流程、獲客邏輯與價值交換，並用 ${spots||'企劃書與分析資料'} 支撐提案說服力。`;
-  if(item.category==='AI')return `核心設計以問題場景、技術角色、資料流與使用者體驗為主軸，確保 AI 是解法的一部分，而不是附加亮點。`;
-  if(item.category==='永續')return `我用問題定義、利害關係人、行動方案與可持續運作方式來組織提案，讓概念可以被實際執行。`;
-  if(item.category==='HR')return `我把內容整理成知識模組、實務觀察與可應用方法三層，讓學習不只是吸收，而是能被帶回工作現場。`;
-  return `這個作品的核心設計是把主題拆成易理解的架構，再用文字、分析與展示素材把重點收束成完整敘事。`;
+  const spots=(item.spotlight||[]).slice(0,3);
+  if(spots.length)return `內容主要圍繞 ${spots.join('、')} 這幾個部分展開。`;
+  return '內容以主題說明、重點整理和成果呈現為主。';
 }
 function deriveOutcomes(item){
   if(item.outcomes)return item.outcomes;
-  if(item.award)return `成果上，這個作品獲得「${item.award}」，也讓我更清楚如何把複雜主題整理成能被評審與外部理解的提案。`;
-  if(item.category==='培訓'||item.category==='HR')return `成果不只是在課程或資料上的累積，更重要的是我建立了後續可以持續使用的知識框架與實務判斷方式。`;
-  return `成果上，這個作品讓我完成從研究、整理到表達的一整段流程，也成為我後續做提案與跨域整合的重要基礎。`;
+  if(item.award)return `成果是獲得「${item.award}」。`;
+  if(item.appScreens&&item.appScreens.length)return '成果是一套可展示的 App 概念與畫面整理。';
+  if(item.category==='FinTech')return '成果是一份完成度較高的金融提案或研究整理。';
+  if(item.category==='創業競賽')return '成果是一份完整的創業提案。';
+  return '成果是一份可以公開展示的完成版本。';
 }
 function deriveExecution(item){
   if(item.execution)return item.execution;
-  const tags=joinTags(item);
-  if(item.category==='FinTech')return `執行上，我先整理市場脈絡與使用情境，再把分析、提案與展示內容收束成同一條敘事線，讓 ${tags||'金融主題'} 不只停留在研究，而能被看成一個具體產品或服務構想。`;
-  if(item.category==='創業競賽')return `我會先拆出問題、目標客群與價值主張，再往下整理商業模式、體驗流程與提案結構，讓想法從概念走到一個比較完整、可以被說服的創業方案。`;
-  if(item.category==='AI')return `執行方式上，我先定義使用場景與需求，再決定 AI 要扮演什麼角色，並把技術、流程與價值說明整理成同一個提案結構。`;
-  if(item.category==='法律')return `我以議題脈絡、風險辨識與論點整理為主軸，讓內容不只停留在抽象立場，而是能一步一步說清楚制度與實務上的差異。`;
-  if(item.category==='永續')return `執行上，我把問題拆成使用者端、供給端與平台端三個視角，同時整理行為誘因、運作流程與價值衡量方式，讓永續主題更接近實際產品提案。`;
-  if(item.category==='HR'||item.category==='培訓')return `我會先整理知識架構與實作脈絡，再回頭拆出哪些內容可以真正落地到工作場景，讓這份整理不只是紀錄，而是可延伸使用的方法。`;
-  return `執行上，我先整理資料與主題架構，再挑出最能代表作品價值的內容重點，重新組織成比較完整、也比較容易閱讀的作品版本。`;
+  const spots=(item.spotlight||[]).slice(0,3);
+  if(item.appScreens&&item.appScreens.length)return '這個作品主要是把畫面、功能想法和使用流程整理成一個可閱讀的 App 提案。';
+  if(spots.length)return `執行上，我把內容整理到 ${spots.join('、')} 這幾個重點裡。`;
+  return '執行上，主要是把資料、內容和展示方式整理成一個比較完整的版本。';
 }
 function deriveHighlights(item){
   if(item.highlights)return item.highlights;
   const points=(item.spotlight||[]).slice(0,3);
-  if(points.length)return `這份作品的內容亮點主要集中在 ${points.join('、')}，也因此能更完整地呈現我如何從主題理解一路走到企劃、設計或提案表達。`;
+  if(points.length)return `這份作品主要看的就是 ${points.join('、')}。`;
   const tags=(item.tags||[]).slice(0,3);
-  if(tags.length)return `這份作品特別聚焦在 ${tags.join('、')} 等幾個面向，讓主題不只被描述，而是能被具體拆解、展示與延伸。`;
-  return `這份作品的亮點在於把原本分散的想法與資料整理成有重點的展示內容，讓外部能更快理解我處理這個題目的方式。`;
+  if(tags.length)return `這份作品主要聚焦在 ${tags.join('、')}。`;
+  return '這份作品的重點是把題目整理得清楚。';
 }
 function renderStoryShowcase(item,spotlightHtml,lang='zh'){
   const t=i18nPage[lang];
   const noteTitle=lang==='zh'?'內容補充':'Additional Notes';
-  const noteBody=lang==='zh'?deriveExecution(item):deriveExecutionEn(item);
+  const noteBody=lang==='zh'
+    ?(item.reflection||deriveExecution(item))
+    :((item.reflectionEn&&toEnglishText(item.reflectionEn))||deriveExecutionEn(item));
   const imageCaption=lang==='zh'?'精選作品畫面與主視覺整理。':'Selected visuals and key interface snapshots.';
   const localizedTitle=lang==='en'?enTitle(item):item.title;
   const imageBlock=item.coverImage?`<div class="story-media"><img src="${esc(fileUrlFromRoot(item.coverImage))}" alt="${esc(localizedTitle)} ${t.appScreen}"/><p class="story-media-caption">${imageCaption}</p></div>`:'';
