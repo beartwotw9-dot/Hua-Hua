@@ -309,6 +309,7 @@ html.lang-zh-active .lang-block.lang-zh{display:block!important}
 .code-features{position:relative;z-index:1;list-style:none;display:flex;flex-direction:column;gap:.42rem;margin-bottom:1rem}
 .code-features li{position:relative;padding-left:.95rem;font-size:.82rem;line-height:1.65;color:var(--ink2)}
 .code-features li::before{content:"•";position:absolute;left:0;color:var(--sage)}
+.code-tech{position:relative;z-index:1;margin:.1rem 0 1rem;font-size:.78rem;line-height:1.7;color:var(--muted)}
 .code-meta{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:.45rem;margin-top:auto;padding-top:.4rem}
 .code-pill{font-size:.68rem;padding:.2rem .56rem;border-radius:999px;background:var(--white);border:1px solid var(--border);color:var(--muted)}
 .code-link{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;margin-top:1rem;padding:.8rem 1rem;border-radius:999px;text-decoration:none;background:var(--ink);color:var(--white);font-size:.86rem;font-weight:600;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
@@ -982,6 +983,7 @@ footer{
           <li>Built and published as a standalone web app</li>
           <li>Designed as an accessible entry point for financial learning</li>
         </ul>
+        <p class="code-tech">Tech: Base44, React, Supabase Storage, PWA</p>
         <div class="code-meta">
           <span class="code-pill">Financial Education</span>
           <span class="code-pill">Web App</span>
@@ -1000,6 +1002,7 @@ footer{
           <li>Focused on SROI-related calculation and application flow</li>
           <li>Presented as a dedicated interactive app experience</li>
         </ul>
+        <p class="code-tech">Tech: Google AI Studio, SPA, Service Worker</p>
         <div class="code-meta">
           <span class="code-pill">Google AI Studio</span>
           <span class="code-pill">SROI Tool</span>
@@ -1018,6 +1021,7 @@ footer{
           <li>`Ready to Assign` budgeting flow and category-based allocation</li>
           <li>Quick expense entry, records, shared tab, and settings navigation</li>
         </ul>
+        <p class="code-tech">Tech: React, Express, Google Cloud Run</p>
         <div class="code-meta">
           <span class="code-pill">Finance</span>
           <span class="code-pill">Zero-Based Budgeting</span>
@@ -1036,6 +1040,7 @@ footer{
           <li>Integrated TW and US asset tracking with K-line charts and stock-level views</li>
           <li>Backtesting, portfolio analysis, risk observation, and budget-based buy planning</li>
         </ul>
+        <p class="code-tech">Tech: Next.js, React, Tailwind CSS, Vercel</p>
         <div class="code-meta">
           <span class="code-pill">FinTech</span>
           <span class="code-pill">Portfolio Analytics</span>
@@ -1054,6 +1059,7 @@ footer{
           <li>Project management, vendor records, communication logs, and follow-up items</li>
           <li>HR recruiting, training management, and cross-functional coordination in one interface</li>
         </ul>
+        <p class="code-tech">Tech: HTML, CSS, JavaScript, SheetJS, GitHub Pages</p>
         <div class="code-meta">
           <span class="code-pill">Internal Tools</span>
           <span class="code-pill">Operations</span>
@@ -1304,11 +1310,11 @@ const i18n={
       intro:'這裡收錄我目前已上線的程式作品與互動實驗，主題從理財學習、AI 應用，到把概念整理成可實際操作的產品流程。',
       open:'開啟作品 ↗',
       items:[
-        {title:'金融安心學堂',desc:'以理財學習為主題的 Web App，嘗試把相對陌生的金融知識整理成更容易理解、也更容易進入的學習體驗。',badge:'Base44',tags:['金融教育','Web App'],features:['以理財學習為核心定位','已獨立上線為 Web App','設計方向偏向更易入門的學習體驗']},
-        {title:'SROI 計算器',desc:'以 SROI 計算為主題的 AI Studio app，嘗試把社會影響力的評估過程整理成更直接、可操作的互動工具。',badge:'AI Studio',tags:['Google AI Studio','SROI 工具'],features:['建立於 Google AI Studio','聚焦 SROI 計算與應用情境','以獨立 app 形式呈現互動體驗']},
-        {title:'ZenBudget 零基預算工具',desc:'以零基預算為核心的理財工具，從帳戶總覽、預算分配到快速記帳，整理成一套更貼近日常使用的理財流程。',badge:'Web App',tags:['理財工具','零基預算'],features:['帳戶總覽整合現金、銀行與信用卡','以 Ready to Assign 進行預算分配','包含快速記帳、紀錄、共同與設定分頁']},
-        {title:'Portfolio 投資決策平台',desc:'整合市場資訊、自選股追蹤、K 線圖、策略回測與投資組合分析的個人金融平台，讓看盤、配置與投資決策可以放在同一個操作流程裡。',badge:'Vercel',tags:['FinTech','投資組合分析'],features:['整合市場總覽、自選股與自動更新報價','支援台股與美股資產追蹤，搭配個股 K 線圖','包含策略回測、績效分析、風險觀察與預算導向買入方案']},
-        {title:'戰勤營運管理平台',desc:'以內部營運管理為核心的戰勤平台，把原本分散在不同表單、訊息與部門間的資訊整合到同一個系統裡，讓進度、任務與協作狀態更清楚可追蹤。',badge:'War Room',tags:['內部工具','營運管理'],features:['全公司總覽結合 KPI、重要任務與近期時程','整合案件進度、任務優先級、廠商紀錄與溝通追蹤','涵蓋人資招募、教育訓練與跨部門協作管理']}
+        {title:'金融安心學堂',desc:'以理財學習為主題的 Web App，嘗試把相對陌生的金融知識整理成更容易理解、也更容易進入的學習體驗。',badge:'Base44',tags:['金融教育','Web App'],features:['以理財學習為核心定位','已獨立上線為 Web App','設計方向偏向更易入門的學習體驗'],tech:'技術：Base44、React、Supabase Storage、PWA'},
+        {title:'SROI 計算器',desc:'以 SROI 計算為主題的 AI Studio app，嘗試把社會影響力的評估過程整理成更直接、可操作的互動工具。',badge:'AI Studio',tags:['Google AI Studio','SROI 工具'],features:['建立於 Google AI Studio','聚焦 SROI 計算與應用情境','以獨立 app 形式呈現互動體驗'],tech:'技術：Google AI Studio、SPA、Service Worker'},
+        {title:'ZenBudget 零基預算工具',desc:'以零基預算為核心的理財工具，從帳戶總覽、預算分配到快速記帳，整理成一套更貼近日常使用的理財流程。',badge:'Web App',tags:['理財工具','零基預算'],features:['帳戶總覽整合現金、銀行與信用卡','以 Ready to Assign 進行預算分配','包含快速記帳、紀錄、共同與設定分頁'],tech:'技術：React、Express、Google Cloud Run'},
+        {title:'Portfolio 投資決策平台',desc:'整合市場資訊、自選股追蹤、K 線圖、策略回測與投資組合分析的個人金融平台，讓看盤、配置與投資決策可以放在同一個操作流程裡。',badge:'Vercel',tags:['FinTech','投資組合分析'],features:['整合市場總覽、自選股與自動更新報價','支援台股與美股資產追蹤，搭配個股 K 線圖','包含策略回測、績效分析、風險觀察與預算導向買入方案'],tech:'技術：Next.js、React、Tailwind CSS、Vercel'},
+        {title:'戰勤營運管理平台',desc:'以內部營運管理為核心的戰勤平台，把原本分散在不同表單、訊息與部門間的資訊整合到同一個系統裡，讓進度、任務與協作狀態更清楚可追蹤。',badge:'War Room',tags:['內部工具','營運管理'],features:['全公司總覽結合 KPI、重要任務與近期時程','整合案件進度、任務優先級、廠商紀錄與溝通追蹤','涵蓋人資招募、教育訓練與跨部門協作管理'],tech:'技術：HTML、CSS、JavaScript、SheetJS、GitHub Pages'}
       ]
     },
     skills:{eyebrow:'技能',title:'技能與工具',cats:['數據分析','AI 工具應用','人資與組織發展','專案管理'],names:['Python（pandas, sklearn）','Power BI','R 語言','Excel / SQL','ChatGPT / Claude','Gemini / Google AI Studio','Perplexity / NotebookLM','生成式 AI × 行政自動化','招募甄選 & SOP 建置','教育訓練設計 & 主持','ESG 政策規劃','團體動力引導 & 主動傾聽','Linear / Asana','Notion','QA 測試規劃','計畫書撰寫申請'],certTitle:'📜 專業證照（14 張）',langTitle:'🌐 語言能力',langs:['中文（母語）','英文（中等）']},
@@ -1374,11 +1380,11 @@ const i18n={
       intro:'A selection of live apps and interactive builds that reflect my interest in finance, AI applications, and turning ideas into usable product flows.',
       open:'Launch App ↗',
       items:[
-        {title:'Finance Peace Academy',desc:'A finance-learning web app built around making money topics feel more approachable. The project focuses on turning financial knowledge into a clearer and more accessible learning experience.',badge:'Base44',tags:['Financial Education','Web App'],features:['Finance-learning positioning with a clear educational focus','Built and published as a standalone web app','Designed as an accessible entry point for financial learning']},
-        {title:'SROI Calculator',desc:'An AI Studio app centered on SROI calculation. This project presents the idea of turning social return assessment into a more direct and usable interactive tool.',badge:'AI Studio',tags:['Google AI Studio','SROI Tool'],features:['Built and hosted through Google AI Studio','Focused on SROI-related calculation and application flow','Presented as a dedicated interactive app experience']},
-        {title:'ZenBudget',desc:'A zero-based budgeting tool that organizes personal finance into a clearer monthly workflow. From account overview to budget allocation and quick expense entry, the product is designed around everyday money management.',badge:'Web App',tags:['Finance Tool','Zero-Based Budgeting'],features:['Account overview with cash, bank, and credit balances','Ready to Assign budgeting flow and category-based allocation','Quick expense entry, records, shared tab, and settings navigation']},
-        {title:'Portfolio Investment Platform',desc:'A personal finance platform that combines market data, watchlist tracking, K-line charts, backtesting, and portfolio analysis. It helps extend day-to-day market monitoring into allocation planning and investment decisions.',badge:'Vercel',tags:['FinTech','Portfolio Analytics'],features:['Market overview, auto-updating quotes, and watchlist tracking','TW and US asset tracking with stock-level K-line charts','Backtesting, performance analysis, risk observation, and budget-based buy planning']},
-        {title:'War Room Operations Platform',desc:'An internal operations platform that brings forms, updates, and department workflows into one system, making progress, ownership, and cross-functional collaboration easier to manage.',badge:'War Room',tags:['Internal Tools','Operations'],features:['Company overview with KPI tracking, key tasks, and near-term timeline','Project progress, task priority, vendor records, and communication follow-up','HR recruiting, training management, and cross-functional coordination in one interface']}
+        {title:'Finance Peace Academy',desc:'A finance-learning web app built around making money topics feel more approachable. The project focuses on turning financial knowledge into a clearer and more accessible learning experience.',badge:'Base44',tags:['Financial Education','Web App'],features:['Finance-learning positioning with a clear educational focus','Built and published as a standalone web app','Designed as an accessible entry point for financial learning'],tech:'Tech: Base44, React, Supabase Storage, PWA'},
+        {title:'SROI Calculator',desc:'An AI Studio app centered on SROI calculation. This project presents the idea of turning social return assessment into a more direct and usable interactive tool.',badge:'AI Studio',tags:['Google AI Studio','SROI Tool'],features:['Built and hosted through Google AI Studio','Focused on SROI-related calculation and application flow','Presented as a dedicated interactive app experience'],tech:'Tech: Google AI Studio, SPA, Service Worker'},
+        {title:'ZenBudget',desc:'A zero-based budgeting tool that organizes personal finance into a clearer monthly workflow. From account overview to budget allocation and quick expense entry, the product is designed around everyday money management.',badge:'Web App',tags:['Finance Tool','Zero-Based Budgeting'],features:['Account overview with cash, bank, and credit balances','Ready to Assign budgeting flow and category-based allocation','Quick expense entry, records, shared tab, and settings navigation'],tech:'Tech: React, Express, Google Cloud Run'},
+        {title:'Portfolio Investment Platform',desc:'A personal finance platform that combines market data, watchlist tracking, K-line charts, backtesting, and portfolio analysis. It helps extend day-to-day market monitoring into allocation planning and investment decisions.',badge:'Vercel',tags:['FinTech','Portfolio Analytics'],features:['Market overview, auto-updating quotes, and watchlist tracking','TW and US asset tracking with stock-level K-line charts','Backtesting, performance analysis, risk observation, and budget-based buy planning'],tech:'Tech: Next.js, React, Tailwind CSS, Vercel'},
+        {title:'War Room Operations Platform',desc:'An internal operations platform that brings forms, updates, and department workflows into one system, making progress, ownership, and cross-functional collaboration easier to manage.',badge:'War Room',tags:['Internal Tools','Operations'],features:['Company overview with KPI tracking, key tasks, and near-term timeline','Project progress, task priority, vendor records, and communication follow-up','HR recruiting, training management, and cross-functional coordination in one interface'],tech:'Tech: HTML, CSS, JavaScript, SheetJS, GitHub Pages'}
       ]
     },
     skills:{eyebrow:'Skills',title:'Skills & Tools',cats:['Data Analysis','AI Applications','HR & Organizational Development','Project Management'],names:['Python (pandas, sklearn)','Power BI','R','Excel / SQL','ChatGPT / Claude','Gemini / Google AI Studio','Perplexity / NotebookLM','Generative AI × Workflow Automation','Recruiting & SOP Design','Training Design & Facilitation','ESG Policy Planning','Group Facilitation & Active Listening','Linear / Asana','Notion','QA Test Planning','Proposal Writing'],certTitle:'📜 Professional Certifications (14)',langTitle:'🌐 Languages',langs:['Mandarin (Native)','English (Intermediate)']},
@@ -1469,6 +1475,7 @@ function syncPageLanguage(lang){
     setText(card.querySelector('.code-badge'),item.badge);
     setText(card.querySelector('.code-title'),item.title);
     setText(card.querySelector('.code-desc'),item.desc);
+    setText(card.querySelector('.code-tech'),item.tech);
     const tags=[...card.querySelectorAll('.code-pill')];
     item.tags.forEach((tag,tagIdx)=>{
       if(tags[tagIdx])setText(tags[tagIdx],tag);
