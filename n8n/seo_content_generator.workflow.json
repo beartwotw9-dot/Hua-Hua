@@ -1,0 +1,322 @@
+{
+  "name": "SEO Content Generator MVP",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "documentId": "YOUR_GOOGLE_SHEET_ID",
+        "sheetName": "SERP_Input"
+      },
+      "id": "read-serp-input",
+      "name": "Read SERP_Input",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        470,
+        160
+      ],
+      "notes": "Configure credentials and set operation to read rows."
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "documentId": "YOUR_GOOGLE_SHEET_ID",
+        "sheetName": "SEO_Input"
+      },
+      "id": "read-seo-input",
+      "name": "Read SEO_Input",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        470,
+        360
+      ],
+      "notes": "Configure credentials and set operation to read rows."
+    },
+    {
+      "parameters": {
+        "jsCode": "const rows = items.filter(item => String(item.json.status || '').toLowerCase() === 'pending');\nreturn rows.length ? [rows[0]] : [];"
+      },
+      "id": "pick-serp-pending",
+      "name": "Pick First SERP Pending",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const rows = items.filter(item => String(item.json.status || '').toLowerCase() === 'pending');\nreturn rows.length ? [rows[0]] : [];"
+      },
+      "id": "pick-seo-pending",
+      "name": "Pick First SEO Pending",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://serpapi.com/search.json",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "engine",
+              "value": "google"
+            },
+            {
+              "name": "q",
+              "value": "={{ $json.keyword }}"
+            },
+            {
+              "name": "api_key",
+              "value": "={{ $env.SERP_API_KEY }}"
+            },
+            {
+              "name": "num",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "id": "call-serp-api",
+      "name": "Call SERP API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        980,
+        160
+      ],
+      "notes": "Replace with ValueSERP if preferred."
+    },
+    {
+      "parameters": {
+        "jsCode": "const organic = ($json.organic_results || []).slice(0, 10);\nreturn organic.map((row, index) => ({ json: { timestamp: new Date().toISOString(), input_row: $item(0).$node['Pick First SERP Pending'].json.row_number || '', keyword: $item(0).$node['Pick First SERP Pending'].json.keyword || '', position: index + 1, title: row.title || '', link: row.link || row.url || '', snippet: row.snippet || row.description || '', top_entities: 'TODO: parse entities in Code node', token_count: '', mode: 'live' } }));"
+      },
+      "id": "format-serp-results",
+      "name": "Format SERP Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1240,
+        160
+      ],
+      "notes": "TODO: add the same heuristic entity extraction as the Apps Script version."
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "documentId": "YOUR_GOOGLE_SHEET_ID",
+        "sheetName": "SERP_Results"
+      },
+      "id": "write-serp-results",
+      "name": "Write SERP_Results",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1500,
+        160
+      ],
+      "notes": "Configure operation to append rows."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.LLM_API_KEY }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"model\":\"gpt-4o-mini\",\"messages\":[{\"role\":\"system\",\"content\":\"Return exactly the requested sections.\"},{\"role\":\"user\",\"content\":\"Keyword: {{$json.keyword}}\\nProduct: {{$json.product}}\\nScenario: {{$json.scenario}}\\n\\nReturn sections:\\n=== ARTICLE ===\\n=== IMAGE_PROMPT_25 ===\\n=== IMAGE_PROMPT_50 ===\\n=== IMAGE_PROMPT_75 ===\\n=== QUALITY_NOTES ===\"}]}"
+      },
+      "id": "call-openai",
+      "name": "Call OpenAI",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        980,
+        360
+      ],
+      "notes": "Swap for Anthropic if needed."
+    },
+    {
+      "parameters": {
+        "jsCode": "const text = $json.choices?.[0]?.message?.content || '';\nconst grab = (name, next) => {\n  const pattern = next ? new RegExp(`===\\\\s*${name}\\\\s*===([\\\\s\\\\S]*?)===\\\\s*${next}\\\\s*===`) : new RegExp(`===\\\\s*${name}\\\\s*===([\\\\s\\\\S]*)$`);\n  const match = text.match(pattern);\n  return match ? match[1].trim() : '';\n};\nreturn [{ json: { timestamp: new Date().toISOString(), input_row: $item(0).$node['Pick First SEO Pending'].json.row_number || '', keyword: $item(0).$node['Pick First SEO Pending'].json.keyword || '', product: $item(0).$node['Pick First SEO Pending'].json.product || '', scenario: $item(0).$node['Pick First SEO Pending'].json.scenario || '', article: grab('ARTICLE', 'IMAGE_PROMPT_25'), image_prompt_25: grab('IMAGE_PROMPT_25', 'IMAGE_PROMPT_50'), image_prompt_50: grab('IMAGE_PROMPT_50', 'IMAGE_PROMPT_75'), image_prompt_75: grab('IMAGE_PROMPT_75', 'QUALITY_NOTES'), quality_notes: grab('QUALITY_NOTES'), mode: 'live' } }];"
+      },
+      "id": "parse-seo-sections",
+      "name": "Parse SEO Sections",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1240,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "documentId": "YOUR_GOOGLE_SHEET_ID",
+        "sheetName": "SEO_Output"
+      },
+      "id": "write-seo-output",
+      "name": "Write SEO_Output",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1500,
+        360
+      ],
+      "notes": "Configure operation to append rows."
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Read SERP_Input",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read SEO_Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read SERP_Input": {
+      "main": [
+        [
+          {
+            "node": "Pick First SERP Pending",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pick First SERP Pending": {
+      "main": [
+        [
+          {
+            "node": "Call SERP API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call SERP API": {
+      "main": [
+        [
+          {
+            "node": "Format SERP Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format SERP Results": {
+      "main": [
+        [
+          {
+            "node": "Write SERP_Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read SEO_Input": {
+      "main": [
+        [
+          {
+            "node": "Pick First SEO Pending",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pick First SEO Pending": {
+      "main": [
+        [
+          {
+            "node": "Call OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Parse SEO Sections",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse SEO Sections": {
+      "main": [
+        [
+          {
+            "node": "Write SEO_Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "seo-mvp-v1",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "pinData": {},
+  "tags": []
+}
