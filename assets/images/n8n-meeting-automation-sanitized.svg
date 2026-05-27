@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Sanitized Meeting Automation Workflow</title>
+  <desc id="desc">A high-level workflow showing file upload, transcription, AI cleanup, structured notes, and delivery into enterprise collaboration tools.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#faf8f4"/>
+      <stop offset="100%" stop-color="#f2ebe0"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#b9aa94" flood-opacity=".22"/>
+    </filter>
+    <style>
+      .label{font:600 26px 'Noto Sans TC',Arial,sans-serif;fill:#2c261d}
+      .sub{font:400 18px 'Noto Sans TC',Arial,sans-serif;fill:#6f6455}
+      .pill{font:700 17px 'Noto Sans TC',Arial,sans-serif;fill:#6b9070}
+      .small{font:500 16px 'Noto Sans TC',Arial,sans-serif;fill:#847867}
+      .card{fill:#fffdf9;stroke:#dfd2bf;stroke-width:2}
+      .line{stroke:#8d7f6d;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="800" y="84" text-anchor="middle" class="label">Meeting Automation Workflow</text>
+  <text x="800" y="122" text-anchor="middle" class="sub">Sanitized public overview for portfolio use</text>
+
+  <g filter="url(#shadow)">
+    <rect class="card" x="80" y="250" rx="28" ry="28" width="200" height="130"/>
+    <text x="180" y="305" text-anchor="middle" class="pill">1. Upload</text>
+    <text x="180" y="342" text-anchor="middle" class="sub">Form submission</text>
+    <text x="180" y="370" text-anchor="middle" class="small">department / date / file</text>
+
+    <rect class="card" x="390" y="250" rx="28" ry="28" width="220" height="130"/>
+    <text x="500" y="305" text-anchor="middle" class="pill">2. Speech-to-Text</text>
+    <text x="500" y="342" text-anchor="middle" class="sub">Audio transcription</text>
+    <text x="500" y="370" text-anchor="middle" class="small">faster-whisper pipeline</text>
+
+    <rect class="card" x="720" y="250" rx="28" ry="28" width="220" height="130"/>
+    <text x="830" y="305" text-anchor="middle" class="pill">3. AI Cleanup</text>
+    <text x="830" y="342" text-anchor="middle" class="sub">Punctuation / structuring</text>
+    <text x="830" y="370" text-anchor="middle" class="small">LLM post-processing</text>
+
+    <rect class="card" x="1050" y="250" rx="28" ry="28" width="220" height="130"/>
+    <text x="1160" y="305" text-anchor="middle" class="pill">4. Meeting Notes</text>
+    <text x="1160" y="342" text-anchor="middle" class="sub">Structured summary</text>
+    <text x="1160" y="370" text-anchor="middle" class="small">action items / risks / follow-up</text>
+
+    <rect class="card" x="1320" y="160" rx="24" ry="24" width="190" height="110"/>
+    <text x="1415" y="215" text-anchor="middle" class="pill">Drive</text>
+    <text x="1415" y="247" text-anchor="middle" class="sub">Docs & files</text>
+
+    <rect class="card" x="1320" y="305" rx="24" ry="24" width="190" height="110"/>
+    <text x="1415" y="360" text-anchor="middle" class="pill">Sheets</text>
+    <text x="1415" y="392" text-anchor="middle" class="sub">Index tracking</text>
+
+    <rect class="card" x="1320" y="450" rx="24" ry="24" width="190" height="110"/>
+    <text x="1415" y="505" text-anchor="middle" class="pill">Chat</text>
+    <text x="1415" y="537" text-anchor="middle" class="sub">Team notification</text>
+
+    <rect class="card" x="470" y="555" rx="28" ry="28" width="300" height="140"/>
+    <text x="620" y="612" text-anchor="middle" class="pill">Enterprise Use Case</text>
+    <text x="620" y="650" text-anchor="middle" class="sub">Reduce repetitive meeting admin work</text>
+    <text x="620" y="680" text-anchor="middle" class="small">from upload to searchable outputs</text>
+
+    <rect class="card" x="860" y="555" rx="28" ry="28" width="300" height="140"/>
+    <text x="1010" y="612" text-anchor="middle" class="pill">Operational Safeguards</text>
+    <text x="1010" y="650" text-anchor="middle" class="sub">Error handling / queueing / retries</text>
+    <text x="1010" y="680" text-anchor="middle" class="small">designed for day-to-day team use</text>
+  </g>
+
+  <path class="line" d="M280 315 H390"/>
+  <path class="line" d="M610 315 H720"/>
+  <path class="line" d="M940 315 H1050"/>
+  <path class="line" d="M1270 315 H1320"/>
+  <path class="line" d="M1270 315 C1305 315,1295 215,1320 215"/>
+  <path class="line" d="M1270 315 C1305 315,1295 505,1320 505"/>
+  <path class="line" d="M620 380 V555"/>
+  <path class="line" d="M1010 380 V555"/>
+</svg>
