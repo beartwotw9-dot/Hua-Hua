@@ -314,6 +314,7 @@ html.lang-zh-active .lang-block.lang-zh{display:block!important}
 .code-pill{font-size:.68rem;padding:.2rem .56rem;border-radius:999px;background:var(--white);border:1px solid var(--border);color:var(--muted)}
 .code-link{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;margin-top:1rem;padding:.8rem 1rem;border-radius:999px;text-decoration:none;background:var(--ink);color:var(--white);font-size:.86rem;font-weight:600;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
 .code-link:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft);background:var(--sage)}
+.code-link.is-disabled{background:var(--bg3);color:var(--muted);pointer-events:none;box-shadow:none}
 
 /* ── CONTACT ── */
 #contact{padding:6rem 0;background:var(--bg2)}
@@ -750,7 +751,7 @@ footer{
         </p>
         <p class="hero-desc">
           <strong id="hero-lead">Designing better systems for people to learn, work, and grow.</strong><br>
-          <span id="hero-intro">I build practical systems at the intersection of finance, product, and organizational development.</span>
+          <span id="hero-intro">I build practical systems with AI workflows, automation, and product thinking across finance, operations, and organizational development.</span>
         </p>
         <div class="hero-btns">
           <a href="#projects" class="btn-fill"><span class="lang-en">View Projects →</span><span class="lang-zh">瀏覽專案 →</span></a>
@@ -793,12 +794,12 @@ footer{
         <div class="about-prose">
           <p>My work centers on the intersection of finance, organization, and product.</p>
           <p>I care about how analytical thinking and organizational understanding support better decisions, stronger systems, and higher-quality execution.</p>
-          <p>Starting from a finance background, I continue to explore HR, product work, and digital practice. Over time, I have built a cross-disciplinary approach that combines business analysis, process thinking, and generative AI tools to turn ideas into practical solutions.</p>
+          <p>Starting from a finance background, I continue to explore HR, product work, and digital practice. Over time, I have built a cross-disciplinary approach that combines business analysis, process design, generative AI, and workflow automation to turn ideas into practical solutions.</p>
         </div>
         <div class="about-features">
           <div class="afeature"><div class="afeature-icon">🌱</div><h4>Sustainability Mindset</h4><p>Certified in ESG fundamentals and experienced in carbon-policy research.</p></div>
           <div class="afeature"><div class="afeature-icon">📊</div><h4>Data-Driven Execution</h4><p>Python, Power BI, and analytics methods to turn insights into decisions.</p></div>
-          <div class="afeature"><div class="afeature-icon">🔗</div><h4>Cross-Functional Alignment</h4><p>Able to bridge finance, HR, and product contexts with shared execution logic.</p></div>
+          <div class="afeature"><div class="afeature-icon">🤖</div><h4>AI & Automation</h4><p>Use generative AI, workflow automation, and RPA thinking to redesign repetitive work into clearer systems.</p></div>
           <div class="afeature"><div class="afeature-icon">🎤</div><h4>Facilitation & Training</h4><p>Hands-on training facilitation and internal workshop design experience.</p></div>
         </div>
       </div>
@@ -968,7 +969,7 @@ footer{
       <p class="sec-eyebrow">Code</p>
       <h2 class="sec-title">Code</h2>
       <div class="sec-rule" style="margin:0 auto .9rem"></div>
-      <p class="code-intro" id="code-intro">A selection of live apps and interactive builds that reflect my interest in finance, AI applications, and turning ideas into usable product flows.</p>
+      <p class="code-intro" id="code-intro">A selection of live builds that show how I use AI, automation, and product thinking to turn ideas into usable systems rather than just quick prototypes.</p>
     </div>
     <div class="reveal code-grid">
       <article class="code-card">
@@ -1053,11 +1054,11 @@ footer{
           <span class="code-badge">War Room</span>
         </div>
         <h3 class="code-title">戰勤營運管理平台</h3>
-        <p class="code-desc">An internal operations platform built to bring scattered forms, updates, and department workflows into one system. From company-wide overview to department-level execution, the platform focuses on making progress, ownership, and collaboration easier to track.</p>
+        <p class="code-desc">An internal operations platform that is actually used in an enterprise setting to centralize day-to-day management across teams. It brings scattered forms, updates, and department workflows into one system so progress, ownership, and collaboration can be tracked in a way the team can use every day.</p>
         <ul class="code-features">
-          <li>Company KPI overview, key tasks, and timeline-based progress tracking</li>
-          <li>Project management, vendor records, communication logs, and follow-up items</li>
-          <li>HR recruiting, training management, and cross-functional coordination in one interface</li>
+          <li>Used for real cross-functional operations, with company KPI overview, key tasks, and timeline-based progress tracking</li>
+          <li>Supports ongoing project management, vendor records, communication logs, and follow-up items in one interface</li>
+          <li>Extends into HR recruiting, training management, and daily coordination instead of staying as a static dashboard</li>
         </ul>
         <p class="code-tech">Tech: HTML, CSS, JavaScript, SheetJS, GitHub Pages</p>
         <div class="code-meta">
@@ -1065,6 +1066,25 @@ footer{
           <span class="code-pill">Operations</span>
         </div>
         <a class="code-link" href="https://beartwotw9-dot.github.io/warroom/" target="_blank" rel="noopener">Launch App ↗</a>
+      </article>
+      <article class="code-card">
+        <div class="code-top">
+          <span class="code-index">06</span>
+          <span class="code-badge">n8n</span>
+        </div>
+        <h3 class="code-title">Meeting Transcript Automation System</h3>
+        <p class="code-desc">An internal meeting automation workflow that is already used in an enterprise context to turn one uploaded recording into a cleaned transcript, structured meeting notes, department filing, and Google Chat notification. It was built to reduce repetitive manual work and make meeting outputs usable right away.</p>
+        <ul class="code-features">
+          <li>Colleagues can directly submit department, date, meeting name, and audio file through an n8n form as part of the real meeting workflow</li>
+          <li>faster-whisper and Gemini 2.5 Flash handle transcription, cleanup, and structured meeting-note generation with minimal manual intervention</li>
+          <li>Outputs are routed into Google Drive, Sheets, and department Chat spaces, with error notification flow to support stable day-to-day use</li>
+        </ul>
+        <p class="code-tech">Tech: n8n, faster-whisper, Gemini 2.5 Flash, Google Workspace, Tailscale Funnel, launchd</p>
+        <div class="code-meta">
+          <span class="code-pill">AI Automation</span>
+          <span class="code-pill">RPA</span>
+        </div>
+        <a class="code-link is-disabled" href="#code" aria-disabled="true">Private Workflow</a>
       </article>
     </div>
   </div>
@@ -1094,7 +1114,7 @@ footer{
           <li class="skill-item"><span class="skill-main"><span class="skill-name">ChatGPT / Claude</span></span></li>
           <li class="skill-item"><span class="skill-main"><span class="skill-name">Gemini / Google AI Studio</span></span></li>
           <li class="skill-item"><span class="skill-main"><span class="skill-name">Perplexity / NotebookLM</span></span></li>
-          <li class="skill-item"><span class="skill-main"><span class="skill-name">Generative AI × Workflow Automation</span></span></li>
+          <li class="skill-item"><span class="skill-main"><span class="skill-name">Generative AI × Workflow Automation × RPA</span></span></li>
         </ul>
       </div>
       <div class="skillcard">
@@ -1215,7 +1235,7 @@ const i18n={
     nav:{about:'關於我',experience:'經歷',projects:'專案',communities:'組織與社群',code:'Code',skills:'技能',contact:'聯絡我'},
     heroEyebrow:'YU, HSIN-HUA · 作品集 2026',
     heroLead:'為學習、工作與成長設計更好的系統。',
-    heroIntro:'我關注財務、組織與產品交會的地方，並持續探索如何透過更好的系統設計，支持人們學習、工作與成長。',
+    heroIntro:'我把 AI 工作流、自動化與產品思維放進財務、營運與組織發展的實際系統中。',
     stats:[
       'GPA 3.79 / 4.0 · 系排前四',
       '專業證照',
@@ -1233,12 +1253,12 @@ const i18n={
       prose:[
         '工作與興趣主要在財務、組織與產品的交會。',
         '關注分析思維與組織理解如何支持更好的決策、更強韌的系統，以及更有品質的執行。',
-        '以財務背景為起點，並在 HR、產品工作與數位實作中持續探索，逐步發展出跨領域的問題解決方式，結合商業分析、流程思維與生成式 AI 工具，將想法轉化為可實踐的解決方案。'
+        '以財務背景為起點，並在 HR、產品工作與數位實作中持續探索，逐步發展出跨領域的問題解決方式，結合商業分析、流程設計、生成式 AI 與工作流自動化，將想法轉化為可實踐的解決方案。'
       ],
       features:[
         {title:'永續思維',text:'具備 ESG 永續發展基礎能力，並有碳政策研究經驗。'},
         {title:'數據驅動',text:'以 Python、Power BI 與分析方法將洞察轉為決策。'},
-        {title:'跨域協作',text:'可串接財務、人資與產品語境，推動共同執行。'},
+        {title:'AI 與流程自動化',text:'會把生成式 AI、工作流自動化與 RPA 思維放進實際流程設計，不只停留在工具嘗試。'},
         {title:'訓練引導',text:'具內訓規劃與主持經驗，能落地課程設計。'}
       ]
     },
@@ -1307,17 +1327,18 @@ const i18n={
     code:{
       eyebrow:'Code',
       title:'Code',
-      intro:'這裡收錄我目前已上線的程式作品與互動實驗，主題從理財學習、AI 應用，到把概念整理成可實際操作的產品流程。',
+      intro:'這裡收錄我目前已上線的程式作品與互動實驗，重點不只是把東西做出來，而是把 AI、流程自動化與產品思維整理成可實際運作的系統。',
       open:'開啟作品 ↗',
       items:[
         {title:'金融安心學堂',desc:'以理財學習為主題的 Web App，嘗試把相對陌生的金融知識整理成更容易理解、也更容易進入的學習體驗。',badge:'Base44',tags:['金融教育','Web App'],features:['以理財學習為核心定位','已獨立上線為 Web App','設計方向偏向更易入門的學習體驗'],tech:'技術：Base44、React、Supabase Storage、PWA'},
         {title:'SROI 計算器',desc:'以 SROI 計算為主題的 AI Studio app，嘗試把社會影響力的評估過程整理成更直接、可操作的互動工具。',badge:'AI Studio',tags:['Google AI Studio','SROI 工具'],features:['建立於 Google AI Studio','聚焦 SROI 計算與應用情境','以獨立 app 形式呈現互動體驗'],tech:'技術：Google AI Studio、SPA、Service Worker'},
         {title:'ZenBudget 零基預算工具',desc:'以零基預算為核心的理財工具，從帳戶總覽、預算分配到快速記帳，整理成一套更貼近日常使用的理財流程。',badge:'Web App',tags:['理財工具','零基預算'],features:['帳戶總覽整合現金、銀行與信用卡','以 Ready to Assign 進行預算分配','包含快速記帳、紀錄、共同與設定分頁'],tech:'技術：React、Express、Google Cloud Run'},
         {title:'Portfolio 投資決策平台',desc:'整合市場資訊、自選股追蹤、K 線圖、策略回測與投資組合分析的個人金融平台，讓看盤、配置與投資決策可以放在同一個操作流程裡。',badge:'Vercel',tags:['FinTech','投資組合分析'],features:['整合市場總覽、自選股與自動更新報價','支援台股與美股資產追蹤，搭配個股 K 線圖','包含策略回測、績效分析、風險觀察與預算導向買入方案'],tech:'技術：Next.js、React、Tailwind CSS、Vercel'},
-        {title:'戰勤營運管理平台',desc:'以內部營運管理為核心的戰勤平台，把原本分散在不同表單、訊息與部門間的資訊整合到同一個系統裡，讓進度、任務與協作狀態更清楚可追蹤。',badge:'War Room',tags:['內部工具','營運管理'],features:['全公司總覽結合 KPI、重要任務與近期時程','整合案件進度、任務優先級、廠商紀錄與溝通追蹤','涵蓋人資招募、教育訓練與跨部門協作管理'],tech:'技術：HTML、CSS、JavaScript、SheetJS、GitHub Pages'}
+        {title:'戰勤營運管理平台',desc:'這是一套已實際用在企業內部的營運管理平台，把原本分散在不同表單、訊息與部門間的資訊整合到同一個系統裡，讓進度、任務與協作狀態可以被團隊日常追蹤與使用。',badge:'War Room',tags:['內部工具','營運管理'],features:['支援公司層級 KPI、重要任務與時程追蹤，作為跨部門協作入口','把案件進度、任務優先級、廠商紀錄與溝通追蹤整合在同一個介面','不只是展示型 dashboard，也實際延伸到人資招募、教育訓練與日常營運協作'],tech:'技術：HTML、CSS、JavaScript、SheetJS、GitHub Pages',href:'https://beartwotw9-dot.github.io/warroom/',cta:'開啟作品 ↗'},
+        {title:'會議逐字稿自動化系統',desc:'這是一套已在企業內部實際使用的會議自動化流程，能把會議錄音轉成整理逐字稿、結構化會議記錄、部門歸檔與 Chat 通知，重點是減少重複人工整理，讓會議成果能直接被使用。',badge:'n8n',tags:['AI 自動化','RPA'],features:['同事可直接透過 n8n 表單上傳部門、日期、會議名稱與音檔，接入真實會議流程','以 faster-whisper 與 Gemini 2.5 Flash 完成轉錄、整理與會議記錄生成，降低人工處理負擔','自動寫入 Google Drive、Sheets 與部門 Chat，並加上錯誤通知機制以支援日常穩定運作'],tech:'技術：n8n、faster-whisper、Gemini 2.5 Flash、Google Workspace、Tailscale Funnel、launchd',href:'assets/images/n8n-meeting-automation.jpg',cta:'查看流程圖 ↗'}
       ]
     },
-    skills:{eyebrow:'技能',title:'技能與工具',cats:['數據分析','AI 工具應用','人資與組織發展','專案管理'],names:['Python（pandas, sklearn）','Power BI','R 語言','Excel / SQL','ChatGPT / Claude','Gemini / Google AI Studio','Perplexity / NotebookLM','生成式 AI × 行政自動化','招募甄選 & SOP 建置','教育訓練設計 & 主持','ESG 政策規劃','團體動力引導 & 主動傾聽','Linear / Asana','Notion','QA 測試規劃','計畫書撰寫申請'],certTitle:'📜 專業證照（14 張）',langTitle:'🌐 語言能力',langs:['中文（母語）','英文（中等）']},
+    skills:{eyebrow:'技能',title:'技能與工具',cats:['數據分析','AI 工具應用','人資與組織發展','專案管理'],names:['Python（pandas, sklearn）','Power BI','R 語言','Excel / SQL','ChatGPT / Claude','Gemini / Google AI Studio','Perplexity / NotebookLM','生成式 AI × 工作流自動化 × RPA','招募甄選 & SOP 建置','教育訓練設計 & 主持','ESG 政策規劃','團體動力引導 & 主動傾聽','Linear / Asana','Notion','QA 測試規劃','計畫書撰寫申請'],certTitle:'📜 專業證照（14 張）',langTitle:'🌐 語言能力',langs:['中文（母語）','英文（中等）']},
     contact:{eyebrow:'聯絡',lead:'有想聊的，<br>歡迎找我說話。',sub:'對人資科技、組織發展、產品管理、ESG 相關的職缺或合作機會保持開放。<br>有任何想法，歡迎直接聯繫，我會盡快回覆。',labels:['姓名','Email','訊息'],placeholders:['你的名字','your@email.com','Hi，我想聊聊…'],send:'送出訊息 →',sending:'送出中…',success:'訊息已送出，我會在 48 小時內回覆 🙌',fail:'送出失敗，請稍後再試一次。',linkedin:'LinkedIn / 游欣樺'},
     footer:{copy:'© <span id="year"></span> 游欣樺 — 跨越資料與人心，讓決策有溫度。',top:'回到頂端 ↑'}
   },
@@ -1326,7 +1347,7 @@ const i18n={
     nav:{about:'About',experience:'Experience',projects:'Projects',communities:'Communities',code:'Code',skills:'Skills',contact:'Contact'},
     heroEyebrow:'YU, HSIN-HUA · Portfolio 2026',
     heroLead:'Designing better systems for people to learn, work, and grow.',
-    heroIntro:'I build practical systems at the intersection of finance, product, and organizational development.',
+    heroIntro:'I build practical systems with AI workflows, automation, and product thinking across finance, operations, and organizational development.',
     stats:['GPA 3.79 / 4.0 · Top 4 in Class','Professional Certifications','Business Competitions','Financial Records Managed'],
     about:{
       eyebrow:'About Me',
@@ -1339,12 +1360,12 @@ const i18n={
       prose:[
         'My work centers on the intersection of finance, organization, and product.',
         'I care about how analytical thinking and organizational understanding support better decisions, stronger systems, and higher-quality execution.',
-        'Starting from a finance background, I continue to explore HR, product work, and digital practice. Over time, I have built a cross-disciplinary approach that combines business analysis, process thinking, and generative AI tools to turn ideas into practical solutions.'
+        'Starting from a finance background, I continue to explore HR, product work, and digital practice. Over time, I have built a cross-disciplinary approach that combines business analysis, process design, generative AI, and workflow automation to turn ideas into practical solutions.'
       ],
       features:[
         {title:'Sustainability Mindset',text:'Certified in ESG fundamentals and experienced in carbon-policy research.'},
         {title:'Data-Driven Execution',text:'Python, Power BI, and analytics methods to turn insights into decisions.'},
-        {title:'Cross-Functional Alignment',text:'Able to bridge finance, HR, and product contexts with shared execution logic.'},
+        {title:'AI & Automation',text:'Use generative AI, workflow automation, and RPA thinking to redesign repetitive work into clearer systems.'},
         {title:'Facilitation & Training',text:'Hands-on training facilitation and internal workshop design experience.'}
       ]
     },
@@ -1377,17 +1398,18 @@ const i18n={
     code:{
       eyebrow:'Code',
       title:'Code',
-      intro:'A selection of live apps and interactive builds that reflect my interest in finance, AI applications, and turning ideas into usable product flows.',
+      intro:'A selection of live builds that show how I use AI, automation, and product thinking to turn ideas into usable systems rather than just quick prototypes.',
       open:'Launch App ↗',
       items:[
         {title:'Finance Peace Academy',desc:'A finance-learning web app built around making money topics feel more approachable. The project focuses on turning financial knowledge into a clearer and more accessible learning experience.',badge:'Base44',tags:['Financial Education','Web App'],features:['Finance-learning positioning with a clear educational focus','Built and published as a standalone web app','Designed as an accessible entry point for financial learning'],tech:'Tech: Base44, React, Supabase Storage, PWA'},
         {title:'SROI Calculator',desc:'An AI Studio app centered on SROI calculation. This project presents the idea of turning social return assessment into a more direct and usable interactive tool.',badge:'AI Studio',tags:['Google AI Studio','SROI Tool'],features:['Built and hosted through Google AI Studio','Focused on SROI-related calculation and application flow','Presented as a dedicated interactive app experience'],tech:'Tech: Google AI Studio, SPA, Service Worker'},
         {title:'ZenBudget',desc:'A zero-based budgeting tool that organizes personal finance into a clearer monthly workflow. From account overview to budget allocation and quick expense entry, the product is designed around everyday money management.',badge:'Web App',tags:['Finance Tool','Zero-Based Budgeting'],features:['Account overview with cash, bank, and credit balances','Ready to Assign budgeting flow and category-based allocation','Quick expense entry, records, shared tab, and settings navigation'],tech:'Tech: React, Express, Google Cloud Run'},
         {title:'Portfolio Investment Platform',desc:'A personal finance platform that combines market data, watchlist tracking, K-line charts, backtesting, and portfolio analysis. It helps extend day-to-day market monitoring into allocation planning and investment decisions.',badge:'Vercel',tags:['FinTech','Portfolio Analytics'],features:['Market overview, auto-updating quotes, and watchlist tracking','TW and US asset tracking with stock-level K-line charts','Backtesting, performance analysis, risk observation, and budget-based buy planning'],tech:'Tech: Next.js, React, Tailwind CSS, Vercel'},
-        {title:'War Room Operations Platform',desc:'An internal operations platform that brings forms, updates, and department workflows into one system, making progress, ownership, and cross-functional collaboration easier to manage.',badge:'War Room',tags:['Internal Tools','Operations'],features:['Company overview with KPI tracking, key tasks, and near-term timeline','Project progress, task priority, vendor records, and communication follow-up','HR recruiting, training management, and cross-functional coordination in one interface'],tech:'Tech: HTML, CSS, JavaScript, SheetJS, GitHub Pages'}
+        {title:'War Room Operations Platform',desc:'An internal operations platform that is actively used in an enterprise setting to centralize day-to-day management across teams. It brings forms, updates, and department workflows into one system so progress, ownership, and collaboration can be tracked in a way people actually use.',badge:'War Room',tags:['Internal Tools','Operations'],features:['Used for real cross-functional operations, with company KPI tracking, key tasks, and timeline-based visibility','Supports ongoing project progress, task priority, vendor records, and communication follow-up in one interface','Extends into HR recruiting, training management, and day-to-day coordination instead of staying as a static dashboard'],tech:'Tech: HTML, CSS, JavaScript, SheetJS, GitHub Pages',href:'https://beartwotw9-dot.github.io/warroom/',cta:'Launch App ↗'},
+        {title:'Meeting Transcript Automation System',desc:'An internal meeting automation workflow that is already used in an enterprise context to turn one uploaded recording into a cleaned transcript, structured meeting notes, department filing, and Google Chat notification. It was built to reduce repetitive manual work and make meeting outputs usable right away.',badge:'n8n',tags:['AI Automation','RPA'],features:['Colleagues can directly submit department, date, meeting name, and audio file through an n8n form as part of the real meeting workflow','faster-whisper and Gemini 2.5 Flash handle transcription, cleanup, and structured meeting-note generation with minimal manual intervention','Outputs are routed into Google Drive, Sheets, and department Chat spaces, with error notification flow to support stable day-to-day use'],tech:'Tech: n8n, faster-whisper, Gemini 2.5 Flash, Google Workspace, Tailscale Funnel, launchd',href:'assets/images/n8n-meeting-automation.jpg',cta:'View Workflow ↗'}
       ]
     },
-    skills:{eyebrow:'Skills',title:'Skills & Tools',cats:['Data Analysis','AI Applications','HR & Organizational Development','Project Management'],names:['Python (pandas, sklearn)','Power BI','R','Excel / SQL','ChatGPT / Claude','Gemini / Google AI Studio','Perplexity / NotebookLM','Generative AI × Workflow Automation','Recruiting & SOP Design','Training Design & Facilitation','ESG Policy Planning','Group Facilitation & Active Listening','Linear / Asana','Notion','QA Test Planning','Proposal Writing'],certTitle:'📜 Professional Certifications (14)',langTitle:'🌐 Languages',langs:['Mandarin (Native)','English (Intermediate)']},
+    skills:{eyebrow:'Skills',title:'Skills & Tools',cats:['Data Analysis','AI Applications','HR & Organizational Development','Project Management'],names:['Python (pandas, sklearn)','Power BI','R','Excel / SQL','ChatGPT / Claude','Gemini / Google AI Studio','Perplexity / NotebookLM','Generative AI × Workflow Automation × RPA','Recruiting & SOP Design','Training Design & Facilitation','ESG Policy Planning','Group Facilitation & Active Listening','Linear / Asana','Notion','QA Test Planning','Proposal Writing'],certTitle:'📜 Professional Certifications (14)',langTitle:'🌐 Languages',langs:['Mandarin (Native)','English (Intermediate)']},
     contact:{eyebrow:'Contact',lead:'If you’d like to connect,<br>let’s talk.',sub:'I’m open to roles and collaborations in HR tech, organizational development, product management, and ESG.<br>Feel free to reach out anytime and I’ll reply as soon as possible.',labels:['Name','Email','Message'],placeholders:['Your name','your@email.com','Hi, I\'d love to connect...'],send:'Send Message →',sending:'Sending...',success:'Message sent. I’ll reply within 48 hours 🙌',fail:'Failed to send. Please try again in a moment.',linkedin:'LinkedIn / Dora Yu'},
     footer:{copy:'© <span id="year"></span> Dora Yu — Designing better systems for people to learn, work, and grow.',top:'Back to Top ↑'}
   }
@@ -1484,7 +1506,18 @@ function syncPageLanguage(lang){
     if(features&&item.features){
       features.innerHTML=item.features.map(feature=>`<li>${feature}</li>`).join('');
     }
-    setText(card.querySelector('.code-link'),t.code.open);
+    const link=card.querySelector('.code-link');
+    if(link){
+      const href=item.href||link.getAttribute('href')||'#code';
+      link.setAttribute('href',href);
+      setText(link,item.cta||t.code.open);
+      link.classList.toggle('is-disabled',href==='#code');
+      if(href==='#code'){
+        link.setAttribute('aria-disabled','true');
+      }else{
+        link.removeAttribute('aria-disabled');
+      }
+    }
   });
 
   setText(document.querySelector('#skills .sec-eyebrow'),t.skills.eyebrow);
