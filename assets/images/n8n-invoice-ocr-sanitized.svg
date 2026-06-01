@@ -1,128 +1,100 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
   <title id="title">Sanitized Invoice OCR Workflow</title>
-  <desc id="desc">A portfolio-safe workflow diagram showing invoice image upload, OCR parsing, field cleanup, drive archiving, and category-based ledger routing.</desc>
+  <desc id="desc">A simplified portfolio-safe workflow diagram for invoice OCR classification and filing.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#fbf8f2"/>
-      <stop offset="100%" stop-color="#f1e9dc"/>
+      <stop offset="0%" stop-color="#fbf8f3"/>
+      <stop offset="100%" stop-color="#f2eadf"/>
     </linearGradient>
-    <linearGradient id="heroGlow" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#dceadf"/>
-      <stop offset="100%" stop-color="#f6efe2"/>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fdf8f0"/>
     </linearGradient>
-    <linearGradient id="routePanel" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0%" stop-color="#eef6ef"/>
-      <stop offset="100%" stop-color="#e4efe5"/>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#e9f3eb"/>
+      <stop offset="100%" stop-color="#f2f7f1"/>
     </linearGradient>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#b8aa91" flood-opacity=".18"/>
-    </filter>
-    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#b8aa91" flood-opacity=".12"/>
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#b7a88f" flood-opacity=".14"/>
     </filter>
     <style>
-      .title{font:700 40px 'Noto Sans TC',Arial,sans-serif;fill:#29231c}
-      .eyebrow{font:700 15px 'Noto Sans TC',Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;fill:#9d7c52}
-      .lead{font:400 21px 'Noto Sans TC',Arial,sans-serif;fill:#645949}
-      .label{font:700 22px 'Noto Sans TC',Arial,sans-serif;fill:#355840}
-      .sub{font:500 17px 'Noto Sans TC',Arial,sans-serif;fill:#5f5648}
-      .small{font:400 15px 'Noto Sans TC',Arial,sans-serif;fill:#8a7e6d}
-      .tiny{font:600 14px 'Noto Sans TC',Arial,sans-serif;fill:#6b9070}
-      .card{fill:#fffdf9;stroke:#ddd0bc;stroke-width:2}
-      .mini{fill:#fffdfa;stroke:#d8ccb8;stroke-width:2}
-      .flow{stroke:#877867;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
-      .dash{stroke:#c5b79f;stroke-width:3;stroke-dasharray:10 10;fill:none;stroke-linecap:round}
+      .eyebrow{font:700 14px 'Noto Sans TC',Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;fill:#9a7b54}
+      .title{font:700 42px 'Noto Sans TC',Arial,sans-serif;fill:#241f18}
+      .lead{font:400 22px 'Noto Sans TC',Arial,sans-serif;fill:#655b4c}
+      .section{font:700 16px 'Noto Sans TC',Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;fill:#9a7b54}
+      .cardTitle{font:700 28px 'Noto Sans TC',Arial,sans-serif;fill:#355840}
+      .cardBody{font:500 20px 'Noto Sans TC',Arial,sans-serif;fill:#5f5648}
+      .cardMeta{font:400 17px 'Noto Sans TC',Arial,sans-serif;fill:#8a7d6a}
+      .miniTitle{font:700 21px 'Noto Sans TC',Arial,sans-serif;fill:#355840}
+      .miniMeta{font:500 16px 'Noto Sans TC',Arial,sans-serif;fill:#736755}
+      .pill{font:700 18px 'Noto Sans TC',Arial,sans-serif;fill:#4f7355}
+      .frame{fill:url(#panel);stroke:#e4d7c4;stroke-width:2}
+      .routeFrame{fill:url(#accent);stroke:#d7e5d8;stroke-width:2}
+      .card{fill:#fffdfa;stroke:#ddd1be;stroke-width:2}
+      .line{stroke:#847563;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
     </style>
   </defs>
 
   <rect width="1600" height="900" fill="url(#bg)"/>
-  <circle cx="190" cy="128" r="160" fill="url(#heroGlow)" opacity=".78"/>
-  <circle cx="1435" cy="780" r="210" fill="#e7f0e7" opacity=".4"/>
+  <circle cx="210" cy="130" r="170" fill="#f4efe4"/>
+  <circle cx="1400" cy="760" r="180" fill="#eef5ef" opacity=".55"/>
 
-  <text x="800" y="88" text-anchor="middle" class="eyebrow">N8N · FINANCE AUTOMATION · SANITIZED VIEW</text>
-  <text x="800" y="138" text-anchor="middle" class="title">Invoice OCR Classification &amp; Filing Workflow</text>
-  <text x="800" y="178" text-anchor="middle" class="lead">Public-safe overview of how invoice images become structured, routed bookkeeping records.</text>
-
-  <g filter="url(#soft)">
-    <rect x="66" y="232" width="1458" height="430" rx="36" ry="36" fill="rgba(255,253,249,.74)" stroke="#e7ddcf" stroke-width="2"/>
-    <rect x="1145" y="212" width="330" height="488" rx="34" ry="34" fill="url(#routePanel)" stroke="#cad9cb" stroke-width="2"/>
-  </g>
+  <text x="800" y="88" text-anchor="middle" class="eyebrow">N8N · SANITIZED WORKFLOW · FINANCE AUTOMATION</text>
+  <text x="800" y="148" text-anchor="middle" class="title">Invoice OCR Classification &amp; Filing</text>
+  <text x="800" y="194" text-anchor="middle" class="lead">A cleaner internal workflow for turning uploaded invoice images into structured records and categorized ledger entries.</text>
 
   <g filter="url(#shadow)">
-    <rect class="card" x="120" y="350" rx="28" ry="28" width="190" height="136"/>
-    <text x="215" y="402" text-anchor="middle" class="label">1. Upload</text>
-    <text x="215" y="438" text-anchor="middle" class="sub">Receipt form intake</text>
-    <text x="215" y="466" text-anchor="middle" class="small">staff / category / image</text>
-
-    <rect class="card" x="360" y="350" rx="28" ry="28" width="210" height="136"/>
-    <text x="465" y="402" text-anchor="middle" class="label">2. Prep Image</text>
-    <text x="465" y="438" text-anchor="middle" class="sub">Normalize &amp; compress</text>
-    <text x="465" y="466" text-anchor="middle" class="small">OCR-ready JPEG pipeline</text>
-
-    <rect class="card" x="620" y="350" rx="28" ry="28" width="210" height="136"/>
-    <text x="725" y="402" text-anchor="middle" class="label">3. OCR Parse</text>
-    <text x="725" y="438" text-anchor="middle" class="sub">Traditional Chinese OCR</text>
-    <text x="725" y="466" text-anchor="middle" class="small">extract raw text content</text>
-
-    <rect class="card" x="880" y="350" rx="28" ry="28" width="220" height="136"/>
-    <text x="990" y="402" text-anchor="middle" class="label">4. Field Cleanup</text>
-    <text x="990" y="438" text-anchor="middle" class="sub">Vendor / amount / date</text>
-    <text x="990" y="466" text-anchor="middle" class="small">rename file &amp; structure record</text>
-
-    <rect class="card" x="1140" y="290" rx="28" ry="28" width="220" height="126"/>
-    <text x="1250" y="338" text-anchor="middle" class="label">5. Drive Archive</text>
-    <text x="1250" y="372" text-anchor="middle" class="sub">Cloud storage</text>
-    <text x="1250" y="398" text-anchor="middle" class="small">save image &amp; return file link</text>
-
-    <rect class="card" x="1140" y="486" rx="28" ry="28" width="220" height="126"/>
-    <text x="1250" y="534" text-anchor="middle" class="label">6. Route by Type</text>
-    <text x="1250" y="568" text-anchor="middle" class="sub">Switch-based branching</text>
-    <text x="1250" y="594" text-anchor="middle" class="small">send records into the right ledger</text>
-
-    <rect class="mini" x="1388" y="272" rx="22" ry="22" width="110" height="78"/>
-    <text x="1443" y="318" text-anchor="middle" class="tiny">Drive</text>
-
-    <rect class="mini" x="1388" y="382" rx="22" ry="22" width="110" height="78"/>
-    <text x="1443" y="428" text-anchor="middle" class="tiny">Payment</text>
-
-    <rect class="mini" x="1388" y="482" rx="22" ry="22" width="110" height="78"/>
-    <text x="1443" y="528" text-anchor="middle" class="tiny">General</text>
-
-    <rect class="mini" x="1388" y="582" rx="22" ry="22" width="110" height="78"/>
-    <text x="1443" y="628" text-anchor="middle" class="tiny">Fixed</text>
-
-    <rect class="mini" x="1388" y="682" rx="22" ry="22" width="110" height="78"/>
-    <text x="1443" y="728" text-anchor="middle" class="tiny">Tax / Petty</text>
+    <rect class="frame" x="84" y="250" rx="34" ry="34" width="1432" height="560"/>
+    <rect class="routeFrame" x="1088" y="282" rx="30" ry="30" width="356" height="336"/>
   </g>
 
-  <path class="flow" d="M310 418 H360"/>
-  <path class="flow" d="M570 418 H620"/>
-  <path class="flow" d="M830 418 H880"/>
-  <path class="flow" d="M1100 418 H1140"/>
-  <path class="flow" d="M1250 416 V486"/>
-  <path class="flow" d="M1360 353 H1388"/>
-  <path class="flow" d="M1360 548 C1380 548,1370 421,1388 421"/>
-  <path class="flow" d="M1360 548 H1388"/>
-  <path class="flow" d="M1360 548 C1380 548,1370 621,1388 621"/>
-  <path class="flow" d="M1360 548 C1380 548,1370 721,1388 721"/>
+  <text x="144" y="302" class="section">Input</text>
+  <text x="500" y="302" class="section">Processing</text>
+  <text x="1140" y="332" class="section">Outputs</text>
 
-  <path class="dash" d="M215 486 V620 H530"/>
-  <path class="dash" d="M725 486 V620 H1050"/>
+  <g filter="url(#shadow)">
+    <rect class="card" x="132" y="356" rx="28" ry="28" width="256" height="190"/>
+    <text x="168" y="414" class="cardTitle">1. Upload</text>
+    <text x="168" y="454" class="cardBody">Receipt image form</text>
+    <text x="168" y="489" class="cardMeta">staff name / expense type / file</text>
 
-  <g filter="url(#soft)">
-    <rect class="card" x="300" y="690" rx="26" ry="26" width="320" height="116"/>
-    <text x="460" y="738" text-anchor="middle" class="label">Finance Use Case</text>
-    <text x="460" y="772" text-anchor="middle" class="sub">Reduce repetitive invoice admin work</text>
-    <text x="460" y="796" text-anchor="middle" class="small">from one upload to searchable records</text>
+    <rect class="card" x="448" y="356" rx="28" ry="28" width="256" height="190"/>
+    <text x="484" y="414" class="cardTitle">2. Prep</text>
+    <text x="484" y="454" class="cardBody">Normalize and compress</text>
+    <text x="484" y="489" class="cardMeta">make the image OCR-ready</text>
 
-    <rect class="card" x="690" y="690" rx="26" ry="26" width="320" height="116"/>
-    <text x="850" y="738" text-anchor="middle" class="label">Structured Outputs</text>
-    <text x="850" y="772" text-anchor="middle" class="sub">Fields, links, and ledger-ready rows</text>
-    <text x="850" y="796" text-anchor="middle" class="small">designed for everyday bookkeeping workflows</text>
+    <rect class="card" x="764" y="356" rx="28" ry="28" width="256" height="190"/>
+    <text x="800" y="414" class="cardTitle">3. OCR + Parse</text>
+    <text x="800" y="454" class="cardBody">Extract key fields</text>
+    <text x="800" y="489" class="cardMeta">vendor / amount / date / invoice info</text>
 
-    <rect class="card" x="1080" y="690" rx="26" ry="26" width="320" height="116"/>
-    <text x="1240" y="738" text-anchor="middle" class="label">Routing Logic</text>
-    <text x="1240" y="772" text-anchor="middle" class="sub">Category-based filing across sheets</text>
-    <text x="1240" y="796" text-anchor="middle" class="small">keeps records organized without exposing internal IDs</text>
+    <rect class="card" x="1124" y="370" rx="24" ry="24" width="284" height="94"/>
+    <text x="1160" y="424" class="miniTitle">Drive archive</text>
+    <text x="1160" y="448" class="miniMeta">save image and return file link</text>
+
+    <rect class="card" x="1124" y="494" rx="24" ry="24" width="284" height="94"/>
+    <text x="1160" y="548" class="miniTitle">Ledger routing</text>
+    <text x="1160" y="572" class="miniMeta">send to the right bookkeeping tab</text>
+
+    <rect class="card" x="118" y="648" rx="26" ry="26" width="404" height="116"/>
+    <text x="320" y="694" text-anchor="middle" class="pill">Why it matters</text>
+    <text x="320" y="730" text-anchor="middle" class="cardBody">Cuts repetitive finance admin work</text>
+
+    <rect class="card" x="598" y="648" rx="26" ry="26" width="404" height="116"/>
+    <text x="800" y="694" text-anchor="middle" class="pill">Structured result</text>
+    <text x="800" y="730" text-anchor="middle" class="cardBody">Files, fields, and ledger-ready rows</text>
+
+    <rect class="card" x="1078" y="648" rx="26" ry="26" width="404" height="116"/>
+    <text x="1280" y="694" text-anchor="middle" class="pill">Routing logic</text>
+    <text x="1280" y="730" text-anchor="middle" class="cardBody">Payment / General / Fixed / Tax / Petty</text>
   </g>
+
+  <path class="line" d="M388 450 H448"/>
+  <path class="line" d="M704 450 H764"/>
+  <path class="line" d="M1020 450 H1088"/>
+  <path class="line" d="M1266 464 V494"/>
+
+  <circle cx="1088" cy="450" r="8" fill="#847563"/>
+  <circle cx="448" cy="450" r="8" fill="#847563"/>
+  <circle cx="764" cy="450" r="8" fill="#847563"/>
 </svg>

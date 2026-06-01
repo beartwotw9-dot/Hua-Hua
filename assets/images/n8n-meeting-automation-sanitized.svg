@@ -1,78 +1,106 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
   <title id="title">Sanitized Meeting Automation Workflow</title>
-  <desc id="desc">A high-level workflow showing file upload, transcription, AI cleanup, structured notes, and delivery into enterprise collaboration tools.</desc>
+  <desc id="desc">A simplified portfolio-safe workflow diagram for meeting transcript automation.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#faf8f4"/>
-      <stop offset="100%" stop-color="#f2ebe0"/>
+      <stop offset="0%" stop-color="#fbf8f3"/>
+      <stop offset="100%" stop-color="#f2eadf"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fdf8f0"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#e9f3eb"/>
+      <stop offset="100%" stop-color="#f2f7f1"/>
     </linearGradient>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#b9aa94" flood-opacity=".22"/>
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#b7a88f" flood-opacity=".14"/>
     </filter>
     <style>
-      .label{font:600 26px 'Noto Sans TC',Arial,sans-serif;fill:#2c261d}
-      .sub{font:400 18px 'Noto Sans TC',Arial,sans-serif;fill:#6f6455}
-      .pill{font:700 17px 'Noto Sans TC',Arial,sans-serif;fill:#6b9070}
-      .small{font:500 16px 'Noto Sans TC',Arial,sans-serif;fill:#847867}
-      .card{fill:#fffdf9;stroke:#dfd2bf;stroke-width:2}
-      .line{stroke:#8d7f6d;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .eyebrow{font:700 14px 'Noto Sans TC',Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;fill:#9a7b54}
+      .title{font:700 42px 'Noto Sans TC',Arial,sans-serif;fill:#241f18}
+      .lead{font:400 22px 'Noto Sans TC',Arial,sans-serif;fill:#655b4c}
+      .section{font:700 16px 'Noto Sans TC',Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;fill:#9a7b54}
+      .cardTitle{font:700 28px 'Noto Sans TC',Arial,sans-serif;fill:#355840}
+      .cardBody{font:500 20px 'Noto Sans TC',Arial,sans-serif;fill:#5f5648}
+      .cardMeta{font:400 17px 'Noto Sans TC',Arial,sans-serif;fill:#8a7d6a}
+      .miniTitle{font:700 21px 'Noto Sans TC',Arial,sans-serif;fill:#355840}
+      .miniMeta{font:500 16px 'Noto Sans TC',Arial,sans-serif;fill:#736755}
+      .pill{font:700 18px 'Noto Sans TC',Arial,sans-serif;fill:#4f7355}
+      .frame{fill:url(#panel);stroke:#e4d7c4;stroke-width:2}
+      .routeFrame{fill:url(#accent);stroke:#d7e5d8;stroke-width:2}
+      .card{fill:#fffdfa;stroke:#ddd1be;stroke-width:2}
+      .line{stroke:#847563;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
     </style>
   </defs>
 
   <rect width="1600" height="900" fill="url(#bg)"/>
-  <text x="800" y="84" text-anchor="middle" class="label">Meeting Automation Workflow</text>
-  <text x="800" y="122" text-anchor="middle" class="sub">Sanitized public overview for portfolio use</text>
+  <circle cx="210" cy="130" r="170" fill="#f4efe4"/>
+  <circle cx="1400" cy="760" r="180" fill="#eef5ef" opacity=".55"/>
+
+  <text x="800" y="88" text-anchor="middle" class="eyebrow">N8N · SANITIZED WORKFLOW · AI AUTOMATION</text>
+  <text x="800" y="148" text-anchor="middle" class="title">Meeting Transcript Automation</text>
+  <text x="800" y="194" text-anchor="middle" class="lead">A cleaner internal workflow for turning one uploaded audio file into structured notes and searchable collaboration outputs.</text>
 
   <g filter="url(#shadow)">
-    <rect class="card" x="80" y="250" rx="28" ry="28" width="200" height="130"/>
-    <text x="180" y="305" text-anchor="middle" class="pill">1. Upload</text>
-    <text x="180" y="342" text-anchor="middle" class="sub">Form submission</text>
-    <text x="180" y="370" text-anchor="middle" class="small">department / date / file</text>
-
-    <rect class="card" x="390" y="250" rx="28" ry="28" width="220" height="130"/>
-    <text x="500" y="305" text-anchor="middle" class="pill">2. Speech-to-Text</text>
-    <text x="500" y="342" text-anchor="middle" class="sub">Audio transcription</text>
-    <text x="500" y="370" text-anchor="middle" class="small">faster-whisper pipeline</text>
-
-    <rect class="card" x="720" y="250" rx="28" ry="28" width="220" height="130"/>
-    <text x="830" y="305" text-anchor="middle" class="pill">3. AI Cleanup</text>
-    <text x="830" y="342" text-anchor="middle" class="sub">Punctuation / structuring</text>
-    <text x="830" y="370" text-anchor="middle" class="small">LLM post-processing</text>
-
-    <rect class="card" x="1050" y="250" rx="28" ry="28" width="220" height="130"/>
-    <text x="1160" y="305" text-anchor="middle" class="pill">4. Meeting Notes</text>
-    <text x="1160" y="342" text-anchor="middle" class="sub">Structured summary</text>
-    <text x="1160" y="370" text-anchor="middle" class="small">action items / risks / follow-up</text>
-
-    <rect class="card" x="1320" y="160" rx="24" ry="24" width="190" height="110"/>
-    <text x="1415" y="215" text-anchor="middle" class="pill">Drive</text>
-    <text x="1415" y="247" text-anchor="middle" class="sub">Docs &amp; files</text>
-
-    <rect class="card" x="1320" y="305" rx="24" ry="24" width="190" height="110"/>
-    <text x="1415" y="360" text-anchor="middle" class="pill">Sheets</text>
-    <text x="1415" y="392" text-anchor="middle" class="sub">Index tracking</text>
-
-    <rect class="card" x="1320" y="450" rx="24" ry="24" width="190" height="110"/>
-    <text x="1415" y="505" text-anchor="middle" class="pill">Chat</text>
-    <text x="1415" y="537" text-anchor="middle" class="sub">Team notification</text>
-
-    <rect class="card" x="470" y="555" rx="28" ry="28" width="300" height="140"/>
-    <text x="620" y="612" text-anchor="middle" class="pill">Enterprise Use Case</text>
-    <text x="620" y="650" text-anchor="middle" class="sub">Reduce repetitive meeting admin work</text>
-    <text x="620" y="680" text-anchor="middle" class="small">from upload to searchable outputs</text>
-
-    <rect class="card" x="860" y="555" rx="28" ry="28" width="300" height="140"/>
-    <text x="1010" y="612" text-anchor="middle" class="pill">Operational Safeguards</text>
-    <text x="1010" y="650" text-anchor="middle" class="sub">Error handling / queueing / retries</text>
-    <text x="1010" y="680" text-anchor="middle" class="small">designed for day-to-day team use</text>
+    <rect class="frame" x="84" y="250" rx="34" ry="34" width="1432" height="560"/>
+    <rect class="routeFrame" x="1088" y="282" rx="30" ry="30" width="356" height="336"/>
   </g>
 
-  <path class="line" d="M280 315 H390"/>
-  <path class="line" d="M610 315 H720"/>
-  <path class="line" d="M940 315 H1050"/>
-  <path class="line" d="M1270 315 H1320"/>
-  <path class="line" d="M1270 315 C1305 315,1295 215,1320 215"/>
-  <path class="line" d="M1270 315 C1305 315,1295 505,1320 505"/>
-  <path class="line" d="M620 380 V555"/>
-  <path class="line" d="M1010 380 V555"/>
+  <text x="144" y="302" class="section">Input</text>
+  <text x="500" y="302" class="section">Processing</text>
+  <text x="1140" y="332" class="section">Outputs</text>
+
+  <g filter="url(#shadow)">
+    <rect class="card" x="132" y="356" rx="28" ry="28" width="256" height="190"/>
+    <text x="168" y="414" class="cardTitle">1. Upload</text>
+    <text x="168" y="454" class="cardBody">Meeting form intake</text>
+    <text x="168" y="489" class="cardMeta">department / date / audio file</text>
+
+    <rect class="card" x="448" y="356" rx="28" ry="28" width="256" height="190"/>
+    <text x="484" y="414" class="cardTitle">2. Transcribe</text>
+    <text x="484" y="454" class="cardBody">Speech-to-text pipeline</text>
+    <text x="484" y="489" class="cardMeta">convert recording into raw transcript</text>
+
+    <rect class="card" x="764" y="356" rx="28" ry="28" width="256" height="190"/>
+    <text x="800" y="414" class="cardTitle">3. Clean + Structure</text>
+    <text x="800" y="454" class="cardBody">AI note generation</text>
+    <text x="800" y="489" class="cardMeta">summary / action items / follow-up</text>
+
+    <rect class="card" x="1124" y="350" rx="24" ry="24" width="284" height="82"/>
+    <text x="1160" y="400" class="miniTitle">Drive archive</text>
+    <text x="1160" y="422" class="miniMeta">store transcript and notes</text>
+
+    <rect class="card" x="1124" y="454" rx="24" ry="24" width="284" height="82"/>
+    <text x="1160" y="504" class="miniTitle">Sheets index</text>
+    <text x="1160" y="526" class="miniMeta">track records and meeting metadata</text>
+
+    <rect class="card" x="1124" y="558" rx="24" ry="24" width="284" height="82"/>
+    <text x="1160" y="608" class="miniTitle">Chat notification</text>
+    <text x="1160" y="630" class="miniMeta">deliver output to the team channel</text>
+
+    <rect class="card" x="118" y="648" rx="26" ry="26" width="404" height="116"/>
+    <text x="320" y="694" text-anchor="middle" class="pill">Why it matters</text>
+    <text x="320" y="730" text-anchor="middle" class="cardBody">Cuts repetitive meeting admin work</text>
+
+    <rect class="card" x="598" y="648" rx="26" ry="26" width="404" height="116"/>
+    <text x="800" y="694" text-anchor="middle" class="pill">Structured result</text>
+    <text x="800" y="730" text-anchor="middle" class="cardBody">Transcript, notes, and follow-up outputs</text>
+
+    <rect class="card" x="1078" y="648" rx="26" ry="26" width="404" height="116"/>
+    <text x="1280" y="694" text-anchor="middle" class="pill">Delivery logic</text>
+    <text x="1280" y="730" text-anchor="middle" class="cardBody">Drive / Sheets / Chat in one workflow</text>
+  </g>
+
+  <path class="line" d="M388 450 H448"/>
+  <path class="line" d="M704 450 H764"/>
+  <path class="line" d="M1020 450 H1088"/>
+  <path class="line" d="M1408 391 H1438"/>
+  <path class="line" d="M1408 495 H1438"/>
+  <path class="line" d="M1408 599 H1438"/>
+
+  <circle cx="1088" cy="450" r="8" fill="#847563"/>
+  <circle cx="448" cy="450" r="8" fill="#847563"/>
+  <circle cx="764" cy="450" r="8" fill="#847563"/>
 </svg>
