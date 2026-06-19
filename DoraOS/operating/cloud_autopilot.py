@@ -8,6 +8,7 @@ need to reason about script ordering each time.
 from __future__ import annotations
 
 import argparse
+import os
 import subprocess
 import sys
 from dataclasses import dataclass
@@ -65,13 +66,17 @@ def pick_python(script_path: Path) -> str:
     return sys.executable
 
 
-def run_job(name: str, script_path: Path, script_args: list[str], logger) -> JobResult:
+def run_job(name: str, script_path: Path, script_args: list[str], logger, env_values: dict[str, str] | None = None) -> JobResult:
     python_bin = pick_python(script_path)
     cmd = [python_bin, str(script_path), *script_args]
+    run_env = os.environ.copy()
+    if env_values:
+        run_env.update(env_values)
     try:
         result = subprocess.run(
             cmd,
             cwd=str(ROOT),
+            env=run_env,
             capture_output=True,
             text=True,
             check=False,
@@ -428,7 +433,7 @@ def main() -> int:
             ]
         )
 
-    results = [run_job(name, path, job_args, logger) for name, path, job_args in jobs]
+    results = [run_job(name, path, job_args, logger, env) for name, path, job_args in jobs]
     fallback_markers = detect_fallback_markers(vault_path, today)
     source_health = collect_source_health(vault_path, today, results)
     generated_at = datetime.now().strftime("%Y-%m-%d %H:%M")
@@ -446,7 +451,9 @@ def main() -> int:
     rerender_args = [pick_python(operating_feed_script), str(operating_feed_script), "--env-file", str(Path(args.env_file).expanduser())]
     if args.verbose:
         rerender_args.append("--verbose")
-    subprocess.run(rerender_args, cwd=str(ROOT), capture_output=True, text=True, check=False)
+    rerender_env = os.environ.copy()
+    rerender_env.update(env)
+    subprocess.run(rerender_args, cwd=str(ROOT), env=rerender_env, capture_output=True, text=True, check=False)
     logger.info("Updated automation status at %s", AUTOMATION_STATUS)
 
     if (
@@ -458,6 +465,7 @@ def main() -> int:
             OPERATING_DIR / "line_daily_brief.py",
             ["--env-file", str(Path(args.env_file).expanduser())],
             logger,
+            env,
         )
         if not line_result.success:
             logger.warning("Cloud LINE daily brief failed: %s", line_result.detail)
