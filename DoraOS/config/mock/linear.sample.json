@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "id": "lin-201",
+      "title": "Ship daily brief prototype",
+      "summary": "Current milestone for DoraOS v0.4 with emphasis on maintainability and mock-first adapters.",
+      "project": "DoraOS",
+      "status": "In Progress",
+      "url": "https://linear.app/example/issue/DORA-201",
+      "updated_at": "2026-05-13",
+      "labels": ["v0.4", "prototype"]
+    },
+    {
+      "id": "lin-202",
+      "title": "Document memory hygiene approval flow",
+      "summary": "Clarify what gets promoted to durable memory and when human review is required.",
+      "project": "DoraOS",
+      "status": "Todo",
+      "url": "https://linear.app/example/issue/DORA-202",
+      "updated_at": "2026-05-12",
+      "labels": ["memory", "ops"]
+    }
+  ]
+}

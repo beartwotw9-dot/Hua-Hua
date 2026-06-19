@@ -1,0 +1,44 @@
+.DS_Store
+
+# Local environment and secrets
+.env
+*.env
+!.env.example
+!.env.sample
+
+# Google OAuth client credentials and local tokens
+credentials.json
+google-token.json
+google-token.json.invalid-*
+token.json
+*-token.json
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node / frontend build artifacts
+node_modules/
+.next/
+dist/
+build/
+
+# Logs and local runtime output
+*.log
+logs/*.log
+.coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Generated/rendered local artifacts
+outputs/
+generated_assets/
+rendered_*/
+*_pdf_pages*/
+*_pdf_render/
+fontconfig_cache/
+libreoffice_patched/
+lo_tmp*/

@@ -1,0 +1,26 @@
+{
+  "enabled": true,
+  "discover_from_existing_notes": true,
+  "output_subdir": "Resources/Notion Sync/Daily Backups",
+  "status_note": "Resources/Notion Sync/Notion Backup Status.md",
+  "retries": 2,
+  "retry_delay_seconds": 1.5,
+  "recent_rows_limit": 10,
+  "explicit_sources": [
+    {
+      "kind": "database",
+      "id": "34d76488-1ec8-81f6-83b7-f1295db396b7",
+      "title": "Notion Projects"
+    },
+    {
+      "kind": "database",
+      "id": "34d76488-1ec8-81d6-96b9-e0a8d517b7e9",
+      "title": "Notion Tasks HQ"
+    },
+    {
+      "kind": "database",
+      "id": "34d76488-1ec8-8134-9f25-c7ef1b5fdb7a",
+      "title": "Notion Weekly Review"
+    }
+  ]
+}

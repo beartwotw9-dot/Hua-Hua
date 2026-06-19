@@ -1,0 +1,113 @@
+{
+  "enabled": true,
+  "source": "semantic_scholar",
+  "auto_capture_notes": true,
+  "note_output_subdir": "Resources/Research Sources/Auto Papers",
+  "max_results_per_topic": 10,
+  "daily_surface_limit": 3,
+  "days_back": 30,
+  "topics": [
+    {
+      "name": "方向一｜神經多樣性學生 × 生成式 AI 日常支持 | Neurodivergent Students × Generative AI Daily Support",
+      "query": "\"ADHD students\" OR \"neurodivergent students\" OR \"autistic students\" OR \"college students ADHD\" OR \"higher education ADHD\" OR \"students executive dysfunction\"",
+      "rss_categories": ["cs.HC", "cs.CY", "cs.AI"],
+      "must_match_any": [
+        "adhd",
+        "autism",
+        "autistic",
+        "neurodivergent",
+        "neurodiversity",
+        "student",
+        "students",
+        "higher education",
+        "college",
+        "university",
+        "executive dysfunction",
+        "attention"
+      ],
+      "exclude_if_any": [
+        "battery",
+        "lithium",
+        "li-ion",
+        "electrochemical",
+        "circuit network"
+      ]
+    },
+    {
+      "name": "方向二｜生成式 AI 學習支持 × 情緒調節 | Generative AI Learning Support × Emotional Regulation",
+      "query": "\"generative ai education\" OR \"ai-assisted learning\" OR \"chatbot learning support\" OR \"AI emotional support\" OR \"LLM students support\" OR \"emotional regulation learning\"",
+      "rss_categories": ["cs.HC", "cs.AI", "cs.IR"],
+      "must_match_any": [
+        "generative ai",
+        "chatgpt",
+        "large language model",
+        "llm",
+        "chatbot",
+        "learning support",
+        "ai-assisted learning",
+        "emotional regulation",
+        "emotion regulation",
+        "stress",
+        "wellbeing",
+        "support"
+      ],
+      "exclude_if_any": [
+        "battery",
+        "lithium",
+        "li-ion",
+        "electrochemical",
+        "robot path",
+        "wireless sensor"
+      ]
+    },
+    {
+      "name": "方向三｜科技接受 × 人機互動 × 認知鷹架 | TAM × Human-AI Interaction × Cognitive Scaffolding",
+      "query": "\"technology acceptance model\" OR TAM OR \"human-ai interaction\" OR \"cognitive scaffolding\" OR \"perceived usefulness\" OR \"executive function support\"",
+      "rss_categories": ["cs.HC", "cs.CY", "cs.IR"],
+      "must_match_any": [
+        "technology acceptance",
+        "tam",
+        "perceived usefulness",
+        "perceived ease of use",
+        "human-ai interaction",
+        "cognitive scaffolding",
+        "scaffold",
+        "attention management",
+        "executive function",
+        "self-regulation"
+      ],
+      "exclude_if_any": [
+        "battery",
+        "lithium",
+        "li-ion",
+        "electrochemical",
+        "thermodynamic",
+        "semiconductor"
+      ]
+    },
+    {
+      "name": "心理學理論與量表｜Psychological Theories & Scales",
+      "query": "\"executive dysfunction scale\" OR \"perceived stress scale\" OR \"emotion regulation questionnaire\" OR \"adhd self-report scale\" OR \"self-regulated learning scale\"",
+      "rss_categories": ["q-bio.NC", "cs.HC", "cs.CY"],
+      "must_match_any": [
+        "scale",
+        "questionnaire",
+        "inventory",
+        "validated",
+        "executive dysfunction",
+        "perceived stress",
+        "emotion regulation",
+        "adhd self-report",
+        "self-regulated learning",
+        "measurement"
+      ],
+      "exclude_if_any": [
+        "battery",
+        "lithium",
+        "li-ion",
+        "sensor network",
+        "robot"
+      ]
+    }
+  ]
+}

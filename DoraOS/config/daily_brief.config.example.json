@@ -1,0 +1,78 @@
+{
+  "brief": {
+    "vault_output_dir": "Resources/AI Briefs"
+  },
+  "sources": {
+    "obsidian": {
+      "enabled": true,
+      "include_paths": [
+        "Projects",
+        "Resources"
+      ],
+      "exclude_paths": [
+        "Areas",
+        "Areas/Health/Journals",
+        "Archive",
+        "Resources/AI Briefs",
+        "Resources/OpenHuman",
+        "Resources/AI Memory Review",
+        "Resources/AI Memory",
+        "Resources/AI Weekly Reviews",
+        "Resources/Research Sources"
+      ]
+    },
+    "github": {
+      "enabled": true,
+      "mock_path": "config/mock/github.sample.json",
+      "repo_scope": [
+        "doraos",
+        "ops-playbooks"
+      ]
+    },
+    "linear": {
+      "enabled": true,
+      "use_real_api": true,
+      "mock_path": "config/mock/linear.sample.json",
+      "workspace_scope": [],
+      "team_scope": [
+        "DORA"
+      ],
+      "project_names": [
+        "DoraOS"
+      ],
+      "project_ids": [],
+      "issue_states": [
+        "In Progress",
+        "Todo"
+      ],
+      "assignee_filter": [],
+      "updated_since_days": 14,
+      "max_items": 5
+    },
+    "gmail": {
+      "enabled": true,
+      "mock_path": "config/mock/gmail.sample.json",
+      "label_scope": [
+        "doraos-brief",
+        "important"
+      ]
+    },
+    "memory": {
+      "enabled": true,
+      "db_path": "memory/dora_memory.sqlite"
+    }
+  },
+  "safety": {
+    "write_mode": "brief_only",
+    "require_approval_for": [
+      "durable_memory_writes",
+      "sending_email",
+      "github_changes",
+      "linear_changes"
+    ],
+    "redact_raw_sensitive_content": true
+  },
+  "logging": {
+    "file": "logs/daily_brief.log"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "gh-101",
+      "title": "Define DoraOS daily brief acceptance criteria",
+      "summary": "Open issue tracking what the first briefing loop must include before it becomes a daily habit.",
+      "repo": "doraos",
+      "status": "open",
+      "url": "https://github.com/example/doraos/issues/101",
+      "updated_at": "2026-05-13",
+      "labels": ["planning", "v0.4"],
+      "action_hint": "Confirm scope before expanding automation."
+    },
+    {
+      "id": "gh-102",
+      "title": "Refine MCP adapter boundaries for brief pipeline",
+      "summary": "Discussion thread on keeping transport adapters isolated from summarization logic.",
+      "repo": "doraos",
+      "status": "discussion",
+      "url": "https://github.com/example/doraos/issues/102",
+      "updated_at": "2026-05-12",
+      "labels": ["architecture"]
+    }
+  ]
+}

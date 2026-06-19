@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "id": "mail-301",
+      "subject": "Follow-up on operator workflow review",
+      "snippet": "A collaborator wants feedback on whether the daily brief should include a weekly carryover section.",
+      "from": "collaborator@example.com",
+      "status": "unread",
+      "date": "2026-05-13",
+      "labels": ["important", "doraos-brief"],
+      "sensitivity": "normal"
+    },
+    {
+      "id": "mail-302",
+      "subject": "Meeting prep for DoraOS architecture sync",
+      "snippet": "Request to confirm the agenda and top questions for the architecture review meeting.",
+      "from": "ops@example.com",
+      "status": "starred",
+      "date": "2026-05-13",
+      "labels": ["doraos-brief"],
+      "sensitivity": "normal"
+    }
+  ]
+}

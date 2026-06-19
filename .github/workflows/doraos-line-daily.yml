@@ -1,0 +1,68 @@
+name: DoraOS LINE Daily
+
+on:
+  schedule:
+    # 08:05 Asia/Taipei. GitHub Actions cron is UTC.
+    - cron: "5 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: doraos-line-daily
+  cancel-in-progress: false
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: DoraOS
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r operating/requirements.txt -r recovery/requirements.txt
+
+      - name: Restore DoraOS env
+        env:
+          DORAOS_ENV_B64: ${{ secrets.DORAOS_ENV_B64 }}
+          DORAOS_GOOGLE_CREDENTIALS_B64: ${{ secrets.DORAOS_GOOGLE_CREDENTIALS_B64 }}
+          DORAOS_GOOGLE_TOKEN_B64: ${{ secrets.DORAOS_GOOGLE_TOKEN_B64 }}
+        run: |
+          if [ -z "$DORAOS_ENV_B64" ]; then
+            echo "Missing GitHub secret: DORAOS_ENV_B64" >&2
+            exit 1
+          fi
+          if [ -z "$DORAOS_GOOGLE_CREDENTIALS_B64" ]; then
+            echo "Missing GitHub secret: DORAOS_GOOGLE_CREDENTIALS_B64" >&2
+            exit 1
+          fi
+          if [ -z "$DORAOS_GOOGLE_TOKEN_B64" ]; then
+            echo "Missing GitHub secret: DORAOS_GOOGLE_TOKEN_B64" >&2
+            exit 1
+          fi
+          printf '%s' "$DORAOS_ENV_B64" | base64 --decode > .env
+          mkdir -p operating obsidian/DoraOS
+          printf '%s' "$DORAOS_GOOGLE_CREDENTIALS_B64" | base64 --decode > operating/credentials.json
+          printf '%s' "$DORAOS_GOOGLE_TOKEN_B64" | base64 --decode > operating/google-token.json
+          {
+            printf '\n'
+            printf 'OBSIDIAN_VAULT_PATH=%s/DoraOS/obsidian/DoraOS\n' "$GITHUB_WORKSPACE"
+            printf 'GOOGLE_OAUTH_CREDENTIALS_PATH=%s/DoraOS/operating/credentials.json\n' "$GITHUB_WORKSPACE"
+            printf 'GOOGLE_TOKEN_PATH=%s/DoraOS/operating/google-token.json\n' "$GITHUB_WORKSPACE"
+            printf 'CLOUD_AUTOPILOT_SEND_LINE_DAILY=true\n'
+          } >> .env
+
+      - name: Run cloud daily pipeline and push LINE
+        run: python operating/cloud_autopilot.py --env-file .env --mode daily --verbose

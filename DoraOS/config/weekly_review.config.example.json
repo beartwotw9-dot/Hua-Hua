@@ -1,0 +1,31 @@
+{
+  "paths": {
+    "briefs_dir": "Resources/AI Briefs",
+    "memory_review_dir": "Resources/AI Memory Review",
+    "approved_memory_file": "Resources/AI Memory/approved-memory.md",
+    "weekly_review_dir": "Resources/AI Weekly Reviews"
+  },
+  "linear": {
+    "enabled": false,
+    "api_key_env": "LINEAR_API_KEY",
+    "use_real_api": true,
+    "workspace_scope": [],
+    "team_scope": [
+      "DORA"
+    ],
+    "project_names": [
+      "DoraOS"
+    ],
+    "project_ids": [],
+    "issue_states": [
+      "In Progress",
+      "Todo"
+    ],
+    "assignee_filter": [],
+    "updated_since_days": 14,
+    "max_items": 5
+  },
+  "logging": {
+    "file": "logs/weekly_review.log"
+  }
+}
