@@ -62,6 +62,7 @@ jobs:
             printf 'GOOGLE_OAUTH_CREDENTIALS_PATH=%s/DoraOS/operating/credentials.json\n' "$GITHUB_WORKSPACE"
             printf 'GOOGLE_TOKEN_PATH=%s/DoraOS/operating/google-token.json\n' "$GITHUB_WORKSPACE"
             printf 'CLOUD_AUTOPILOT_SEND_LINE_DAILY=true\n'
+            printf 'LINE_TASKS_BRIEF_ENABLED=true\n'
           } >> .env
 
       - name: Run cloud daily pipeline and push LINE

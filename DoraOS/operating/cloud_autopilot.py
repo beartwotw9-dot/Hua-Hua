@@ -469,6 +469,15 @@ def main() -> int:
         )
         if not line_result.success:
             logger.warning("Cloud LINE daily brief failed: %s", line_result.detail)
+        tasks_line_result = run_job(
+            "line_tasks_brief",
+            OPERATING_DIR / "line_tasks_brief.py",
+            ["--env-file", str(Path(args.env_file).expanduser())],
+            logger,
+            env,
+        )
+        if not tasks_line_result.success:
+            logger.warning("Cloud LINE tasks brief failed: %s", tasks_line_result.detail)
 
     print(AUTOMATION_STATUS)
     return 0
