@@ -4,6 +4,8 @@ on:
   schedule:
     # 08:05 Asia/Taipei. GitHub Actions cron is UTC.
     - cron: "5 0 * * *"
+    # 13:05 Asia/Taipei catch-up. GitHub schedule can be delayed or skipped.
+    - cron: "5 5 * * *"
   workflow_dispatch:
 
 permissions:

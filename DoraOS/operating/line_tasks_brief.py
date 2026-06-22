@@ -99,6 +99,7 @@ def main() -> int:
     parser.add_argument("--env-file", default=str(DEFAULT_ENV_FILE))
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--strict", action="store_true", help="Exit non-zero when no LINE message is actually pushed.")
     parser.add_argument("--verbose", action="store_true")
     args = parser.parse_args()
 
@@ -116,11 +117,11 @@ def main() -> int:
     if not enabled:
         logger.info("LINE tasks brief disabled.")
         print(json.dumps({"sent": False, "reason": "disabled", "date": brief_date}, ensure_ascii=False))
-        return 0
+        return 2 if args.strict else 0
     if not token or not to_id:
         logger.warning("LINE tasks brief missing credentials.")
         print(json.dumps({"sent": False, "reason": "missing_credentials", "date": brief_date}, ensure_ascii=False))
-        return 0
+        return 2 if args.strict else 0
 
     conn = init_state(_state_path(config))
     try:

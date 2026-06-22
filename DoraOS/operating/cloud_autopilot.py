@@ -460,6 +460,7 @@ def main() -> int:
         args.mode == "daily"
         and env.get("CLOUD_AUTOPILOT_SEND_LINE_DAILY", "false").strip().lower() in {"1", "true", "yes", "on"}
     ):
+        line_failures: list[JobResult] = []
         line_result = run_job(
             "line_daily_brief",
             OPERATING_DIR / "line_daily_brief.py",
@@ -469,15 +470,20 @@ def main() -> int:
         )
         if not line_result.success:
             logger.warning("Cloud LINE daily brief failed: %s", line_result.detail)
+            line_failures.append(line_result)
         tasks_line_result = run_job(
             "line_tasks_brief",
             OPERATING_DIR / "line_tasks_brief.py",
-            ["--env-file", str(Path(args.env_file).expanduser())],
+            ["--env-file", str(Path(args.env_file).expanduser()), "--strict"],
             logger,
             env,
         )
         if not tasks_line_result.success:
             logger.warning("Cloud LINE tasks brief failed: %s", tasks_line_result.detail)
+            line_failures.append(tasks_line_result)
+        if line_failures:
+            logger.error("Cloud LINE push failed for %s.", ", ".join(job.name for job in line_failures))
+            return 1
 
     print(AUTOMATION_STATUS)
     return 0
