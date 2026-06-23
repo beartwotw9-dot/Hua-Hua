@@ -20,6 +20,18 @@ from line_daily_brief import (
 )
 
 
+def tasks_source_failed(tasks_text: str) -> bool:
+    return any(
+        marker in tasks_text
+        for marker in [
+            "status: api-failed",
+            "status: api-disabled",
+            "status: auth-required",
+            "Google Tasks API failed",
+        ]
+    )
+
+
 def _state_path(config: dict[str, str]) -> Path:
     configured = config.get("LINE_TASKS_BRIEF_STATE_PATH", "").strip()
     if configured:
@@ -75,7 +87,7 @@ def build_tasks_line_brief(config: dict[str, str]) -> tuple[str, str, str]:
         "",
     ]
 
-    if "status: api-failed" in tasks_text or "Google Tasks API failed" in tasks_text:
+    if tasks_source_failed(tasks_text):
         lines += [
             "⚠️ Google Tasks 今天抓取失敗",
             "不要把這當成 0 件；請打開 Google Tasks 手動確認。",
@@ -106,10 +118,11 @@ def main() -> int:
     logger = build_logger("doraos.line_tasks_brief", LOG_DIR / "dora_line_tasks_brief.log", verbose=args.verbose)
     config = load_env_file(Path(args.env_file))
     brief_date, body, task_count = build_tasks_line_brief(config)
+    tasks_text = read_text(_vault(config) / "Resources" / "Operating Feed" / f"{brief_date} Google Tasks.md")
 
     if args.dry_run:
         print(body)
-        return 0
+        return 3 if args.strict and tasks_source_failed(tasks_text) else 0
 
     enabled = config.get("LINE_TASKS_BRIEF_ENABLED", "true").strip().lower() in {"1", "true", "yes"}
     token = config.get("LINE_CHANNEL_ACCESS_TOKEN", "").strip()
@@ -122,6 +135,10 @@ def main() -> int:
         logger.warning("LINE tasks brief missing credentials.")
         print(json.dumps({"sent": False, "reason": "missing_credentials", "date": brief_date}, ensure_ascii=False))
         return 2 if args.strict else 0
+    if args.strict and tasks_source_failed(tasks_text):
+        logger.warning("LINE tasks brief blocked because Google Tasks source failed for %s.", brief_date)
+        print(json.dumps({"sent": False, "reason": "tasks_source_failed", "date": brief_date}, ensure_ascii=False))
+        return 3
 
     conn = init_state(_state_path(config))
     try:

@@ -410,7 +410,7 @@ def main() -> int:
         ("research_digest", OPERATING_DIR / "research_digest_sync.py", [*env_args, *common_flags]),
         ("gmail_digest", OPERATING_DIR / "gmail_digest_sync.py", [*env_args, *common_flags]),
         ("calendar_today", OPERATING_DIR / "calendar_today_sync.py", [*env_args, *common_flags]),
-        ("google_tasks", OPERATING_DIR / "google_tasks_sync.py", [*env_args, *common_flags]),
+        ("google_tasks", OPERATING_DIR / "google_tasks_sync.py", [*env_args, *common_flags, "--strict"]),
         ("weather_market", OPERATING_DIR / "weather_market_sync.py", [*env_args, *common_flags]),
         ("operating_feed", OPERATING_DIR / "operating_feed_compose.py", [*env_args, *common_flags]),
         ("morning_brief_notion", RECOVERY_DIR / "morning_brief_notion_sync.py", [*env_args, *common_flags]),

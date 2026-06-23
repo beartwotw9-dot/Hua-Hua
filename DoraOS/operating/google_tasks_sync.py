@@ -233,6 +233,7 @@ def main() -> int:
     parser.add_argument("--verbose", action="store_true")
     parser.add_argument("--max-tasks", type=int, default=50)
     parser.add_argument("--reauth", action="store_true", help="Archive the existing token and run the local OAuth flow.")
+    parser.add_argument("--strict", action="store_true", help="Exit non-zero when Google Tasks live sync fails.")
     args = parser.parse_args()
 
     logger = build_logger("doraos.google_tasks_sync", LOG_DIR / "dora_google_tasks_sync.log", verbose=args.verbose)
@@ -245,6 +246,7 @@ def main() -> int:
     today, generated_at = today_stamp()
     output_path = vault_path / "Resources" / "Operating Feed" / f"{today} Google Tasks.md"
 
+    failed = False
     try:
         retries, delay = _retry_settings(config)
         creds = get_credentials(config, logger, force_reauth=args.reauth)
@@ -252,19 +254,20 @@ def main() -> int:
         tasks = fetch_tasks(service, retries, delay, logger, args.max_tasks)
         content = build_tasks_view(tasks, generated_at, args.max_tasks)
     except Exception as exc:
+        failed = True
         content = build_failure_tasks(generated_at, exc)
         logger.error("Google Tasks sync failed; wrote explicit failure view without stale fallback: %s", exc)
 
     if args.dry_run:
         print(content)
         logger.info("Dry run complete for %s", output_path)
-        return 0
+        return 2 if failed and args.strict else 0
 
     ensure_dir(output_path.parent)
     output_path.write_text(content, encoding="utf-8")
     logger.info("Wrote Google Tasks view to %s", output_path)
     print(output_path)
-    return 0
+    return 2 if failed and args.strict else 0
 
 
 if __name__ == "__main__":
