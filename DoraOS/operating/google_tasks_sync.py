@@ -15,6 +15,7 @@ from googleapiclient.discovery import build
 
 from common import (
     DEFAULT_ENV_FILE,
+    GOOGLE_READONLY_SCOPES,
     LOG_DIR,
     build_logger,
     clip_text,
@@ -27,11 +28,7 @@ from common import (
 )
 
 
-SCOPES = [
-    "https://www.googleapis.com/auth/gmail.readonly",
-    "https://www.googleapis.com/auth/calendar.readonly",
-    "https://www.googleapis.com/auth/tasks.readonly",
-]
+SCOPES = GOOGLE_READONLY_SCOPES
 
 
 def _retry_settings(config: Dict[str, str]) -> tuple[int, float]:

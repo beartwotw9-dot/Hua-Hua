@@ -14,13 +14,10 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
-from common import DEFAULT_ENV_FILE, LOG_DIR, build_logger, ensure_dir, load_env_file, require_env, retry_call, today_stamp, wait_for_network
+from common import DEFAULT_ENV_FILE, GOOGLE_READONLY_SCOPES, LOG_DIR, build_logger, ensure_dir, load_env_file, require_env, retry_call, today_stamp, wait_for_network
 
 
-SCOPES = [
-    "https://www.googleapis.com/auth/gmail.readonly",
-    "https://www.googleapis.com/auth/calendar.readonly",
-]
+SCOPES = GOOGLE_READONLY_SCOPES
 
 
 def _retry_settings(config: Dict[str, str]) -> tuple[int, float]:

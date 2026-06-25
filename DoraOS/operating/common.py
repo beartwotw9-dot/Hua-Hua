@@ -18,6 +18,12 @@ DEFAULT_ENV_FILE = ROOT / ".env"
 LOG_DIR = ROOT / "logs"
 T = TypeVar("T")
 
+GOOGLE_READONLY_SCOPES = [
+    "https://www.googleapis.com/auth/gmail.readonly",
+    "https://www.googleapis.com/auth/calendar.readonly",
+    "https://www.googleapis.com/auth/tasks.readonly",
+]
+
 # Default retry settings — can be overridden via .env
 # SYNC_RETRY_ATTEMPTS=3  (up from 2; helps with slow DNS after wake)
 # SYNC_RETRY_BACKOFF_SECONDS=2.0  (up from 1.5; gives more time between tries)
