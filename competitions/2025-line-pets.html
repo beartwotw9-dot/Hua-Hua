@@ -3,128 +3,265 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>LINE PETs 情感連結新解方 | 競賽作品集</title>
+<title>LINE PETs 把陪伴放進 LINE | 游欣樺作品集</title>
+<meta name="description" content="LINE PETs：以 LINE 為入口的情緒陪伴與任務互動產品提案。"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Noto+Sans+TC:wght@300;400;500;700;800&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#FAF8F4;--bg2:#F4EFE6;--bg3:#EDE6D8;--white:#FFFDF9;--sand:#E2D5C0;--sage:#6B9070;--sage-d:#4F7355;--earth:#A0704A;--amber:#C98B3A;--ink:#221E16;--ink2:#4A4336;--muted:#8C7F6E;--border:rgba(160,130,90,0.15);--serif:'Noto Serif TC',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
-body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.75}
-nav{position:fixed;top:0;left:0;right:0;z-index:20;height:58px;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(250,248,244,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
-.nav-logo{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);text-decoration:none}
-.back-link{color:var(--ink);text-decoration:none;border:1px solid var(--sand);border-radius:100px;padding:.45rem 1rem;font-size:.85rem}
-.hero{min-height:52vh;padding:7rem 2.5rem 4rem;color:var(--white);display:flex;align-items:end;background:linear-gradient(160deg, #2A3A4A, #5A7A8A)}
-.hero-inner,.wrap{max-width:1080px;margin:0 auto;width:100%}
-.eyebrow{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,253,249,.75);margin-bottom:.7rem}
-h1{font-family:var(--serif);font-size:clamp(2.1rem,5vw,4.2rem);line-height:1.16;letter-spacing:-.02em;max-width:820px}
-.hero-meta{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.4rem}
-.pill{border-radius:100px;padding:.28rem .8rem;font-size:.75rem;font-weight:700;background:rgba(255,253,249,.18);border:1px solid rgba(255,253,249,.38);color:var(--white)}
-.pill.award{background:var(--amber);border-color:var(--amber);color:var(--ink)}
-section{padding:4.5rem 2.5rem}
-.section-title{font-family:var(--serif);font-size:1.55rem;margin-bottom:1rem}
-.overview{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:start}
-.summary{color:var(--ink2);font-size:1rem;font-weight:300}.spotlight-list{margin-top:1.2rem;display:grid;gap:.45rem;list-style:none}.spotlight-list li{position:relative;padding-left:1rem;color:var(--ink2);font-size:.9rem}.spotlight-list li::before{content:"";position:absolute;left:0;top:.78rem;width:5px;height:5px;border-radius:50%;background:var(--sage)}
-.team-note{margin-top:.7rem;padding:.6rem .75rem;border:1px solid var(--border);background:var(--white);border-radius:8px;font-size:.84rem;color:var(--ink2);line-height:1.65}
-.team-note strong{color:var(--ink);font-weight:700}
-.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
-.meta-card,.story-card,.related-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem}
-.meta-label{font-size:.7rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
-.meta-value{font-family:var(--serif);font-weight:700;color:var(--ink);margin-top:.15rem}
-.story-lead{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.25rem;margin-bottom:1rem}
-.story-lead p{font-size:.95rem;color:var(--ink2);font-weight:300;line-height:1.9}
-.story-showcase{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem;margin-bottom:1rem;align-items:stretch}
-.story-showcase > :only-child{grid-column:1 / -1}
-.story-media,.story-note{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem}
-.story-media img{display:block;width:100%;border-radius:6px;border:1px solid var(--border);background:var(--bg2)}
-.story-media-caption{font-size:.8rem;color:var(--muted);margin-top:.65rem}
-.story-note h3{font-family:var(--serif);font-size:1.02rem;color:var(--ink);margin-bottom:.55rem}
-.story-note p{font-size:.9rem;color:var(--ink2);font-weight:300;line-height:1.82}
-.story-note .spotlight-list{margin-top:.85rem}
-.story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;grid-auto-rows:1fr}
-.story-card h3{font-family:var(--serif);font-size:1.02rem;color:var(--ink);margin-bottom:.55rem}
-.story-card{display:flex;flex-direction:column}
-.story-card p{font-size:.9rem;color:var(--ink2);font-weight:300;line-height:1.86}
-.app-intro-block{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem 1.1rem;margin-bottom:1rem}
-.app-intro{font-size:.92rem;color:var(--ink2);font-weight:300;line-height:1.82;margin:0}
-.app-carousel{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.8rem}
-.app-nav-btn{width:40px;height:40px;border-radius:999px;border:1px solid var(--border);background:var(--white);color:var(--ink);font-size:1.4rem;line-height:1;display:grid;place-items:center;cursor:pointer}
-.app-nav-btn:hover{border-color:var(--sand)}
-.app-track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:.1rem .1rem .35rem}
-.app-track::-webkit-scrollbar{display:none}
-.app-slide{flex:0 0 min(320px,76vw);scroll-snap-align:start;background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
-.app-phone{padding:1rem .95rem .75rem;background:var(--bg2);border-bottom:1px solid var(--border)}
-.app-notch{display:block;width:34%;height:10px;border-radius:999px;background:var(--sand);margin:0 auto .6rem}
-.app-shot{border-radius:26px;border:1px solid var(--sand);padding:.45rem;background:var(--white);overflow:hidden}
-.app-shot img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:20px;background:var(--bg3)}
-.app-shot-fallback{aspect-ratio:9/16;border-radius:20px;background:var(--bg3);display:grid;place-items:center;padding:1rem;text-align:center}
-.app-shot-fallback strong{font-family:var(--serif);color:var(--ink)}
-.app-slide-body{padding:.85rem .95rem 1rem}
-.app-slide-body h3{font-family:var(--serif);font-size:1rem;color:var(--ink);margin-bottom:.35rem}
-.app-slide-body p{font-size:.86rem;color:var(--ink2);font-weight:300;line-height:1.75}
-.app-dots{display:flex;justify-content:center;gap:.42rem;margin-top:.9rem}
-.app-dot{width:7px;height:7px;border-radius:50%;border:none;background:var(--sand);cursor:pointer}
-.app-dot.active{width:18px;border-radius:999px;background:var(--sage)}
-.related{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.related-card{text-decoration:none;color:inherit;transition:transform .2s,border-color .2s}
-.related-card:hover{transform:translateY(-2px);border-color:var(--sand)}
-.related-year{font-size:.72rem;color:var(--muted)}
-.related-title{font-family:var(--serif);font-weight:700;margin:.25rem 0}
-.note{background:var(--bg2);border:1px dashed var(--sand);border-radius:8px;padding:1.1rem;color:var(--muted);font-size:.88rem}
-.small-link{font-family:var(--sans);border:1px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:100px;padding:.28rem .7rem;font-size:.72rem;text-decoration:none;cursor:pointer}
-@media(max-width:768px){nav{padding:0 1.25rem}.hero,section{padding-left:1.25rem;padding-right:1.25rem}.overview,.story-showcase,.story-grid,.related{grid-template-columns:1fr}.meta-grid{grid-template-columns:1fr}.app-carousel{grid-template-columns:1fr}.app-nav-btn{display:none}.app-slide{flex-basis:82vw}}
+:root{
+  --bg:#f8f4ec;
+  --paper:#fffdf8;
+  --paper2:#f1eadf;
+  --line:#06c755;
+  --mint:#dff5e7;
+  --sage:#526f5c;
+  --leaf:#2f5941;
+  --coral:#e78d7f;
+  --amber:#c98b3a;
+  --ink:#1f1a14;
+  --ink2:#4d4438;
+  --muted:#817466;
+  --border:rgba(104,82,52,.17);
+  --shadow:0 20px 55px rgba(48,35,22,.14);
+  --serif:'Fraunces','Noto Serif TC',serif;
+  --sans:'Noto Sans TC',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:
+  radial-gradient(800px 420px at 95% 4%,rgba(6,199,85,.14),transparent 64%),
+  radial-gradient(620px 360px at 6% 86%,rgba(231,141,127,.12),transparent 66%),
+  var(--bg);color:var(--ink);line-height:1.75}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:60px;padding:0 clamp(1.2rem,4vw,2.6rem);display:flex;align-items:center;justify-content:space-between;background:rgba(248,244,236,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--serif);font-weight:700;text-decoration:none;letter-spacing:.02em}
+.back-link{display:inline-flex;align-items:center;gap:.35rem;text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;font-size:.86rem;color:var(--ink2);background:rgba(255,253,248,.76)}
+.back-link:hover{border-color:rgba(6,199,85,.45);color:var(--leaf)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.2rem,4vw,2.5rem)}
+.hero{padding:8rem 0 4rem;min-height:92vh;display:flex;align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,430px);gap:3rem;align-items:center}
+.eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf);margin-bottom:1rem}
+h1{font-family:var(--serif);font-size:clamp(2.7rem,6vw,5.5rem);line-height:1.03;letter-spacing:-.035em;margin-bottom:1rem}
+.hero-copy{max-width:680px;color:var(--ink2);font-size:1.06rem;line-height:1.9}
+.hero-meta{display:flex;gap:.55rem;flex-wrap:wrap;margin:1.5rem 0 2rem}
+.pill{border-radius:999px;padding:.38rem .8rem;background:var(--paper);border:1px solid var(--border);color:var(--ink2);font-size:.78rem;font-weight:800}
+.pill.line{background:var(--line);border-color:var(--line);color:#fff}
+.hero-actions{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:999px;padding:.78rem 1.2rem;font-weight:800;font-size:.9rem}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.secondary{border:1px solid var(--border);background:var(--paper);color:var(--ink2)}
+.btn:hover{transform:translateY(-1px)}
+.phone-stage{position:relative;min-height:560px;display:grid;place-items:center}
+.pet-orbit{position:absolute;right:-.5rem;top:1.1rem;width:150px;height:150px;border-radius:44px;background:linear-gradient(145deg,#fffdf8,#dff5e7);box-shadow:var(--shadow);border:1px solid rgba(6,199,85,.18);display:grid;place-items:center;transform:rotate(5deg)}
+.pet-face{position:relative;width:94px;height:82px;border-radius:42% 42% 48% 48%;background:#7bcf8a;border:3px solid #2f5941}
+.pet-face::before,.pet-face::after{content:"";position:absolute;top:28px;width:10px;height:10px;border-radius:50%;background:#163321}
+.pet-face::before{left:25px}.pet-face::after{right:25px}
+.pet-ear{position:absolute;top:-16px;width:30px;height:34px;background:#7bcf8a;border:3px solid #2f5941;border-radius:18px 18px 6px 6px}
+.pet-ear.left{left:12px;transform:rotate(-18deg)}.pet-ear.right{right:12px;transform:rotate(18deg)}
+.pet-mouth{position:absolute;left:50%;bottom:22px;width:20px;height:10px;border-bottom:3px solid #163321;border-radius:0 0 20px 20px;transform:translateX(-50%)}
+.phone{position:relative;width:min(360px,88vw);border-radius:38px;padding:.85rem;background:#111;border:1px solid rgba(0,0,0,.2);box-shadow:0 28px 72px rgba(26,22,17,.3)}
+.screen{overflow:hidden;border-radius:30px;background:#eef6ef;min-height:580px}
+.line-top{height:54px;background:#06c755;color:#fff;display:flex;align-items:center;gap:.65rem;padding:0 1rem;font-weight:800}
+.avatar-dot{width:30px;height:30px;border-radius:12px;background:#fff;display:grid;place-items:center;color:#06c755;font-size:1rem}
+.chat{padding:1rem;display:grid;gap:.75rem}
+.bubble{max-width:82%;padding:.72rem .86rem;border-radius:18px;font-size:.88rem;line-height:1.65;box-shadow:0 6px 18px rgba(25,49,35,.07)}
+.bubble.friend{background:#fff;border-bottom-left-radius:5px}
+.bubble.user{justify-self:end;background:#d4f8db;border-bottom-right-radius:5px}
+.mission-card{background:#fff;border:1px solid rgba(6,199,85,.18);border-radius:20px;padding:1rem;margin-top:.3rem}
+.mission-title{font-weight:800;color:var(--leaf);margin-bottom:.45rem}
+.mission-row{display:flex;justify-content:space-between;gap:.8rem;font-size:.78rem;color:var(--muted);padding:.34rem 0;border-top:1px solid rgba(82,111,92,.12)}
+.section{padding:4.5rem 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:1.5rem;margin-bottom:1.6rem}
+.section-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.12;letter-spacing:-.02em}
+.section-note{max-width:560px;color:var(--muted);font-size:.95rem}
+.overview{display:grid;grid-template-columns:1.1fr .9fr;gap:1.1rem;align-items:start}
+.panel,.card,.related-card{background:rgba(255,253,248,.86);border:1px solid var(--border);border-radius:18px;box-shadow:0 14px 34px rgba(48,35,22,.07)}
+.panel{padding:1.35rem}
+.summary{color:var(--ink2);font-size:1rem;line-height:1.9}
+.team-note{margin-top:1rem;padding:.9rem 1rem;border-radius:14px;background:rgba(6,199,85,.08);color:var(--ink2);font-size:.9rem}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.meta-card{padding:1rem;background:var(--paper);border:1px solid var(--border);border-radius:16px}
+.meta-label{font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.meta-value{font-family:var(--serif);font-weight:700;margin-top:.2rem}
+.problem-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.card{padding:1.15rem}
+.card-index{font-family:var(--serif);font-size:2rem;color:var(--line);line-height:1}
+.card h3{font-family:var(--serif);font-size:1.15rem;margin:.6rem 0 .45rem}
+.card p{font-size:.92rem;color:var(--ink2);line-height:1.82}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.flow-step{position:relative;padding:1.15rem;background:var(--paper);border:1px solid var(--border);border-radius:18px}
+.flow-step:not(:last-child)::after{content:"";position:absolute;right:-.68rem;top:50%;width:.7rem;height:2px;background:var(--line)}
+.flow-step strong{display:block;color:var(--leaf);font-size:.92rem;margin-bottom:.35rem}
+.flow-step span{font-size:.86rem;color:var(--ink2)}
+.role-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.role-list{list-style:none;display:grid;gap:.55rem}
+.role-list li{position:relative;padding-left:1.15rem;color:var(--ink2);font-size:.94rem}
+.role-list li::before{content:"";position:absolute;left:0;top:.72rem;width:7px;height:7px;border-radius:50%;background:var(--line)}
+.related{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.related-card{text-decoration:none;padding:1.1rem;transition:transform .2s,border-color .2s}
+.related-card:hover{transform:translateY(-2px);border-color:rgba(6,199,85,.38)}
+.related-year{font-size:.76rem;color:var(--muted)}
+.related-title{font-family:var(--serif);font-size:1.12rem;font-weight:700;margin:.25rem 0 .55rem}
+.small-link{display:inline-flex;border:1px solid var(--border);border-radius:999px;padding:.34rem .78rem;font-size:.76rem;color:var(--leaf);font-weight:800}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.84rem}
+@media(max-width:880px){
+  .hero{padding-top:6rem}.hero-grid,.overview,.problem-grid,.flow,.role-grid,.related{grid-template-columns:1fr}
+  .section-head{display:block}.section-note{margin-top:.6rem}
+  .phone-stage{min-height:auto;margin-top:1rem}.pet-orbit{right:.2rem;top:-.5rem;width:118px;height:118px}.pet-face{transform:scale(.78)}
+  .flow-step:not(:last-child)::after{display:none}
+}
+@media(max-width:520px){
+  nav{height:56px}.back-link{padding:.42rem .75rem}.nav-logo{font-size:1rem}
+  .hero{min-height:auto}.hero-actions{display:grid}.btn{width:100%}
+  .meta-grid{grid-template-columns:1fr}.screen{min-height:540px}.phone{width:100%}
+}
 </style>
 </head>
 <body>
-<nav><a href="../index.html#hero" class="nav-logo">游欣樺</a><a class="back-link" href="../index.html#projects">← 返回</a></nav>
-<header class="hero"><div class="hero-inner"><p class="eyebrow">AI · 2025</p><h1>LINE PETs 情感連結新解方</h1><div class="hero-meta"><span class="pill award">作品整理</span><span class="pill">LINE</span><span class="pill">情緒AI</span><span class="pill">數位陪伴</span><span class="pill">社群互動</span></div></div></header>
-<main>
-<section><div class="wrap overview"><div><h2 class="section-title">作品概覽</h2><p class="summary">以 LINE 為載體，提出結合情緒互動與任務機制的 AI 陪伴概念。</p><div class="team-note"><strong>團隊協作</strong>： LINE FRESH 提案團隊：楊雨姮、簡以庭、游欣樺</div></div><div class="meta-grid"><div class="meta-card"><div class="meta-label">年份</div><div class="meta-value">2025</div></div><div class="meta-card"><div class="meta-label">類別</div><div class="meta-value">AI</div></div><div class="meta-card"><div class="meta-label">獎項</div><div class="meta-value">作品整理</div></div><div class="meta-card"><div class="meta-label">聚焦主題</div><div class="meta-value">LINE / 情緒AI</div></div></div></div></section>
-<section><div class="wrap"><h2 class="section-title">作品介紹</h2><div class="story-lead"><p>以 LINE 為載體，提出結合情緒互動與任務機制的 AI 陪伴概念。 這個題目是團隊協作完成。 這頁整理的是這個提案從問題設定、內容設計到最後成果的完整脈絡。</p></div><div class="story-grid"><article class="story-card"><h3>目的</h3><p>建立可被日常使用的情緒支持系統，透過 LINE 高普及平台把陪伴從被動聊天升級為主動關懷。</p></article><article class="story-card"><h3>發想</h3><p>孤獨感與情緒支持需求持續升高，尤其高齡與獨居族群更明顯。既有聊天機器人大多被動回應，缺乏持續關係感。</p></article><article class="story-card"><h3>核心設計</h3><p>結合情緒辨識、主動提醒與寵物互動成長系統，讓使用者在同一介面完成陪伴互動、情緒支持與生活節奏管理。</p></article><article class="story-card"><h3>執行方式</h3><p>以 LIFF、Messaging API、Beacon 建立技術骨架，並導入任務與勳章機制、原創角色合作、線下活動串聯，提高留存與黏著。</p></article><article class="story-card"><h3>內容亮點</h3><p>核心差異在於主動式陪伴設計，能依語境給出不同情緒回應，讓 AI 互動更貼近真實關係而非工具式回覆。</p></article><article class="story-card"><h3>成果</h3><p>完成 LINE FRESH 校園競賽提案，驗證情緒 AI 與平台互動可形成可持續經營的數位陪伴模型。</p></article></div></div></section>
+<nav>
+  <a href="../index.html#hero" class="nav-logo">游欣樺</a>
+  <a class="back-link" href="../index.html#projects">返回作品集</a>
+</nav>
 
-<section><div class="wrap"><h2 class="section-title">相關作品</h2><div class="related"><a class="related-card" href="2025-ai%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80-%E7%A2%B3%E6%84%9F%E6%9C%AA%E4%BE%86.html"><div class="related-year">2025 · AI</div><div class="related-title">碳感未來 AI 減碳 ERP</div><span class="small-link">查看詳情 →</span></a><a class="related-card" href="2026-edubot.html"><div class="related-year">2026 · AI</div><div class="related-title">EduBot 早療家庭行動系統（115 年度創新創業競賽）</div><span class="small-link">查看詳情 →</span></a></div></div></section>
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">LINE FRESH · AI Companion Concept</p>
+      <h1>LINE PETs<br>把陪伴放進 LINE</h1>
+      <p class="hero-copy">把陪伴放進使用者已經熟悉的 LINE 裡。這份提案討論的不是再做一個聊天機器人，而是讓 AI 角色在日常對話、任務提醒與情緒回應之間，慢慢形成可以持續互動的關係感。</p>
+      <div class="hero-meta">
+        <span class="pill line">LINE</span>
+        <span class="pill">情緒 AI</span>
+        <span class="pill">數位陪伴</span>
+        <span class="pill">任務互動</span>
+        <span class="pill">2025</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn primary" href="#concept">看產品概念</a>
+        <a class="btn secondary" href="#role">看我負責的部分</a>
+      </div>
+    </div>
+    <div class="phone-stage" aria-label="LINE PETs product mockup">
+      <div class="pet-orbit" aria-hidden="true">
+        <div class="pet-face"><span class="pet-ear left"></span><span class="pet-ear right"></span><span class="pet-mouth"></span></div>
+      </div>
+      <div class="phone">
+        <div class="screen">
+          <div class="line-top"><span class="avatar-dot">P</span><span>LINE PETs</span></div>
+          <div class="chat">
+            <div class="bubble friend">今天看起來有點累，要不要先做一個 30 秒呼吸任務？</div>
+            <div class="bubble user">可以，今天真的有點耗。</div>
+            <div class="bubble friend">收到。那我先陪你把今天拆小一點，不急著一次解決全部。</div>
+            <div class="mission-card">
+              <div class="mission-title">今日陪伴任務</div>
+              <div class="mission-row"><span>情緒 check-in</span><strong>完成</strong></div>
+              <div class="mission-row"><span>補水提醒</span><strong>14:30</strong></div>
+              <div class="mission-row"><span>晚間回顧</span><strong>待完成</strong></div>
+            </div>
+            <div class="bubble user">如果我沒回你呢？</div>
+            <div class="bubble friend">我會晚一點再輕輕提醒，不會一直打擾你。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap overview">
+      <div class="panel">
+        <h2 class="section-title">作品概覽</h2>
+        <p class="summary">LINE PETs 是 LINE FRESH 校園競賽的產品提案。團隊從孤獨感、情緒支持與日常陪伴切入，設計一個可以透過 LINE 互動的 AI 寵物角色。它會聊天，也會主動提醒、陪使用者完成小任務，讓陪伴更像一段持續累積的關係，而不是一次性的問答。</p>
+        <div class="team-note"><strong>團隊協作：</strong>LINE FRESH 提案團隊：楊雨姮、簡以庭、游欣樺</div>
+      </div>
+      <div class="meta-grid">
+        <div class="meta-card"><div class="meta-label">年份</div><div class="meta-value">2025</div></div>
+        <div class="meta-card"><div class="meta-label">類別</div><div class="meta-value">AI / LINE</div></div>
+        <div class="meta-card"><div class="meta-label">場景</div><div class="meta-value">情緒陪伴</div></div>
+        <div class="meta-card"><div class="meta-label">輸出</div><div class="meta-value">產品提案</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="concept">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">不是聊天機器人，<br>而是日常陪伴入口</h2>
+        <p class="section-note">設計核心是「低摩擦」。使用者不用下載新 App，也不用學新操作；在 LINE 裡完成情緒回應、任務提醒、角色互動與活動串聯。</p>
+      </div>
+      <div class="problem-grid">
+        <article class="card"><div class="card-index">01</div><h3>情緒支持碎片化</h3><p>很多人真正需要陪伴的時候，不一定會主動求助。產品需要在不打擾的前提下，提供可被接受的輕量互動。</p></article>
+        <article class="card"><div class="card-index">02</div><h3>LINE 是自然入口</h3><p>LINE 已經在日常溝通裡，適合作為陪伴服務的第一層入口。熟悉感能降低嘗試成本，也讓提醒更容易被看見。</p></article>
+        <article class="card"><div class="card-index">03</div><h3>角色讓關係累積</h3><p>寵物角色承接情緒回應、任務成長與徽章機制，讓使用者不是只收到功能通知，而是感覺有人陪著推進。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">產品流程</h2>
+        <p class="section-note">從一次訊息開始，逐步接到情緒判斷、陪伴任務、角色成長和活動回流。</p>
+      </div>
+      <div class="flow">
+        <div class="flow-step"><strong>LINE 互動</strong><span>使用者用原本熟悉的聊天介面開始對話。</span></div>
+        <div class="flow-step"><strong>情緒理解</strong><span>根據語境判斷使用者當下狀態與需要的回應強度。</span></div>
+        <div class="flow-step"><strong>任務陪伴</strong><span>提供補水、休息、回顧、活動提醒等小任務。</span></div>
+        <div class="flow-step"><strong>關係延伸</strong><span>透過角色成長、徽章與線下活動提高留存。</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="role">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">我在這份提案裡做的事</h2>
+        <p class="section-note">團隊作品不把成果說成單人完成；這裡只整理我能對外說明、也最能代表我的貢獻。</p>
+      </div>
+      <div class="role-grid">
+        <article class="panel">
+          <h3 class="section-title" style="font-size:1.35rem">問題與產品邏輯</h3>
+          <ul class="role-list">
+            <li>協助把「情緒陪伴」拆成使用者情境、互動入口與留存機制。</li>
+            <li>整理 LINE 作為入口的優勢：低學習成本、高日常觸達、通知與聊天整合。</li>
+            <li>把提案語言從功能描述收斂成產品價值：主動陪伴、低打擾、可持續互動。</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3 class="section-title" style="font-size:1.35rem">商業與執行想像</h3>
+          <ul class="role-list">
+            <li>參與任務、徽章、原創角色合作與線下活動串聯的設計討論。</li>
+            <li>協助梳理 LIFF、Messaging API、Beacon 等可能支撐的互動骨架。</li>
+            <li>把提案整理成可以被評審快速理解的故事線：痛點、概念、機制、延伸。</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title" style="margin-bottom:1.2rem">相關作品</h2>
+      <div class="related">
+        <a class="related-card" href="2025-ai%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80-%E7%A2%B3%E6%84%9F%E6%9C%AA%E4%BE%86.html">
+          <div class="related-year">2025 · AI</div>
+          <div class="related-title">碳感未來 AI 減碳 ERP</div>
+          <span class="small-link">查看詳情</span>
+        </a>
+        <a class="related-card" href="2026-edubot.html">
+          <div class="related-year">2026 · AI</div>
+          <div class="related-title">EduBot 早療家庭行動系統</div>
+          <span class="small-link">查看詳情</span>
+        </a>
+      </div>
+    </div>
+  </section>
 </main>
-<script id="competition-data" type="application/json">{"lang":"zh"}</script>
-<script>
-const pageDataEl=document.getElementById('competition-data');
-let lang='zh';
-try{
-  const pageData=JSON.parse(pageDataEl?.textContent||'{}');
-  lang=pageData.lang==='en'?'en':'zh';
-}catch(_e){lang='zh';}
-document.querySelectorAll('[data-app-carousel]').forEach((carousel)=>{
-  const track=carousel.querySelector('.app-track');
-  const slides=[...track.querySelectorAll('.app-slide')];
-  const dotsWrap=carousel.parentElement.querySelector('.app-dots');
-  if(!slides.length||!dotsWrap)return;
-  const prevBtn=carousel.querySelector('.app-nav-btn.prev');
-  const nextBtn=carousel.querySelector('.app-nav-btn.next');
-  const dots=slides.map((_,index)=>{
-    const dot=document.createElement('button');
-    dot.type='button';
-    dot.className='app-dot';
-    dot.setAttribute('aria-label', '切換到第 ' + (index + 1) + ' 張');
-    dot.addEventListener('click',()=>track.scrollTo({left:slides[index].offsetLeft-track.offsetLeft,behavior:'smooth'}));
-    dotsWrap.appendChild(dot);
-    return dot;
-  });
-  const syncActive=()=>{
-    const midpoint=track.scrollLeft+track.clientWidth/2;
-    let activeIndex=0;
-    let minDist=Infinity;
-    slides.forEach((slide,index)=>{
-      const center=slide.offsetLeft+slide.clientWidth/2;
-      const dist=Math.abs(center-midpoint);
-      if(dist<minDist){minDist=dist;activeIndex=index;}
-    });
-    dots.forEach((dot,index)=>dot.classList.toggle('active',index===activeIndex));
-  };
-  const step=()=>slides[0]?.clientWidth+16||340;
-  prevBtn?.addEventListener('click',()=>track.scrollBy({left:-step(),behavior:'smooth'}));
-  nextBtn?.addEventListener('click',()=>track.scrollBy({left:step(),behavior:'smooth'}));
-  track.addEventListener('scroll',syncActive,{passive:true});
-  syncActive();
-});
-</script>
+
+<footer>
+  <div class="wrap">LINE PETs · Portfolio page by Dora Yu</div>
+</footer>
 </body>
 </html>

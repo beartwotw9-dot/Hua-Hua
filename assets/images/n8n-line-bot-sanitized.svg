@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1012" viewBox="0 0 1800 1012" role="img" aria-labelledby="title desc">
+  <title id="title">n8n LINE Bot AI Reply Workflow</title>
+  <desc id="desc">A portfolio-safe workflow evidence graphic showing LINE message intake, AI Agent processing, OpenAI model generation, and LINE Reply API delivery.</desc>
+  <defs>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#07120d" flood-opacity=".26"/>
+    </filter>
+    <filter id="nodeShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#07120d" flood-opacity=".16"/>
+    </filter>
+    <linearGradient id="panelGlow" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffdf7"/>
+      <stop offset="1" stop-color="#edf8ef"/>
+    </linearGradient>
+    <pattern id="dotGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2" fill="#d8cbb9" opacity=".45"/>
+    </pattern>
+    <style>
+      .bg{fill:#0f1c17}
+      .grid{fill:url(#dotGrid)}
+      .panel{fill:url(#panelGlow);stroke:#d8e8dd;stroke-width:4}
+      .node{fill:#fffdf7;stroke:#d8cbb9;stroke-width:3}
+      .agent{fill:#eef7ef;stroke:#17a34a;stroke-width:4}
+      .output{fill:#ecf7ff;stroke:#b7d5ef;stroke-width:3}
+      .lineNode{fill:#eefbf2;stroke:#17a34a;stroke-width:3}
+      .title{font:700 31px Arial,sans-serif;fill:#ffffff}
+      .lead{font:400 18px Arial,sans-serif;fill:#bdd1c6}
+      .label{font:700 14px Arial,sans-serif;fill:#ffffff}
+      .section{font:700 16px Arial,sans-serif;letter-spacing:.18em;fill:#9b815e;text-transform:uppercase}
+      .nodeTitle{font:700 29px Arial,sans-serif;fill:#315b42}
+      .nodeText{font:400 20px Arial,sans-serif;fill:#62594c}
+      .smallText{font:400 16px Arial,sans-serif;fill:#827664}
+      .chip{font:400 14px Arial,sans-serif;fill:#ccebd9}
+      .line{stroke:#17a34a;stroke-width:6;fill:none;stroke-linecap:round}
+      .lineSoft{stroke:#7d715f;stroke-width:5;fill:none;stroke-linecap:round}
+      .dot{fill:#17a34a}
+      .tiny{font:700 13px Arial,sans-serif;fill:#315b42}
+    </style>
+  </defs>
+
+  <rect class="bg" width="1800" height="1012"/>
+  <rect class="grid" width="1800" height="1012" opacity=".22"/>
+  <circle cx="1620" cy="90" r="118" fill="#17a34a" opacity=".12"/>
+  <circle cx="156" cy="884" r="170" fill="#e78d7f" opacity=".12"/>
+
+  <text class="title" x="72" y="84">n8n LINE Bot AI Reply Workflow</text>
+  <text class="lead" x="72" y="146">LINE message -&gt; n8n webhook -&gt; AI Agent -&gt; OpenAI model -&gt; LINE Reply API</text>
+
+  <g filter="url(#softShadow)">
+    <rect class="panel" x="70" y="230" width="1660" height="700" rx="32"/>
+  </g>
+
+  <rect x="100" y="260" width="282" height="48" rx="22" fill="#17a34a"/>
+  <text class="label" x="124" y="289">Workflow evidence</text>
+
+  <text class="section" x="130" y="372">Input</text>
+  <text class="section" x="510" y="372">AI Processing</text>
+  <text class="section" x="1248" y="372">Delivery</text>
+
+  <g filter="url(#nodeShadow)">
+    <rect class="lineNode" x="130" y="420" width="292" height="178" rx="26"/>
+    <circle cx="178" cy="482" r="26" fill="#17a34a"/>
+    <text x="178" y="491" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#ffffff">L</text>
+    <text class="nodeTitle" x="166" y="530">1. LINE Webhook</text>
+    <text class="smallText" x="166" y="566">receive user message</text>
+
+    <rect class="agent" x="510" y="394" width="328" height="230" rx="30"/>
+    <circle cx="560" cy="466" r="28" fill="#315b42"/>
+    <path d="M548 466h24M560 454v24" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+    <text class="nodeTitle" x="548" y="528">2. AI Agent</text>
+    <text class="nodeText" x="548" y="570">shape intent and reply</text>
+    <text class="smallText" x="548" y="604">guardrail: portfolio scope</text>
+
+    <rect class="node" x="890" y="420" width="292" height="178" rx="26"/>
+    <circle cx="938" cy="482" r="26" fill="#111827"/>
+    <text x="938" y="491" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#ffffff">AI</text>
+    <text class="nodeTitle" x="926" y="530">3. Chat Model</text>
+    <text class="smallText" x="926" y="566">generate structured reply</text>
+
+    <rect class="output" x="1248" y="420" width="360" height="178" rx="30"/>
+    <circle cx="1304" cy="482" r="26" fill="#5b7cfa"/>
+    <path d="M1292 482h24M1304 470v24" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+    <text class="nodeTitle" x="1338" y="530">4. LINE Reply API</text>
+    <text class="smallText" x="1338" y="566">send response to chat</text>
+
+    <rect class="node" x="130" y="728" width="388" height="112" rx="24"/>
+    <text class="nodeText" x="324" y="775" text-anchor="middle" font-weight="700" fill="#315b42">Why it matters</text>
+    <text class="nodeText" x="324" y="812" text-anchor="middle">AI hides inside a familiar chat entry</text>
+
+    <rect class="node" x="706" y="728" width="388" height="112" rx="24"/>
+    <text class="nodeText" x="900" y="775" text-anchor="middle" font-weight="700" fill="#315b42">Structured result</text>
+    <text class="nodeText" x="900" y="812" text-anchor="middle">Message, context, reply payload</text>
+
+    <rect class="node" x="1282" y="728" width="388" height="112" rx="24"/>
+    <text class="nodeText" x="1476" y="775" text-anchor="middle" font-weight="700" fill="#315b42">Delivery logic</text>
+    <text class="nodeText" x="1476" y="812" text-anchor="middle">Webhook / Agent / HTTP request</text>
+  </g>
+
+  <path class="line" d="M422 509 H510"/>
+  <path class="line" d="M838 509 H890"/>
+  <path class="line" d="M1182 509 H1248"/>
+  <circle class="dot" cx="422" cy="509" r="11"/>
+  <circle class="dot" cx="838" cy="509" r="11"/>
+  <circle class="dot" cx="1182" cy="509" r="11"/>
+
+  <g>
+    <rect x="70" y="960" width="128" height="38" rx="18" fill="#11251d" stroke="#17a34a" stroke-width="2"/>
+    <text class="chip" x="134" y="984" text-anchor="middle">LINE Webhook</text>
+    <rect x="216" y="960" width="118" height="38" rx="18" fill="#11251d" stroke="#17a34a" stroke-width="2"/>
+    <text class="chip" x="275" y="984" text-anchor="middle">AI Agent</text>
+    <rect x="352" y="960" width="162" height="38" rx="18" fill="#11251d" stroke="#17a34a" stroke-width="2"/>
+    <text class="chip" x="433" y="984" text-anchor="middle">OpenAI Model</text>
+    <rect x="532" y="960" width="150" height="38" rx="18" fill="#11251d" stroke="#17a34a" stroke-width="2"/>
+    <text class="chip" x="607" y="984" text-anchor="middle">HTTP Request</text>
+    <rect x="700" y="960" width="142" height="38" rx="18" fill="#11251d" stroke="#17a34a" stroke-width="2"/>
+    <text class="chip" x="771" y="984" text-anchor="middle">Reply API</text>
+  </g>
+</svg>
