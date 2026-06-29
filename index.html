@@ -322,6 +322,18 @@ html.lang-zh-active .lang-block.lang-zh{display:block!important}
 .code-link{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;margin-top:1rem;padding:.8rem 1rem;border-radius:999px;text-decoration:none;background:var(--ink);color:var(--white);font-size:.86rem;font-weight:600;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
 .code-link:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft);background:var(--sage)}
 .code-link.is-disabled{background:var(--bg3);color:var(--muted);pointer-events:none;box-shadow:none}
+#data .code-grid{align-items:start}
+#data .code-card{min-height:0;padding:1.2rem}
+#data .code-title{font-size:1.12rem;line-height:1.22;margin-bottom:.65rem}
+#data .code-index{font-size:1.75rem}
+#data .code-top{margin-bottom:.85rem}
+#data .code-desc{font-size:.86rem;line-height:1.68;margin-bottom:.85rem}
+#data .code-features{gap:.32rem;margin-bottom:.75rem}
+#data .code-features li{font-size:.78rem;line-height:1.55}
+#data .code-tech{font-size:.74rem;line-height:1.55;margin:.05rem 0 .8rem}
+#data .code-meta{margin-top:.25rem;padding-top:0}
+#data .code-pill{font-size:.64rem}
+#data .code-link{margin-top:.9rem;padding:.72rem .9rem}
 
 /* ── CONTACT ── */
 #contact{padding:6rem 0;background:var(--bg2)}
@@ -346,7 +358,7 @@ html.lang-zh-active .lang-block.lang-zh{display:block!important}
 .form-success{display:none;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1rem 1.1rem;font-size:.95rem;color:var(--ink2)}
 
 /* ── PORTFOLIO BOT ── */
-.portfolio-bot{position:fixed;right:1.35rem;bottom:1.35rem;z-index:210;display:flex;flex-direction:column;align-items:flex-end;gap:.75rem}
+.portfolio-bot{position:fixed;right:2.35rem;bottom:1.6rem;z-index:210;display:flex;flex-direction:column;align-items:flex-end;gap:.75rem}
 .bot-panel{width:min(360px,calc(100vw - 2rem));max-height:min(620px,calc(100vh - 5.5rem));display:none;flex-direction:column;background:var(--white);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow-strong);overflow:hidden}
 .bot-panel.open{display:flex}
 .bot-head{display:flex;align-items:center;gap:.8rem;padding:1rem 1rem .85rem;background:linear-gradient(135deg,rgba(95,134,111,.16),rgba(200,135,51,.11));border-bottom:1px solid var(--border)}
@@ -371,7 +383,7 @@ html.lang-zh-active .lang-block.lang-zh{display:block!important}
 .bot-input:focus{border-color:var(--sage);box-shadow:0 0 0 3px rgba(107,144,112,.12)}
 .bot-send{border:none;border-radius:999px;background:var(--ink);color:var(--white);font-weight:800;font-size:.82rem;padding:0 .95rem;cursor:pointer;transition:background .2s,transform .15s}
 .bot-send:hover{background:var(--sage-d);transform:translateY(-1px)}
-.bot-toggle{display:flex;align-items:center;gap:.6rem;border:none;border-radius:999px;background:var(--ink);color:var(--white);box-shadow:var(--shadow-strong);padding:.68rem .95rem .68rem .72rem;cursor:pointer;transition:transform .2s,background .2s}
+.bot-toggle{display:flex;align-items:center;gap:.6rem;max-width:calc(100vw - 4.7rem);border:none;border-radius:999px;background:var(--ink);color:var(--white);box-shadow:var(--shadow-strong);padding:.68rem .95rem .68rem .72rem;cursor:pointer;transition:transform .2s,background .2s}
 .bot-toggle:hover{transform:translateY(-2px);background:var(--sage-d)}
 .bot-toggle .bot-face{width:34px;height:34px;border-radius:13px}
 .bot-toggle .bot-face::before,.bot-toggle .bot-face::after{top:14px}
@@ -1250,7 +1262,7 @@ footer{
           <span class="code-index">03</span>
           <span class="code-badge">Tableau</span>
         </div>
-        <h3 class="code-title">電子支付</h3>
+        <h3 class="code-title">Electronic Payments</h3>
         <p class="code-desc">A Tableau dashboard for scanning electronic-payment data and comparing trend changes across key views.</p>
         <ul class="code-features">
           <li>電子支付相關資料整理</li>
@@ -1653,8 +1665,8 @@ const i18n={
       open:'View Dashboard ↗',
       items:[
         {title:'PM2.5',desc:'A Tableau dashboard for reviewing PM2.5 and air-quality data through interactive charts and regional comparisons.',badge:'Tableau',tags:['Data Visualization','Air Quality'],features:['PM2.5 and air quality data visualization','Presented as an interactive dashboard'],tech:'Tech: Tableau Public, dashboard design, data visualization',href:'https://public.tableau.com/app/profile/hsin.hua.yu/viz/pm25_17095222446470/1_1',cta:'View Dashboard ↗'},
-        {title:'Survey on Student Satisfaction and Adoption of Automated Ordering Systems',desc:'A survey dashboard that organizes student responses about automated ordering systems into adoption and satisfaction views.',badge:'Tableau',tags:['Data Visualization','Survey Analysis'],features:['Student survey result visualization','Focused on adoption and satisfaction with automated ordering systems'],tech:'Tech: Tableau Public, dashboard design, interactive visualization',href:'https://public.tableau.com/app/profile/hsin.hua.yu/viz/1_17359904183130/1_1',cta:'View Dashboard ↗'},
-        {title:'電子支付',desc:'A Tableau dashboard for scanning electronic-payment data and comparing trend changes across key views.',badge:'Tableau',tags:['Data Visualization','Electronic Payments'],features:['Electronic payment data overview','Uses dashboard format for trend and comparison reading'],tech:'Tech: Tableau Public, dashboard design, interactive visualization',href:'https://public.tableau.com/app/profile/hsin.hua.yu/viz/_17178678899480/1',cta:'View Dashboard ↗'}
+        {title:'Automated Ordering Survey Dashboard',desc:'A survey dashboard that organizes student responses about automated ordering systems into adoption and satisfaction views.',badge:'Tableau',tags:['Data Visualization','Survey Analysis'],features:['Student survey result visualization','Focused on adoption and satisfaction with automated ordering systems'],tech:'Tech: Tableau Public, dashboard design, interactive visualization',href:'https://public.tableau.com/app/profile/hsin.hua.yu/viz/1_17359904183130/1_1',cta:'View Dashboard ↗'},
+        {title:'Electronic Payments',desc:'A Tableau dashboard for scanning electronic-payment data and comparing trend changes across key views.',badge:'Tableau',tags:['Data Visualization','Electronic Payments'],features:['Electronic payment data overview','Uses dashboard format for trend and comparison reading'],tech:'Tech: Tableau Public, dashboard design, interactive visualization',href:'https://public.tableau.com/app/profile/hsin.hua.yu/viz/_17178678899480/1',cta:'View Dashboard ↗'}
       ]
     },
     skills:{eyebrow:'Skills',title:'Skills & Tools',cats:['Data Analysis','AI Applications','HR & Organizational Development','Project Management'],names:['Python (pandas, sklearn)','Power BI','R','Excel / SQL','ChatGPT / Claude','Gemini / Google AI Studio','Perplexity / NotebookLM','Generative AI × Workflow Automation × RPA','Recruiting & SOP Design','Training Design & Facilitation','ESG Policy Planning','Group Facilitation & Active Listening','Linear / Asana','Notion','QA Test Planning','Proposal Writing'],certTitle:'📜 Professional Certifications (14)',langTitle:'🌐 Languages',langs:['Mandarin (Native)','English (Intermediate)']},
